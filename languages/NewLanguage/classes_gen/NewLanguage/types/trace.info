@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <root>
+    <file name="Manifest.java">
+      <unit at="16,0,73,0" name="NewLanguage.types.Manifest" />
+    </file>
+    <file name="PrincipalsAnalysisImpl.java">
+      <unit at="10,0,27,0" name="NewLanguage.types.PrincipalsAnalysisImpl" />
+    </file>
+  </root>
+  <root nodeRef="r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/4966914339162178726">
+    <file name="Constants_termTable.java">
+      <node id="4966914339162178731" at="15,42,16,29" concept="2" />
+      <node id="4966914339162178731" at="21,31,22,103" concept="7" />
+      <node id="4966914339162178731" at="25,0,26,0" concept="3" trace="pattern" />
+      <node id="4966914339162178741" at="29,45,30,29" concept="2" />
+      <node id="4966914339162178741" at="35,31,36,106" concept="7" />
+      <node id="4966914339162178741" at="39,0,40,0" concept="3" trace="pattern" />
+      <node id="4966914339162178731" at="15,0,18,0" concept="1" trace="intType_term#(Z)V" />
+      <node id="4966914339162178741" at="29,0,32,0" concept="1" trace="stringType_term#(Z)V" />
+      <node id="4966914339162178731" at="20,0,24,0" concept="5" trace="getTerm#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="4966914339162178741" at="34,0,38,0" concept="5" trace="getTerm#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <scope id="4966914339162178731" at="15,42,16,29" />
+      <scope id="4966914339162178731" at="21,31,22,103" />
+      <scope id="4966914339162178741" at="29,45,30,29" />
+      <scope id="4966914339162178741" at="35,31,36,106" />
+      <scope id="4966914339162178731" at="15,0,18,0">
+        <var name="pattern" id="4966914339162178731" />
+      </scope>
+      <scope id="4966914339162178741" at="29,0,32,0">
+        <var name="pattern" id="4966914339162178741" />
+      </scope>
+      <scope id="4966914339162178731" at="20,0,24,0" />
+      <scope id="4966914339162178741" at="34,0,38,0" />
+      <unit id="4966914339162178731" at="13,0,27,0" name="NewLanguage.types.Constants_termTable$intType_term" />
+      <unit id="4966914339162178741" at="27,0,41,0" name="NewLanguage.types.Constants_termTable$stringType_term" />
+      <unit id="4966914339162178726" at="11,0,44,0" name="NewLanguage.types.Constants_termTable" />
+    </file>
+  </root>
+  <root nodeRef="r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/4966914339162178747">
+    <file name="ConstantRules_ddd.java">
+      <node id="4966914339162184894" at="21,67,22,29" concept="2" />
+      <node id="4966914339162184894" at="26,42,27,52" concept="6" />
+      <node id="4966914339162184894" at="27,52,28,73" concept="2" />
+      <node id="4966914339162184894" at="28,73,29,26" concept="7" />
+      <node id="4966914339162184894" at="32,29,33,18" concept="7" />
+      <node id="4966914339162184894" at="37,0,38,0" concept="3" trace="required" />
+      <node id="4966914339162184894" at="38,0,39,0" concept="3" trace="ruleBuilders" />
+      <node id="4966914339162184894" at="39,0,40,0" concept="3" trace="session" />
+      <node id="4966914339162184894" at="43,49,44,135" concept="10" />
+      <node id="4966914339162184894" at="48,47,49,16" concept="7" />
+      <node id="4966914339162184894" at="55,77,56,37" concept="7" />
+      <node id="4966914339162184894" at="21,0,24,0" concept="1" trace="Token#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="4966914339162184894" at="32,0,35,0" concept="5" trace="token#()LNewLanguage/types/ConstantRules_ddd/Token;" />
+      <node id="4966914339162184894" at="43,0,46,0" concept="1" trace="ConstantRules_ddd#(Ljetbrains/mps/lang/coderules/template/RuleTable;)V" />
+      <node id="4966914339162184894" at="47,0,51,0" concept="5" trace="applicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="4966914339162184894" at="54,0,58,0" concept="5" trace="createToken#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)LNewLanguage/types/ConstantRules_ddd/Token;" />
+      <node id="4966914339162184894" at="25,0,31,0" concept="5" trace="apply#()Ljava/lang/Iterable;" />
+      <scope id="4966914339162184894" at="21,67,22,29" />
+      <scope id="4966914339162184894" at="32,29,33,18" />
+      <scope id="4966914339162184894" at="43,49,44,135" />
+      <scope id="4966914339162184894" at="48,47,49,16" />
+      <scope id="4966914339162184894" at="55,77,56,37" />
+      <scope id="4966914339162184894" at="21,0,24,0">
+        <var name="input" id="4966914339162184894" />
+        <var name="session" id="4966914339162184894" />
+      </scope>
+      <scope id="4966914339162184894" at="26,42,29,26">
+        <var name="_session" id="4966914339162184894" />
+      </scope>
+      <scope id="4966914339162184894" at="32,0,35,0" />
+      <scope id="4966914339162184894" at="43,0,46,0">
+        <var name="ruleTable" id="4966914339162184894" />
+      </scope>
+      <scope id="4966914339162184894" at="47,0,51,0" />
+      <scope id="4966914339162184894" at="54,0,58,0">
+        <var name="input" id="4966914339162184894" />
+        <var name="session" id="4966914339162184894" />
+      </scope>
+      <scope id="4966914339162184894" at="25,0,31,0" />
+      <unit id="4966914339162184894" at="19,0,41,0" name="NewLanguage.types.ConstantRules_ddd$Token" />
+      <unit id="4966914339162184894" at="17,0,59,0" name="NewLanguage.types.ConstantRules_ddd" />
+    </file>
+    <file name="ConstantRules_main.java">
+      <node id="4966914339162189811" at="34,67,35,29" concept="2" />
+      <node id="4966914339162189811" at="39,42,40,52" concept="6" />
+      <node id="4966914339162189811" at="40,52,41,73" concept="2" />
+      <node id="7117166485039328988" at="44,63,45,66" concept="2" />
+      <node id="7117166485039329017" at="45,66,46,66" concept="2" />
+      <node id="7117166485039328976" at="46,66,47,0" concept="8" />
+      <node id="7117166485039328976" at="47,0,48,133" concept="6" />
+      <node id="7117166485039328976" at="48,133,49,0" concept="8" />
+      <node id="7117166485039329046" at="49,0,50,142" concept="2" />
+      <node id="7995570326656726279" at="50,142,51,139" concept="2" />
+      <node id="7995570326656726286" at="53,40,54,36" concept="7" />
+      <node id="7995570326656726286" at="56,118,57,0" concept="8" />
+      <node id="7995570326656726286" at="57,0,58,27" concept="7" />
+      <node id="7995570326656735421" at="60,28,61,118" concept="2" />
+      <node id="7995570326656735458" at="61,118,62,117" concept="2" />
+      <node id="7117166485039328976" at="62,117,63,0" concept="8" />
+      <node id="7117166485039328976" at="63,0,64,66" concept="2" />
+      <node id="7117166485039327245" at="70,63,71,0" concept="8" />
+      <node id="7117166485039327245" at="71,0,72,133" concept="6" />
+      <node id="7117166485039327245" at="72,133,73,0" concept="8" />
+      <node id="7995570326656735541" at="73,0,74,120" concept="2" />
+      <node id="7995570326656735718" at="74,120,75,120" concept="2" />
+      <node id="7117166485039327245" at="75,120,76,0" concept="8" />
+      <node id="7117166485039327245" at="76,0,77,66" concept="2" />
+      <node id="4966914339162189811" at="80,24,81,26" concept="7" />
+      <node id="4966914339162189811" at="84,29,85,18" concept="7" />
+      <node id="7117166485039328976" at="90,29,91,20" concept="7" />
+      <node id="7117166485039328988" at="94,0,95,0" concept="3" trace="S" />
+      <node id="7117166485039329017" at="95,0,96,0" concept="3" trace="T" />
+      <node id="7117166485039327245" at="100,30,101,20" concept="7" />
+      <node id="4966914339162189811" at="107,0,108,0" concept="3" trace="required" />
+      <node id="4966914339162189811" at="108,0,109,0" concept="3" trace="ruleBuilders" />
+      <node id="4966914339162189811" at="109,0,110,0" concept="3" trace="session" />
+      <node id="4966914339162189811" at="113,50,114,136" concept="10" />
+      <node id="4966914339162189811" at="118,47,119,16" concept="7" />
+      <node id="4966914339162189811" at="125,77,126,37" concept="7" />
+      <node id="4966914339162189811" at="34,0,37,0" concept="1" trace="Token#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="7995570326656726286" at="53,0,56,0" concept="5" trace="metaArgs#()[Ljava/lang/Object;" />
+      <node id="4966914339162189811" at="84,0,87,0" concept="5" trace="token#()LNewLanguage/types/ConstantRules_main/Token;" />
+      <node id="7117166485039328976" at="90,0,93,0" concept="5" trace="rule#()LNewLanguage/types/ConstantRules_main/Token/main;" />
+      <node id="7117166485039327245" at="100,0,103,0" concept="5" trace="rule#()LNewLanguage/types/ConstantRules_main/Token/main1;" />
+      <node id="4966914339162189811" at="113,0,116,0" concept="1" trace="ConstantRules_main#(Ljetbrains/mps/lang/coderules/template/RuleTable;)V" />
+      <node id="7995570326656726286" at="56,0,60,0" concept="5" trace="eval#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;Ljetbrains/mps/logic/reactor/evaluation/InvocationContext;null)Ljava/lang/Object;" />
+      <node id="4966914339162189811" at="117,0,121,0" concept="5" trace="applicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="4966914339162189811" at="124,0,128,0" concept="5" trace="createToken#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)LNewLanguage/types/ConstantRules_main/Token;" />
+      <node id="7995570326656726290" at="51,139,60,28" concept="2" />
+      <node id="7117166485039327245" at="69,0,79,0" concept="5" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="7117166485039327244" at="67,24,80,24" concept="2" />
+      <node id="7117166485039328976" at="43,0,66,0" concept="5" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="7117166485039328974" at="41,73,67,24" concept="2" />
+      <node id="4966914339162189811" at="38,0,83,0" concept="5" trace="apply#()Ljava/lang/Iterable;" />
+      <scope id="4966914339162189811" at="34,67,35,29" />
+      <scope id="7995570326656726286" at="53,40,54,36" />
+      <scope id="4966914339162189811" at="84,29,85,18" />
+      <scope id="7117166485039328976" at="90,29,91,20" />
+      <scope id="7117166485039327245" at="100,30,101,20" />
+      <scope id="4966914339162189811" at="113,50,114,136" />
+      <scope id="4966914339162189811" at="118,47,119,16" />
+      <scope id="4966914339162189811" at="125,77,126,37" />
+      <scope id="7995570326656726286" at="56,118,58,27" />
+      <scope id="4966914339162189811" at="34,0,37,0">
+        <var name="input" id="4966914339162189811" />
+        <var name="session" id="4966914339162189811" />
+      </scope>
+      <scope id="7995570326656726286" at="53,0,56,0" />
+      <scope id="4966914339162189811" at="84,0,87,0" />
+      <scope id="7117166485039328976" at="90,0,93,0" />
+      <scope id="7117166485039327245" at="100,0,103,0" />
+      <scope id="4966914339162189811" at="113,0,116,0">
+        <var name="ruleTable" id="4966914339162189811" />
+      </scope>
+      <scope id="7995570326656726286" at="56,0,60,0">
+        <var name="_invocationContext" id="7995570326656726286" />
+        <var name="_logicalContext" id="7995570326656726286" />
+        <var name="args" id="7995570326656726286" />
+      </scope>
+      <scope id="4966914339162189811" at="117,0,121,0" />
+      <scope id="4966914339162189811" at="124,0,128,0">
+        <var name="input" id="4966914339162189811" />
+        <var name="session" id="4966914339162189811" />
+      </scope>
+      <scope id="7117166485039327245" at="70,63,77,66">
+        <var name="builder" id="7117166485039327245" />
+      </scope>
+      <scope id="7117166485039327245" at="69,0,79,0">
+        <var name="session" id="7117166485039327245" />
+      </scope>
+      <scope id="7117166485039328976" at="44,63,64,66">
+        <var name="builder" id="7117166485039328976" />
+      </scope>
+      <scope id="7117166485039328976" at="43,0,66,0">
+        <var name="session" id="7117166485039328976" />
+      </scope>
+      <scope id="4966914339162189811" at="39,42,81,26">
+        <var name="_session" id="4966914339162189811" />
+      </scope>
+      <scope id="4966914339162189811" at="38,0,83,0" />
+      <unit id="7995570326656726286" at="52,103,60,11" name="NewLanguage.types.ConstantRules_main$Token$1$1" />
+      <unit id="7117166485039327245" at="98,0,106,0" name="NewLanguage.types.ConstantRules_main$Token$main1" />
+      <unit id="7117166485039328976" at="88,0,98,0" name="NewLanguage.types.ConstantRules_main$Token$main" />
+      <unit id="7117166485039327245" at="68,10,80,7" name="NewLanguage.types.ConstantRules_main$Token$2" />
+      <unit id="7117166485039328976" at="42,10,67,7" name="NewLanguage.types.ConstantRules_main$Token$1" />
+      <unit id="4966914339162189811" at="32,0,111,0" name="NewLanguage.types.ConstantRules_main$Token" />
+      <unit id="4966914339162189811" at="30,0,129,0" name="NewLanguage.types.ConstantRules_main" />
+    </file>
+    <file name="ConstantRules_ruleTable.java">
+      <node id="4966914339162178747" at="16,73,17,20" concept="10" />
+      <node id="4966914339162178747" at="17,20,18,11" concept="2" />
+      <node id="4966914339162178747" at="22,24,23,27" concept="7" />
+      <node id="4966914339162178747" at="27,26,28,45" concept="7" />
+      <node id="4966914339162178747" at="32,34,33,43" concept="7" />
+      <node id="4966914339162178747" at="37,54,38,25" concept="7" />
+      <node id="4966914339162178747" at="41,23,42,89" concept="6" />
+      <node id="4966914339162189811" at="42,89,43,73" concept="2" />
+      <node id="4966914339162178748" at="43,73,44,82" concept="2" />
+      <node id="4966914339162184894" at="44,82,45,72" concept="2" />
+      <node id="4966914339162178747" at="45,72,46,70" concept="2" />
+      <node id="4966914339162178747" at="49,0,50,0" concept="3" trace="ruleTemplates" />
+      <node id="4966914339162178747" at="16,0,20,0" concept="1" trace="ConstantRules_ruleTable#(Ljetbrains/mps/lang/coderules/aspect/AbstractCoderulesManifest;)V" />
+      <node id="4966914339162178747" at="21,0,25,0" concept="5" trace="name#()Ljava/lang/String;" />
+      <node id="4966914339162178747" at="26,0,30,0" concept="5" trace="fqName#()Ljava/lang/String;" />
+      <node id="4966914339162178747" at="31,0,35,0" concept="5" trace="extendedFqName#()Ljava/lang/String;" />
+      <node id="4966914339162178747" at="36,0,40,0" concept="5" trace="ruleTemplates#()Ljava/util/Collection;" />
+      <node id="4966914339162178747" at="41,0,48,0" concept="5" trace="init#()V" />
+      <scope id="4966914339162178747" at="22,24,23,27" />
+      <scope id="4966914339162178747" at="27,26,28,45" />
+      <scope id="4966914339162178747" at="32,34,33,43" />
+      <scope id="4966914339162178747" at="37,54,38,25" />
+      <scope id="4966914339162178747" at="16,73,18,11" />
+      <scope id="4966914339162178747" at="16,0,20,0">
+        <var name="manifest" id="4966914339162178747" />
+      </scope>
+      <scope id="4966914339162178747" at="21,0,25,0" />
+      <scope id="4966914339162178747" at="26,0,30,0" />
+      <scope id="4966914339162178747" at="31,0,35,0" />
+      <scope id="4966914339162178747" at="36,0,40,0" />
+      <scope id="4966914339162178747" at="41,23,46,70">
+        <var name="list" id="4966914339162178747" />
+      </scope>
+      <scope id="4966914339162178747" at="41,0,48,0" />
+      <unit id="4966914339162178747" at="14,0,51,0" name="NewLanguage.types.ConstantRules_ruleTable" />
+    </file>
+    <file name="ConstantRules_stringLiteral.java">
+      <node id="4966914339162178748" at="24,67,25,21" concept="2" />
+      <node id="4966914339162178748" at="25,21,26,29" concept="2" />
+      <node id="4966914339162178748" at="30,42,31,52" concept="6" />
+      <node id="4966914339162178748" at="31,52,32,73" concept="2" />
+      <node id="4966914339162178899" at="32,73,33,179" concept="2" />
+      <node id="4966914339162178748" at="33,179,34,26" concept="7" />
+      <node id="4966914339162178748" at="37,29,38,18" concept="7" />
+      <node id="4966914339162178748" at="42,0,43,0" concept="3" trace="s" />
+      <node id="4966914339162178748" at="43,0,44,0" concept="3" trace="required" />
+      <node id="4966914339162178748" at="44,0,45,0" concept="3" trace="ruleBuilders" />
+      <node id="4966914339162178748" at="45,0,46,0" concept="3" trace="session" />
+      <node id="4966914339162178748" at="49,59,50,145" concept="10" />
+      <node id="4966914339162178748" at="54,47,55,35" concept="7" />
+      <node id="4966914339162178748" at="61,77,62,37" concept="7" />
+      <node id="4966914339162178748" at="66,0,67,0" concept="9" trace="StringValue$R1" />
+      <node id="4966914339162178748" at="37,0,40,0" concept="5" trace="token#()LNewLanguage/types/ConstantRules_stringLiteral/Token;" />
+      <node id="4966914339162178748" at="49,0,52,0" concept="1" trace="ConstantRules_stringLiteral#(Ljetbrains/mps/lang/coderules/template/RuleTable;)V" />
+      <node id="4966914339162178748" at="24,0,28,0" concept="1" trace="Token#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="4966914339162178748" at="53,0,57,0" concept="5" trace="applicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="4966914339162178748" at="60,0,64,0" concept="5" trace="createToken#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)LNewLanguage/types/ConstantRules_stringLiteral/Token;" />
+      <node id="4966914339162178748" at="29,0,36,0" concept="5" trace="apply#()Ljava/lang/Iterable;" />
+      <scope id="4966914339162178748" at="37,29,38,18" />
+      <scope id="4966914339162178748" at="49,59,50,145" />
+      <scope id="4966914339162178748" at="54,47,55,35" />
+      <scope id="4966914339162178748" at="61,77,62,37" />
+      <scope id="4966914339162178748" at="24,67,26,29" />
+      <scope id="4966914339162178748" at="37,0,40,0" />
+      <scope id="4966914339162178748" at="49,0,52,0">
+        <var name="ruleTable" id="4966914339162178748" />
+      </scope>
+      <scope id="4966914339162178748" at="24,0,28,0">
+        <var name="input" id="4966914339162178748" />
+        <var name="session" id="4966914339162178748" />
+      </scope>
+      <scope id="4966914339162178748" at="30,42,34,26">
+        <var name="_session" id="4966914339162178748" />
+      </scope>
+      <scope id="4966914339162178748" at="53,0,57,0" />
+      <scope id="4966914339162178748" at="60,0,64,0">
+        <var name="input" id="4966914339162178748" />
+        <var name="session" id="4966914339162178748" />
+      </scope>
+      <scope id="4966914339162178748" at="29,0,36,0" />
+      <unit id="4966914339162178748" at="65,0,68,0" name="NewLanguage.types.ConstantRules_stringLiteral$CONCEPTS" />
+      <unit id="4966914339162178748" at="22,0,47,0" name="NewLanguage.types.ConstantRules_stringLiteral$Token" />
+      <unit id="4966914339162178748" at="20,0,69,0" name="NewLanguage.types.ConstantRules_stringLiteral" />
+    </file>
+    <file name="Manifest.java">
+      <node id="4966914339162178747" at="50,82,51,83" concept="2" />
+    </file>
+    <file name="PrincipalsAnalysisImpl.java">
+      <node id="4966914339162192823" at="20,0,21,87" concept="2" />
+      <node id="7117166485039327245" at="22,64,23,63" concept="2" />
+    </file>
+  </root>
+  <root nodeRef="r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/4966914339162184906">
+    <file name="Manifest.java">
+      <node id="4966914339162184906" at="56,80,57,70" concept="2" />
+    </file>
+    <file name="PrincipalsAnalysisImpl.java">
+      <node id="4966914339162192056" at="21,87,22,64" concept="2" />
+      <node id="4966914339162194683" at="23,63,24,65" concept="2" />
+    </file>
+    <file name="Queries_queryTable.java">
+      <node id="4966914339162184906" at="26,31,27,11" concept="2" />
+      <node id="4966914339162184954" at="32,34,33,155" concept="10" />
+      <node id="4966914339162184954" at="38,59,39,31" concept="2" />
+      <node id="4966914339162184954" at="43,62,44,27" concept="2" />
+      <node id="4966914339162184954" at="44,27,45,20" concept="7" />
+      <node id="4966914339162184954" at="49,44,50,54" concept="6" />
+      <node id="4966914339162184954" at="50,54,51,80" concept="2" />
+      <node id="4966914339162192056" at="54,65,55,0" concept="8" />
+      <node id="4966914339162192056" at="55,0,56,135" concept="6" />
+      <node id="4966914339162192056" at="56,135,57,0" concept="8" />
+      <node id="4966914339162192840" at="57,0,58,122" concept="2" />
+      <node id="4966914339162192056" at="58,122,59,0" concept="8" />
+      <node id="4966914339162192056" at="59,0,60,68" concept="2" />
+      <node id="4966914339162184954" at="63,26,64,28" concept="7" />
+      <node id="4966914339162184954" at="67,31,68,20" concept="7" />
+      <node id="4966914339162192056" at="73,32,74,22" concept="7" />
+      <node id="4966914339162184954" at="81,0,82,0" concept="3" trace="query" />
+      <node id="4966914339162184954" at="82,0,83,0" concept="3" trace="ruleBuilders" />
+      <node id="4966914339162184954" at="83,0,84,0" concept="3" trace="session" />
+      <node id="4966914339162184954" at="88,47,89,30" concept="7" />
+      <node id="4966914339162184954" at="93,55,94,32" concept="7" />
+      <node id="4966914339162184954" at="98,66,99,32" concept="7" />
+      <node id="4966914339162184954" at="105,96,106,22" concept="7" />
+      <node id="4966914339162194680" at="114,35,115,157" concept="10" />
+      <node id="4966914339162194680" at="120,59,121,31" concept="2" />
+      <node id="4966914339162194680" at="125,63,126,27" concept="2" />
+      <node id="4966914339162194680" at="126,27,127,20" concept="7" />
+      <node id="4966914339162194680" at="131,44,132,54" concept="6" />
+      <node id="4966914339162194680" at="132,54,133,80" concept="2" />
+      <node id="4966914339162194683" at="136,65,137,0" concept="8" />
+      <node id="4966914339162194683" at="137,0,138,137" concept="6" />
+      <node id="4966914339162194683" at="138,137,139,0" concept="8" />
+      <node id="4966914339162194687" at="139,0,140,122" concept="2" />
+      <node id="4966914339162194683" at="140,122,141,0" concept="8" />
+      <node id="4966914339162194683" at="141,0,142,68" concept="2" />
+      <node id="4966914339162194680" at="145,26,146,28" concept="7" />
+      <node id="4966914339162194680" at="149,31,150,20" concept="7" />
+      <node id="4966914339162194683" at="155,33,156,22" concept="7" />
+      <node id="4966914339162194680" at="163,0,164,0" concept="3" trace="query" />
+      <node id="4966914339162194680" at="164,0,165,0" concept="3" trace="ruleBuilders" />
+      <node id="4966914339162194680" at="165,0,166,0" concept="3" trace="session" />
+      <node id="4966914339162194680" at="170,47,171,31" concept="7" />
+      <node id="4966914339162194680" at="175,55,176,32" concept="7" />
+      <node id="4966914339162194680" at="180,66,181,32" concept="7" />
+      <node id="4966914339162194680" at="187,96,188,22" concept="7" />
+      <node id="4966914339162184906" at="196,53,197,26" concept="7" />
+      <node id="4966914339162184906" at="200,23,201,85" concept="6" />
+      <node id="4966914339162184954" at="201,85,202,70" concept="2" />
+      <node id="4966914339162194680" at="202,70,203,71" concept="2" />
+      <node id="4966914339162184906" at="203,71,204,0" concept="8" />
+      <node id="4966914339162184906" at="204,0,205,71" concept="2" />
+      <node id="4966914339162184906" at="208,0,209,0" concept="3" trace="queryTemplates" />
+      <node id="4966914339162184906" at="26,0,29,0" concept="1" trace="Queries_queryTable#()V" />
+      <node id="4966914339162184954" at="32,0,35,0" concept="1" trace="check_queryTemplate#()V" />
+      <node id="4966914339162184954" at="38,0,41,0" concept="1" trace="Token#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="4966914339162184954" at="67,0,70,0" concept="5" trace="token#()LNewLanguage/types/Queries_queryTable/check_queryTemplate/Token;" />
+      <node id="4966914339162192056" at="73,0,76,0" concept="5" trace="rule#()LNewLanguage/types/Queries_queryTable/check_queryTemplate/Token/check;" />
+      <node id="4966914339162194680" at="114,0,117,0" concept="1" trace="typeof_queryTemplate#()V" />
+      <node id="4966914339162194680" at="120,0,123,0" concept="1" trace="Token#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="4966914339162194680" at="149,0,152,0" concept="5" trace="token#()LNewLanguage/types/Queries_queryTable/typeof_queryTemplate/Token;" />
+      <node id="4966914339162194683" at="155,0,158,0" concept="5" trace="rule#()LNewLanguage/types/Queries_queryTable/typeof_queryTemplate/Token/typeof;" />
+      <node id="4966914339162184954" at="87,0,91,0" concept="5" trace="queryType#()Ljava/lang/Class;" />
+      <node id="4966914339162184954" at="92,0,96,0" concept="5" trace="newQuery#()Ljetbrains/mps/lang/coderules/template/QueryTemplate/QueryConfigurable;" />
+      <node id="4966914339162184954" at="97,0,101,0" concept="5" trace="createToken#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)LNewLanguage/types/Queries_queryTable/check_queryTemplate/Token;" />
+      <node id="4966914339162184954" at="104,0,108,0" concept="5" trace="configure#(Ljava/lang/String;Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
+      <node id="4966914339162194680" at="169,0,173,0" concept="5" trace="queryType#()Ljava/lang/Class;" />
+      <node id="4966914339162194680" at="174,0,178,0" concept="5" trace="newQuery#()Ljetbrains/mps/lang/coderules/template/QueryTemplate/QueryConfigurable;" />
+      <node id="4966914339162194680" at="179,0,183,0" concept="5" trace="createToken#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)LNewLanguage/types/Queries_queryTable/typeof_queryTemplate/Token;" />
+      <node id="4966914339162194680" at="186,0,190,0" concept="5" trace="configure#(Ljava/lang/String;Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
+      <node id="4966914339162184906" at="195,0,199,0" concept="5" trace="queryTemplates#()Ljava/util/Collection;" />
+      <node id="4966914339162184954" at="42,0,47,0" concept="5" trace="withQuery#(Ljetbrains/mps/coderules/typechecking/service/CheckQuery;)Ljetbrains/mps/lang/coderules/template/QueryTemplate/Token;" />
+      <node id="4966914339162194680" at="124,0,129,0" concept="5" trace="withQuery#(Ljetbrains/mps/coderules/typechecking/service/TypeOfQuery;)Ljetbrains/mps/lang/coderules/template/QueryTemplate/Token;" />
+      <node id="4966914339162184906" at="200,0,207,0" concept="5" trace="init#()V" />
+      <node id="4966914339162192056" at="53,0,62,0" concept="5" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="4966914339162194683" at="135,0,144,0" concept="5" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="4966914339162192054" at="51,80,63,26" concept="2" />
+      <node id="4966914339162194682" at="133,80,145,26" concept="2" />
+      <node id="4966914339162184954" at="48,0,66,0" concept="5" trace="apply#()Ljava/lang/Iterable;" />
+      <node id="4966914339162194680" at="130,0,148,0" concept="5" trace="apply#()Ljava/lang/Iterable;" />
+      <scope id="4966914339162184906" at="26,31,27,11" />
+      <scope id="4966914339162184954" at="32,34,33,155" />
+      <scope id="4966914339162184954" at="38,59,39,31" />
+      <scope id="4966914339162184954" at="67,31,68,20" />
+      <scope id="4966914339162192056" at="73,32,74,22" />
+      <scope id="4966914339162184954" at="88,47,89,30" />
+      <scope id="4966914339162184954" at="93,55,94,32" />
+      <scope id="4966914339162184954" at="98,66,99,32" />
+      <scope id="4966914339162184954" at="105,96,106,22" />
+      <scope id="4966914339162194680" at="114,35,115,157" />
+      <scope id="4966914339162194680" at="120,59,121,31" />
+      <scope id="4966914339162194680" at="149,31,150,20" />
+      <scope id="4966914339162194683" at="155,33,156,22" />
+      <scope id="4966914339162194680" at="170,47,171,31" />
+      <scope id="4966914339162194680" at="175,55,176,32" />
+      <scope id="4966914339162194680" at="180,66,181,32" />
+      <scope id="4966914339162194680" at="187,96,188,22" />
+      <scope id="4966914339162184906" at="196,53,197,26" />
+      <scope id="4966914339162184954" at="43,62,45,20" />
+      <scope id="4966914339162194680" at="125,63,127,20" />
+      <scope id="4966914339162184906" at="26,0,29,0" />
+      <scope id="4966914339162184954" at="32,0,35,0" />
+      <scope id="4966914339162184954" at="38,0,41,0">
+        <var name="session" id="4966914339162184954" />
+      </scope>
+      <scope id="4966914339162184954" at="67,0,70,0" />
+      <scope id="4966914339162192056" at="73,0,76,0" />
+      <scope id="4966914339162194680" at="114,0,117,0" />
+      <scope id="4966914339162194680" at="120,0,123,0">
+        <var name="session" id="4966914339162194680" />
+      </scope>
+      <scope id="4966914339162194680" at="149,0,152,0" />
+      <scope id="4966914339162194683" at="155,0,158,0" />
+      <scope id="4966914339162184954" at="87,0,91,0" />
+      <scope id="4966914339162184954" at="92,0,96,0" />
+      <scope id="4966914339162184954" at="97,0,101,0">
+        <var name="session" id="4966914339162184954" />
+      </scope>
+      <scope id="4966914339162184954" at="104,0,108,0">
+        <var name="config" id="4966914339162184954" />
+        <var name="stage" id="4966914339162184954" />
+      </scope>
+      <scope id="4966914339162194680" at="169,0,173,0" />
+      <scope id="4966914339162194680" at="174,0,178,0" />
+      <scope id="4966914339162194680" at="179,0,183,0">
+        <var name="session" id="4966914339162194680" />
+      </scope>
+      <scope id="4966914339162194680" at="186,0,190,0">
+        <var name="config" id="4966914339162194680" />
+        <var name="stage" id="4966914339162194680" />
+      </scope>
+      <scope id="4966914339162184906" at="195,0,199,0" />
+      <scope id="4966914339162184954" at="42,0,47,0">
+        <var name="query" id="4966914339162184954" />
+      </scope>
+      <scope id="4966914339162194680" at="124,0,129,0">
+        <var name="query" id="4966914339162194680" />
+      </scope>
+      <scope id="4966914339162184906" at="200,23,205,71">
+        <var name="list" id="4966914339162184906" />
+      </scope>
+      <scope id="4966914339162192056" at="54,65,60,68">
+        <var name="builder" id="4966914339162192056" />
+      </scope>
+      <scope id="4966914339162194683" at="136,65,142,68">
+        <var name="builder" id="4966914339162194683" />
+      </scope>
+      <scope id="4966914339162184906" at="200,0,207,0" />
+      <scope id="4966914339162192056" at="53,0,62,0">
+        <var name="session" id="4966914339162192056" />
+      </scope>
+      <scope id="4966914339162194683" at="135,0,144,0">
+        <var name="session" id="4966914339162194683" />
+      </scope>
+      <scope id="4966914339162184954" at="49,44,64,28">
+        <var name="_session" id="4966914339162184954" />
+      </scope>
+      <scope id="4966914339162194680" at="131,44,146,28">
+        <var name="_session" id="4966914339162194680" />
+      </scope>
+      <scope id="4966914339162184954" at="48,0,66,0" />
+      <scope id="4966914339162194680" at="130,0,148,0" />
+      <unit id="4966914339162192056" at="71,0,79,0" name="NewLanguage.types.Queries_queryTable$check_queryTemplate$Token$check" />
+      <unit id="4966914339162184954" at="102,0,110,0" name="NewLanguage.types.Queries_queryTable$check_queryTemplate$Configurable" />
+      <unit id="4966914339162194683" at="153,0,161,0" name="NewLanguage.types.Queries_queryTable$typeof_queryTemplate$Token$typeof" />
+      <unit id="4966914339162194680" at="184,0,192,0" name="NewLanguage.types.Queries_queryTable$typeof_queryTemplate$Configurable" />
+      <unit id="4966914339162192056" at="52,12,63,9" name="NewLanguage.types.Queries_queryTable$check_queryTemplate$Token$1" />
+      <unit id="4966914339162194683" at="134,12,145,9" name="NewLanguage.types.Queries_queryTable$typeof_queryTemplate$Token$1" />
+      <unit id="4966914339162184954" at="36,0,86,0" name="NewLanguage.types.Queries_queryTable$check_queryTemplate$Token" />
+      <unit id="4966914339162194680" at="118,0,168,0" name="NewLanguage.types.Queries_queryTable$typeof_queryTemplate$Token" />
+      <unit id="4966914339162184954" at="30,0,112,0" name="NewLanguage.types.Queries_queryTable$check_queryTemplate" />
+      <unit id="4966914339162194680" at="112,0,194,0" name="NewLanguage.types.Queries_queryTable$typeof_queryTemplate" />
+      <unit id="4966914339162184906" at="24,0,211,0" name="NewLanguage.types.Queries_queryTable" />
+    </file>
+  </root>
+  <root nodeRef="r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/4966914339162184915">
+    <file name="Macros_macroTable.java">
+      <node id="4966914339162184915" at="19,24,20,20" concept="7" />
+      <node id="4966914339162184915" at="24,36,25,117" concept="7" />
+      <node id="4966914339162184915" at="29,38,30,16" concept="7" />
+      <node id="4966914339162184915" at="35,26,36,39" concept="12" />
+      <node id="4966914339162184915" at="37,5,38,0" concept="8" />
+      <node id="4966914339162184915" at="38,0,39,105" concept="6" />
+      <node id="4966914339162184915" at="39,105,40,18" concept="7" />
+      <node id="4966914339162184915" at="45,30,46,39" concept="12" />
+      <node id="4966914339162184915" at="47,5,48,0" concept="8" />
+      <node id="4966914339162184915" at="50,5,51,16" concept="7" />
+      <node id="4966914339162184915" at="55,60,56,89" concept="6" />
+      <node id="4966914339162184915" at="56,89,57,0" concept="8" />
+      <node id="4966914339162184915" at="57,0,58,0" concept="8" />
+      <node id="4966914339162184915" at="58,0,59,18" concept="7" />
+      <node id="4966914339162184915" at="48,0,50,5" concept="11" />
+      <node id="4966914339162184915" at="34,129,37,5" concept="4" />
+      <node id="4966914339162184915" at="44,113,47,5" concept="4" />
+      <node id="4966914339162184915" at="18,0,22,0" concept="5" trace="name#()Ljava/lang/String;" />
+      <node id="4966914339162184915" at="23,0,27,0" concept="5" trace="tableRef#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4966914339162184915" at="28,0,32,0" concept="5" trace="extendsRef#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4966914339162184915" at="54,0,61,0" concept="5" trace="allMacroTemplateRefs#()Ljava/util/Collection;" />
+      <node id="4966914339162184915" at="33,0,42,0" concept="5" trace="expandMacroTemplate#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/Collection;" />
+      <node id="4966914339162184915" at="43,0,53,0" concept="5" trace="callMacroTemplate#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljetbrains/mps/lang/coderules/template/CallMacroTemplate;" />
+      <scope id="4966914339162184915" at="19,24,20,20" />
+      <scope id="4966914339162184915" at="24,36,25,117" />
+      <scope id="4966914339162184915" at="29,38,30,16" />
+      <scope id="4966914339162184915" at="35,26,36,39" />
+      <scope id="4966914339162184915" at="45,30,46,39" />
+      <scope id="4966914339162184915" at="18,0,22,0" />
+      <scope id="4966914339162184915" at="23,0,27,0" />
+      <scope id="4966914339162184915" at="28,0,32,0" />
+      <scope id="4966914339162184915" at="55,60,59,18">
+        <var name="result" id="4966914339162184915" />
+      </scope>
+      <scope id="4966914339162184915" at="34,129,40,18">
+        <var name="result" id="4966914339162184915" />
+      </scope>
+      <scope id="4966914339162184915" at="44,113,51,16" />
+      <scope id="4966914339162184915" at="54,0,61,0" />
+      <scope id="4966914339162184915" at="33,0,42,0">
+        <var name="concept" id="4966914339162184915" />
+      </scope>
+      <scope id="4966914339162184915" at="43,0,53,0">
+        <var name="templateRef" id="4966914339162184915" />
+      </scope>
+      <unit id="4966914339162184915" at="16,0,63,0" name="NewLanguage.types.Macros_macroTable" />
+    </file>
+    <file name="Manifest.java">
+      <node id="4966914339162184915" at="45,88,46,77" concept="2" />
+    </file>
+  </root>
+  <root nodeRef="r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7995570326656741040">
+    <file name="MyTerms_termTable.java">
+      <node id="3100765949326514269" at="21,49,22,29" concept="2" />
+      <node id="3100765949326514281" at="26,20,27,124" concept="7" />
+      <node id="3100765949326514281" at="27,124,28,0" concept="8" />
+      <node id="3100765949326514281" at="29,14,30,123" concept="7" />
+      <node id="3100765949326514286" at="34,20,35,118" concept="7" />
+      <node id="3100765949326514286" at="35,118,36,0" concept="8" />
+      <node id="3100765949326514286" at="37,14,38,117" concept="7" />
+      <node id="3100765949326514294" at="42,20,43,142" concept="7" />
+      <node id="3100765949326514294" at="43,142,44,0" concept="8" />
+      <node id="3100765949326514294" at="45,14,46,86" concept="7" />
+      <node id="3100765949326514269" at="51,31,52,217" concept="7" />
+      <node id="3100765949326514269" at="55,0,56,0" concept="3" trace="pattern" />
+      <node id="3100765949326514299" at="59,43,60,29" concept="2" />
+      <node id="3100765949326514299" at="65,31,66,231" concept="7" />
+      <node id="3100765949326514299" at="69,0,70,0" concept="3" trace="pattern" />
+      <node id="3100765949326514316" at="73,42,74,29" concept="2" />
+      <node id="3100765949326514339" at="78,20,79,117" concept="7" />
+      <node id="3100765949326514339" at="79,117,80,0" concept="8" />
+      <node id="3100765949326514339" at="81,14,82,116" concept="7" />
+      <node id="3100765949326514316" at="87,31,88,271" concept="7" />
+      <node id="3100765949326514316" at="91,0,92,0" concept="3" trace="pattern" />
+      <node id="3100765949326514345" at="95,45,96,29" concept="2" />
+      <node id="3100765949326514345" at="101,31,102,106" concept="7" />
+      <node id="3100765949326514345" at="105,0,106,0" concept="3" trace="pattern" />
+      <node id="3100765949326514281" at="29,12,31,7" concept="0" />
+      <node id="3100765949326514286" at="37,12,39,7" concept="0" />
+      <node id="3100765949326514294" at="45,12,47,7" concept="0" />
+      <node id="3100765949326514339" at="81,12,83,7" concept="0" />
+      <node id="3100765949326514269" at="21,0,24,0" concept="1" trace="classifierType_term#(Z)V" />
+      <node id="3100765949326514299" at="59,0,62,0" concept="1" trace="primType_term#(Z)V" />
+      <node id="3100765949326514316" at="73,0,76,0" concept="1" trace="intType_term#(Z)V" />
+      <node id="3100765949326514345" at="95,0,98,0" concept="1" trace="stringType_term#(Z)V" />
+      <node id="3100765949326514269" at="50,0,54,0" concept="5" trace="getTerm#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="3100765949326514299" at="64,0,68,0" concept="5" trace="getTerm#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="3100765949326514316" at="86,0,90,0" concept="5" trace="getTerm#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="3100765949326514345" at="100,0,104,0" concept="5" trace="getTerm#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="3100765949326514281" at="25,34,31,7" concept="4" />
+      <node id="3100765949326514286" at="33,28,39,7" concept="4" />
+      <node id="3100765949326514294" at="41,33,47,7" concept="4" />
+      <node id="3100765949326514339" at="77,27,83,7" concept="4" />
+      <node id="3100765949326514281" at="25,0,33,0" concept="5" trace="classifier#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="3100765949326514286" at="33,0,41,0" concept="5" trace="kind#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="3100765949326514294" at="41,0,49,0" concept="5" trace="parameter#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="3100765949326514339" at="77,0,85,0" concept="5" trace="val#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <scope id="3100765949326514269" at="21,49,22,29" />
+      <scope id="3100765949326514281" at="29,14,30,123" />
+      <scope id="3100765949326514286" at="37,14,38,117" />
+      <scope id="3100765949326514294" at="45,14,46,86" />
+      <scope id="3100765949326514269" at="51,31,52,217" />
+      <scope id="3100765949326514299" at="59,43,60,29" />
+      <scope id="3100765949326514299" at="65,31,66,231" />
+      <scope id="3100765949326514316" at="73,42,74,29" />
+      <scope id="3100765949326514339" at="81,14,82,116" />
+      <scope id="3100765949326514316" at="87,31,88,271" />
+      <scope id="3100765949326514345" at="95,45,96,29" />
+      <scope id="3100765949326514345" at="101,31,102,106" />
+      <scope id="3100765949326514281" at="26,20,28,0" />
+      <scope id="3100765949326514286" at="34,20,36,0" />
+      <scope id="3100765949326514294" at="42,20,44,0" />
+      <scope id="3100765949326514339" at="78,20,80,0" />
+      <scope id="3100765949326514269" at="21,0,24,0">
+        <var name="pattern" id="3100765949326514269" />
+      </scope>
+      <scope id="3100765949326514299" at="59,0,62,0">
+        <var name="pattern" id="3100765949326514299" />
+      </scope>
+      <scope id="3100765949326514316" at="73,0,76,0">
+        <var name="pattern" id="3100765949326514316" />
+      </scope>
+      <scope id="3100765949326514345" at="95,0,98,0">
+        <var name="pattern" id="3100765949326514345" />
+      </scope>
+      <scope id="3100765949326514269" at="50,0,54,0" />
+      <scope id="3100765949326514299" at="64,0,68,0" />
+      <scope id="3100765949326514316" at="86,0,90,0" />
+      <scope id="3100765949326514345" at="100,0,104,0" />
+      <scope id="3100765949326514281" at="25,34,31,7" />
+      <scope id="3100765949326514286" at="33,28,39,7" />
+      <scope id="3100765949326514294" at="41,33,47,7" />
+      <scope id="3100765949326514339" at="77,27,83,7" />
+      <scope id="3100765949326514281" at="25,0,33,0" />
+      <scope id="3100765949326514286" at="33,0,41,0" />
+      <scope id="3100765949326514294" at="41,0,49,0" />
+      <scope id="3100765949326514339" at="77,0,85,0" />
+      <unit id="3100765949326514299" at="57,0,71,0" name="NewLanguage.types.MyTerms_termTable$primType_term" />
+      <unit id="3100765949326514345" at="93,0,107,0" name="NewLanguage.types.MyTerms_termTable$stringType_term" />
+      <unit id="3100765949326514316" at="71,0,93,0" name="NewLanguage.types.MyTerms_termTable$intType_term" />
+      <unit id="3100765949326514269" at="19,0,57,0" name="NewLanguage.types.MyTerms_termTable$classifierType_term" />
+      <unit id="7995570326656741040" at="17,0,110,0" name="NewLanguage.types.MyTerms_termTable" />
+    </file>
+  </root>
+  <root nodeRef="r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7995570326656741057">
+    <file name="Manifest.java">
+      <node id="7995570326656741057" at="51,83,52,81" concept="2" />
+    </file>
+    <file name="SampleRules_ruleTable.java">
+      <node id="7995570326656741057" at="16,71,17,20" concept="10" />
+      <node id="7995570326656741057" at="17,20,18,11" concept="2" />
+      <node id="7995570326656741057" at="22,24,23,25" concept="7" />
+      <node id="7995570326656741057" at="27,26,28,43" concept="7" />
+      <node id="7995570326656741057" at="32,34,33,14" concept="7" />
+      <node id="7995570326656741057" at="37,54,38,25" concept="7" />
+      <node id="7995570326656741057" at="41,23,42,89" concept="6" />
+      <node id="7995570326656741057" at="42,89,43,70" concept="2" />
+      <node id="7995570326656741057" at="46,0,47,0" concept="3" trace="ruleTemplates" />
+      <node id="7995570326656741057" at="16,0,20,0" concept="1" trace="SampleRules_ruleTable#(Ljetbrains/mps/lang/coderules/aspect/AbstractCoderulesManifest;)V" />
+      <node id="7995570326656741057" at="21,0,25,0" concept="5" trace="name#()Ljava/lang/String;" />
+      <node id="7995570326656741057" at="26,0,30,0" concept="5" trace="fqName#()Ljava/lang/String;" />
+      <node id="7995570326656741057" at="31,0,35,0" concept="5" trace="extendedFqName#()Ljava/lang/String;" />
+      <node id="7995570326656741057" at="36,0,40,0" concept="5" trace="ruleTemplates#()Ljava/util/Collection;" />
+      <node id="7995570326656741057" at="41,0,45,0" concept="5" trace="init#()V" />
+      <scope id="7995570326656741057" at="22,24,23,25" />
+      <scope id="7995570326656741057" at="27,26,28,43" />
+      <scope id="7995570326656741057" at="32,34,33,14" />
+      <scope id="7995570326656741057" at="37,54,38,25" />
+      <scope id="7995570326656741057" at="16,71,18,11" />
+      <scope id="7995570326656741057" at="41,23,43,70">
+        <var name="list" id="7995570326656741057" />
+      </scope>
+      <scope id="7995570326656741057" at="16,0,20,0">
+        <var name="manifest" id="7995570326656741057" />
+      </scope>
+      <scope id="7995570326656741057" at="21,0,25,0" />
+      <scope id="7995570326656741057" at="26,0,30,0" />
+      <scope id="7995570326656741057" at="31,0,35,0" />
+      <scope id="7995570326656741057" at="36,0,40,0" />
+      <scope id="7995570326656741057" at="41,0,45,0" />
+      <unit id="7995570326656741057" at="14,0,48,0" name="NewLanguage.types.SampleRules_ruleTable" />
+    </file>
+  </root>
+</debug-info>
+
