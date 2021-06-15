@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Constant;
   private ConceptPresentation props_ConstantContainer;
+  private ConceptPresentation props_ConstantIntegerType;
+  private ConceptPresentation props_ConstantStringType;
   private ConceptPresentation props_IntValue;
   private ConceptPresentation props_StringValue;
   private ConceptPresentation props_Value;
@@ -34,6 +36,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstantContainer = cpb.create();
         }
         return props_ConstantContainer;
+      case LanguageConceptSwitch.ConstantIntegerType:
+        if (props_ConstantIntegerType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConstantIntegerType");
+          props_ConstantIntegerType = cpb.create();
+        }
+        return props_ConstantIntegerType;
+      case LanguageConceptSwitch.ConstantStringType:
+        if (props_ConstantStringType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConstantStringType");
+          props_ConstantStringType = cpb.create();
+        }
+        return props_ConstantStringType;
       case LanguageConceptSwitch.IntValue:
         if (props_IntValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

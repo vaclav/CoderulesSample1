@@ -13,6 +13,8 @@ import jetbrains.mps.logic.dataform.ListRole;
 import jetbrains.mps.logic.dataform.ListNode;
 import jetbrains.mps.logic.dataform.TermNode;
 import jetbrains.mps.logic.dataform.Value;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class MyTerms_termTable {
 
@@ -82,10 +84,18 @@ public class MyTerms_termTable {
         return (ValueRole.create("val", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
       }
     }
+    public DataForm kind() {
+      if (pattern) {
+        return (ValueRole.create("kind", LogicalUtil.asValue(CONCEPTS.ConstantIntegerType$Mr)));
+
+      } else {
+        return (ValueRole.create("kind", LogicalUtil.asValue(CONCEPTS.ConstantIntegerType$Mr)));
+      }
+    }
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(TermNode.symbol(2), ValueRole.create("_term", Value.create("primType")), ChildRole.create(RoleNode.symbol("_subterm"), TermNode.create(TermNode.symbol(2), ValueRole.create("_term", Value.create("intType")), LogicalUtil.asDataForm(val())))));
+      return (TermNode.create(TermNode.symbol(2), ValueRole.create("_term", Value.create("primType")), ChildRole.create(RoleNode.symbol("_subterm"), TermNode.create(TermNode.symbol(3), ValueRole.create("_term", Value.create("intType")), LogicalUtil.asDataForm(val()), LogicalUtil.asDataForm(kind())))));
     }
 
     private boolean pattern;
@@ -104,14 +114,26 @@ public class MyTerms_termTable {
         return (ValueRole.create("val", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
       }
     }
+    public DataForm kind() {
+      if (pattern) {
+        return (ValueRole.create("kind", LogicalUtil.asValue(CONCEPTS.ConstantStringType$MU)));
+
+      } else {
+        return (ValueRole.create("kind", LogicalUtil.asValue(CONCEPTS.ConstantStringType$MU)));
+      }
+    }
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(TermNode.symbol(2), ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val())));
+      return (TermNode.create(TermNode.symbol(3), ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val()), LogicalUtil.asDataForm(kind())));
     }
 
     private boolean pattern;
   }
 
 
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept ConstantIntegerType$Mr = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3faL, "NewLanguage.structure.ConstantIntegerType");
+    /*package*/ static final SConcept ConstantStringType$MU = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3fbL, "NewLanguage.structure.ConstantStringType");
+  }
 }

@@ -56,6 +56,7 @@ public class Queries_queryTable extends AbstractQueryTable {
             RuleBuilder builder = new RuleBuilder(session, "check", "check", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recoverAll", 1)).withArguments(query.getTypesCollector()).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
           }
@@ -138,11 +139,14 @@ public class Queries_queryTable extends AbstractQueryTable {
             RuleBuilder builder = new RuleBuilder(session, "typeof", "typeof", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("expectType", 2)).withArguments(query.getSubject(), query.getTypesCollector()).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recoverAll", 1)).withArguments(query.getTypesCollector()).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
           }
 
         }.apply(_session);
+
         return ruleBuilders;
       }
 

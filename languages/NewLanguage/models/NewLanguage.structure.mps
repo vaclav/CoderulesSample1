@@ -99,5 +99,15 @@
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6REEnKi1UfU">
+    <property role="EcuMT" value="7920329245027967994" />
+    <property role="TrG5h" value="ConstantIntegerType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6REEnKi1UfV">
+    <property role="EcuMT" value="7920329245027967995" />
+    <property role="TrG5h" value="ConstantStringType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

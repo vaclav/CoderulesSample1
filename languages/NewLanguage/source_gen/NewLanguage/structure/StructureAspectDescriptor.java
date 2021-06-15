@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConstant = createDescriptorForConstant();
   /*package*/ final ConceptDescriptor myConceptConstantContainer = createDescriptorForConstantContainer();
+  /*package*/ final ConceptDescriptor myConceptConstantIntegerType = createDescriptorForConstantIntegerType();
+  /*package*/ final ConceptDescriptor myConceptConstantStringType = createDescriptorForConstantStringType();
   /*package*/ final ConceptDescriptor myConceptIntValue = createDescriptorForIntValue();
   /*package*/ final ConceptDescriptor myConceptStringValue = createDescriptorForStringValue();
   /*package*/ final ConceptDescriptor myConceptValue = createDescriptorForValue();
@@ -32,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptConstant, myConceptConstantContainer, myConceptIntValue, myConceptStringValue, myConceptValue);
+    return Arrays.asList(myConceptConstant, myConceptConstantContainer, myConceptConstantIntegerType, myConceptConstantStringType, myConceptIntValue, myConceptStringValue, myConceptValue);
   }
 
   @Override
@@ -43,6 +45,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptConstant;
       case LanguageConceptSwitch.ConstantContainer:
         return myConceptConstantContainer;
+      case LanguageConceptSwitch.ConstantIntegerType:
+        return myConceptConstantIntegerType;
+      case LanguageConceptSwitch.ConstantStringType:
+        return myConceptConstantStringType;
       case LanguageConceptSwitch.IntValue:
         return myConceptIntValue;
       case LanguageConceptSwitch.StringValue:
@@ -75,6 +81,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/4966914339162076875");
     b.version(2);
     b.aggregate("constants", 0x44ee06468f8cb6d2L).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL).optional(true).ordered(true).multiple(true).origin("4966914339162076882").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForConstantIntegerType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "ConstantIntegerType", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3faL);
+    b.class_(false, false, false);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/7920329245027967994");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForConstantStringType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "ConstantStringType", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3fbL);
+    b.class_(false, false, false);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/7920329245027967995");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIntValue() {
