@@ -30,7 +30,7 @@ public class ConstantRules_ruleTable extends AbstractRuleTable implements RuleTa
 
   @Override
   public String extendedFqName() {
-    return "NewLanguage.types.SampleRules";
+    return "";
   }
 
   @Override
@@ -42,7 +42,7 @@ public class ConstantRules_ruleTable extends AbstractRuleTable implements RuleTa
     List<RuleTemplate<?>> list = ListSequence.fromList(new ArrayList<RuleTemplate<?>>());
     ListSequence.fromList(list).addElement(new ConstantRules_main(this));
     ListSequence.fromList(list).addElement(new ConstantRules_stringLiteral(this));
-    ListSequence.fromList(list).addElement(new ConstantRules_ddd(this));
+    ListSequence.fromList(list).addElement(new ConstantRules_intLiteral(this));
     this.ruleTemplates = ListSequence.fromList(list).asUnmodifiable();
   }
 

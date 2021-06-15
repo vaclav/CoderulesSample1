@@ -19,8 +19,13 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(this.principalCtrs).addElement(new ConstraintSymbol("main", 0));
 
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("checkAll", 0));
+    SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("typeOf", 2));
     SetSequence.fromSet(principalRulesTags).addElement("check");
+    SetSequence.fromSet(principalRulesTags).addElement("intLiteral");
+    SetSequence.fromSet(principalRulesTags).addElement("intLiteral");
     SetSequence.fromSet(principalRulesTags).addElement("main");
+    SetSequence.fromSet(principalRulesTags).addElement("stringLiteral");
+    SetSequence.fromSet(principalRulesTags).addElement("stringLiteral");
     SetSequence.fromSet(principalRulesTags).addElement("typeof");
   }
 }

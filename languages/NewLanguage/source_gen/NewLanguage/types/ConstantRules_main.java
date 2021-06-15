@@ -9,19 +9,10 @@ import jetbrains.mps.lang.coderules.template.TemplateApplicationSession;
 import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.logic.unification.MetaLogicalFactory;
-import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
-import jetbrains.mps.lang.coderules.template.PredicateBuilder;
-import jetbrains.mps.logic.predicate.EvalExpressionPredicate;
-import jetbrains.mps.lang.coderules.template.LateExpression;
-import jetbrains.mps.logic.reactor.logical.LogicalContext;
-import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
-import jetbrains.mps.logic.predicate.LogicalPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
-import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
@@ -42,36 +33,9 @@ public class ConstantRules_main extends AbstractRuleTemplate<ConstantRules_main.
       new main() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          S = MetaLogicalFactory.metaLogical("S", DataForm.class);
-          T = MetaLogicalFactory.metaLogical("T", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "main", "main#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "main", "main", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 2)).withArguments(rule().S, rule().T).toConstraint());
-          builder.appendGuard(new ConstraintBuilder(new ConstraintSymbol("checkAll", 2)).withArguments(rule().S, rule().T).toConstraint());
-          builder.appendGuard(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
-            public Object[] metaArgs() {
-              return new Object[]{};
-            }
-            public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
-
-              return 1 < 5;
-            }
-          }).toPredicate());
-          builder.appendGuard(new PredicateBuilder(LogicalPredicate.BOUND_SYM).withArguments(rule().S).toPredicate());
-          builder.appendGuard(new PredicateBuilder(LogicalPredicate.FREE_SYM).withArguments(rule().T).toPredicate());
-
-          ListSequence.fromList(ruleBuilders).addElement(builder);
-        }
-
-      }.apply(_session);
-      new main1() {
-        @Override
-        public void apply(TemplateApplicationSession session) {
-
-          RuleBuilder builder = new RuleBuilder(session, "main", "main#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
-
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -88,16 +52,6 @@ public class ConstantRules_main extends AbstractRuleTemplate<ConstantRules_main.
     public abstract class main implements ConstraintRuleTemplate {
 
       protected main rule() {
-        return this;
-      }
-
-      protected MetaLogical S;
-      protected MetaLogical T;
-
-    }
-    public abstract class main1 implements ConstraintRuleTemplate {
-
-      protected main1 rule() {
         return this;
       }
 

@@ -9,16 +9,16 @@ import jetbrains.mps.lang.coderules.template.TemplateApplicationSession;
 import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.logic.unification.MetaLogicalFactory;
+import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
-import jetbrains.mps.logic.dataform.DataForm;
+import jetbrains.mps.lang.coderules.template.PredicateBuilder;
+import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.logic.dataform.ValueRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.logic.unification.MetaLogicalFactory;
-import jetbrains.mps.lang.coderules.template.PredicateBuilder;
-import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
@@ -29,12 +29,12 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRules_stringLiteral.Token> {
+public class ConstantRules_intLiteral extends AbstractRuleTemplate<ConstantRules_intLiteral.Token> {
 
   public class Token implements RuleTemplate.Token {
 
     public Token(SNode input, TemplateApplicationSession session) {
-      this.s = input;
+      this.i = input;
       this.session = session;
     }
 
@@ -42,30 +42,32 @@ public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRu
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new stringLiteral() {
+      new intLiteral() {
         @Override
         public void apply(TemplateApplicationSession session) {
+          IntType = MetaLogicalFactory.metaLogical("IntType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "stringLiteral", "stringLiteral#0" + "_" + String.valueOf(token().s.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().s, SNodeOperations.getPointer(token().s));
+          RuleBuilder builder = new RuleBuilder(session, "intLiteral", "intLiteral#0" + "_" + String.valueOf(token().i.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().i, SNodeOperations.getPointer(token().i));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().s, (new MyTerms_termTable.stringType_term(false) {
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().IntType, (new MyTerms_termTable.intType_term(false) {
             public DataForm val() {
-              return ValueRole.create("val", LogicalUtil.asValue(SPropertyOperations.getString(token().s, PROPS.v$9ODg)));
+              return ValueRole.create("val", LogicalUtil.asValue(SPropertyOperations.getInteger(token().i, PROPS.value$9Utg)));
             }
-          }).getTerm()).toConstraint());
+          }).getTerm()).toPredicate());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().i, rule().IntType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
 
       }.apply(_session);
-      new stringLiteral1() {
+      new intLiteral1() {
         @Override
         public void apply(TemplateApplicationSession session) {
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
           B = MetaLogicalFactory.metaLogical("B", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "stringLiteral", "stringLiteral#1" + "_" + String.valueOf(token().s.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().s, SNodeOperations.getPointer(token().s));
+          RuleBuilder builder = new RuleBuilder(session, "intLiteral", "intLiteral#1" + "_" + String.valueOf(token().i.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().i, SNodeOperations.getPointer(token().i));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(rule().A, rule().B).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().A, rule().B).toPredicate());
@@ -81,17 +83,18 @@ public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRu
       return this;
     }
 
-    public abstract class stringLiteral implements ConstraintRuleTemplate {
+    public abstract class intLiteral implements ConstraintRuleTemplate {
 
-      protected stringLiteral rule() {
+      protected intLiteral rule() {
         return this;
       }
 
+      protected MetaLogical IntType;
 
     }
-    public abstract class stringLiteral1 implements ConstraintRuleTemplate {
+    public abstract class intLiteral1 implements ConstraintRuleTemplate {
 
-      protected stringLiteral1 rule() {
+      protected intLiteral1 rule() {
         return this;
       }
 
@@ -100,20 +103,20 @@ public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRu
 
     }
 
-    protected SNode s;
+    protected SNode i;
     protected List<SNode> required;
     protected List<RuleBuilder> ruleBuilders;
     protected TemplateApplicationSession session;
   }
 
 
-  public ConstantRules_stringLiteral(RuleTable ruleTable) {
-    super(ruleTable, "stringLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/4966914339162178748"));
+  public ConstantRules_intLiteral(RuleTable ruleTable) {
+    super(ruleTable, "intLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/3100765949326701594"));
   }
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.StringValue$R1;
+    return CONCEPTS.IntValue$2D;
   }
 
 
@@ -124,10 +127,10 @@ public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRu
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty v$9ODg = MetaAdapterFactory.getProperty(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb76eL, 0x44ee06468f8cb76fL, "v");
+    /*package*/ static final SProperty value$9Utg = MetaAdapterFactory.getProperty(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb771L, 0x44ee06468f8cb772L, "value");
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept StringValue$R1 = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb76eL, "NewLanguage.structure.StringValue");
+    /*package*/ static final SConcept IntValue$2D = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb771L, "NewLanguage.structure.IntValue");
   }
 }

@@ -96,10 +96,18 @@ public class MyTerms_termTable {
       this.pattern = pattern;
     }
 
+    public DataForm val() {
+      if (pattern) {
+        return ValueRole.create("val", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
+
+      } else {
+        return (ValueRole.create("val", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
+      }
+    }
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(TermNode.symbol(1), ValueRole.create("_term", Value.create("stringType"))));
+      return (TermNode.create(TermNode.symbol(2), ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val())));
     }
 
     private boolean pattern;

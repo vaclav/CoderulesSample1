@@ -49,7 +49,6 @@ public class Manifest extends AbstractCoderulesManifest {
     {
       List<RuleTable> rtables = ListSequence.fromList(new ArrayList<RuleTable>());
       ListSequence.fromList(rtables).addElement(new ConstantRules_ruleTable(this));
-      ListSequence.fromList(rtables).addElement(new SampleRules_ruleTable(this));
       this.ruleTables = ListSequence.fromList(rtables).asUnmodifiable();
     }
     {

@@ -119,7 +119,7 @@
   <node concept="24kQdi" id="4jI1$qfzxye">
     <ref role="1XX52x" to="bfo2:4jI1$qfzbtL" resolve="IntValue" />
     <node concept="3F0A7n" id="4jI1$qfzxyj" role="2wV5jI">
-      <ref role="1NtTu8" to="bfo2:4jI1$qfzbtM" resolve="v" />
+      <ref role="1NtTu8" to="bfo2:4jI1$qfzbtM" resolve="value" />
     </node>
   </node>
 </model>

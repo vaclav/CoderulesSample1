@@ -1,51 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="NewLanguage.types.ConstantRules_ddd">
+  <dependency className="NewLanguage.types.ConstantRules_intLiteral">
+    <classNode dependClassName="NewLanguage.types.MyTerms_termTable" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleBuilder" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTemplate" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.TemplateApplicationSession" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractRuleTemplate" />
-  </dependency>
-  <dependency className="NewLanguage.types.ConstantRules_main">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.LateExpression" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.PredicateBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTemplate" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.TemplateApplicationSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
-    <classNode dependClassName="jetbrains.mps.logic.predicate.EvalExpressionPredicate" />
-    <classNode dependClassName="jetbrains.mps.logic.predicate.LogicalPredicate" />
-    <classNode dependClassName="jetbrains.mps.logic.reactor.evaluation.InvocationContext" />
-    <classNode dependClassName="jetbrains.mps.logic.reactor.logical.LogicalContext" />
+    <classNode dependClassName="jetbrains.mps.logic.dataform.ValueRole" />
+    <classNode dependClassName="jetbrains.mps.logic.predicate.UnificationPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
+    <classNode dependClassName="jetbrains.mps.logic.unification.LogicalUtil" />
     <classNode dependClassName="jetbrains.mps.logic.unification.MetaLogicalFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractRuleTemplate" />
+  </dependency>
+  <dependency className="NewLanguage.types.ConstantRules_main">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintBuilder" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleBuilder" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTemplate" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.TemplateApplicationSession" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractRuleTemplate" />
   </dependency>
   <dependency className="NewLanguage.types.ConstantRules_ruleTable">
-    <classNode dependClassName="NewLanguage.types.ConstantRules_ddd" />
+    <classNode dependClassName="NewLanguage.types.ConstantRules_intLiteral" />
     <classNode dependClassName="NewLanguage.types.ConstantRules_main" />
     <classNode dependClassName="NewLanguage.types.ConstantRules_stringLiteral" />
     <classNode dependClassName="java.lang.Override" />
@@ -60,30 +67,36 @@
     <classNode extendsClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
   </dependency>
   <dependency className="NewLanguage.types.ConstantRules_stringLiteral">
+    <classNode dependClassName="NewLanguage.types.MyTerms_termTable" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintBuilder" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.PredicateBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTemplate" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.TemplateApplicationSession" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
+    <classNode dependClassName="jetbrains.mps.logic.dataform.ValueRole" />
+    <classNode dependClassName="jetbrains.mps.logic.predicate.UnificationPredicate" />
+    <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
+    <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
+    <classNode dependClassName="jetbrains.mps.logic.unification.LogicalUtil" />
+    <classNode dependClassName="jetbrains.mps.logic.unification.MetaLogicalFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractRuleTemplate" />
-  </dependency>
-  <dependency className="NewLanguage.types.Constants_termTable">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.AbstractTermDeclaration" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.TermNode" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.Value" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.ValueRole" />
   </dependency>
   <dependency className="NewLanguage.types.Macros_macroTable">
     <classNode dependClassName="java.lang.NullPointerException" />
@@ -105,7 +118,6 @@
     <classNode dependClassName="NewLanguage.types.Macros_macroTable" />
     <classNode dependClassName="NewLanguage.types.PrincipalsAnalysisImpl" />
     <classNode dependClassName="NewLanguage.types.Queries_queryTable" />
-    <classNode dependClassName="NewLanguage.types.SampleRules_ruleTable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -163,18 +175,6 @@
     <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractQueryTable" />
-  </dependency>
-  <dependency className="NewLanguage.types.SampleRules_ruleTable">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.aspect.AbstractCoderulesManifest" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTemplate" />
-    <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractRuleTable" />
-    <classNode extendsClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
   </dependency>
 </dependenciesRoot>
 
