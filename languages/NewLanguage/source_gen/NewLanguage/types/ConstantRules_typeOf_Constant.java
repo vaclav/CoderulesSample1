@@ -31,12 +31,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRules_typeOf_Value.Token> {
+public class ConstantRules_typeOf_Constant extends AbstractRuleTemplate<ConstantRules_typeOf_Constant.Token> {
 
   public class Token implements RuleTemplate.Token {
 
     public Token(SNode input, TemplateApplicationSession session) {
-      this.v = input;
+      this.c = input;
       this.session = session;
     }
 
@@ -44,21 +44,21 @@ public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRul
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new typeOf_Value() {
+      new typeOf_Constant() {
         @Override
         public void apply(TemplateApplicationSession session) {
           TypeCollector = MetaLogicalFactory.metaLogical("TypeCollector", BiConsumer.class);
           TypeNode = MetaLogicalFactory.metaLogical("TypeNode", SNode.class);
           TypeTerm = MetaLogicalFactory.metaLogical("TypeTerm", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "typeOf_Value", "typeOf_Value" + "_" + String.valueOf(token().v.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().v, SNodeOperations.getPointer(token().v));
+          RuleBuilder builder = new RuleBuilder(session, "typeOf_Constant", "typeOf_Constant" + "_" + String.valueOf(token().c.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().c, SNodeOperations.getPointer(token().c));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 2)).withArguments(token().v, rule().TypeCollector).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().v, rule().TypeTerm).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 2)).withArguments(token().c, rule().TypeCollector).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().c, rule().TypeTerm).toConstraint());
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, rule().TypeTerm).toConstraint());
           builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
-              return new Object[]{rule().TypeCollector, token().v, rule().TypeNode, token().v};
+              return new Object[]{rule().TypeCollector, token().c, rule().TypeNode, token().c};
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<BiConsumer<SNodeReference, SNode>> typedArg0 = (Logical<BiConsumer<SNodeReference, SNode>>) args[0];
@@ -82,9 +82,9 @@ public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRul
       return this;
     }
 
-    public abstract class typeOf_Value implements ConstraintRuleTemplate {
+    public abstract class typeOf_Constant implements ConstraintRuleTemplate {
 
-      protected typeOf_Value rule() {
+      protected typeOf_Constant rule() {
         return this;
       }
 
@@ -94,20 +94,20 @@ public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRul
 
     }
 
-    protected SNode v;
+    protected SNode c;
     protected List<SNode> required;
     protected List<RuleBuilder> ruleBuilders;
     protected TemplateApplicationSession session;
   }
 
 
-  public ConstantRules_typeOf_Value(RuleTable ruleTable) {
-    super(ruleTable, "typeOf_Value", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/1749218580158570606"));
+  public ConstantRules_typeOf_Constant(RuleTable ruleTable) {
+    super(ruleTable, "typeOf_Constant", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/1749218580158394794"));
   }
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.AbstractValue$G$;
+    return CONCEPTS.Constant$wW;
   }
 
 
@@ -118,6 +118,6 @@ public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRul
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept AbstractValue$G$ = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L, "NewLanguage.structure.AbstractValue");
+    /*package*/ static final SConcept Constant$wW = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, "NewLanguage.structure.Constant");
   }
 }

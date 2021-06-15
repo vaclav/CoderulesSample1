@@ -16,18 +16,14 @@ import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
-import jetbrains.mps.logic.dataform.ValueRole;
-import jetbrains.mps.logic.unification.LogicalUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConstantRules_intLiteral extends AbstractRuleTemplate<ConstantRules_intLiteral.Token> {
 
@@ -50,11 +46,7 @@ public class ConstantRules_intLiteral extends AbstractRuleTemplate<ConstantRules
           RuleBuilder builder = new RuleBuilder(session, "intLiteral", "intLiteral" + "_" + String.valueOf(token().i.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().i, SNodeOperations.getPointer(token().i));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().IntType, (new MyTerms_termTable.intType_term(false) {
-            public DataForm val() {
-              return ValueRole.create("val", LogicalUtil.asValue(SPropertyOperations.getInteger(token().i, PROPS.value$9Utg)));
-            }
-          }).getTerm()).toPredicate());
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().IntType, (new MyTerms_termTable.intType_term(false)).getTerm()).toPredicate());
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().i, rule().IntType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -99,10 +91,6 @@ public class ConstantRules_intLiteral extends AbstractRuleTemplate<ConstantRules
   @Override
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty value$9Utg = MetaAdapterFactory.getProperty(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb771L, 0x44ee06468f8cb772L, "value");
   }
 
   private static final class CONCEPTS {

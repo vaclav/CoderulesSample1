@@ -26,6 +26,7 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("constantDeclaration");
     SetSequence.fromSet(principalRulesTags).addElement("intLiteral");
     SetSequence.fromSet(principalRulesTags).addElement("stringLiteral");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Value");
     SetSequence.fromSet(principalRulesTags).addElement("typeof");
   }

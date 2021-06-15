@@ -62,7 +62,7 @@
         <property role="3F0ifm" value=":" />
       </node>
       <node concept="3F1sOY" id="4jI1$qfzbs$" role="3EZMnx">
-        <ref role="1NtTu8" to="bfo2:4jI1$qfzbrI" resolve="value" />
+        <ref role="1NtTu8" to="bfo2:4jI1$qfzbrI" resolve="initializerValue" />
       </node>
       <node concept="l2Vlx" id="4jI1$qfzbsf" role="2iSdaV" />
     </node>

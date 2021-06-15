@@ -12,18 +12,13 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
-import jetbrains.mps.logic.dataform.DataForm;
-import jetbrains.mps.logic.dataform.ValueRole;
-import jetbrains.mps.logic.unification.LogicalUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRules_stringLiteral.Token> {
 
@@ -45,11 +40,7 @@ public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRu
           RuleBuilder builder = new RuleBuilder(session, "stringLiteral", "stringLiteral" + "_" + String.valueOf(token().s.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().s, SNodeOperations.getPointer(token().s));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().s, (new MyTerms_termTable.stringType_term(false) {
-            public DataForm val() {
-              return ValueRole.create("val", LogicalUtil.asValue(SPropertyOperations.getString(token().s, PROPS.v$9ODg)));
-            }
-          }).getTerm()).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().s, (new MyTerms_termTable.stringType_term(false)).getTerm()).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -92,10 +83,6 @@ public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRu
   @Override
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty v$9ODg = MetaAdapterFactory.getProperty(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb76eL, 0x44ee06468f8cb76fL, "v");
   }
 
   private static final class CONCEPTS {

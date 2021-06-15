@@ -45,7 +45,7 @@ public class ConstantRules_constantDeclaration extends AbstractRuleTemplate<Cons
 
           RuleBuilder builder = new RuleBuilder(session, "constantDeclaration", "constantDeclaration" + "_" + String.valueOf(token().constant.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().constant, SNodeOperations.getPointer(token().constant));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().constant, LINKS.value$TtkI), rule().InitializerType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().constant, LINKS.initializerValue$TtkI), rule().InitializerType).toConstraint());
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().constant, rule().InitializerType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -93,7 +93,7 @@ public class ConstantRules_constantDeclaration extends AbstractRuleTemplate<Cons
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink value$TtkI = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, 0x44ee06468f8cb6eeL, "value");
+    /*package*/ static final SContainmentLink initializerValue$TtkI = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, 0x44ee06468f8cb6eeL, "initializerValue");
   }
 
   private static final class CONCEPTS {

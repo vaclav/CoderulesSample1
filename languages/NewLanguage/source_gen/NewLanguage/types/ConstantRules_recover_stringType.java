@@ -56,7 +56,7 @@ public class ConstantRules_recover_stringType extends AbstractRuleTemplate<Const
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return createConstantStringType_j7rhs9_a0a0a0a0a0f();
+              return createConstantStringType_j7rhs9_a0a0a0a0a0g();
             }
           }).toPredicate());
 
@@ -103,7 +103,7 @@ public class ConstantRules_recover_stringType extends AbstractRuleTemplate<Const
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createConstantStringType_j7rhs9_a0a0a0a0a0f() {
+  private static SNode createConstantStringType_j7rhs9_a0a0a0a0a0g() {
     SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantStringType$MU);
     return n0.getResult();
   }

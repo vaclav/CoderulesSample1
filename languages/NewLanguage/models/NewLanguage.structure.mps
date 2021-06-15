@@ -65,7 +65,7 @@
     <node concept="1TJgyj" id="4jI1$qfzbrI" role="1TKVEi">
       <property role="IQ2ns" value="4966914339162076910" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="value" />
+      <property role="20kJfa" value="initializerValue" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="4jI1$qfzbrh" resolve="AbstractValue" />
     </node>

@@ -41,6 +41,7 @@ public class ConstantRules_ruleTable extends AbstractRuleTable implements RuleTa
   private void init() {
     List<RuleTemplate<?>> list = ListSequence.fromList(new ArrayList<RuleTemplate<?>>());
     ListSequence.fromList(list).addElement(new ConstantRules_constantDeclaration(this));
+    ListSequence.fromList(list).addElement(new ConstantRules_typeOf_Constant(this));
     ListSequence.fromList(list).addElement(new ConstantRules_stringLiteral(this));
     ListSequence.fromList(list).addElement(new ConstantRules_intLiteral(this));
     ListSequence.fromList(list).addElement(new ConstantRules_typeOf_Value(this));
