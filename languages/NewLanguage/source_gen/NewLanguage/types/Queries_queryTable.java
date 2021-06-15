@@ -140,7 +140,6 @@ public class Queries_queryTable extends AbstractQueryTable {
 
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("expectType", 2)).withArguments(query.getSubject(), query.getTypesCollector()).toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recoverAll", 1)).withArguments(query.getTypesCollector()).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
           }

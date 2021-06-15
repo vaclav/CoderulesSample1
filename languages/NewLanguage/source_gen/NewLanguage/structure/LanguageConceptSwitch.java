@@ -9,23 +9,23 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int Constant = 0;
-  public static final int ConstantContainer = 1;
-  public static final int ConstantIntegerType = 2;
-  public static final int ConstantStringType = 3;
-  public static final int IntValue = 4;
-  public static final int StringValue = 5;
-  public static final int Value = 6;
+  public static final int AbstractValue = 0;
+  public static final int Constant = 1;
+  public static final int ConstantContainer = 2;
+  public static final int ConstantIntegerType = 3;
+  public static final int ConstantStringType = 4;
+  public static final int IntValue = 5;
+  public static final int StringValue = 6;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xf1277323ea964c38L, 0xa5127456d3818e7aL);
+    builder.put(0x44ee06468f8cb6d1L, AbstractValue);
     builder.put(0x44ee06468f8cb6ceL, Constant);
     builder.put(0x44ee06468f8cb6cbL, ConstantContainer);
     builder.put(0x6deaa97c1207a3faL, ConstantIntegerType);
     builder.put(0x6deaa97c1207a3fbL, ConstantStringType);
     builder.put(0x44ee06468f8cb771L, IntValue);
     builder.put(0x44ee06468f8cb76eL, StringValue);
-    builder.put(0x44ee06468f8cb6d1L, Value);
     myIndex = builder.seal();
   }
 

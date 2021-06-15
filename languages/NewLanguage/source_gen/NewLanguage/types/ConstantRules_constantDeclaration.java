@@ -45,8 +45,8 @@ public class ConstantRules_constantDeclaration extends AbstractRuleTemplate<Cons
 
           RuleBuilder builder = new RuleBuilder(session, "constantDeclaration", "constantDeclaration" + "_" + String.valueOf(token().constant.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().constant, SNodeOperations.getPointer(token().constant));
 
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().constant, LINKS.value$TtkI), rule().InitializerType).toConstraint());
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().constant, rule().InitializerType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().constant, LINKS.value$TtkI), rule().InitializerType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

@@ -9,19 +9,25 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_AbstractValue;
   private ConceptPresentation props_Constant;
   private ConceptPresentation props_ConstantContainer;
   private ConceptPresentation props_ConstantIntegerType;
   private ConceptPresentation props_ConstantStringType;
   private ConceptPresentation props_IntValue;
   private ConceptPresentation props_StringValue;
-  private ConceptPresentation props_Value;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractValue:
+        if (props_AbstractValue == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractValue = cpb.create();
+        }
+        return props_AbstractValue;
       case LanguageConceptSwitch.Constant:
         if (props_Constant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -64,12 +70,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StringValue = cpb.create();
         }
         return props_StringValue;
-      case LanguageConceptSwitch.Value:
-        if (props_Value == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_Value = cpb.create();
-        }
-        return props_Value;
     }
     return null;
   }
