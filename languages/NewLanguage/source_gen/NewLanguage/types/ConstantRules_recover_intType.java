@@ -44,13 +44,13 @@ public class ConstantRules_recover_intType extends AbstractRuleTemplate<Constant
       new recover_intType() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          Node = MetaLogicalFactory.metaLogical("Node", SNode.class);
-          Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
+          TypeNode = MetaLogicalFactory.metaLogical("TypeNode", SNode.class);
+          TypeTerm = MetaLogicalFactory.metaLogical("TypeTerm", DataForm.class);
 
           RuleBuilder builder = new RuleBuilder(session, "recover_intType", "recover_intType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().Node, (new MyTerms_termTable.intType_term(true)).getTerm()).withPatternLogicals(null, rule().Type).toConstraint());
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Node, new LateExpression<Object>() {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, (new MyTerms_termTable.intType_term(true)).getTerm()).withPatternLogicals(null, rule().TypeTerm).toConstraint());
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().TypeNode, new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{};
             }
@@ -77,8 +77,8 @@ public class ConstantRules_recover_intType extends AbstractRuleTemplate<Constant
         return this;
       }
 
-      protected MetaLogical Node;
-      protected MetaLogical Type;
+      protected MetaLogical TypeNode;
+      protected MetaLogical TypeTerm;
 
     }
 

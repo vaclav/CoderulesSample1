@@ -58,15 +58,14 @@ public class ConstantRules_typeOf_Constant extends AbstractRuleTemplate<Constant
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, rule().TypeTerm).toConstraint());
           builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
-              return new Object[]{rule().TypeCollector, token().c, rule().TypeNode, token().c};
+              return new Object[]{rule().TypeCollector, rule().TypeNode, token().c};
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<BiConsumer<SNodeReference, SNode>> typedArg0 = (Logical<BiConsumer<SNodeReference, SNode>>) args[0];
               Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
-              Logical<SNode> typedArg2 = (Logical<SNode>) args[2];
-              SNode typedArg3 = (SNode) args[3];
+              SNode typedArg2 = (SNode) args[2];
 
-              typedArg0.findRoot().value().accept(SNodeOperations.getPointer(typedArg1.findRoot().value()), typedArg2.findRoot().value());
+              typedArg0.findRoot().value().accept(SNodeOperations.getPointer(typedArg2), typedArg1.findRoot().value());
               return true;
             }
           }).toPredicate());

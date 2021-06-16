@@ -8,7 +8,6 @@ import jetbrains.mps.logic.dataform.ValueRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
 import jetbrains.mps.logic.dataform.ChildRole;
-import jetbrains.mps.logic.dataform.RoleNode;
 import jetbrains.mps.logic.dataform.ListRole;
 import jetbrains.mps.logic.dataform.ListNode;
 import jetbrains.mps.logic.dataform.TermNode;
@@ -40,16 +39,16 @@ public class MyTerms_termTable {
     }
     public DataForm parameter() {
       if (pattern) {
-        return ChildRole.create(RoleNode.symbol("parameter"), LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(DataForm.class)));
+        return ChildRole.create("parameter", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(DataForm.class)));
 
       } else {
-        return (ListRole.create(RoleNode.symbol("parameter"), ListNode.createList()));
+        return (ListRole.create("parameter", ListNode.createList()));
       }
     }
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(TermNode.symbol(4), ValueRole.create("_term", Value.create("classifierType")), LogicalUtil.asDataForm(classifier()), LogicalUtil.asDataForm(kind()), LogicalUtil.asDataForm(parameter())));
+      return (TermNode.create(ValueRole.create("_term", Value.create("classifierType")), LogicalUtil.asDataForm(classifier()), LogicalUtil.asDataForm(kind()), LogicalUtil.asDataForm(parameter())));
     }
 
     private boolean pattern;
@@ -63,7 +62,7 @@ public class MyTerms_termTable {
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(TermNode.symbol(2), ValueRole.create("_term", Value.create("primType")), ChildRole.create(RoleNode.symbol("_subterm"), LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(DataForm.class)))));
+      return (TermNode.create(ValueRole.create("_term", Value.create("primType")), ChildRole.create("_subterm", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(DataForm.class)))));
     }
 
     private boolean pattern;
@@ -85,7 +84,7 @@ public class MyTerms_termTable {
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(TermNode.symbol(2), ValueRole.create("_term", Value.create("primType")), ChildRole.create(RoleNode.symbol("_subterm"), TermNode.create(TermNode.symbol(2), ValueRole.create("_term", Value.create("intType")), LogicalUtil.asDataForm(val())))));
+      return (TermNode.create(ValueRole.create("_term", Value.create("primType")), ChildRole.create("_subterm", TermNode.create(ValueRole.create("_term", Value.create("intType")), LogicalUtil.asDataForm(val())))));
     }
 
     private boolean pattern;
@@ -107,7 +106,7 @@ public class MyTerms_termTable {
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(TermNode.symbol(2), ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val())));
+      return (TermNode.create(ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val())));
     }
 
     private boolean pattern;

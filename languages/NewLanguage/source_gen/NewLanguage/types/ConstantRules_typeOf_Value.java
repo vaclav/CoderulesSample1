@@ -51,22 +51,51 @@ public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRul
           TypeNode = MetaLogicalFactory.metaLogical("TypeNode", SNode.class);
           TypeTerm = MetaLogicalFactory.metaLogical("TypeTerm", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "typeOf_Value", "typeOf_Value" + "_" + String.valueOf(token().v.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().v, SNodeOperations.getPointer(token().v));
+          RuleBuilder builder = new RuleBuilder(session, "typeOf_Value", "typeOf_Value#0" + "_" + String.valueOf(token().v.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().v, SNodeOperations.getPointer(token().v));
+
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("recoverAll", 1)).withArguments(rule().TypeCollector).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().v, rule().TypeTerm).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, rule().TypeTerm).toConstraint());
+          builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
+            public Object[] metaArgs() {
+              return new Object[]{rule().TypeCollector, rule().TypeNode, token().v};
+            }
+            public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
+              Logical<BiConsumer<SNodeReference, SNode>> typedArg0 = (Logical<BiConsumer<SNodeReference, SNode>>) args[0];
+              Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
+              SNode typedArg2 = (SNode) args[2];
+
+              typedArg0.findRoot().value().accept(SNodeOperations.getPointer(typedArg2), typedArg1.findRoot().value());
+              return true;
+            }
+          }).toPredicate());
+
+          ListSequence.fromList(ruleBuilders).addElement(builder);
+        }
+
+      }.apply(_session);
+      new typeOf_Value1() {
+        @Override
+        public void apply(TemplateApplicationSession session) {
+          TypeCollector = MetaLogicalFactory.metaLogical("TypeCollector", BiConsumer.class);
+          TypeNode = MetaLogicalFactory.metaLogical("TypeNode", SNode.class);
+          TypeTerm = MetaLogicalFactory.metaLogical("TypeTerm", DataForm.class);
+
+          RuleBuilder builder = new RuleBuilder(session, "typeOf_Value", "typeOf_Value#1" + "_" + String.valueOf(token().v.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().v, SNodeOperations.getPointer(token().v));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 2)).withArguments(token().v, rule().TypeCollector).toConstraint());
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().v, rule().TypeTerm).toConstraint());
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, rule().TypeTerm).toConstraint());
           builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
-              return new Object[]{rule().TypeCollector, token().v, rule().TypeNode, token().v};
+              return new Object[]{rule().TypeCollector, rule().TypeNode, token().v};
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<BiConsumer<SNodeReference, SNode>> typedArg0 = (Logical<BiConsumer<SNodeReference, SNode>>) args[0];
               Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
-              Logical<SNode> typedArg2 = (Logical<SNode>) args[2];
-              SNode typedArg3 = (SNode) args[3];
+              SNode typedArg2 = (SNode) args[2];
 
-              typedArg0.findRoot().value().accept(SNodeOperations.getPointer(typedArg1.findRoot().value()), typedArg2.findRoot().value());
+              typedArg0.findRoot().value().accept(SNodeOperations.getPointer(typedArg2), typedArg1.findRoot().value());
               return true;
             }
           }).toPredicate());
@@ -85,6 +114,17 @@ public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRul
     public abstract class typeOf_Value implements ConstraintRuleTemplate {
 
       protected typeOf_Value rule() {
+        return this;
+      }
+
+      protected MetaLogical TypeCollector;
+      protected MetaLogical TypeNode;
+      protected MetaLogical TypeTerm;
+
+    }
+    public abstract class typeOf_Value1 implements ConstraintRuleTemplate {
+
+      protected typeOf_Value1 rule() {
         return this;
       }
 
