@@ -10,11 +10,12 @@ import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
-import java.util.function.BiConsumer;
 import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.function.BiConsumer;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.EvalExpressionPredicate;
 import jetbrains.mps.lang.coderules.template.LateExpression;
@@ -28,15 +29,16 @@ import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
 
-public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRules_typeOf_Value.Token> {
+public class ConstantRules_binary_type_non_transitive extends AbstractRuleTemplate<ConstantRules_binary_type_non_transitive.Token> {
 
   public class Token implements RuleTemplate.Token {
 
     public Token(SNode input, TemplateApplicationSession session) {
-      this.v = input;
+      this.bin = input;
       this.session = session;
     }
 
@@ -44,51 +46,38 @@ public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRul
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new typeOf_Value() {
+      new binary_type_non_transitive() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          TypeCollector = MetaLogicalFactory.metaLogical("TypeCollector", BiConsumer.class);
-          TypeNode = MetaLogicalFactory.metaLogical("TypeNode", SNode.class);
-          TypeTerm = MetaLogicalFactory.metaLogical("TypeTerm", DataForm.class);
+          LeftType = MetaLogicalFactory.metaLogical("LeftType", DataForm.class);
+          RightType = MetaLogicalFactory.metaLogical("RightType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "typeOf_Value", "typeOf_Value#0" + "_" + String.valueOf(token().v.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().v, SNodeOperations.getPointer(token().v));
+          RuleBuilder builder = new RuleBuilder(session, "binary_type_non_transitive", "binary_type_non_transitive#0" + "_" + String.valueOf(token().bin.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().bin, SNodeOperations.getPointer(token().bin));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("recoverAll", 1)).withArguments(rule().TypeCollector).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().v, rule().TypeTerm).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, rule().TypeTerm).toConstraint());
-          builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
-            public Object[] metaArgs() {
-              return new Object[]{rule().TypeCollector, rule().TypeNode, token().v};
-            }
-            public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
-              Logical<BiConsumer<SNodeReference, SNode>> typedArg0 = (Logical<BiConsumer<SNodeReference, SNode>>) args[0];
-              Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
-              SNode typedArg2 = (SNode) args[2];
-
-              typedArg0.findRoot().value().accept(SNodeOperations.getPointer(typedArg2), typedArg1.findRoot().value());
-              return true;
-            }
-          }).toPredicate());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.left$WBNK), rule().LeftType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.right$WChM), rule().RightType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().bin, (new MyTerms_termTable.floatType_term(false)).getTerm()).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
 
       }.apply(_session);
-      new typeOf_Value1() {
+      new binary_type_non_transitive1() {
         @Override
         public void apply(TemplateApplicationSession session) {
           TypeCollector = MetaLogicalFactory.metaLogical("TypeCollector", BiConsumer.class);
           TypeNode = MetaLogicalFactory.metaLogical("TypeNode", SNode.class);
-          TypeTerm = MetaLogicalFactory.metaLogical("TypeTerm", DataForm.class);
+          DivExprType = MetaLogicalFactory.metaLogical("DivExprType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "typeOf_Value", "typeOf_Value#1" + "_" + String.valueOf(token().v.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().v, SNodeOperations.getPointer(token().v));
+          RuleBuilder builder = new RuleBuilder(session, "binary_type_non_transitive", "binary_type_non_transitive#1" + "_" + String.valueOf(token().bin.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().bin, SNodeOperations.getPointer(token().bin));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 2)).withArguments(token().v, rule().TypeCollector).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().v, rule().TypeTerm).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, rule().TypeTerm).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 2)).withArguments(token().bin, rule().TypeCollector).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().bin, rule().DivExprType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, rule().DivExprType).toConstraint());
           builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
-              return new Object[]{rule().TypeCollector, rule().TypeNode, token().v};
+              return new Object[]{rule().TypeCollector, rule().TypeNode, token().bin};
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<BiConsumer<SNodeReference, SNode>> typedArg0 = (Logical<BiConsumer<SNodeReference, SNode>>) args[0];
@@ -111,43 +100,42 @@ public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRul
       return this;
     }
 
-    public abstract class typeOf_Value implements ConstraintRuleTemplate {
+    public abstract class binary_type_non_transitive implements ConstraintRuleTemplate {
 
-      protected typeOf_Value rule() {
+      protected binary_type_non_transitive rule() {
+        return this;
+      }
+
+      protected MetaLogical LeftType;
+      protected MetaLogical RightType;
+
+    }
+    public abstract class binary_type_non_transitive1 implements ConstraintRuleTemplate {
+
+      protected binary_type_non_transitive1 rule() {
         return this;
       }
 
       protected MetaLogical TypeCollector;
       protected MetaLogical TypeNode;
-      protected MetaLogical TypeTerm;
-
-    }
-    public abstract class typeOf_Value1 implements ConstraintRuleTemplate {
-
-      protected typeOf_Value1 rule() {
-        return this;
-      }
-
-      protected MetaLogical TypeCollector;
-      protected MetaLogical TypeNode;
-      protected MetaLogical TypeTerm;
+      protected MetaLogical DivExprType;
 
     }
 
-    protected SNode v;
+    protected SNode bin;
     protected List<SNode> required;
     protected List<RuleBuilder> ruleBuilders;
     protected TemplateApplicationSession session;
   }
 
 
-  public ConstantRules_typeOf_Value(RuleTable ruleTable) {
-    super(ruleTable, "typeOf_Value", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/1749218580158570606"));
+  public ConstantRules_binary_type_non_transitive(RuleTable ruleTable) {
+    super(ruleTable, "binary_type_non_transitive", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/6708639879380716142"));
   }
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.AbstractValue$G$;
+    return CONCEPTS.DivExpr$sE;
   }
 
 
@@ -157,7 +145,12 @@ public class ConstantRules_typeOf_Value extends AbstractRuleTemplate<ConstantRul
     return new Token(input, session);
   }
 
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink left$WBNK = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ecfcL, 0x5d19e06d2880ecfdL, "left");
+    /*package*/ static final SContainmentLink right$WChM = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ecfcL, 0x5d19e06d2880ecffL, "right");
+  }
+
   private static final class CONCEPTS {
-    /*package*/ static final SConcept AbstractValue$G$ = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L, "NewLanguage.structure.AbstractValue");
+    /*package*/ static final SConcept DivExpr$sE = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2881dc53L, "NewLanguage.structure.DivExpr");
   }
 }

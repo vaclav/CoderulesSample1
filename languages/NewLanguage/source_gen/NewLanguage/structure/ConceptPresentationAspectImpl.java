@@ -9,12 +9,20 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_AbstractValue;
+  private ConceptPresentation props_BinaryExpr;
   private ConceptPresentation props_Constant;
   private ConceptPresentation props_ConstantContainer;
+  private ConceptPresentation props_ConstantFloatType;
   private ConceptPresentation props_ConstantIntegerType;
+  private ConceptPresentation props_ConstantReference;
   private ConceptPresentation props_ConstantStringType;
+  private ConceptPresentation props_DivExpr;
+  private ConceptPresentation props_Expr;
+  private ConceptPresentation props_FloatValue;
   private ConceptPresentation props_IntValue;
+  private ConceptPresentation props_MinusExpr;
+  private ConceptPresentation props_MulExpr;
+  private ConceptPresentation props_PlusExpr;
   private ConceptPresentation props_StringValue;
 
   @Override
@@ -22,12 +30,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.AbstractValue:
-        if (props_AbstractValue == null) {
+      case LanguageConceptSwitch.BinaryExpr:
+        if (props_BinaryExpr == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_AbstractValue = cpb.create();
+          props_BinaryExpr = cpb.create();
         }
-        return props_AbstractValue;
+        return props_BinaryExpr;
       case LanguageConceptSwitch.Constant:
         if (props_Constant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -42,6 +50,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstantContainer = cpb.create();
         }
         return props_ConstantContainer;
+      case LanguageConceptSwitch.ConstantFloatType:
+        if (props_ConstantFloatType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConstantFloatType");
+          props_ConstantFloatType = cpb.create();
+        }
+        return props_ConstantFloatType;
       case LanguageConceptSwitch.ConstantIntegerType:
         if (props_ConstantIntegerType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -49,6 +64,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstantIntegerType = cpb.create();
         }
         return props_ConstantIntegerType;
+      case LanguageConceptSwitch.ConstantReference:
+        if (props_ConstantReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d28801405L, 0x5d19e06d28801406L, "target", "", "");
+          props_ConstantReference = cpb.create();
+        }
+        return props_ConstantReference;
       case LanguageConceptSwitch.ConstantStringType:
         if (props_ConstantStringType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -56,6 +78,26 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstantStringType = cpb.create();
         }
         return props_ConstantStringType;
+      case LanguageConceptSwitch.DivExpr:
+        if (props_DivExpr == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("/");
+          props_DivExpr = cpb.create();
+        }
+        return props_DivExpr;
+      case LanguageConceptSwitch.Expr:
+        if (props_Expr == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Expr = cpb.create();
+        }
+        return props_Expr;
+      case LanguageConceptSwitch.FloatValue:
+        if (props_FloatValue == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("FloatValue");
+          props_FloatValue = cpb.create();
+        }
+        return props_FloatValue;
       case LanguageConceptSwitch.IntValue:
         if (props_IntValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -63,6 +105,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_IntValue = cpb.create();
         }
         return props_IntValue;
+      case LanguageConceptSwitch.MinusExpr:
+        if (props_MinusExpr == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("-");
+          props_MinusExpr = cpb.create();
+        }
+        return props_MinusExpr;
+      case LanguageConceptSwitch.MulExpr:
+        if (props_MulExpr == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("*");
+          props_MulExpr = cpb.create();
+        }
+        return props_MulExpr;
+      case LanguageConceptSwitch.PlusExpr:
+        if (props_PlusExpr == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("+");
+          props_PlusExpr = cpb.create();
+        }
+        return props_PlusExpr;
       case LanguageConceptSwitch.StringValue:
         if (props_StringValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

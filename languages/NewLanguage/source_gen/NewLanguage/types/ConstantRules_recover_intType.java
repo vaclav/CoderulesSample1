@@ -56,7 +56,7 @@ public class ConstantRules_recover_intType extends AbstractRuleTemplate<Constant
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return createConstantIntegerType_j7rhs9_a0a0a0a0a0f();
+              return createConstantIntegerType_j7rhs9_a0a0a0a0a0j();
             }
           }).toPredicate());
 
@@ -103,7 +103,7 @@ public class ConstantRules_recover_intType extends AbstractRuleTemplate<Constant
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createConstantIntegerType_j7rhs9_a0a0a0a0a0f() {
+  private static SNode createConstantIntegerType_j7rhs9_a0a0a0a0a0j() {
     SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantIntegerType$Mr);
     return n0.getResult();
   }

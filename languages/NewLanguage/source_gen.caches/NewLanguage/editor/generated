@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-bthg4xzehxuqa5yldl49v2xd75m94ib">
-  <files names="ConstantContainer_Editor.java:ConstantContainer_EditorBuilder_a.java:Constant_Editor.java:Constant_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:IntValue_Editor.java:IntValue_EditorBuilder_a.java:StringValue_Editor.java:StringValue_EditorBuilder_a.java" />
+<product version="3" modelHash="-73vyunmrghd6qrs4tnkf9t6blrcp3s">
+  <files names="BinaryExpr_Editor.java:BinaryExpr_EditorBuilder_a.java:ConstantContainer_Editor.java:ConstantContainer_EditorBuilder_a.java:ConstantReference_Editor.java:ConstantReference_EditorBuilder_a.java:ConstantReference_SubstituteMenu.java:Constant_Editor.java:Constant_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:FloatValue_Editor.java:FloatValue_EditorBuilder_a.java:IntValue_Editor.java:IntValue_EditorBuilder_a.java:StringValue_Editor.java:StringValue_EditorBuilder_a.java" />
 </product>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="agp7g92m5bo1k2bnu2tquj255quf3w">
-  <files names="ConstantRules_constantDeclaration.java:ConstantRules_intLiteral.java:ConstantRules_recover_intType.java:ConstantRules_recover_stringType.java:ConstantRules_ruleTable.java:ConstantRules_stringLiteral.java:ConstantRules_typeOf_Constant.java:ConstantRules_typeOf_Value.java:Macros_macroTable.java:Manifest.java:MyTerms_termTable.java:PrincipalsAnalysisImpl.java:Queries_queryTable.java:TypesAspectDescriptor.java" />
+<product version="3" modelHash="eh6njuyansv01qmiwtce8yuhzbatwx5">
+  <files names="ConstantRules_binary_type_non_transitive.java:ConstantRules_binary_type_transitive.java:ConstantRules_constantDeclaration.java:ConstantRules_floatLiteral.java:ConstantRules_intLiteral.java:ConstantRules_recover_floatType.java:ConstantRules_recover_intType.java:ConstantRules_recover_stringType.java:ConstantRules_reference.java:ConstantRules_ruleTable.java:ConstantRules_stringLiteral.java:ConstantRules_typeOf_Constant.java:ConstantRules_typeOf_Expression.java:Macros_macroTable.java:Manifest.java:MyTerms_termTable.java:PrincipalsAnalysisImpl.java:Queries_queryTable.java:TypesAspectDescriptor.java" />
 </product>
 

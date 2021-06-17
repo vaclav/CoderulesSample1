@@ -22,13 +22,20 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("expectType", 2));
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("recoverAll", 1));
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("typeOf", 2));
+    SetSequence.fromSet(principalRulesTags).addElement("binary_type_non_transitive");
+    SetSequence.fromSet(principalRulesTags).addElement("binary_type_non_transitive");
+    SetSequence.fromSet(principalRulesTags).addElement("binary_type_transitive");
+    SetSequence.fromSet(principalRulesTags).addElement("binary_type_transitive");
     SetSequence.fromSet(principalRulesTags).addElement("check");
     SetSequence.fromSet(principalRulesTags).addElement("constantDeclaration");
+    SetSequence.fromSet(principalRulesTags).addElement("floatLiteral");
     SetSequence.fromSet(principalRulesTags).addElement("intLiteral");
+    SetSequence.fromSet(principalRulesTags).addElement("reference");
+    SetSequence.fromSet(principalRulesTags).addElement("reference");
     SetSequence.fromSet(principalRulesTags).addElement("stringLiteral");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Value");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Value");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
     SetSequence.fromSet(principalRulesTags).addElement("typeof");
   }
 }

@@ -13,12 +13,20 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptAbstractValue = createDescriptorForAbstractValue();
+  /*package*/ final ConceptDescriptor myConceptBinaryExpr = createDescriptorForBinaryExpr();
   /*package*/ final ConceptDescriptor myConceptConstant = createDescriptorForConstant();
   /*package*/ final ConceptDescriptor myConceptConstantContainer = createDescriptorForConstantContainer();
+  /*package*/ final ConceptDescriptor myConceptConstantFloatType = createDescriptorForConstantFloatType();
   /*package*/ final ConceptDescriptor myConceptConstantIntegerType = createDescriptorForConstantIntegerType();
+  /*package*/ final ConceptDescriptor myConceptConstantReference = createDescriptorForConstantReference();
   /*package*/ final ConceptDescriptor myConceptConstantStringType = createDescriptorForConstantStringType();
+  /*package*/ final ConceptDescriptor myConceptDivExpr = createDescriptorForDivExpr();
+  /*package*/ final ConceptDescriptor myConceptExpr = createDescriptorForExpr();
+  /*package*/ final ConceptDescriptor myConceptFloatValue = createDescriptorForFloatValue();
   /*package*/ final ConceptDescriptor myConceptIntValue = createDescriptorForIntValue();
+  /*package*/ final ConceptDescriptor myConceptMinusExpr = createDescriptorForMinusExpr();
+  /*package*/ final ConceptDescriptor myConceptMulExpr = createDescriptorForMulExpr();
+  /*package*/ final ConceptDescriptor myConceptPlusExpr = createDescriptorForPlusExpr();
   /*package*/ final ConceptDescriptor myConceptStringValue = createDescriptorForStringValue();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -34,25 +42,41 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractValue, myConceptConstant, myConceptConstantContainer, myConceptConstantIntegerType, myConceptConstantStringType, myConceptIntValue, myConceptStringValue);
+    return Arrays.asList(myConceptBinaryExpr, myConceptConstant, myConceptConstantContainer, myConceptConstantFloatType, myConceptConstantIntegerType, myConceptConstantReference, myConceptConstantStringType, myConceptDivExpr, myConceptExpr, myConceptFloatValue, myConceptIntValue, myConceptMinusExpr, myConceptMulExpr, myConceptPlusExpr, myConceptStringValue);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.AbstractValue:
-        return myConceptAbstractValue;
+      case LanguageConceptSwitch.BinaryExpr:
+        return myConceptBinaryExpr;
       case LanguageConceptSwitch.Constant:
         return myConceptConstant;
       case LanguageConceptSwitch.ConstantContainer:
         return myConceptConstantContainer;
+      case LanguageConceptSwitch.ConstantFloatType:
+        return myConceptConstantFloatType;
       case LanguageConceptSwitch.ConstantIntegerType:
         return myConceptConstantIntegerType;
+      case LanguageConceptSwitch.ConstantReference:
+        return myConceptConstantReference;
       case LanguageConceptSwitch.ConstantStringType:
         return myConceptConstantStringType;
+      case LanguageConceptSwitch.DivExpr:
+        return myConceptDivExpr;
+      case LanguageConceptSwitch.Expr:
+        return myConceptExpr;
+      case LanguageConceptSwitch.FloatValue:
+        return myConceptFloatValue;
       case LanguageConceptSwitch.IntValue:
         return myConceptIntValue;
+      case LanguageConceptSwitch.MinusExpr:
+        return myConceptMinusExpr;
+      case LanguageConceptSwitch.MulExpr:
+        return myConceptMulExpr;
+      case LanguageConceptSwitch.PlusExpr:
+        return myConceptPlusExpr;
       case LanguageConceptSwitch.StringValue:
         return myConceptStringValue;
       default:
@@ -65,11 +89,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForAbstractValue() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "AbstractValue", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L);
+  private static ConceptDescriptor createDescriptorForBinaryExpr() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "BinaryExpr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ecfcL);
     b.class_(false, true, false);
-    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/4966914339162076881");
+    b.super_("NewLanguage.structure.Expr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/6708639879380659452");
     b.version(2);
+    b.aggregate("left", 0x5d19e06d2880ecfdL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L).optional(false).ordered(true).multiple(false).origin("6708639879380659453").done();
+    b.aggregate("right", 0x5d19e06d2880ecffL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L).optional(false).ordered(true).multiple(false).origin("6708639879380659455").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConstant() {
@@ -90,11 +117,27 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("constants", 0x44ee06468f8cb6d2L).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL).optional(true).ordered(true).multiple(true).origin("4966914339162076882").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForConstantFloatType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "ConstantFloatType", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x73cc67b338abc1eeL);
+    b.class_(false, false, false);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/8344158229058273774");
+    b.version(2);
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForConstantIntegerType() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "ConstantIntegerType", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3faL);
     b.class_(false, false, false);
     b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/7920329245027967994");
     b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForConstantReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "ConstantReference", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d28801405L);
+    b.class_(false, false, false);
+    b.super_("NewLanguage.structure.Expr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/6708639879380603909");
+    b.version(2);
+    b.associate("target", 0x5d19e06d28801406L).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL).optional(false).origin("6708639879380603910").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConstantStringType() {
@@ -104,19 +147,71 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForDivExpr() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "DivExpr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2881dc53L);
+    b.class_(false, false, false);
+    b.super_("NewLanguage.structure.BinaryExpr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ecfcL);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/6708639879380720723");
+    b.version(2);
+    b.alias("/");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForExpr() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "Expr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L);
+    b.class_(false, true, false);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/4966914339162076881");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForFloatValue() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "FloatValue", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x73cc67b338ab2d0cL);
+    b.class_(false, false, false);
+    b.super_("NewLanguage.structure.Expr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/8344158229058235660");
+    b.version(2);
+    b.property("value", 0x73cc67b338ab2d0dL).type(PrimitiveTypeId.STRING).origin("8344158229058235661").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForIntValue() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "IntValue", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb771L);
     b.class_(false, false, false);
-    b.super_("NewLanguage.structure.AbstractValue", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L);
+    b.super_("NewLanguage.structure.Expr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L);
     b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/4966914339162077041");
     b.version(2);
     b.property("value", 0x44ee06468f8cb772L).type(PrimitiveTypeId.INTEGER).origin("4966914339162077042").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForMinusExpr() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "MinusExpr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ed3fL);
+    b.class_(false, false, false);
+    b.super_("NewLanguage.structure.BinaryExpr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ecfcL);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/6708639879380659519");
+    b.version(2);
+    b.alias("-");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMulExpr() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "MulExpr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2881dc52L);
+    b.class_(false, false, false);
+    b.super_("NewLanguage.structure.BinaryExpr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ecfcL);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/6708639879380720722");
+    b.version(2);
+    b.alias("*");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForPlusExpr() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "PlusExpr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ed3eL);
+    b.class_(false, false, false);
+    b.super_("NewLanguage.structure.BinaryExpr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ecfcL);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/6708639879380659518");
+    b.version(2);
+    b.alias("+");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForStringValue() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "StringValue", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb76eL);
     b.class_(false, false, false);
-    b.super_("NewLanguage.structure.AbstractValue", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L);
+    b.super_("NewLanguage.structure.Expr", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L);
     b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/4966914339162077038");
     b.version(2);
     b.property("v", 0x44ee06468f8cb76fL).type(PrimitiveTypeId.STRING).origin("4966914339162077039").done();

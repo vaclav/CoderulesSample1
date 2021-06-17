@@ -89,6 +89,28 @@ public class MyTerms_termTable {
 
     private boolean pattern;
   }
+  public static class floatType_term extends AbstractTermDeclaration {
+
+    public floatType_term(boolean pattern) {
+      this.pattern = pattern;
+    }
+
+    public DataForm val() {
+      if (pattern) {
+        return ValueRole.create("val", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
+
+      } else {
+        return (ValueRole.create("val", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
+      }
+    }
+
+    @Override
+    public DataForm getTerm() {
+      return (TermNode.create(ValueRole.create("_term", Value.create("primType")), ChildRole.create("_subterm", TermNode.create(ValueRole.create("_term", Value.create("floatType")), LogicalUtil.asDataForm(val())))));
+    }
+
+    private boolean pattern;
+  }
   public static class stringType_term extends AbstractTermDeclaration {
 
     public stringType_term(boolean pattern) {

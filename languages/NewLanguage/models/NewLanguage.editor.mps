@@ -9,6 +9,7 @@
   <imports>
     <import index="bfo2" ref="r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -24,6 +25,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
+        <reference id="1078939183255" name="editorComponent" index="PMmxG" />
+      </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
       </concept>
@@ -31,7 +35,13 @@
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
+      <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
+      <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
+        <child id="1088186146602" name="editorComponent" index="1sWHZn" />
+      </concept>
+      <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -120,6 +130,48 @@
     <ref role="1XX52x" to="bfo2:4jI1$qfzbtL" resolve="IntValue" />
     <node concept="3F0A7n" id="4jI1$qfzxyj" role="2wV5jI">
       <ref role="1NtTu8" to="bfo2:4jI1$qfzbtM" resolve="value" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="5OpS6OCw1gy">
+    <ref role="1XX52x" to="bfo2:5OpS6OCw1g5" resolve="ConstantReference" />
+    <node concept="1iCGBv" id="5OpS6OCw1g$" role="2wV5jI">
+      <ref role="1NtTu8" to="bfo2:5OpS6OCw1g6" resolve="target" />
+      <node concept="1sVBvm" id="5OpS6OCw1gA" role="1sWHZn">
+        <node concept="3F0A7n" id="5OpS6OCw1gH" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="5OpS6OCweOs">
+    <ref role="1XX52x" to="bfo2:5OpS6OCweNW" resolve="BinaryExpr" />
+    <node concept="3EZMnI" id="5OpS6OCweOu" role="2wV5jI">
+      <node concept="3F1sOY" id="5OpS6OCweOC" role="3EZMnx">
+        <ref role="1NtTu8" to="bfo2:5OpS6OCweNX" resolve="left" />
+      </node>
+      <node concept="PMmxH" id="5OpS6OCweOM" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F1sOY" id="5OpS6OCwjaY" role="3EZMnx">
+        <ref role="1NtTu8" to="bfo2:5OpS6OCweNZ" resolve="right" />
+      </node>
+      <node concept="l2Vlx" id="5OpS6OCweOx" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7fcpVcSEMOD">
+    <ref role="1XX52x" to="bfo2:7fcpVcSEMOc" resolve="FloatValue" />
+    <node concept="3EZMnI" id="7fcpVcSEMOF" role="2wV5jI">
+      <node concept="3F0A7n" id="7fcpVcSEMOM" role="3EZMnx">
+        <ref role="1NtTu8" to="bfo2:7fcpVcSEMOd" resolve="value" />
+      </node>
+      <node concept="3F0ifn" id="7fcpVcSEMOS" role="3EZMnx">
+        <property role="3F0ifm" value="f" />
+        <node concept="11L4FC" id="7fcpVcSEMOW" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7fcpVcSEMOI" role="2iSdaV" />
     </node>
   </node>
 </model>

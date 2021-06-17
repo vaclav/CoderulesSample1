@@ -9,22 +9,38 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int AbstractValue = 0;
+  public static final int BinaryExpr = 0;
   public static final int Constant = 1;
   public static final int ConstantContainer = 2;
-  public static final int ConstantIntegerType = 3;
-  public static final int ConstantStringType = 4;
-  public static final int IntValue = 5;
-  public static final int StringValue = 6;
+  public static final int ConstantFloatType = 3;
+  public static final int ConstantIntegerType = 4;
+  public static final int ConstantReference = 5;
+  public static final int ConstantStringType = 6;
+  public static final int DivExpr = 7;
+  public static final int Expr = 8;
+  public static final int FloatValue = 9;
+  public static final int IntValue = 10;
+  public static final int MinusExpr = 11;
+  public static final int MulExpr = 12;
+  public static final int PlusExpr = 13;
+  public static final int StringValue = 14;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xf1277323ea964c38L, 0xa5127456d3818e7aL);
-    builder.put(0x44ee06468f8cb6d1L, AbstractValue);
+    builder.put(0x5d19e06d2880ecfcL, BinaryExpr);
     builder.put(0x44ee06468f8cb6ceL, Constant);
     builder.put(0x44ee06468f8cb6cbL, ConstantContainer);
+    builder.put(0x73cc67b338abc1eeL, ConstantFloatType);
     builder.put(0x6deaa97c1207a3faL, ConstantIntegerType);
+    builder.put(0x5d19e06d28801405L, ConstantReference);
     builder.put(0x6deaa97c1207a3fbL, ConstantStringType);
+    builder.put(0x5d19e06d2881dc53L, DivExpr);
+    builder.put(0x44ee06468f8cb6d1L, Expr);
+    builder.put(0x73cc67b338ab2d0cL, FloatValue);
     builder.put(0x44ee06468f8cb771L, IntValue);
+    builder.put(0x5d19e06d2880ed3fL, MinusExpr);
+    builder.put(0x5d19e06d2881dc52L, MulExpr);
+    builder.put(0x5d19e06d2880ed3eL, PlusExpr);
     builder.put(0x44ee06468f8cb76eL, StringValue);
     myIndex = builder.seal();
   }
