@@ -15,12 +15,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.function.BiConsumer;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.EvalExpressionPredicate;
 import jetbrains.mps.lang.coderules.template.LateExpression;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
-import java.util.function.BiConsumer;
 import jetbrains.mps.logic.reactor.logical.Logical;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
@@ -33,7 +33,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class ConstantRules_binary_type_transitive extends AbstractRuleTemplate<ConstantRules_binary_type_transitive.Token> {
+public class ConstantRules_binary__expr_type_fixed_to_float extends AbstractRuleTemplate<ConstantRules_binary__expr_type_fixed_to_float.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -46,57 +46,35 @@ public class ConstantRules_binary_type_transitive extends AbstractRuleTemplate<C
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new binary_type_transitive() {
+      new binary__expr_type_fixed_to_float() {
         @Override
         public void apply(TemplateApplicationSession session) {
           LeftType = MetaLogicalFactory.metaLogical("LeftType", DataForm.class);
           RightType = MetaLogicalFactory.metaLogical("RightType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "binary_type_transitive", "binary_type_transitive#0" + "_" + String.valueOf(token().bin.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().bin, SNodeOperations.getPointer(token().bin));
+          RuleBuilder builder = new RuleBuilder(session, "binary__expr_type_fixed_to_float", "binary__expr_type_fixed_to_float#0" + "_" + String.valueOf(token().bin.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().bin, SNodeOperations.getPointer(token().bin));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.left$WBNK), rule().LeftType).toConstraint());
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.right$WChM), rule().RightType).toConstraint());
-          builder.appendGuard(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
-            public Object[] metaArgs() {
-              return new Object[]{token().bin};
-            }
-            public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
-              SNode typedArg0 = (SNode) args[0];
-
-              return !(SNodeOperations.isInstanceOf(typedArg0, CONCEPTS.DivExpr$sE));
-            }
-          }).toPredicate());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().bin, rule().LeftType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().bin, (new MyTerms_termTable.floatType_term(false)).getTerm()).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
 
       }.apply(_session);
-      new binary_type_transitive1() {
+      new binary__expr_type_fixed_to_float1() {
         @Override
         public void apply(TemplateApplicationSession session) {
           TypeCollector = MetaLogicalFactory.metaLogical("TypeCollector", BiConsumer.class);
           TypeNode = MetaLogicalFactory.metaLogical("TypeNode", SNode.class);
-          LeftType = MetaLogicalFactory.metaLogical("LeftType", DataForm.class);
-          RightType = MetaLogicalFactory.metaLogical("RightType", DataForm.class);
+          DivExprType = MetaLogicalFactory.metaLogical("DivExprType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "binary_type_transitive", "binary_type_transitive#1" + "_" + String.valueOf(token().bin.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().bin, SNodeOperations.getPointer(token().bin));
+          RuleBuilder builder = new RuleBuilder(session, "binary__expr_type_fixed_to_float", "binary__expr_type_fixed_to_float#1" + "_" + String.valueOf(token().bin.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().bin, SNodeOperations.getPointer(token().bin));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 2)).withArguments(token().bin, rule().TypeCollector).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.left$WBNK), rule().LeftType).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.right$WChM), rule().RightType).toConstraint());
-          builder.appendGuard(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
-            public Object[] metaArgs() {
-              return new Object[]{token().bin};
-            }
-            public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
-              SNode typedArg0 = (SNode) args[0];
-
-              return !(SNodeOperations.isInstanceOf(typedArg0, CONCEPTS.DivExpr$sE));
-            }
-          }).toPredicate());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, rule().LeftType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().bin, rule().DivExprType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().TypeNode, rule().DivExprType).toConstraint());
           builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{rule().TypeCollector, rule().TypeNode, token().bin};
@@ -122,9 +100,9 @@ public class ConstantRules_binary_type_transitive extends AbstractRuleTemplate<C
       return this;
     }
 
-    public abstract class binary_type_transitive implements ConstraintRuleTemplate {
+    public abstract class binary__expr_type_fixed_to_float implements ConstraintRuleTemplate {
 
-      protected binary_type_transitive rule() {
+      protected binary__expr_type_fixed_to_float rule() {
         return this;
       }
 
@@ -132,16 +110,15 @@ public class ConstantRules_binary_type_transitive extends AbstractRuleTemplate<C
       protected MetaLogical RightType;
 
     }
-    public abstract class binary_type_transitive1 implements ConstraintRuleTemplate {
+    public abstract class binary__expr_type_fixed_to_float1 implements ConstraintRuleTemplate {
 
-      protected binary_type_transitive1 rule() {
+      protected binary__expr_type_fixed_to_float1 rule() {
         return this;
       }
 
       protected MetaLogical TypeCollector;
       protected MetaLogical TypeNode;
-      protected MetaLogical LeftType;
-      protected MetaLogical RightType;
+      protected MetaLogical DivExprType;
 
     }
 
@@ -152,13 +129,13 @@ public class ConstantRules_binary_type_transitive extends AbstractRuleTemplate<C
   }
 
 
-  public ConstantRules_binary_type_transitive(RuleTable ruleTable) {
-    super(ruleTable, "binary_type_transitive", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/6708639879380703252"));
+  public ConstantRules_binary__expr_type_fixed_to_float(RuleTable ruleTable) {
+    super(ruleTable, "binary__expr_type_fixed_to_float", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/6708639879380716142"));
   }
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.BinaryExpr$tm;
+    return CONCEPTS.DivExpr$sE;
   }
 
 
@@ -175,6 +152,5 @@ public class ConstantRules_binary_type_transitive extends AbstractRuleTemplate<C
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept DivExpr$sE = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2881dc53L, "NewLanguage.structure.DivExpr");
-    /*package*/ static final SConcept BinaryExpr$tm = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d2880ecfcL, "NewLanguage.structure.BinaryExpr");
   }
 }

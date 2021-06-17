@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="NewLanguage.types.ConstantRules_binary_type_non_transitive">
+  <dependency className="NewLanguage.types.ConstantRules_binary__expr_type_fixed_to_float">
     <classNode dependClassName="NewLanguage.types.MyTerms_termTable" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -37,7 +37,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractRuleTemplate" />
   </dependency>
-  <dependency className="NewLanguage.types.ConstantRules_binary_type_transitive">
+  <dependency className="NewLanguage.types.ConstantRules_binary_expr_type">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -58,6 +58,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
     <classNode dependClassName="jetbrains.mps.logic.predicate.EvalExpressionPredicate" />
+    <classNode dependClassName="jetbrains.mps.logic.predicate.LogicalPredicate" />
+    <classNode dependClassName="jetbrains.mps.logic.predicate.UnificationPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.evaluation.InvocationContext" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.Logical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.LogicalContext" />
@@ -284,8 +286,8 @@
     <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractRuleTemplate" />
   </dependency>
   <dependency className="NewLanguage.types.ConstantRules_ruleTable">
-    <classNode dependClassName="NewLanguage.types.ConstantRules_binary_type_non_transitive" />
-    <classNode dependClassName="NewLanguage.types.ConstantRules_binary_type_transitive" />
+    <classNode dependClassName="NewLanguage.types.ConstantRules_binary__expr_type_fixed_to_float" />
+    <classNode dependClassName="NewLanguage.types.ConstantRules_binary_expr_type" />
     <classNode dependClassName="NewLanguage.types.ConstantRules_constantDeclaration" />
     <classNode dependClassName="NewLanguage.types.ConstantRules_floatLiteral" />
     <classNode dependClassName="NewLanguage.types.ConstantRules_intLiteral" />

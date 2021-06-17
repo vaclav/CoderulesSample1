@@ -43,8 +43,8 @@ public class ConstantRules_ruleTable extends AbstractRuleTable implements RuleTa
     ListSequence.fromList(list).addElement(new ConstantRules_constantDeclaration(this));
     ListSequence.fromList(list).addElement(new ConstantRules_typeOf_Constant(this));
     ListSequence.fromList(list).addElement(new ConstantRules_reference(this));
-    ListSequence.fromList(list).addElement(new ConstantRules_binary_type_transitive(this));
-    ListSequence.fromList(list).addElement(new ConstantRules_binary_type_non_transitive(this));
+    ListSequence.fromList(list).addElement(new ConstantRules_binary_expr_type(this));
+    ListSequence.fromList(list).addElement(new ConstantRules_binary__expr_type_fixed_to_float(this));
     ListSequence.fromList(list).addElement(new ConstantRules_stringLiteral(this));
     ListSequence.fromList(list).addElement(new ConstantRules_intLiteral(this));
     ListSequence.fromList(list).addElement(new ConstantRules_floatLiteral(this));
