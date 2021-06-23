@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="6pdu3t82dvdx20vg1i8hdn9izlc46wn">
-  <files names="ConstantRules_binary__expr_type_fixed_to_float.java:ConstantRules_binary_expr_type.java:ConstantRules_constantDeclaration.java:ConstantRules_floatLiteral.java:ConstantRules_intLiteral.java:ConstantRules_recover_floatType.java:ConstantRules_recover_intType.java:ConstantRules_recover_stringType.java:ConstantRules_reference.java:ConstantRules_ruleTable.java:ConstantRules_stringLiteral.java:ConstantRules_typeOf_Constant.java:ConstantRules_typeOf_Expression.java:Macros_macroTable.java:Manifest.java:MyTerms_termTable.java:PrincipalsAnalysisImpl.java:Queries_queryTable.java:TypesAspectDescriptor.java" />
+<product version="3" modelHash="-bqyhdt1xe9gsj2qxbd142ujpvhnhasy">
+  <files names="Check_binary_expr_type.java:Check_constantDeclaration.java:Check_floatLiteral.java:Check_intLiteral.java:Check_reference.java:Check_ruleTable.java:Check_stringLiteral.java:ExpectType_ruleTable.java:ExpectType_typeOf_Constant.java:ExpectType_typeOf_Expression.java:Macros_macroTable.java:Manifest.java:MyTerms_termTable.java:PrincipalsAnalysisImpl.java:Queries_queryTable.java:Recover_recover_floatType.java:Recover_recover_intType.java:Recover_recover_stringType.java:Recover_ruleTable.java:TypesAspectDescriptor.java:lcs_lcs_prim.java:lcs_lcs_string.java:lcs_ruleTable.java" />
 </product>
 

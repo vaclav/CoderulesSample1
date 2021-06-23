@@ -120,6 +120,17 @@
         </node>
       </node>
     </node>
+    <node concept="3boF28" id="r_DgNl21Ir" role="3boF2k">
+      <property role="TrG5h" value="i" />
+      <node concept="1PAgPj" id="r_DgNl21Jh" role="3boF2C">
+        <node concept="1bpOEZ" id="r_DgNl21J_" role="1PAgMg">
+          <property role="1bpOEY" value="1.2" />
+        </node>
+        <node concept="3boF4C" id="r_DgNl21JI" role="1PAgMi">
+          <property role="3boF4D" value="foo" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

@@ -21,16 +21,16 @@ import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class ConstantRules_constantDeclaration extends AbstractRuleTemplate<ConstantRules_constantDeclaration.Token> {
+public class Check_reference extends AbstractRuleTemplate<Check_reference.Token> {
 
   public class Token implements RuleTemplate.Token {
 
     public Token(SNode input, TemplateApplicationSession session) {
-      this.constant = input;
+      this.ref = input;
       this.session = session;
     }
 
@@ -38,15 +38,15 @@ public class ConstantRules_constantDeclaration extends AbstractRuleTemplate<Cons
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new constantDeclaration() {
+      new reference() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          InitializerType = MetaLogicalFactory.metaLogical("InitializerType", DataForm.class);
+          DeclType = MetaLogicalFactory.metaLogical("DeclType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "constantDeclaration", "constantDeclaration" + "_" + String.valueOf(token().constant.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().constant, SNodeOperations.getPointer(token().constant));
+          RuleBuilder builder = new RuleBuilder(session, "reference", "reference" + "_" + String.valueOf(token().ref.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().ref, SNodeOperations.getPointer(token().ref));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().constant, LINKS.initializerValue$TtkI), rule().InitializerType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().constant, rule().InitializerType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().ref, LINKS.target$C4m5), rule().DeclType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().ref, rule().DeclType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -59,30 +59,30 @@ public class ConstantRules_constantDeclaration extends AbstractRuleTemplate<Cons
       return this;
     }
 
-    public abstract class constantDeclaration implements ConstraintRuleTemplate {
+    public abstract class reference implements ConstraintRuleTemplate {
 
-      protected constantDeclaration rule() {
+      protected reference rule() {
         return this;
       }
 
-      protected MetaLogical InitializerType;
+      protected MetaLogical DeclType;
 
     }
 
-    protected SNode constant;
+    protected SNode ref;
     protected List<SNode> required;
     protected List<RuleBuilder> ruleBuilders;
     protected TemplateApplicationSession session;
   }
 
 
-  public ConstantRules_constantDeclaration(RuleTable ruleTable) {
-    super(ruleTable, "constantDeclaration", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/1749218580158264298"));
+  public Check_reference(RuleTable ruleTable) {
+    super(ruleTable, "reference", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/6708639879380635123"));
   }
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.Constant$wW;
+    return CONCEPTS.ConstantReference$c$;
   }
 
 
@@ -93,10 +93,10 @@ public class ConstantRules_constantDeclaration extends AbstractRuleTemplate<Cons
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink initializerValue$TtkI = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, 0x44ee06468f8cb6eeL, "initializerValue");
+    /*package*/ static final SReferenceLink target$C4m5 = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d28801405L, 0x5d19e06d28801406L, "target");
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept Constant$wW = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, "NewLanguage.structure.Constant");
+    /*package*/ static final SConcept ConstantReference$c$ = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d28801405L, "NewLanguage.structure.ConstantReference");
   }
 }

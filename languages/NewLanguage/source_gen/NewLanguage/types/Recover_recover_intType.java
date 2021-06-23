@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.builder.SNodeBuilder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class ConstantRules_recover_intType extends AbstractRuleTemplate<ConstantRules_recover_intType.Token> {
+public class Recover_recover_intType extends AbstractRuleTemplate<Recover_recover_intType.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -56,7 +56,7 @@ public class ConstantRules_recover_intType extends AbstractRuleTemplate<Constant
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return createConstantIntegerType_j7rhs9_a0a0a0a0a0j();
+              return createConstantIntegerType_mptleq_a0a0a0a0a0a();
             }
           }).toPredicate());
 
@@ -88,7 +88,7 @@ public class ConstantRules_recover_intType extends AbstractRuleTemplate<Constant
   }
 
 
-  public ConstantRules_recover_intType(RuleTable ruleTable) {
+  public Recover_recover_intType(RuleTable ruleTable) {
     super(ruleTable, "recover_intType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/1204249894879871997"));
   }
 
@@ -103,7 +103,7 @@ public class ConstantRules_recover_intType extends AbstractRuleTemplate<Constant
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createConstantIntegerType_j7rhs9_a0a0a0a0a0j() {
+  private static SNode createConstantIntegerType_mptleq_a0a0a0a0a0a() {
     SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantIntegerType$Mr);
     return n0.getResult();
   }

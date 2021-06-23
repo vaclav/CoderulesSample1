@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class ConstantRules_floatLiteral extends AbstractRuleTemplate<ConstantRules_floatLiteral.Token> {
+public class Check_floatLiteral extends AbstractRuleTemplate<Check_floatLiteral.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -69,7 +69,7 @@ public class ConstantRules_floatLiteral extends AbstractRuleTemplate<ConstantRul
   }
 
 
-  public ConstantRules_floatLiteral(RuleTable ruleTable) {
+  public Check_floatLiteral(RuleTable ruleTable) {
     super(ruleTable, "floatLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/8344158229058266665"));
   }
 

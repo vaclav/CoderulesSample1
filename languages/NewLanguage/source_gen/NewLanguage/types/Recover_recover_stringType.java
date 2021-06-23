@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.builder.SNodeBuilder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class ConstantRules_recover_stringType extends AbstractRuleTemplate<ConstantRules_recover_stringType.Token> {
+public class Recover_recover_stringType extends AbstractRuleTemplate<Recover_recover_stringType.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -56,7 +56,7 @@ public class ConstantRules_recover_stringType extends AbstractRuleTemplate<Const
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return createConstantStringType_j7rhs9_a0a0a0a0a0l();
+              return createConstantStringType_mptleq_a0a0a0a0a0c();
             }
           }).toPredicate());
 
@@ -88,7 +88,7 @@ public class ConstantRules_recover_stringType extends AbstractRuleTemplate<Const
   }
 
 
-  public ConstantRules_recover_stringType(RuleTable ruleTable) {
+  public Recover_recover_stringType(RuleTable ruleTable) {
     super(ruleTable, "recover_stringType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/1749218580158408090"));
   }
 
@@ -103,7 +103,7 @@ public class ConstantRules_recover_stringType extends AbstractRuleTemplate<Const
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createConstantStringType_j7rhs9_a0a0a0a0a0l() {
+  private static SNode createConstantStringType_mptleq_a0a0a0a0a0c() {
     SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantStringType$MU);
     return n0.getResult();
   }

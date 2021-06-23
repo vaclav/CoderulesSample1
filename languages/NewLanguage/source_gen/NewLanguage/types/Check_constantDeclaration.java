@@ -14,23 +14,23 @@ import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
-import jetbrains.mps.lang.coderules.template.PredicateBuilder;
-import jetbrains.mps.logic.predicate.UnificationPredicate;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
 
-public class ConstantRules_intLiteral extends AbstractRuleTemplate<ConstantRules_intLiteral.Token> {
+public class Check_constantDeclaration extends AbstractRuleTemplate<Check_constantDeclaration.Token> {
 
   public class Token implements RuleTemplate.Token {
 
     public Token(SNode input, TemplateApplicationSession session) {
-      this.i = input;
+      this.constant = input;
       this.session = session;
     }
 
@@ -38,16 +38,15 @@ public class ConstantRules_intLiteral extends AbstractRuleTemplate<ConstantRules
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new intLiteral() {
+      new constantDeclaration() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          IntType = MetaLogicalFactory.metaLogical("IntType", DataForm.class);
+          InitializerType = MetaLogicalFactory.metaLogical("InitializerType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "intLiteral", "intLiteral" + "_" + String.valueOf(token().i.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().i, SNodeOperations.getPointer(token().i));
+          RuleBuilder builder = new RuleBuilder(session, "constantDeclaration", "constantDeclaration" + "_" + String.valueOf(token().constant.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().constant, SNodeOperations.getPointer(token().constant));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().IntType, (new MyTerms_termTable.intType_term(false)).getTerm()).toPredicate());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().i, rule().IntType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().constant, LINKS.initializerValue$TtkI), rule().InitializerType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().constant, rule().InitializerType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -60,30 +59,30 @@ public class ConstantRules_intLiteral extends AbstractRuleTemplate<ConstantRules
       return this;
     }
 
-    public abstract class intLiteral implements ConstraintRuleTemplate {
+    public abstract class constantDeclaration implements ConstraintRuleTemplate {
 
-      protected intLiteral rule() {
+      protected constantDeclaration rule() {
         return this;
       }
 
-      protected MetaLogical IntType;
+      protected MetaLogical InitializerType;
 
     }
 
-    protected SNode i;
+    protected SNode constant;
     protected List<SNode> required;
     protected List<RuleBuilder> ruleBuilders;
     protected TemplateApplicationSession session;
   }
 
 
-  public ConstantRules_intLiteral(RuleTable ruleTable) {
-    super(ruleTable, "intLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/3100765949326701594"));
+  public Check_constantDeclaration(RuleTable ruleTable) {
+    super(ruleTable, "constantDeclaration", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/1749218580158264298"));
   }
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.IntValue$2D;
+    return CONCEPTS.Constant$wW;
   }
 
 
@@ -93,7 +92,11 @@ public class ConstantRules_intLiteral extends AbstractRuleTemplate<ConstantRules
     return new Token(input, session);
   }
 
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink initializerValue$TtkI = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, 0x44ee06468f8cb6eeL, "initializerValue");
+  }
+
   private static final class CONCEPTS {
-    /*package*/ static final SConcept IntValue$2D = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb771L, "NewLanguage.structure.IntValue");
+    /*package*/ static final SConcept Constant$wW = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, "NewLanguage.structure.Constant");
   }
 }

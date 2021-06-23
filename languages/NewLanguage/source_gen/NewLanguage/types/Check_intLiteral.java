@@ -9,10 +9,13 @@ import jetbrains.mps.lang.coderules.template.TemplateApplicationSession;
 import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.logic.unification.MetaLogicalFactory;
+import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
+import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
@@ -20,12 +23,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRules_stringLiteral.Token> {
+public class Check_intLiteral extends AbstractRuleTemplate<Check_intLiteral.Token> {
 
   public class Token implements RuleTemplate.Token {
 
     public Token(SNode input, TemplateApplicationSession session) {
-      this.s = input;
+      this.i = input;
       this.session = session;
     }
 
@@ -33,14 +36,15 @@ public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRu
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new stringLiteral() {
+      new intLiteral() {
         @Override
         public void apply(TemplateApplicationSession session) {
+          IntType = MetaLogicalFactory.metaLogical("IntType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "stringLiteral", "stringLiteral" + "_" + String.valueOf(token().s.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().s, SNodeOperations.getPointer(token().s));
+          RuleBuilder builder = new RuleBuilder(session, "intLiteral", "intLiteral" + "_" + String.valueOf(token().i.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().i, SNodeOperations.getPointer(token().i));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().s, (new MyTerms_termTable.stringType_term(false)).getTerm()).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().i, (new MyTerms_termTable.intType_term(false)).getTerm()).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -53,29 +57,30 @@ public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRu
       return this;
     }
 
-    public abstract class stringLiteral implements ConstraintRuleTemplate {
+    public abstract class intLiteral implements ConstraintRuleTemplate {
 
-      protected stringLiteral rule() {
+      protected intLiteral rule() {
         return this;
       }
 
+      protected MetaLogical IntType;
 
     }
 
-    protected SNode s;
+    protected SNode i;
     protected List<SNode> required;
     protected List<RuleBuilder> ruleBuilders;
     protected TemplateApplicationSession session;
   }
 
 
-  public ConstantRules_stringLiteral(RuleTable ruleTable) {
-    super(ruleTable, "stringLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/4966914339162178748"));
+  public Check_intLiteral(RuleTable ruleTable) {
+    super(ruleTable, "intLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/3100765949326701594"));
   }
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.StringValue$R1;
+    return CONCEPTS.IntValue$2D;
   }
 
 
@@ -86,6 +91,6 @@ public class ConstantRules_stringLiteral extends AbstractRuleTemplate<ConstantRu
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept StringValue$R1 = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb76eL, "NewLanguage.structure.StringValue");
+    /*package*/ static final SConcept IntValue$2D = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb771L, "NewLanguage.structure.IntValue");
   }
 }
