@@ -45,7 +45,7 @@ public class ConstantReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final ReferenceConstraintsContext _context) {
-            List<SNode> constants = SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getContextNode()), CONCEPTS.Constant$wW, false, new SAbstractConcept[]{});
+            List<SNode> constants = SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getContextNode()), CONCEPTS.ConstantDefinition$wW, false, new SAbstractConcept[]{});
             return ListScope.forNamedElements(constants);
           }
         };
@@ -59,7 +59,7 @@ public class ConstantReference_Constraints extends BaseConstraintsDescriptor {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept ConstantReference$c$ = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x5d19e06d28801405L, "NewLanguage.structure.ConstantReference");
-    /*package*/ static final SConcept Constant$wW = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, "NewLanguage.structure.Constant");
+    /*package*/ static final SConcept ConstantDefinition$wW = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, "NewLanguage.structure.ConstantDefinition");
   }
 
   private static final class LINKS {

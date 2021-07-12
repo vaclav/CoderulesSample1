@@ -457,7 +457,7 @@
                                       <property role="TrG5h" value="constants" />
                                       <uo k="s:originTrace" v="n:3711979631470343891" />
                                       <node concept="2I9FWS" id="1f" role="1tU5fm">
-                                        <ref role="2I9WkF" to="bfo2:4jI1$qfzbre" resolve="Constant" />
+                                        <ref role="2I9WkF" to="bfo2:4jI1$qfzbre" resolve="ConstantDefinition" />
                                         <uo k="s:originTrace" v="n:3711979631470343386" />
                                       </node>
                                       <node concept="2OqwBi" id="1g" role="33vP2m">
@@ -483,7 +483,7 @@
                                           <node concept="1xMEDy" id="1n" role="1xVPHs">
                                             <uo k="s:originTrace" v="n:3711979631470343897" />
                                             <node concept="chp4Y" id="1o" role="ri$Ld">
-                                              <ref role="cht4Q" to="bfo2:4jI1$qfzbre" resolve="Constant" />
+                                              <ref role="cht4Q" to="bfo2:4jI1$qfzbre" resolve="ConstantDefinition" />
                                               <uo k="s:originTrace" v="n:3711979631470343898" />
                                             </node>
                                           </node>

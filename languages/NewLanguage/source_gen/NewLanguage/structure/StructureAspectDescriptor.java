@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBinaryExpr = createDescriptorForBinaryExpr();
-  /*package*/ final ConceptDescriptor myConceptConstant = createDescriptorForConstant();
+  /*package*/ final ConceptDescriptor myConceptConstantDefinition = createDescriptorForConstantDefinition();
   /*package*/ final ConceptDescriptor myConceptConstantFloatType = createDescriptorForConstantFloatType();
   /*package*/ final ConceptDescriptor myConceptConstantIntegerType = createDescriptorForConstantIntegerType();
   /*package*/ final ConceptDescriptor myConceptConstantLanguageType = createDescriptorForConstantLanguageType();
@@ -23,6 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDefinition = createDescriptorForDefinition();
   /*package*/ final ConceptDescriptor myConceptDivExpr = createDescriptorForDivExpr();
   /*package*/ final ConceptDescriptor myConceptExpr = createDescriptorForExpr();
+  /*package*/ final ConceptDescriptor myConceptField = createDescriptorForField();
   /*package*/ final ConceptDescriptor myConceptFloatValue = createDescriptorForFloatValue();
   /*package*/ final ConceptDescriptor myConceptFunctionCall = createDescriptorForFunctionCall();
   /*package*/ final ConceptDescriptor myConceptFunctionDefinition = createDescriptorForFunctionDefinition();
@@ -34,6 +35,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPlusExpr = createDescriptorForPlusExpr();
   /*package*/ final ConceptDescriptor myConceptProgramDefinition = createDescriptorForProgramDefinition();
   /*package*/ final ConceptDescriptor myConceptStringValue = createDescriptorForStringValue();
+  /*package*/ final ConceptDescriptor myConceptStructDefinition = createDescriptorForStructDefinition();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -48,7 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptBinaryExpr, myConceptConstant, myConceptConstantFloatType, myConceptConstantIntegerType, myConceptConstantLanguageType, myConceptConstantReference, myConceptConstantStringType, myConceptDefinition, myConceptDivExpr, myConceptExpr, myConceptFloatValue, myConceptFunctionCall, myConceptFunctionDefinition, myConceptIntValue, myConceptMinusExpr, myConceptMulExpr, myConceptParameter, myConceptParameterReference, myConceptPlusExpr, myConceptProgramDefinition, myConceptStringValue);
+    return Arrays.asList(myConceptBinaryExpr, myConceptConstantDefinition, myConceptConstantFloatType, myConceptConstantIntegerType, myConceptConstantLanguageType, myConceptConstantReference, myConceptConstantStringType, myConceptDefinition, myConceptDivExpr, myConceptExpr, myConceptField, myConceptFloatValue, myConceptFunctionCall, myConceptFunctionDefinition, myConceptIntValue, myConceptMinusExpr, myConceptMulExpr, myConceptParameter, myConceptParameterReference, myConceptPlusExpr, myConceptProgramDefinition, myConceptStringValue, myConceptStructDefinition);
   }
 
   @Override
@@ -57,8 +59,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.BinaryExpr:
         return myConceptBinaryExpr;
-      case LanguageConceptSwitch.Constant:
-        return myConceptConstant;
+      case LanguageConceptSwitch.ConstantDefinition:
+        return myConceptConstantDefinition;
       case LanguageConceptSwitch.ConstantFloatType:
         return myConceptConstantFloatType;
       case LanguageConceptSwitch.ConstantIntegerType:
@@ -75,6 +77,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptDivExpr;
       case LanguageConceptSwitch.Expr:
         return myConceptExpr;
+      case LanguageConceptSwitch.Field:
+        return myConceptField;
       case LanguageConceptSwitch.FloatValue:
         return myConceptFloatValue;
       case LanguageConceptSwitch.FunctionCall:
@@ -97,6 +101,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptProgramDefinition;
       case LanguageConceptSwitch.StringValue:
         return myConceptStringValue;
+      case LanguageConceptSwitch.StructDefinition:
+        return myConceptStructDefinition;
       default:
         return null;
     }
@@ -117,14 +123,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("right", 0x5d19e06d2880ecffL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L).optional(false).ordered(true).multiple(false).origin("6708639879380659455").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForConstant() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "Constant", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL);
+  private static ConceptDescriptor createDescriptorForConstantDefinition() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "ConstantDefinition", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL);
     b.class_(false, false, false);
     b.super_("NewLanguage.structure.Definition", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3405e02L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/4966914339162076878");
     b.version(2);
     b.aggregate("initializerValue", 0x44ee06468f8cb6eeL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L).optional(false).ordered(true).multiple(false).origin("4966914339162076910").done();
+    b.alias("constant");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConstantFloatType() {
@@ -193,6 +200,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForField() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "Field", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d60L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/813836719653989728");
+    b.version(2);
+    b.aggregate("declaredType", 0xb4b542f44252d63L).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3406bd6L).optional(false).ordered(true).multiple(false).origin("813836719653989731").done();
+    b.aggregate("value", 0xb4b542f44252d65L).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L).optional(false).ordered(true).multiple(false).origin("813836719653989733").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForFloatValue() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "FloatValue", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x73cc67b338ab2d0cL);
     b.class_(false, false, false);
@@ -222,6 +239,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("declaredType", 0x338399ced3406bd7L).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3406bd6L).optional(false).ordered(true).multiple(false).origin("3711979631469947863").done();
     b.aggregate("body", 0x338399ced3406bd9L).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L).optional(false).ordered(true).multiple(false).origin("3711979631469947865").done();
     b.aggregate("parameters", 0x338399ced3406c3aL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3406c3eL).optional(true).ordered(true).multiple(true).origin("3711979631469947962").done();
+    b.alias("fun");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIntValue() {
@@ -285,6 +303,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/4966914339162076875");
     b.version(2);
     b.aggregate("definitions", 0x44ee06468f8cb6d2L).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3405e02L).optional(true).ordered(true).multiple(true).origin("4966914339162076882").done();
+    b.alias("Program");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForStringValue() {
@@ -294,6 +313,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/4966914339162077038");
     b.version(2);
     b.property("v", 0x44ee06468f8cb76fL).type(PrimitiveTypeId.STRING).origin("4966914339162077039").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForStructDefinition() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "StructDefinition", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d5dL);
+    b.class_(false, false, false);
+    b.super_("NewLanguage.structure.Definition", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3405e02L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/813836719653989725");
+    b.version(2);
+    b.aggregate("fields", 0xb4b542f44252dacL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d60L).optional(true).ordered(true).multiple(true).origin("813836719653989804").done();
+    b.alias("struct");
     return b.create();
   }
 }

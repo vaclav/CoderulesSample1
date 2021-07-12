@@ -63,6 +63,7 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().fun, rule().DeclaredType).toConstraint());
           // TODO Let's mandate the two types to be the same for now and address convertsTo later
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().DeclaredType, rule().ActualReturnType).toPredicate());
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().DeclaredType, rule().ActualReturnType).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

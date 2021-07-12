@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_BinaryExpr;
-  private ConceptPresentation props_Constant;
+  private ConceptPresentation props_ConstantDefinition;
   private ConceptPresentation props_ConstantFloatType;
   private ConceptPresentation props_ConstantIntegerType;
   private ConceptPresentation props_ConstantLanguageType;
@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Definition;
   private ConceptPresentation props_DivExpr;
   private ConceptPresentation props_Expr;
+  private ConceptPresentation props_Field;
   private ConceptPresentation props_FloatValue;
   private ConceptPresentation props_FunctionCall;
   private ConceptPresentation props_FunctionDefinition;
@@ -30,6 +31,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_PlusExpr;
   private ConceptPresentation props_ProgramDefinition;
   private ConceptPresentation props_StringValue;
+  private ConceptPresentation props_StructDefinition;
 
   @Override
   @Nullable
@@ -42,13 +44,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BinaryExpr = cpb.create();
         }
         return props_BinaryExpr;
-      case LanguageConceptSwitch.Constant:
-        if (props_Constant == null) {
+      case LanguageConceptSwitch.ConstantDefinition:
+        if (props_ConstantDefinition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_Constant = cpb.create();
+          props_ConstantDefinition = cpb.create();
         }
-        return props_Constant;
+        return props_ConstantDefinition;
       case LanguageConceptSwitch.ConstantFloatType:
         if (props_ConstantFloatType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -102,6 +104,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Expr = cpb.create();
         }
         return props_Expr;
+      case LanguageConceptSwitch.Field:
+        if (props_Field == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Field = cpb.create();
+        }
+        return props_Field;
       case LanguageConceptSwitch.FloatValue:
         if (props_FloatValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -179,6 +188,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StringValue = cpb.create();
         }
         return props_StringValue;
+      case LanguageConceptSwitch.StructDefinition:
+        if (props_StructDefinition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_StructDefinition = cpb.create();
+        }
+        return props_StructDefinition;
     }
     return null;
   }

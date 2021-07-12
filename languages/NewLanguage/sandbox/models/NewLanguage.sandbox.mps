@@ -12,7 +12,7 @@
       </concept>
     </language>
     <language id="f1277323-ea96-4c38-a512-7456d3818e7a" name="NewLanguage">
-      <concept id="4966914339162076878" name="NewLanguage.structure.Constant" flags="ng" index="3boF28">
+      <concept id="4966914339162076878" name="NewLanguage.structure.ConstantDefinition" flags="ng" index="3boF28">
         <child id="4966914339162076910" name="initializerValue" index="3boF2C" />
       </concept>
       <concept id="4966914339162076875" name="NewLanguage.structure.ProgramDefinition" flags="ng" index="3boF2d">
@@ -28,6 +28,13 @@
         <property id="8344158229058235661" name="value" index="1bpOEY" />
       </concept>
       <concept id="8344158229058273774" name="NewLanguage.structure.ConstantFloatType" flags="ng" index="1bpUpt" />
+      <concept id="813836719653989728" name="NewLanguage.structure.Field" flags="ng" index="1frB_f">
+        <child id="813836719653989733" name="value" index="1frB_a" />
+        <child id="813836719653989731" name="declaredType" index="1frB_c" />
+      </concept>
+      <concept id="813836719653989725" name="NewLanguage.structure.StructDefinition" flags="ng" index="1frB_M">
+        <child id="813836719653989804" name="fields" index="1frBA3" />
+      </concept>
       <concept id="3711979631469944321" name="NewLanguage.structure.FunctionDefinition" flags="ng" index="3wKWvf">
         <child id="3711979631469947865" name="body" index="3wKZ8n" />
         <child id="3711979631469947863" name="declaredType" index="3wKZ8p" />
@@ -55,6 +62,7 @@
         <reference id="6708639879380603910" name="target" index="1PAvhF" />
       </concept>
       <concept id="7920329245027967994" name="NewLanguage.structure.ConstantIntegerType" flags="ng" index="1ZVgE6" />
+      <concept id="7920329245027967995" name="NewLanguage.structure.ConstantStringType" flags="ng" index="1ZVgE7" />
     </language>
   </registry>
   <node concept="3boF2d" id="4jI1$qfzxwQ">
@@ -208,6 +216,46 @@
         </node>
         <node concept="1bpOEZ" id="2_f72J8Ie05" role="3wKZmb">
           <property role="1bpOEY" value="12" />
+        </node>
+      </node>
+    </node>
+    <node concept="3wKWvf" id="Hbl2X4b9SV" role="3boF2k">
+      <property role="TrG5h" value="invalidTypes" />
+      <node concept="1ZVgE7" id="Hbl2X4b9Tr" role="3wKZ8p" />
+      <node concept="3boF4R" id="Hbl2X4b9Tu" role="3wKZ8n">
+        <property role="3boF4O" value="10" />
+      </node>
+    </node>
+  </node>
+  <node concept="3boF2d" id="Hbl2X49VD9">
+    <property role="TrG5h" value="3_Structs" />
+    <node concept="3boF28" id="Hbl2X4a7Ry" role="3boF2k">
+      <property role="TrG5h" value="a" />
+      <node concept="3boF4R" id="Hbl2X4a7RC" role="3boF2C">
+        <property role="3boF4O" value="10" />
+      </node>
+    </node>
+    <node concept="1frB_M" id="Hbl2X4a7RN" role="3boF2k">
+      <property role="TrG5h" value="Person" />
+      <node concept="1frB_f" id="Hbl2X4a7RS" role="1frBA3">
+        <property role="TrG5h" value="firstName" />
+        <node concept="1ZVgE7" id="Hbl2X4a8AT" role="1frB_c" />
+        <node concept="3boF4C" id="Hbl2X4a8AW" role="1frB_a">
+          <property role="3boF4D" value="Joe" />
+        </node>
+      </node>
+      <node concept="1frB_f" id="Hbl2X4a8B1" role="1frBA3">
+        <property role="TrG5h" value="lastName" />
+        <node concept="1ZVgE7" id="Hbl2X4a8Ba" role="1frB_c" />
+        <node concept="3boF4C" id="Hbl2X4a8Bd" role="1frB_a">
+          <property role="3boF4D" value="Schmoe" />
+        </node>
+      </node>
+      <node concept="1frB_f" id="Hbl2X4alTg" role="1frBA3">
+        <property role="TrG5h" value="age" />
+        <node concept="1ZVgE6" id="Hbl2X4alTs" role="1frB_c" />
+        <node concept="3boF4R" id="Hbl2X4alTv" role="1frB_a">
+          <property role="3boF4O" value="27" />
         </node>
       </node>
     </node>

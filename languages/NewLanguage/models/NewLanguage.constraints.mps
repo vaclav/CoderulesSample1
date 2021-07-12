@@ -191,7 +191,7 @@
             <node concept="3cpWsn" id="3e3AsVjhBrj" role="3cpWs9">
               <property role="TrG5h" value="constants" />
               <node concept="2I9FWS" id="3e3AsVjhBjq" role="1tU5fm">
-                <ref role="2I9WkF" to="bfo2:4jI1$qfzbre" resolve="Constant" />
+                <ref role="2I9WkF" to="bfo2:4jI1$qfzbre" resolve="ConstantDefinition" />
               </node>
               <node concept="2OqwBi" id="3e3AsVjhBrk" role="33vP2m">
                 <node concept="2OqwBi" id="3e3AsVjhBrl" role="2Oq$k0">
@@ -201,7 +201,7 @@
                 <node concept="2Rf3mk" id="3e3AsVjhBro" role="2OqNvi">
                   <node concept="1xMEDy" id="3e3AsVjhBrp" role="1xVPHs">
                     <node concept="chp4Y" id="3e3AsVjhBrq" role="ri$Ld">
-                      <ref role="cht4Q" to="bfo2:4jI1$qfzbre" resolve="Constant" />
+                      <ref role="cht4Q" to="bfo2:4jI1$qfzbre" resolve="ConstantDefinition" />
                     </node>
                   </node>
                 </node>

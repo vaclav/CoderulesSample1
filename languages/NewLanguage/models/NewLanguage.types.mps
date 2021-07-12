@@ -659,7 +659,7 @@
         </node>
       </node>
       <node concept="2t___k" id="1x6ugvCQbtL" role="1nLNMg">
-        <ref role="2t_S0q" to="bfo2:4jI1$qfzbre" resolve="Constant" />
+        <ref role="2t_S0q" to="bfo2:4jI1$qfzbre" resolve="ConstantDefinition" />
         <node concept="3A20r5" id="1x6ugvCQbtM" role="2t_VXX">
           <property role="TrG5h" value="constant" />
         </node>
@@ -1319,6 +1319,16 @@
                             <ref role="a7OzE" node="3e3AsVjiw8l" resolve="DeclaredType" />
                           </node>
                           <node concept="a7P8L" id="2_f72J8I3zC" role="3A8w4Q">
+                            <ref role="a7OzE" node="3e3AsVjiuQS" resolve="ActualReturnType" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3Aqczg" id="Hbl2X4an7c" role="3cqZAp">
+                        <node concept="3A8Hvi" id="Hbl2X4an91" role="3Aqpz8">
+                          <node concept="a7P8L" id="Hbl2X4an9a" role="3A8wtg">
+                            <ref role="a7OzE" node="3e3AsVjiw8l" resolve="DeclaredType" />
+                          </node>
+                          <node concept="a7P8L" id="Hbl2X4anzz" role="3A8w4Q">
                             <ref role="a7OzE" node="3e3AsVjiuQS" resolve="ActualReturnType" />
                           </node>
                         </node>
@@ -2390,7 +2400,7 @@
         </node>
       </node>
       <node concept="2t___k" id="1x6ugvCQFkX" role="1nLNMg">
-        <ref role="2t_S0q" to="bfo2:4jI1$qfzbre" resolve="Constant" />
+        <ref role="2t_S0q" to="bfo2:4jI1$qfzbre" resolve="ConstantDefinition" />
         <node concept="3A20r5" id="1x6ugvCQFkY" role="2t_VXX">
           <property role="TrG5h" value="c" />
         </node>

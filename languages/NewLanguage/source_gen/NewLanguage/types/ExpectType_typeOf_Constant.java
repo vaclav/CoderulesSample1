@@ -148,7 +148,7 @@ public class ExpectType_typeOf_Constant extends AbstractRuleTemplate<ExpectType_
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.Constant$wW;
+    return CONCEPTS.ConstantDefinition$wW;
   }
 
 
@@ -159,6 +159,6 @@ public class ExpectType_typeOf_Constant extends AbstractRuleTemplate<ExpectType_
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept Constant$wW = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, "NewLanguage.structure.Constant");
+    /*package*/ static final SConcept ConstantDefinition$wW = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, "NewLanguage.structure.ConstantDefinition");
   }
 }
