@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_Assignment;
   private ConceptPresentation props_BinaryExpr;
   private ConceptPresentation props_ConstantDefinition;
   private ConceptPresentation props_ConstantFloatType;
@@ -18,6 +19,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ConstantStringType;
   private ConceptPresentation props_Definition;
   private ConceptPresentation props_DivExpr;
+  private ConceptPresentation props_DotAccessExpr;
+  private ConceptPresentation props_EmptyLine;
   private ConceptPresentation props_Expr;
   private ConceptPresentation props_Field;
   private ConceptPresentation props_FloatValue;
@@ -26,18 +29,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_IntValue;
   private ConceptPresentation props_MinusExpr;
   private ConceptPresentation props_MulExpr;
+  private ConceptPresentation props_New;
   private ConceptPresentation props_Parameter;
   private ConceptPresentation props_ParameterReference;
   private ConceptPresentation props_PlusExpr;
   private ConceptPresentation props_ProgramDefinition;
   private ConceptPresentation props_StringValue;
   private ConceptPresentation props_StructDefinition;
+  private ConceptPresentation props_StructType;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Assignment:
+        if (props_Assignment == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("=");
+          props_Assignment = cpb.create();
+        }
+        return props_Assignment;
       case LanguageConceptSwitch.BinaryExpr:
         if (props_BinaryExpr == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -98,6 +110,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DivExpr = cpb.create();
         }
         return props_DivExpr;
+      case LanguageConceptSwitch.DotAccessExpr:
+        if (props_DotAccessExpr == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation(".");
+          props_DotAccessExpr = cpb.create();
+        }
+        return props_DotAccessExpr;
+      case LanguageConceptSwitch.EmptyLine:
+        if (props_EmptyLine == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<empty>");
+          props_EmptyLine = cpb.create();
+        }
+        return props_EmptyLine;
       case LanguageConceptSwitch.Expr:
         if (props_Expr == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -153,6 +179,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MulExpr = cpb.create();
         }
         return props_MulExpr;
+      case LanguageConceptSwitch.New:
+        if (props_New == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("new");
+          props_New = cpb.create();
+        }
+        return props_New;
       case LanguageConceptSwitch.Parameter:
         if (props_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -195,6 +228,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StructDefinition = cpb.create();
         }
         return props_StructDefinition;
+      case LanguageConceptSwitch.StructType:
+        if (props_StructType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("struct");
+          props_StructType = cpb.create();
+        }
+        return props_StructType;
     }
     return null;
   }

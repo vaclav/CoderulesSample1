@@ -7,17 +7,15 @@ import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.logic.dataform.ValueRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
-import jetbrains.mps.logic.dataform.ChildRole;
-import jetbrains.mps.logic.dataform.ListRole;
-import jetbrains.mps.logic.dataform.ListNode;
 import jetbrains.mps.logic.dataform.TermNode;
 import jetbrains.mps.logic.dataform.Value;
+import jetbrains.mps.logic.dataform.ChildRole;
 
 public class MyTerms_termTable {
 
-  public static class classifierType_term extends AbstractTermDeclaration {
+  public static class structType_term extends AbstractTermDeclaration {
 
-    public classifierType_term(boolean pattern) {
+    public structType_term(boolean pattern) {
       this.pattern = pattern;
     }
 
@@ -29,26 +27,10 @@ public class MyTerms_termTable {
         return (ValueRole.create("classifier", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
       }
     }
-    public DataForm kind() {
-      if (pattern) {
-        return ValueRole.create("kind", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
-
-      } else {
-        return (ValueRole.create("kind", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
-      }
-    }
-    public DataForm parameter() {
-      if (pattern) {
-        return ChildRole.create("parameter", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(DataForm.class)));
-
-      } else {
-        return (ListRole.create("parameter", ListNode.createList()));
-      }
-    }
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(ValueRole.create("_term", Value.create("classifierType")), LogicalUtil.asDataForm(classifier()), LogicalUtil.asDataForm(kind()), LogicalUtil.asDataForm(parameter())));
+      return (TermNode.create(ValueRole.create("_term", Value.create("structType")), LogicalUtil.asDataForm(classifier())));
     }
 
     private boolean pattern;

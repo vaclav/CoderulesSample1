@@ -471,8 +471,6 @@
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.AbstractTermDeclaration" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.ChildRole" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.ListNode" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.ListRole" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.TermNode" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.Value" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.ValueRole" />

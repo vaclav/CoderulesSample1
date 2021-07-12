@@ -48,7 +48,9 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
       List<SNode> params = SLinkOperations.getChildren(SLinkOperations.getTarget(token().call, LINKS.target$SiaI), LINKS.parameters$GU9f);
       List<SNode> args = SLinkOperations.getChildren(token().call, LINKS.arguments$SiCK);
-      if (ListSequence.fromList(args).count() != ListSequence.fromList(params).count()) {
+      int aSize = (ListSequence.fromList(args).isEmpty() ? 0 : ListSequence.fromList(args).count());
+      int pSize = (ListSequence.fromList(params).isEmpty() ? 0 : ListSequence.fromList(params).count());
+      if (aSize != pSize) {
         
         _session.reportFeedback(token().call, FeedbackUtil.feedback("arguments number mismatch", "ERROR", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/2976628853091890014"), SNodeOperations.getPointer(token().call)));;
 

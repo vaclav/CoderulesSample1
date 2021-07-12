@@ -9,32 +9,38 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int BinaryExpr = 0;
-  public static final int ConstantDefinition = 1;
-  public static final int ConstantFloatType = 2;
-  public static final int ConstantIntegerType = 3;
-  public static final int ConstantLanguageType = 4;
-  public static final int ConstantReference = 5;
-  public static final int ConstantStringType = 6;
-  public static final int Definition = 7;
-  public static final int DivExpr = 8;
-  public static final int Expr = 9;
-  public static final int Field = 10;
-  public static final int FloatValue = 11;
-  public static final int FunctionCall = 12;
-  public static final int FunctionDefinition = 13;
-  public static final int IntValue = 14;
-  public static final int MinusExpr = 15;
-  public static final int MulExpr = 16;
-  public static final int Parameter = 17;
-  public static final int ParameterReference = 18;
-  public static final int PlusExpr = 19;
-  public static final int ProgramDefinition = 20;
-  public static final int StringValue = 21;
-  public static final int StructDefinition = 22;
+  public static final int Assignment = 0;
+  public static final int BinaryExpr = 1;
+  public static final int ConstantDefinition = 2;
+  public static final int ConstantFloatType = 3;
+  public static final int ConstantIntegerType = 4;
+  public static final int ConstantLanguageType = 5;
+  public static final int ConstantReference = 6;
+  public static final int ConstantStringType = 7;
+  public static final int Definition = 8;
+  public static final int DivExpr = 9;
+  public static final int DotAccessExpr = 10;
+  public static final int EmptyLine = 11;
+  public static final int Expr = 12;
+  public static final int Field = 13;
+  public static final int FloatValue = 14;
+  public static final int FunctionCall = 15;
+  public static final int FunctionDefinition = 16;
+  public static final int IntValue = 17;
+  public static final int MinusExpr = 18;
+  public static final int MulExpr = 19;
+  public static final int New = 20;
+  public static final int Parameter = 21;
+  public static final int ParameterReference = 22;
+  public static final int PlusExpr = 23;
+  public static final int ProgramDefinition = 24;
+  public static final int StringValue = 25;
+  public static final int StructDefinition = 26;
+  public static final int StructType = 27;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xf1277323ea964c38L, 0xa5127456d3818e7aL);
+    builder.put(0xb4b542f44358f90L, Assignment);
     builder.put(0x5d19e06d2880ecfcL, BinaryExpr);
     builder.put(0x44ee06468f8cb6ceL, ConstantDefinition);
     builder.put(0x73cc67b338abc1eeL, ConstantFloatType);
@@ -44,6 +50,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x6deaa97c1207a3fbL, ConstantStringType);
     builder.put(0x338399ced3405e02L, Definition);
     builder.put(0x5d19e06d2881dc53L, DivExpr);
+    builder.put(0xb4b542f44358f40L, DotAccessExpr);
+    builder.put(0xb4b542f4434a1b5L, EmptyLine);
     builder.put(0x44ee06468f8cb6d1L, Expr);
     builder.put(0xb4b542f44252d60L, Field);
     builder.put(0x73cc67b338ab2d0cL, FloatValue);
@@ -52,12 +60,14 @@ public final class LanguageConceptSwitch {
     builder.put(0x44ee06468f8cb771L, IntValue);
     builder.put(0x5d19e06d2880ed3fL, MinusExpr);
     builder.put(0x5d19e06d2881dc52L, MulExpr);
+    builder.put(0xb4b542f442ecb0cL, New);
     builder.put(0x338399ced3406c3eL, Parameter);
     builder.put(0x338399ced34431d1L, ParameterReference);
     builder.put(0x5d19e06d2880ed3eL, PlusExpr);
     builder.put(0x44ee06468f8cb6cbL, ProgramDefinition);
     builder.put(0x44ee06468f8cb76eL, StringValue);
     builder.put(0xb4b542f44252d5dL, StructDefinition);
+    builder.put(0xb4b542f442cbb88L, StructType);
     myIndex = builder.seal();
   }
 

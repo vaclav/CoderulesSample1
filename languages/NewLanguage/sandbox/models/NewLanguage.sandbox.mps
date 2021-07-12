@@ -28,6 +28,12 @@
         <property id="8344158229058235661" name="value" index="1bpOEY" />
       </concept>
       <concept id="8344158229058273774" name="NewLanguage.structure.ConstantFloatType" flags="ng" index="1bpUpt" />
+      <concept id="813836719654619916" name="NewLanguage.structure.New" flags="ng" index="1fppWz">
+        <reference id="813836719654619917" name="structDefinition" index="1fppWy" />
+      </concept>
+      <concept id="813836719654484872" name="NewLanguage.structure.StructType" flags="ng" index="1fpYYB">
+        <reference id="813836719654484899" name="struct" index="1fpYYc" />
+      </concept>
       <concept id="813836719653989728" name="NewLanguage.structure.Field" flags="ng" index="1frB_f">
         <child id="813836719653989733" name="value" index="1frB_a" />
         <child id="813836719653989731" name="declaredType" index="1frB_c" />
@@ -35,6 +41,15 @@
       <concept id="813836719653989725" name="NewLanguage.structure.StructDefinition" flags="ng" index="1frB_M">
         <child id="813836719653989804" name="fields" index="1frBA3" />
       </concept>
+      <concept id="813836719655063360" name="NewLanguage.structure.DotAccessExpr" flags="ng" index="1fvHHJ">
+        <reference id="813836719655063365" name="property" index="1fvHHE" />
+        <child id="813836719655063363" name="operand" index="1fvHHG" />
+      </concept>
+      <concept id="813836719655063440" name="NewLanguage.structure.Assignment" flags="ng" index="1fvHIZ">
+        <child id="813836719655063443" name="right" index="1fvHIW" />
+        <child id="813836719655063441" name="left" index="1fvHIY" />
+      </concept>
+      <concept id="813836719655002549" name="NewLanguage.structure.EmptyLine" flags="ng" index="1fvZmq" />
       <concept id="3711979631469944321" name="NewLanguage.structure.FunctionDefinition" flags="ng" index="3wKWvf">
         <child id="3711979631469947865" name="body" index="3wKZ8n" />
         <child id="3711979631469947863" name="declaredType" index="3wKZ8p" />
@@ -235,6 +250,7 @@
         <property role="3boF4O" value="10" />
       </node>
     </node>
+    <node concept="1fvZmq" id="Hbl2X4doVT" role="3boF2k" />
     <node concept="1frB_M" id="Hbl2X4a7RN" role="3boF2k">
       <property role="TrG5h" value="Person" />
       <node concept="1frB_f" id="Hbl2X4a7RS" role="1frBA3">
@@ -259,6 +275,88 @@
         </node>
       </node>
     </node>
+    <node concept="1fvZmq" id="Hbl2X4doVn" role="3boF2k" />
+    <node concept="1frB_M" id="Hbl2X4cwVF" role="3boF2k">
+      <property role="TrG5h" value="House" />
+      <node concept="1frB_f" id="Hbl2X4cwW1" role="1frBA3">
+        <property role="TrG5h" value="street" />
+        <node concept="1ZVgE7" id="Hbl2X4cwW7" role="1frB_c" />
+        <node concept="3boF4C" id="Hbl2X4cwWa" role="1frB_a">
+          <property role="3boF4D" value="default" />
+        </node>
+      </node>
+      <node concept="1frB_f" id="Hbl2X4cwWg" role="1frBA3">
+        <property role="TrG5h" value="city" />
+        <node concept="1ZVgE7" id="Hbl2X4cwWp" role="1frB_c" />
+        <node concept="3boF4C" id="Hbl2X4cwWs" role="1frB_a">
+          <property role="3boF4D" value="Somewhere" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4doS9" role="3boF2k" />
+    <node concept="1fvZmq" id="Hbl2X4doSD" role="3boF2k" />
+    <node concept="3wKWvf" id="Hbl2X4bw4x" role="3boF2k">
+      <property role="TrG5h" value="createPerson" />
+      <node concept="1fpYYB" id="Hbl2X4bw4Q" role="3wKZ8p">
+        <ref role="1fpYYc" node="Hbl2X4a7RN" resolve="Person" />
+      </node>
+      <node concept="1fppWz" id="Hbl2X4bWKT" role="3wKZ8n">
+        <ref role="1fppWy" node="Hbl2X4a7RN" resolve="Person" />
+      </node>
+    </node>
+    <node concept="3boF28" id="Hbl2X4bWLd" role="3boF2k">
+      <property role="TrG5h" value="person1" />
+      <node concept="3wKZnR" id="Hbl2X4bWLy" role="3boF2C">
+        <ref role="3wKZmd" node="Hbl2X4bw4x" resolve="createPerson" />
+      </node>
+    </node>
+    <node concept="3boF28" id="Hbl2X4bWLU" role="3boF2k">
+      <property role="TrG5h" value="person2" />
+      <node concept="1PAvhC" id="Hbl2X4bWM$" role="3boF2C">
+        <ref role="1PAvhF" node="Hbl2X4bWLd" resolve="person1" />
+      </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4doWs" role="3boF2k" />
+    <node concept="3boF28" id="Hbl2X4cwWY" role="3boF2k">
+      <property role="TrG5h" value="house1" />
+      <node concept="1fppWz" id="Hbl2X4cwXu" role="3boF2C">
+        <ref role="1fppWy" node="Hbl2X4cwVF" resolve="House" />
+      </node>
+    </node>
+    <node concept="3boF28" id="Hbl2X4cwXZ" role="3boF2k">
+      <property role="TrG5h" value="house2" />
+      <node concept="1PAvhC" id="Hbl2X4cwYx" role="3boF2C">
+        <ref role="1PAvhF" node="Hbl2X4cwWY" resolve="house1" />
+      </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4dCPE" role="3boF2k" />
+    <node concept="3boF28" id="Hbl2X4dCOH" role="3boF2k">
+      <property role="TrG5h" value="cityName" />
+      <node concept="1fvHHJ" id="Hbl2X4dCPx" role="3boF2C">
+        <ref role="1fvHHE" node="Hbl2X4cwWg" resolve="city" />
+        <node concept="1PAvhC" id="Hbl2X4dCPB" role="1fvHHG">
+          <ref role="1PAvhF" node="Hbl2X4cwWY" resolve="house1" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="Hbl2X4dCJE" role="3boF2k">
+      <node concept="1fvHHJ" id="Hbl2X4dCJG" role="1fvHIY">
+        <ref role="1fvHHE" node="Hbl2X4cwW1" resolve="street" />
+        <node concept="1PAvhC" id="Hbl2X4dCKq" role="1fvHHG">
+          <ref role="1PAvhF" node="Hbl2X4cwWY" resolve="house1" />
+        </node>
+      </node>
+      <node concept="3boF4C" id="Hbl2X4dCKt" role="1fvHIW">
+        <property role="3boF4D" value="special" />
+      </node>
+    </node>
+    <node concept="3boF28" id="Hbl2X4dCLd" role="3boF2k">
+      <property role="TrG5h" value="invalidHouse" />
+      <node concept="1fppWz" id="Hbl2X4dCLV" role="3boF2C">
+        <ref role="1fppWy" node="Hbl2X4a7RN" resolve="Person" />
+      </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4dCIv" role="3boF2k" />
   </node>
 </model>
 
