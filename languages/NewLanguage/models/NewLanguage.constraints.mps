@@ -87,12 +87,16 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>
   <node concept="1M2fIO" id="3e3AsVjg6Nj">
+    <property role="3GE5qa" value="expression" />
     <ref role="1M2myG" to="bfo2:3e3AsVjg6KT" resolve="FunctionCall" />
     <node concept="1N5Pfh" id="3e3AsVjg6Nk" role="1Mr941">
       <ref role="1N5Vy1" to="bfo2:3e3AsVjg6L3" resolve="target" />
@@ -133,6 +137,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="3e3AsVjh38p">
+    <property role="3GE5qa" value="expression" />
     <ref role="1M2myG" to="bfo2:3e3AsVjh37h" resolve="ParameterReference" />
     <node concept="1N5Pfh" id="3e3AsVjh38q" role="1Mr941">
       <ref role="1N5Vy1" to="bfo2:3e3AsVjh37i" resolve="declaration" />
@@ -176,6 +181,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="3e3AsVjhAdW">
+    <property role="3GE5qa" value="expression" />
     <ref role="1M2myG" to="bfo2:5OpS6OCw1g5" resolve="ConstantReference" />
     <node concept="1N5Pfh" id="3e3AsVjhAdX" role="1Mr941">
       <ref role="1N5Vy1" to="bfo2:5OpS6OCw1g6" resolve="target" />

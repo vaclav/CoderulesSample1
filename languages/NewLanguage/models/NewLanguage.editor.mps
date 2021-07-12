@@ -74,6 +74,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -122,6 +125,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4jI1$qfzxxG">
+    <property role="3GE5qa" value="expression" />
     <ref role="1XX52x" to="bfo2:4jI1$qfzbtI" resolve="StringValue" />
     <node concept="3EZMnI" id="2G88zfdeXzd" role="2wV5jI">
       <ref role="1k5W1q" node="3e3AsVjhCfk" resolve="StringValue" />
@@ -144,6 +148,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4jI1$qfzxye">
+    <property role="3GE5qa" value="expression" />
     <ref role="1XX52x" to="bfo2:4jI1$qfzbtL" resolve="IntValue" />
     <node concept="3F0A7n" id="4jI1$qfzxyj" role="2wV5jI">
       <ref role="1NtTu8" to="bfo2:4jI1$qfzbtM" resolve="value" />
@@ -151,6 +156,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5OpS6OCw1gy">
+    <property role="3GE5qa" value="expression" />
     <ref role="1XX52x" to="bfo2:5OpS6OCw1g5" resolve="ConstantReference" />
     <node concept="1iCGBv" id="5OpS6OCw1g$" role="2wV5jI">
       <ref role="1NtTu8" to="bfo2:5OpS6OCw1g6" resolve="target" />
@@ -163,6 +169,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5OpS6OCweOs">
+    <property role="3GE5qa" value="expression" />
     <ref role="1XX52x" to="bfo2:5OpS6OCweNW" resolve="BinaryExpr" />
     <node concept="3EZMnI" id="5OpS6OCweOu" role="2wV5jI">
       <node concept="3F1sOY" id="5OpS6OCweOC" role="3EZMnx">
@@ -178,6 +185,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7fcpVcSEMOD">
+    <property role="3GE5qa" value="expression" />
     <ref role="1XX52x" to="bfo2:7fcpVcSEMOc" resolve="FloatValue" />
     <node concept="3EZMnI" id="7fcpVcSEMOF" role="2wV5jI">
       <node concept="3F0A7n" id="7fcpVcSEMOM" role="3EZMnx">
@@ -243,6 +251,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3e3AsVjg6Ly">
+    <property role="3GE5qa" value="expression" />
     <ref role="1XX52x" to="bfo2:3e3AsVjg6KT" resolve="FunctionCall" />
     <node concept="3EZMnI" id="3e3AsVjg6L$" role="2wV5jI">
       <node concept="1iCGBv" id="3e3AsVjg6LF" role="3EZMnx">
@@ -294,6 +303,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3e3AsVjh37I">
+    <property role="3GE5qa" value="expression" />
     <ref role="1XX52x" to="bfo2:3e3AsVjh37h" resolve="ParameterReference" />
     <node concept="1iCGBv" id="3e3AsVjh37K" role="2wV5jI">
       <ref role="1NtTu8" to="bfo2:3e3AsVjh37i" resolve="declaration" />
@@ -306,6 +316,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3e3AsVjhg_6">
+    <property role="3GE5qa" value="type" />
     <ref role="1XX52x" to="bfo2:3e3AsVjg6Jm" resolve="ConstantLanguageType" />
     <node concept="PMmxH" id="3e3AsVjhg_b" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
