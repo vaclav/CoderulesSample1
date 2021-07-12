@@ -25,9 +25,13 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("binary_expr_type");
     SetSequence.fromSet(principalRulesTags).addElement("check");
     SetSequence.fromSet(principalRulesTags).addElement("constantDeclaration");
+    SetSequence.fromSet(principalRulesTags).addElement("constant_reference");
     SetSequence.fromSet(principalRulesTags).addElement("floatLiteral");
+    SetSequence.fromSet(principalRulesTags).addElement("function_call");
+    SetSequence.fromSet(principalRulesTags).addElement("function_definition");
     SetSequence.fromSet(principalRulesTags).addElement("intLiteral");
-    SetSequence.fromSet(principalRulesTags).addElement("reference");
+    SetSequence.fromSet(principalRulesTags).addElement("parameter");
+    SetSequence.fromSet(principalRulesTags).addElement("parameter_reference");
     SetSequence.fromSet(principalRulesTags).addElement("stringLiteral");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");

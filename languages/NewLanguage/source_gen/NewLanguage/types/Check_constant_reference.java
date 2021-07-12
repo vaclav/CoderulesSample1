@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class Check_reference extends AbstractRuleTemplate<Check_reference.Token> {
+public class Check_constant_reference extends AbstractRuleTemplate<Check_constant_reference.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -38,12 +38,12 @@ public class Check_reference extends AbstractRuleTemplate<Check_reference.Token>
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new reference() {
+      new constant_reference() {
         @Override
         public void apply(TemplateApplicationSession session) {
           DeclType = MetaLogicalFactory.metaLogical("DeclType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "reference", "reference" + "_" + String.valueOf(token().ref.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().ref, SNodeOperations.getPointer(token().ref));
+          RuleBuilder builder = new RuleBuilder(session, "constant_reference", "constant_reference" + "_" + String.valueOf(token().ref.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().ref, SNodeOperations.getPointer(token().ref));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().ref, LINKS.target$C4m5), rule().DeclType).toConstraint());
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().ref, rule().DeclType).toConstraint());
@@ -59,9 +59,9 @@ public class Check_reference extends AbstractRuleTemplate<Check_reference.Token>
       return this;
     }
 
-    public abstract class reference implements ConstraintRuleTemplate {
+    public abstract class constant_reference implements ConstraintRuleTemplate {
 
-      protected reference rule() {
+      protected constant_reference rule() {
         return this;
       }
 
@@ -76,8 +76,8 @@ public class Check_reference extends AbstractRuleTemplate<Check_reference.Token>
   }
 
 
-  public Check_reference(RuleTable ruleTable) {
-    super(ruleTable, "reference", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/6708639879380635123"));
+  public Check_constant_reference(RuleTable ruleTable) {
+    super(ruleTable, "constant_reference", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/6708639879380635123"));
   }
 
   @Override

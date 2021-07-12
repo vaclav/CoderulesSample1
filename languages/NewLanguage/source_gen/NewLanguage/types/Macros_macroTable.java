@@ -21,6 +21,8 @@ import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
+import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -48,14 +50,14 @@ public class Macros_macroTable extends AbstractMacroTable {
     }
 
     List<ExpandMacroTemplate<T>> result = ListSequence.fromList(new ArrayList<ExpandMacroTemplate<T>>());
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.IntValue$2D)) {
-      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new IntValue_7475035771484099139_Expand());
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.ConstantIntegerType$Mr)) {
+      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new ConstantIntegerType_7475035771484099139_Expand());
     }
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.FloatValue$v2)) {
-      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new FloatValue_7475035771484099171_Expand());
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.ConstantFloatType$fo)) {
+      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new ConstantFloatType_7475035771484099171_Expand());
     }
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.StringValue$R1)) {
-      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new StringValue_7475035771484099211_Expand());
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.ConstantStringType$MU)) {
+      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new ConstantStringType_7475035771484099211_Expand());
     }
     return result;
   }
@@ -85,7 +87,7 @@ public class Macros_macroTable extends AbstractMacroTable {
     return result;
   }
 
-  public static class IntValue_7475035771484099139_Expand extends AbstractMacroTemplate<IntValue_7475035771484099139_Expand.Token> implements ExpandMacroTemplate<IntValue_7475035771484099139_Expand.Token> {
+  public static class ConstantIntegerType_7475035771484099139_Expand extends AbstractMacroTemplate<ConstantIntegerType_7475035771484099139_Expand.Token> implements ExpandMacroTemplate<ConstantIntegerType_7475035771484099139_Expand.Token> {
 
     public static class Token implements ExpandMacroTemplate.Token {
 
@@ -108,11 +110,16 @@ public class Macros_macroTable extends AbstractMacroTable {
       public RuleBuilder apply() {
         init();
         TemplateApplicationSession _session = session;
-        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.IntValue_7475035771484099139");
+        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.ConstantIntegerType_7475035771484099139");
         builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.intType_term(false)).getTerm()).toPredicate());
+        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
 
-        builder.processMacroInput(CONCEPTS.IntValue$2D, macroInput);
+        builder.processMacroInput(CONCEPTS.ConstantIntegerType$Mr, macroInput);
         return builder;
+      }
+
+      protected Token token() {
+        return this;
       }
 
       protected TemplateApplicationSession session;
@@ -121,7 +128,7 @@ public class Macros_macroTable extends AbstractMacroTable {
       protected SNode ruleInput;
     }
 
-    public IntValue_7475035771484099139_Expand() {
+    public ConstantIntegerType_7475035771484099139_Expand() {
       super(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099139"));
     }
 
@@ -135,7 +142,7 @@ public class Macros_macroTable extends AbstractMacroTable {
       return new Token(ruleInput, macroInput, session);
     }
   }
-  public static class FloatValue_7475035771484099171_Expand extends AbstractMacroTemplate<FloatValue_7475035771484099171_Expand.Token> implements ExpandMacroTemplate<FloatValue_7475035771484099171_Expand.Token> {
+  public static class ConstantFloatType_7475035771484099171_Expand extends AbstractMacroTemplate<ConstantFloatType_7475035771484099171_Expand.Token> implements ExpandMacroTemplate<ConstantFloatType_7475035771484099171_Expand.Token> {
 
     public static class Token implements ExpandMacroTemplate.Token {
 
@@ -158,11 +165,16 @@ public class Macros_macroTable extends AbstractMacroTable {
       public RuleBuilder apply() {
         init();
         TemplateApplicationSession _session = session;
-        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.FloatValue_7475035771484099171");
+        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.ConstantFloatType_7475035771484099171");
         builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.floatType_term(false)).getTerm()).toPredicate());
+        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
 
-        builder.processMacroInput(CONCEPTS.FloatValue$v2, macroInput);
+        builder.processMacroInput(CONCEPTS.ConstantFloatType$fo, macroInput);
         return builder;
+      }
+
+      protected Token token() {
+        return this;
       }
 
       protected TemplateApplicationSession session;
@@ -171,7 +183,7 @@ public class Macros_macroTable extends AbstractMacroTable {
       protected SNode ruleInput;
     }
 
-    public FloatValue_7475035771484099171_Expand() {
+    public ConstantFloatType_7475035771484099171_Expand() {
       super(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099171"));
     }
 
@@ -185,7 +197,7 @@ public class Macros_macroTable extends AbstractMacroTable {
       return new Token(ruleInput, macroInput, session);
     }
   }
-  public static class StringValue_7475035771484099211_Expand extends AbstractMacroTemplate<StringValue_7475035771484099211_Expand.Token> implements ExpandMacroTemplate<StringValue_7475035771484099211_Expand.Token> {
+  public static class ConstantStringType_7475035771484099211_Expand extends AbstractMacroTemplate<ConstantStringType_7475035771484099211_Expand.Token> implements ExpandMacroTemplate<ConstantStringType_7475035771484099211_Expand.Token> {
 
     public static class Token implements ExpandMacroTemplate.Token {
 
@@ -208,11 +220,16 @@ public class Macros_macroTable extends AbstractMacroTable {
       public RuleBuilder apply() {
         init();
         TemplateApplicationSession _session = session;
-        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.StringValue_7475035771484099211");
+        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.ConstantStringType_7475035771484099211");
         builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.stringType_term(false)).getTerm()).toPredicate());
+        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
 
-        builder.processMacroInput(CONCEPTS.StringValue$R1, macroInput);
+        builder.processMacroInput(CONCEPTS.ConstantStringType$MU, macroInput);
         return builder;
+      }
+
+      protected Token token() {
+        return this;
       }
 
       protected TemplateApplicationSession session;
@@ -221,7 +238,7 @@ public class Macros_macroTable extends AbstractMacroTable {
       protected SNode ruleInput;
     }
 
-    public StringValue_7475035771484099211_Expand() {
+    public ConstantStringType_7475035771484099211_Expand() {
       super(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099211"));
     }
 
@@ -286,8 +303,8 @@ public class Macros_macroTable extends AbstractMacroTable {
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept IntValue$2D = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb771L, "NewLanguage.structure.IntValue");
-    /*package*/ static final SConcept FloatValue$v2 = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x73cc67b338ab2d0cL, "NewLanguage.structure.FloatValue");
-    /*package*/ static final SConcept StringValue$R1 = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb76eL, "NewLanguage.structure.StringValue");
+    /*package*/ static final SConcept ConstantIntegerType$Mr = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3faL, "NewLanguage.structure.ConstantIntegerType");
+    /*package*/ static final SConcept ConstantFloatType$fo = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x73cc67b338abc1eeL, "NewLanguage.structure.ConstantFloatType");
+    /*package*/ static final SConcept ConstantStringType$MU = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3fbL, "NewLanguage.structure.ConstantStringType");
   }
 }

@@ -41,11 +41,15 @@ public class Check_ruleTable extends AbstractRuleTable implements RuleTable {
   private void init() {
     List<RuleTemplate<?>> list = ListSequence.fromList(new ArrayList<RuleTemplate<?>>());
     ListSequence.fromList(list).addElement(new Check_constantDeclaration(this));
-    ListSequence.fromList(list).addElement(new Check_reference(this));
+    ListSequence.fromList(list).addElement(new Check_constant_reference(this));
+    ListSequence.fromList(list).addElement(new Check_parameter_reference(this));
+    ListSequence.fromList(list).addElement(new Check_function_call(this));
+    ListSequence.fromList(list).addElement(new Check_function_definition(this));
     ListSequence.fromList(list).addElement(new Check_binary_expr_type(this));
     ListSequence.fromList(list).addElement(new Check_stringLiteral(this));
     ListSequence.fromList(list).addElement(new Check_intLiteral(this));
     ListSequence.fromList(list).addElement(new Check_floatLiteral(this));
+    ListSequence.fromList(list).addElement(new Check_parameter(this));
     this.ruleTemplates = ListSequence.fromList(list).asUnmodifiable();
   }
 
