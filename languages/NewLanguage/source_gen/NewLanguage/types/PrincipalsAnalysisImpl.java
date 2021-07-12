@@ -37,6 +37,8 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("typeof");
   }
 }
