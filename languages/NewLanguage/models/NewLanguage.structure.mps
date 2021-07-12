@@ -7,7 +7,6 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -209,7 +208,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="declaredType" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+      <ref role="20lvS9" node="3e3AsVjg6Jm" resolve="ConstantLanguageType" />
     </node>
     <node concept="1TJgyj" id="3e3AsVjg6Jp" role="1TKVEi">
       <property role="IQ2ns" value="3711979631469947865" />

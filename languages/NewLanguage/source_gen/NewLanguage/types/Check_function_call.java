@@ -9,20 +9,28 @@ import jetbrains.mps.lang.coderules.template.TemplateApplicationSession;
 import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.logic.predicate.FeedbackUtil;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
 import jetbrains.mps.logic.dataform.DataForm;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.function.Function;
+import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
+import jetbrains.mps.lang.coderules.template.PredicateBuilder;
+import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
-import java.util.List;
+import jetbrains.mps.logic.unification.MetaLogicalArray;
 import jetbrains.mps.lang.coderules.template.RuleTable;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Check_function_call extends AbstractRuleTemplate<Check_function_call.Token> {
@@ -38,22 +46,46 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      // TODO Is "require" needed for other references, like parameter reference and constant reference, too?
-      _session.require(token().call, SLinkOperations.getTarget(token().call, LINKS.target$SiaI));
-      new function_call() {
-        @Override
-        public void apply(TemplateApplicationSession session) {
-          FunctionType = MetaLogicalFactory.metaLogical("FunctionType", DataForm.class);
+      List<SNode> params = SLinkOperations.getChildren(SLinkOperations.getTarget(token().call, LINKS.target$SiaI), LINKS.parameters$GU9f);
+      List<SNode> args = SLinkOperations.getChildren(token().call, LINKS.arguments$SiCK);
+      if (ListSequence.fromList(args).count() != ListSequence.fromList(params).count()) {
+        
+        _session.reportFeedback(token().call, FeedbackUtil.feedback("arguments number mismatch", "ERROR", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/2976628853091890014"), SNodeOperations.getPointer(token().call)));;
 
-          RuleBuilder builder = new RuleBuilder(session, "function_call", "function_call" + "_" + String.valueOf(token().call.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().call, SNodeOperations.getPointer(token().call));
+      } else {
+        new function_call() {
+          @Override
+          public void apply(TemplateApplicationSession session) {
+            FunctionType = MetaLogicalFactory.metaLogical("FunctionType", DataForm.class);
+            ArgType = MetaLogicalFactory.multiMetaLogical("ArgType", DataForm.class, ListSequence.fromList(args).count());
+            ParamDeclaredType = MetaLogicalFactory.multiMetaLogical("ParamDeclaredType", DataForm.class, ListSequence.fromList(params).count());
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().call, LINKS.target$SiaI), rule().FunctionType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().call, rule().FunctionType).toConstraint());
+            RuleBuilder builder = new RuleBuilder(session, "function_call", "function_call" + "_" + String.valueOf(token().call.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().call, SNodeOperations.getPointer(token().call));
 
-          ListSequence.fromList(ruleBuilders).addElement(builder);
-        }
+            builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().call, LINKS.target$SiaI), rule().FunctionType).toConstraint());
+            for (int i = 0; i < ListSequence.fromList(args).count(); i++) {
+              builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(ListSequence.fromList(args).getElement(i), rule().ArgType.logicalAt(i)).toConstraint());
+            }
+            for (final Wrappers._int i = new Wrappers._int(0); i.value < ListSequence.fromList(params).count(); i.value++) {
+              try {
+                builder.merge(0, session.expandMacro(token().call, SLinkOperations.getTarget(ListSequence.fromList(params).getElement(i.value), LINKS.declaredType$ScNM), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+                  public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
+                    return tok.withLogical(rule().ParamDeclaredType.logicalAt(i.value)).apply();
+                  }
+                }));
+              } finally {
+              }
+              // TODO Let's mandate the two types to be the same for now and address convertsTo later
+              builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().ArgType.logicalAt(i.value), rule().ParamDeclaredType.logicalAt(i.value)).toPredicate());
+            }
+            // at this point all arguments's types are ensured to be compatible with the function type
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().call, rule().FunctionType).toConstraint());
 
-      }.apply(_session);
+            ListSequence.fromList(ruleBuilders).addElement(builder);
+          }
+
+        }.apply(_session);
+      }
       return ruleBuilders;
     }
 
@@ -68,6 +100,8 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
       }
 
       protected MetaLogical FunctionType;
+      protected MetaLogicalArray ArgType;
+      protected MetaLogicalArray ParamDeclaredType;
 
     }
 
@@ -96,6 +130,9 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
 
   private static final class LINKS {
     /*package*/ static final SReferenceLink target$SiaI = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3406c39L, 0x338399ced3406c43L, "target");
+    /*package*/ static final SContainmentLink parameters$GU9f = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3405e01L, 0x338399ced3406c3aL, "parameters");
+    /*package*/ static final SContainmentLink arguments$SiCK = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3406c39L, 0x338399ced3406c45L, "arguments");
+    /*package*/ static final SContainmentLink declaredType$ScNM = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3406c3eL, 0x338399ced3406c41L, "declaredType");
   }
 
   private static final class CONCEPTS {

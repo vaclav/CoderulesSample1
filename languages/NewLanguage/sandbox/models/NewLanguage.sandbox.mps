@@ -6,9 +6,6 @@
   </languages>
   <imports />
   <registry>
-    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1070534436861" name="jetbrains.mps.baseLanguage.structure.FloatType" flags="in" index="10OMs4" />
-    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -170,7 +167,6 @@
         <property role="TrG5h" value="b" />
         <node concept="1ZVgE6" id="3e3AsVjhAbN" role="3wKZmf" />
       </node>
-      <node concept="10OMs4" id="3e3AsVjhAbO" role="3wKZ8p" />
       <node concept="1PAgPj" id="3e3AsVjhAbP" role="3wKZ8n">
         <node concept="3wLUwv" id="3e3AsVjhAbQ" role="1PAgMg">
           <ref role="3wLUws" node="3e3AsVjhAbK" resolve="a" />
@@ -179,6 +175,7 @@
           <ref role="3wLUws" node="3e3AsVjhAbM" resolve="b" />
         </node>
       </node>
+      <node concept="1bpUpt" id="2_f72J8I2Er" role="3wKZ8p" />
     </node>
     <node concept="3boF28" id="3e3AsVjhAbS" role="3boF2k">
       <property role="TrG5h" value="result" />
@@ -194,6 +191,23 @@
           <node concept="1PAvhC" id="3e3AsVjhAcx" role="1PAgMi">
             <ref role="1PAvhF" node="3e3AsVjhAbh" resolve="value" />
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3boF28" id="2_f72J8Ie03" role="3boF2k">
+      <property role="TrG5h" value="noresult" />
+      <node concept="3wKZnR" id="2_f72J8Ie04" role="3boF2C">
+        <ref role="3wKZmd" node="3e3AsVjhAbJ" resolve="add" />
+        <node concept="1PAgPj" id="2_f72J8Ie06" role="3wKZmb">
+          <node concept="3boF4R" id="2_f72J8Ie07" role="1PAgMg">
+            <property role="3boF4O" value="10" />
+          </node>
+          <node concept="1PAvhC" id="2_f72J8Ie08" role="1PAgMi">
+            <ref role="1PAvhF" node="3e3AsVjhAbh" resolve="value" />
+          </node>
+        </node>
+        <node concept="1bpOEZ" id="2_f72J8Ie05" role="3wKZmb">
+          <property role="1bpOEY" value="12" />
         </node>
       </node>
     </node>

@@ -18,6 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
+import jetbrains.mps.lang.coderules.template.PredicateBuilder;
+import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
@@ -60,7 +62,7 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
           }
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().fun, rule().DeclaredType).toConstraint());
           // TODO Let's mandate the two types to be the same for now and address convertsTo later
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().fun, rule().ActualReturnType).toConstraint());
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().DeclaredType, rule().ActualReturnType).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

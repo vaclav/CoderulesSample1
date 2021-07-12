@@ -111,9 +111,13 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.function.Function" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.ExpandMacroTemplate" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.PredicateBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTemplate" />
@@ -121,13 +125,17 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
+    <classNode dependClassName="jetbrains.mps.logic.predicate.FeedbackUtil" />
+    <classNode dependClassName="jetbrains.mps.logic.predicate.UnificationPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
+    <classNode dependClassName="jetbrains.mps.logic.unification.MetaLogicalArray" />
     <classNode dependClassName="jetbrains.mps.logic.unification.MetaLogicalFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractRuleTemplate" />
@@ -143,6 +151,7 @@
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ExpandMacroTemplate" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.template.PredicateBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTemplate" />
@@ -150,6 +159,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
+    <classNode dependClassName="jetbrains.mps.logic.predicate.UnificationPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
     <classNode dependClassName="jetbrains.mps.logic.unification.MetaLogicalFactory" />
