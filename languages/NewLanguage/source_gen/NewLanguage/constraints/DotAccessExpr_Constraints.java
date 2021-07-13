@@ -49,7 +49,7 @@ public class DotAccessExpr_Constraints extends BaseConstraintsDescriptor {
             if ((_context.getReferenceNode() == null)) {
               return null;
             }
-            SNode operandType = TypecheckingFacade.getFromContext().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), LINKS.property$x0xk));
+            SNode operandType = TypecheckingFacade.getFromContext().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), LINKS.operand$x03i));
             if (SNodeOperations.isInstanceOf(operandType, CONCEPTS.StructType$nR)) {
               return ListScope.forNamedElements(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(operandType, CONCEPTS.StructType$nR), LINKS.struct$JP1k), LINKS.fields$ibNh));
             } else {
@@ -72,6 +72,7 @@ public class DotAccessExpr_Constraints extends BaseConstraintsDescriptor {
 
   private static final class LINKS {
     /*package*/ static final SReferenceLink property$x0xk = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44358f40L, 0xb4b542f44358f45L, "property");
+    /*package*/ static final SContainmentLink operand$x03i = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44358f40L, 0xb4b542f44358f43L, "operand");
     /*package*/ static final SReferenceLink struct$JP1k = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, 0xb4b542f442cbba3L, "struct");
     /*package*/ static final SContainmentLink fields$ibNh = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d5dL, 0xb4b542f44252dacL, "fields");
   }

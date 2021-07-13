@@ -22,10 +22,14 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("expectType", 2));
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("recoverAll", 1));
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("typeOf", 2));
+    SetSequence.fromSet(principalRulesTags).addElement("assignment");
     SetSequence.fromSet(principalRulesTags).addElement("binary_expr_type");
     SetSequence.fromSet(principalRulesTags).addElement("check");
     SetSequence.fromSet(principalRulesTags).addElement("constantDeclaration");
     SetSequence.fromSet(principalRulesTags).addElement("constant_reference");
+    SetSequence.fromSet(principalRulesTags).addElement("constructor");
+    SetSequence.fromSet(principalRulesTags).addElement("dot");
+    SetSequence.fromSet(principalRulesTags).addElement("field");
     SetSequence.fromSet(principalRulesTags).addElement("floatLiteral");
     SetSequence.fromSet(principalRulesTags).addElement("function_call");
     SetSequence.fromSet(principalRulesTags).addElement("function_definition");
@@ -37,8 +41,12 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Field");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Field");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Type");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Type");
     SetSequence.fromSet(principalRulesTags).addElement("typeof");
   }
 }

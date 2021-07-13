@@ -4,37 +4,15 @@ package NewLanguage.types;
 
 import jetbrains.mps.lang.coderules.template.AbstractTermDeclaration;
 import jetbrains.mps.logic.dataform.DataForm;
-import jetbrains.mps.logic.dataform.ValueRole;
-import jetbrains.mps.logic.unification.LogicalUtil;
-import jetbrains.mps.logic.unification.MetaLogicalFactory;
 import jetbrains.mps.logic.dataform.TermNode;
+import jetbrains.mps.logic.dataform.ValueRole;
 import jetbrains.mps.logic.dataform.Value;
 import jetbrains.mps.logic.dataform.ChildRole;
+import jetbrains.mps.logic.unification.LogicalUtil;
+import jetbrains.mps.logic.unification.MetaLogicalFactory;
 
 public class MyTerms_termTable {
 
-  public static class structType_term extends AbstractTermDeclaration {
-
-    public structType_term(boolean pattern) {
-      this.pattern = pattern;
-    }
-
-    public DataForm classifier() {
-      if (pattern) {
-        return ValueRole.create("classifier", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
-
-      } else {
-        return (ValueRole.create("classifier", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
-      }
-    }
-
-    @Override
-    public DataForm getTerm() {
-      return (TermNode.create(ValueRole.create("_term", Value.create("structType")), LogicalUtil.asDataForm(classifier())));
-    }
-
-    private boolean pattern;
-  }
   public static class primType_term extends AbstractTermDeclaration {
 
     public primType_term(boolean pattern) {
@@ -111,6 +89,28 @@ public class MyTerms_termTable {
     @Override
     public DataForm getTerm() {
       return (TermNode.create(ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val())));
+    }
+
+    private boolean pattern;
+  }
+  public static class structType_term extends AbstractTermDeclaration {
+
+    public structType_term(boolean pattern) {
+      this.pattern = pattern;
+    }
+
+    public DataForm struct_definition() {
+      if (pattern) {
+        return ValueRole.create("struct_definition", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
+
+      } else {
+        return (ValueRole.create("struct_definition", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
+      }
+    }
+
+    @Override
+    public DataForm getTerm() {
+      return (TermNode.create(ValueRole.create("_term", Value.create("structType")), LogicalUtil.asDataForm(struct_definition())));
     }
 
     private boolean pattern;

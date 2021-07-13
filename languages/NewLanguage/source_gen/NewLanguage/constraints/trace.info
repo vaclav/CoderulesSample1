@@ -271,7 +271,7 @@
       <node id="813836719655128547" at="36,44,37,20" concept="6" />
       <node id="813836719655128547" at="44,63,45,57" concept="6" />
       <node id="813836719655132271" at="49,56,50,26" concept="6" />
-      <node id="813836719655142207" at="51,13,52,155" concept="5" />
+      <node id="813836719655142207" at="51,13,52,154" concept="5" />
       <node id="813836719655145461" at="53,84,54,199" concept="6" />
       <node id="813836719655145271" at="55,20,56,26" concept="6" />
       <node id="813836719655128546" at="61,6,62,131" concept="5" />
@@ -281,14 +281,15 @@
       <node id="813836719655128546" at="69,0,70,0" concept="7" trace="DotAccessExpr$cT" />
       <node id="813836719655128546" at="70,0,71,0" concept="7" trace="StructType$nR" />
       <node id="813836719655128546" at="74,0,75,0" concept="7" trace="property$x0xk" />
-      <node id="813836719655128546" at="75,0,76,0" concept="7" trace="struct$JP1k" />
-      <node id="813836719655128546" at="76,0,77,0" concept="7" trace="fields$ibNh" />
+      <node id="813836719655128546" at="75,0,76,0" concept="7" trace="operand$x03i" />
+      <node id="813836719655128546" at="76,0,77,0" concept="7" trace="struct$JP1k" />
+      <node id="813836719655128546" at="77,0,78,0" concept="7" trace="fields$ibNh" />
       <node id="813836719655145190" at="55,18,57,13" concept="0" />
       <node id="813836719655128546" at="28,0,31,0" concept="1" trace="DotAccessExpr_Constraints#()V" />
       <node id="813836719655130567" at="48,80,51,13" concept="3" />
       <node id="813836719655128547" at="35,0,39,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="813836719655128547" at="43,0,47,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="813836719655143317" at="52,155,57,13" concept="3" />
+      <node id="813836719655143317" at="52,154,57,13" concept="3" />
       <node id="813836719655128547" at="47,0,59,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="813836719655128547" at="41,56,59,10" concept="6" />
       <node id="813836719655128547" at="39,0,61,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
@@ -317,10 +318,10 @@
       </scope>
       <scope id="813836719655128546" at="32,0,66,0" />
       <unit id="813836719655128546" at="68,0,72,0" name="NewLanguage.constraints.DotAccessExpr_Constraints$CONCEPTS" />
-      <unit id="813836719655128546" at="73,0,78,0" name="NewLanguage.constraints.DotAccessExpr_Constraints$LINKS" />
+      <unit id="813836719655128546" at="73,0,79,0" name="NewLanguage.constraints.DotAccessExpr_Constraints$LINKS" />
       <unit id="813836719655128547" at="42,19,59,9" name="NewLanguage.constraints.DotAccessExpr_Constraints$1$1" />
       <unit id="813836719655128547" at="34,48,61,5" name="NewLanguage.constraints.DotAccessExpr_Constraints$1" />
-      <unit id="813836719655128546" at="27,0,79,0" name="NewLanguage.constraints.DotAccessExpr_Constraints" />
+      <unit id="813836719655128546" at="27,0,80,0" name="NewLanguage.constraints.DotAccessExpr_Constraints" />
     </file>
   </root>
 </debug-info>

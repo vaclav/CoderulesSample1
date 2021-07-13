@@ -23,8 +23,13 @@ import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
+import jetbrains.mps.logic.dataform.DataForm;
+import jetbrains.mps.logic.dataform.ValueRole;
+import jetbrains.mps.logic.unification.LogicalUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class Macros_macroTable extends AbstractMacroTable {
 
@@ -59,6 +64,12 @@ public class Macros_macroTable extends AbstractMacroTable {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.ConstantStringType$MU)) {
       ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new ConstantStringType_7475035771484099211_Expand());
     }
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.StructType$nR)) {
+      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new StructType_813836719655204386_Expand());
+    }
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.StructDefinition$r)) {
+      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new StructDefinition_813836719655168588_Expand());
+    }
     return result;
   }
 
@@ -82,6 +93,8 @@ public class Macros_macroTable extends AbstractMacroTable {
     ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099139"));
     ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099171"));
     ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099211"));
+    ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719655204386"));
+    ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719655168588"));
     ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484017472"));
 
     return result;
@@ -252,6 +265,123 @@ public class Macros_macroTable extends AbstractMacroTable {
       return new Token(ruleInput, macroInput, session);
     }
   }
+  public static class StructType_813836719655204386_Expand extends AbstractMacroTemplate<StructType_813836719655204386_Expand.Token> implements ExpandMacroTemplate<StructType_813836719655204386_Expand.Token> {
+
+    public static class Token implements ExpandMacroTemplate.Token {
+
+      protected Token(SNode ruleInput, SNode macroInput, TemplateApplicationSession session) {
+        this.ruleInput = ruleInput;
+        this.macroInput = macroInput;
+        this.session = session;
+      }
+
+      private void init() {
+      }
+
+      @Override
+      public Token withLogical(Object... logical) {
+        this.Type = ((MetaLogical) logical[0]);
+        return this;
+      }
+
+      @Override
+      public RuleBuilder apply() {
+        init();
+        TemplateApplicationSession _session = session;
+        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.StructType_813836719655204386");
+        builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.structType_term(false) {
+          public DataForm struct_definition() {
+            return ValueRole.create("struct_definition", LogicalUtil.asValue(SLinkOperations.getTarget(macroInput, LINKS.struct$JP1k)));
+          }
+        }).getTerm()).toPredicate());
+        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
+
+        builder.processMacroInput(CONCEPTS.StructType$nR, macroInput);
+        return builder;
+      }
+
+      protected Token token() {
+        return this;
+      }
+
+      protected TemplateApplicationSession session;
+      protected MetaLogical Type;
+      protected SNode macroInput;
+      protected SNode ruleInput;
+    }
+
+    public StructType_813836719655204386_Expand() {
+      super(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719655204386"));
+    }
+
+    @Override
+    public SNodeReference getPrototypeTemplateRef() {
+      return SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126");
+    }
+
+    @Override
+    public Token createToken(SNode ruleInput, SNode macroInput, TemplateApplicationSession session) {
+      return new Token(ruleInput, macroInput, session);
+    }
+  }
+  public static class StructDefinition_813836719655168588_Expand extends AbstractMacroTemplate<StructDefinition_813836719655168588_Expand.Token> implements ExpandMacroTemplate<StructDefinition_813836719655168588_Expand.Token> {
+
+    public static class Token implements ExpandMacroTemplate.Token {
+
+      protected Token(SNode ruleInput, SNode macroInput, TemplateApplicationSession session) {
+        this.ruleInput = ruleInput;
+        this.macroInput = macroInput;
+        this.session = session;
+      }
+
+      private void init() {
+      }
+
+      @Override
+      public Token withLogical(Object... logical) {
+        this.Type = ((MetaLogical) logical[0]);
+        return this;
+      }
+
+      @Override
+      public RuleBuilder apply() {
+        init();
+        TemplateApplicationSession _session = session;
+        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.StructDefinition_813836719655168588");
+        builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.structType_term(false) {
+          public DataForm struct_definition() {
+            return ValueRole.create("struct_definition", LogicalUtil.asValue(macroInput));
+          }
+        }).getTerm()).toPredicate());
+
+        builder.processMacroInput(CONCEPTS.StructDefinition$r, macroInput);
+        return builder;
+      }
+
+      protected Token token() {
+        return this;
+      }
+
+      protected TemplateApplicationSession session;
+      protected MetaLogical Type;
+      protected SNode macroInput;
+      protected SNode ruleInput;
+    }
+
+    public StructDefinition_813836719655168588_Expand() {
+      super(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719655168588"));
+    }
+
+    @Override
+    public SNodeReference getPrototypeTemplateRef() {
+      return SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126");
+    }
+
+    @Override
+    public Token createToken(SNode ruleInput, SNode macroInput, TemplateApplicationSession session) {
+      return new Token(ruleInput, macroInput, session);
+    }
+  }
   public static class make_Float_Type_Call extends AbstractMacroTemplate<make_Float_Type_Call.Token> implements CallMacroTemplate<make_Float_Type_Call.Token> {
 
     public class Token implements CallMacroTemplate.Token {
@@ -306,5 +436,11 @@ public class Macros_macroTable extends AbstractMacroTable {
     /*package*/ static final SConcept ConstantIntegerType$Mr = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3faL, "NewLanguage.structure.ConstantIntegerType");
     /*package*/ static final SConcept ConstantFloatType$fo = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x73cc67b338abc1eeL, "NewLanguage.structure.ConstantFloatType");
     /*package*/ static final SConcept ConstantStringType$MU = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3fbL, "NewLanguage.structure.ConstantStringType");
+    /*package*/ static final SConcept StructType$nR = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, "NewLanguage.structure.StructType");
+    /*package*/ static final SConcept StructDefinition$r = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d5dL, "NewLanguage.structure.StructDefinition");
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SReferenceLink struct$JP1k = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, 0xb4b542f442cbba3L, "struct");
   }
 }

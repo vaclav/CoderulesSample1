@@ -304,6 +304,15 @@
         <ref role="1fppWy" node="Hbl2X4a7RN" resolve="Person" />
       </node>
     </node>
+    <node concept="3wKWvf" id="Hbl2X4e3pi" role="3boF2k">
+      <property role="TrG5h" value="createInvalidPerson" />
+      <node concept="1fpYYB" id="Hbl2X4e3pj" role="3wKZ8p">
+        <ref role="1fpYYc" node="Hbl2X4a7RN" resolve="Person" />
+      </node>
+      <node concept="1fppWz" id="Hbl2X4e3pk" role="3wKZ8n">
+        <ref role="1fppWy" node="Hbl2X4cwVF" resolve="House" />
+      </node>
+    </node>
     <node concept="3boF28" id="Hbl2X4bWLd" role="3boF2k">
       <property role="TrG5h" value="person1" />
       <node concept="3wKZnR" id="Hbl2X4bWLy" role="3boF2C">
@@ -339,6 +348,15 @@
         </node>
       </node>
     </node>
+    <node concept="3boF28" id="Hbl2X4eh9a" role="3boF2k">
+      <property role="TrG5h" value="personAge" />
+      <node concept="1fvHHJ" id="Hbl2X4eha6" role="3boF2C">
+        <ref role="1fvHHE" node="Hbl2X4alTg" resolve="age" />
+        <node concept="1PAvhC" id="Hbl2X4ehac" role="1fvHHG">
+          <ref role="1PAvhF" node="Hbl2X4bWLU" resolve="person2" />
+        </node>
+      </node>
+    </node>
     <node concept="1fvHIZ" id="Hbl2X4dCJE" role="3boF2k">
       <node concept="1fvHHJ" id="Hbl2X4dCJG" role="1fvHIY">
         <ref role="1fvHHE" node="Hbl2X4cwW1" resolve="street" />
@@ -350,10 +368,15 @@
         <property role="3boF4D" value="special" />
       </node>
     </node>
-    <node concept="3boF28" id="Hbl2X4dCLd" role="3boF2k">
-      <property role="TrG5h" value="invalidHouse" />
-      <node concept="1fppWz" id="Hbl2X4dCLV" role="3boF2C">
-        <ref role="1fppWy" node="Hbl2X4a7RN" resolve="Person" />
+    <node concept="1fvHIZ" id="Hbl2X4el7f" role="3boF2k">
+      <node concept="1fvHHJ" id="Hbl2X4el7g" role="1fvHIY">
+        <ref role="1fvHHE" node="Hbl2X4cwW1" resolve="street" />
+        <node concept="1PAvhC" id="Hbl2X4el7h" role="1fvHHG">
+          <ref role="1PAvhF" node="Hbl2X4cwWY" resolve="house1" />
+        </node>
+      </node>
+      <node concept="1bpOEZ" id="Hbl2X4el8d" role="1fvHIW">
+        <property role="1bpOEY" value="23.5" />
       </node>
     </node>
     <node concept="1fvZmq" id="Hbl2X4dCIv" role="3boF2k" />

@@ -18,8 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
-import jetbrains.mps.lang.coderules.template.PredicateBuilder;
-import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
@@ -29,12 +27,12 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class Check_function_definition extends AbstractRuleTemplate<Check_function_definition.Token> {
+public class Check_field extends AbstractRuleTemplate<Check_field.Token> {
 
   public class Token implements RuleTemplate.Token {
 
     public Token(SNode input, TemplateApplicationSession session) {
-      this.fun = input;
+      this.field = input;
       this.session = session;
     }
 
@@ -42,27 +40,23 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new function_definition() {
+      new field() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          ActualReturnType = MetaLogicalFactory.metaLogical("ActualReturnType", DataForm.class);
-          DeclaredType = MetaLogicalFactory.metaLogical("DeclaredType", DataForm.class);
+          Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "function_definition", "function_definition" + "_" + String.valueOf(token().fun.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().fun, SNodeOperations.getPointer(token().fun));
+          RuleBuilder builder = new RuleBuilder(session, "field", "field" + "_" + String.valueOf(token().field.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().field, SNodeOperations.getPointer(token().field));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().fun, LINKS.body$Dpoh), rule().ActualReturnType).toConstraint());
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
           try {
-            builder.merge(0, session.expandMacro(token().fun, SLinkOperations.getTarget(token().fun, LINKS.declaredType$DoUf), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+            builder.merge(0, session.expandMacro(token().field, SLinkOperations.getTarget(token().field, LINKS.declaredType$eZu7), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
               public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                return tok.withLogical(rule().DeclaredType).apply();
+                return tok.withLogical(rule().Type).apply();
               }
             }));
           } finally {
           }
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().fun, rule().DeclaredType).toConstraint());
-          // TODO Let's mandate the two types to be the same for now and address convertsTo later
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().DeclaredType, rule().ActualReturnType).toPredicate());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().field, rule().Type).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -75,31 +69,30 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
       return this;
     }
 
-    public abstract class function_definition implements ConstraintRuleTemplate {
+    public abstract class field implements ConstraintRuleTemplate {
 
-      protected function_definition rule() {
+      protected field rule() {
         return this;
       }
 
-      protected MetaLogical ActualReturnType;
-      protected MetaLogical DeclaredType;
+      protected MetaLogical Type;
 
     }
 
-    protected SNode fun;
+    protected SNode field;
     protected List<SNode> required;
     protected List<RuleBuilder> ruleBuilders;
     protected TemplateApplicationSession session;
   }
 
 
-  public Check_function_definition(RuleTable ruleTable) {
-    super(ruleTable, "function_definition", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/3711979631470533744"));
+  public Check_field(RuleTable ruleTable) {
+    super(ruleTable, "field", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719655253504"));
   }
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.FunctionDefinition$$Y;
+    return CONCEPTS.Field$1S;
   }
 
 
@@ -110,11 +103,10 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink body$Dpoh = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3405e01L, 0x338399ced3406bd9L, "body");
-    /*package*/ static final SContainmentLink declaredType$DoUf = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3405e01L, 0x338399ced3406bd7L, "declaredType");
+    /*package*/ static final SContainmentLink declaredType$eZu7 = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d60L, 0xb4b542f44252d63L, "declaredType");
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept FunctionDefinition$$Y = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3405e01L, "NewLanguage.structure.FunctionDefinition");
+    /*package*/ static final SConcept Field$1S = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d60L, "NewLanguage.structure.Field");
   }
 }

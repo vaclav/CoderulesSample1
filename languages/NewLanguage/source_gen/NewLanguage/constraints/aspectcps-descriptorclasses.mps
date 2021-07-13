@@ -1191,8 +1191,8 @@
                                             </node>
                                           </node>
                                           <node concept="3TrEf2" id="4z" role="2OqNvi">
-                                            <ref role="3Tt5mk" to="bfo2:Hbl2X4doX5" resolve="property" />
-                                            <uo k="s:originTrace" v="n:813836719655142212" />
+                                            <ref role="3Tt5mk" to="bfo2:Hbl2X4doX3" resolve="operand" />
+                                            <uo k="s:originTrace" v="n:813836719655520319" />
                                           </node>
                                         </node>
                                         <node concept="3JvlWi" id="4x" role="2OqNvi">

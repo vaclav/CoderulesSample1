@@ -343,8 +343,8 @@
               <node concept="2OqwBi" id="Hbl2X4dGd1" role="33vP2m">
                 <node concept="2OqwBi" id="Hbl2X4dGd2" role="2Oq$k0">
                   <node concept="3kakTB" id="Hbl2X4dGd3" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="Hbl2X4dGd4" role="2OqNvi">
-                    <ref role="3Tt5mk" to="bfo2:Hbl2X4doX5" resolve="property" />
+                  <node concept="3TrEf2" id="Hbl2X4f8wZ" role="2OqNvi">
+                    <ref role="3Tt5mk" to="bfo2:Hbl2X4doX3" resolve="operand" />
                   </node>
                 </node>
                 <node concept="3JvlWi" id="Hbl2X4dGd5" role="2OqNvi" />
