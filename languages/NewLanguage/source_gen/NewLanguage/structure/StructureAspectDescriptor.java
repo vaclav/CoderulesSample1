@@ -378,6 +378,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/813836719653989725");
     b.version(2);
+    b.associate("extends", 0xb4b542f443e49eaL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d5dL).optional(true).origin("813836719655635434").done();
     b.aggregate("fields", 0xb4b542f44252dacL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d60L).optional(true).ordered(true).multiple(true).origin("813836719653989804").done();
     b.alias("struct");
     return b.create();

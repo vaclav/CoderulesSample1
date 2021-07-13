@@ -39,6 +39,7 @@
         <child id="813836719653989731" name="declaredType" index="1frB_c" />
       </concept>
       <concept id="813836719653989725" name="NewLanguage.structure.StructDefinition" flags="ng" index="1frB_M">
+        <reference id="813836719655635434" name="extends" index="1fthR5" />
         <child id="813836719653989804" name="fields" index="1frBA3" />
       </concept>
       <concept id="813836719655063360" name="NewLanguage.structure.DotAccessExpr" flags="ng" index="1fvHHJ">
@@ -244,12 +245,6 @@
   </node>
   <node concept="3boF2d" id="Hbl2X49VD9">
     <property role="TrG5h" value="3_Structs" />
-    <node concept="3boF28" id="Hbl2X4a7Ry" role="3boF2k">
-      <property role="TrG5h" value="a" />
-      <node concept="3boF4R" id="Hbl2X4a7RC" role="3boF2C">
-        <property role="3boF4O" value="10" />
-      </node>
-    </node>
     <node concept="1fvZmq" id="Hbl2X4doVT" role="3boF2k" />
     <node concept="1frB_M" id="Hbl2X4a7RN" role="3boF2k">
       <property role="TrG5h" value="Person" />
@@ -272,6 +267,18 @@
         <node concept="1ZVgE6" id="Hbl2X4alTs" role="1frB_c" />
         <node concept="3boF4R" id="Hbl2X4alTv" role="1frB_a">
           <property role="3boF4O" value="27" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4fXVd" role="3boF2k" />
+    <node concept="1frB_M" id="Hbl2X4fXWY" role="3boF2k">
+      <property role="TrG5h" value="Magician" />
+      <ref role="1fthR5" node="Hbl2X4a7RN" resolve="Person" />
+      <node concept="1frB_f" id="Hbl2X4fXXS" role="1frBA3">
+        <property role="TrG5h" value="superpowers" />
+        <node concept="1ZVgE7" id="Hbl2X4fXXY" role="1frB_c" />
+        <node concept="3boF4C" id="Hbl2X4fXY5" role="1frB_a">
+          <property role="3boF4D" value="Do magic" />
         </node>
       </node>
     </node>
@@ -311,6 +318,24 @@
       </node>
       <node concept="1fppWz" id="Hbl2X4e3pk" role="3wKZ8n">
         <ref role="1fppWy" node="Hbl2X4cwVF" resolve="House" />
+      </node>
+    </node>
+    <node concept="3wKWvf" id="Hbl2X4fXZb" role="3boF2k">
+      <property role="TrG5h" value="createMagician" />
+      <node concept="1fpYYB" id="Hbl2X4fY0f" role="3wKZ8p">
+        <ref role="1fpYYc" node="Hbl2X4fXWY" resolve="Magician" />
+      </node>
+      <node concept="1fppWz" id="Hbl2X4fY0i" role="3wKZ8n">
+        <ref role="1fppWy" node="Hbl2X4fXWY" resolve="Magician" />
+      </node>
+    </node>
+    <node concept="3wKWvf" id="Hbl2X4fY2s" role="3boF2k">
+      <property role="TrG5h" value="createMagicianAsPerson" />
+      <node concept="1fpYYB" id="Hbl2X4fY3z" role="3wKZ8p">
+        <ref role="1fpYYc" node="Hbl2X4a7RN" resolve="Person" />
+      </node>
+      <node concept="1fppWz" id="Hbl2X4fY3A" role="3wKZ8n">
+        <ref role="1fppWy" node="Hbl2X4fXWY" resolve="Magician" />
       </node>
     </node>
     <node concept="3boF28" id="Hbl2X4bWLd" role="3boF2k">

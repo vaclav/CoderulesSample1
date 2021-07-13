@@ -295,6 +295,11 @@
     <property role="TrG5h" value="StructDefinition" />
     <property role="34LRSv" value="struct" />
     <ref role="1TJDcQ" node="3e3AsVjg5S2" resolve="Definition" />
+    <node concept="1TJgyj" id="Hbl2X4f$BE" role="1TKVEi">
+      <property role="IQ2ns" value="813836719655635434" />
+      <property role="20kJfa" value="extends" />
+      <ref role="20lvS9" node="Hbl2X49iPt" resolve="StructDefinition" />
+    </node>
     <node concept="1TJgyj" id="Hbl2X49iQG" role="1TKVEi">
       <property role="IQ2ns" value="813836719653989804" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

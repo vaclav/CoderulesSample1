@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-44or639rzkumuc9umc52oy5zbl56fv0">
-  <files names="ConstantReference_Constraints.java:ConstraintsAspectDescriptor.java:Definition_Constraints.java:DotAccessExpr_Constraints.java:FunctionCall_Constraints.java:New_Constraints.java:ParameterReference_Constraints.java:StructType_Constraints.java" />
+<product version="3" modelHash="-a5dc37qekzxuuvqxd5atvglwico88zg">
+  <files names="ConstantReference_Constraints.java:ConstraintsAspectDescriptor.java:Definition_Constraints.java:DotAccessExpr_Constraints.java:FunctionCall_Constraints.java:New_Constraints.java:ParameterReference_Constraints.java:StructDefinition_Constraints.java:StructType_Constraints.java" />
 </product>
 

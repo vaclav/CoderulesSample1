@@ -15,7 +15,7 @@
       <unit at="10,0,82,0" name="NewLanguage.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="15,0,396,0" name="NewLanguage.structure.StructureAspectDescriptor" />
+      <unit at="15,0,397,0" name="NewLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/3711979631469944321">
@@ -708,15 +708,16 @@
       <node id="813836719653989725" at="377,112,378,71" concept="0" />
       <node id="813836719653989725" at="378,71,379,97" concept="0" />
       <node id="813836719653989725" at="379,97,380,17" concept="0" />
-      <node id="813836719653989804" at="380,17,381,195" concept="0" />
-      <node id="813836719653989725" at="381,195,382,22" concept="0" />
-      <node id="813836719653989725" at="382,22,383,22" concept="4" />
-      <node id="813836719653989725" at="374,0,385,0" concept="6" trace="createDescriptorForStructDefinition#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="813836719655635434" at="380,17,381,167" concept="0" />
+      <node id="813836719653989804" at="381,167,382,195" concept="0" />
+      <node id="813836719653989725" at="382,195,383,22" concept="0" />
+      <node id="813836719653989725" at="383,22,384,22" concept="4" />
+      <node id="813836719653989725" at="374,0,386,0" concept="6" trace="createDescriptorForStructDefinition#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="813836719653989725" at="117,50,118,41" />
-      <scope id="813836719653989725" at="374,74,383,22">
+      <scope id="813836719653989725" at="374,74,384,22">
         <var name="b" id="813836719653989725" />
       </scope>
-      <scope id="813836719653989725" at="374,0,385,0" />
+      <scope id="813836719653989725" at="374,0,386,0" />
     </file>
   </root>
   <root nodeRef="r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/813836719653989728">
@@ -775,20 +776,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="813836719654484872" at="43,0,44,0" concept="1" trace="myConceptStructType" />
       <node id="813836719654484872" at="119,44,120,35" concept="4" />
-      <node id="813836719654484872" at="385,68,386,155" concept="3" />
-      <node id="813836719654484872" at="386,155,387,34" concept="0" />
-      <node id="813836719654484872" at="387,34,388,122" concept="0" />
-      <node id="813836719654484872" at="388,122,389,97" concept="0" />
-      <node id="813836719654484872" at="389,97,390,17" concept="0" />
-      <node id="813836719654484899" at="390,17,391,167" concept="0" />
-      <node id="813836719654484872" at="391,167,392,22" concept="0" />
-      <node id="813836719654484872" at="392,22,393,22" concept="4" />
-      <node id="813836719654484872" at="385,0,395,0" concept="6" trace="createDescriptorForStructType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="813836719654484872" at="386,68,387,155" concept="3" />
+      <node id="813836719654484872" at="387,155,388,34" concept="0" />
+      <node id="813836719654484872" at="388,34,389,122" concept="0" />
+      <node id="813836719654484872" at="389,122,390,97" concept="0" />
+      <node id="813836719654484872" at="390,97,391,17" concept="0" />
+      <node id="813836719654484899" at="391,17,392,167" concept="0" />
+      <node id="813836719654484872" at="392,167,393,22" concept="0" />
+      <node id="813836719654484872" at="393,22,394,22" concept="4" />
+      <node id="813836719654484872" at="386,0,396,0" concept="6" trace="createDescriptorForStructType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="813836719654484872" at="119,44,120,35" />
-      <scope id="813836719654484872" at="385,68,393,22">
+      <scope id="813836719654484872" at="386,68,394,22">
         <var name="b" id="813836719654484872" />
       </scope>
-      <scope id="813836719654484872" at="385,0,395,0" />
+      <scope id="813836719654484872" at="386,0,396,0" />
     </file>
   </root>
   <root nodeRef="r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/813836719654619916">
