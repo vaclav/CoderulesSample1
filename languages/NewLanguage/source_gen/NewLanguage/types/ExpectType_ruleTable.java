@@ -44,7 +44,6 @@ public class ExpectType_ruleTable extends AbstractRuleTable implements RuleTable
     ListSequence.fromList(list).addElement(new ExpectType_typeOf_Constant(this));
     ListSequence.fromList(list).addElement(new ExpectType_typeOf_FunctionDefinition(this));
     ListSequence.fromList(list).addElement(new ExpectType_typeOf_Field(this));
-    ListSequence.fromList(list).addElement(new ExpectType_typeOf_Type(this));
     this.ruleTemplates = ListSequence.fromList(list).asUnmodifiable();
   }
 

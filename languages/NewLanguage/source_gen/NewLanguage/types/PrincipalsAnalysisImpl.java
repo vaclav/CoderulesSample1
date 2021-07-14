@@ -45,8 +45,6 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Field");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Type");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Type");
     SetSequence.fromSet(principalRulesTags).addElement("typeof");
   }
 }
