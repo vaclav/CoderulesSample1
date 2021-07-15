@@ -25,7 +25,7 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("assignment");
     SetSequence.fromSet(principalRulesTags).addElement("binary_expr_type");
     SetSequence.fromSet(principalRulesTags).addElement("check");
-    SetSequence.fromSet(principalRulesTags).addElement("constantDeclaration");
+    SetSequence.fromSet(principalRulesTags).addElement("constantDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("constant_reference");
     SetSequence.fromSet(principalRulesTags).addElement("constructor");
     SetSequence.fromSet(principalRulesTags).addElement("convert");
@@ -46,6 +46,10 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Field");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Variable");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Variable");
     SetSequence.fromSet(principalRulesTags).addElement("typeof");
+    SetSequence.fromSet(principalRulesTags).addElement("varDefinition");
+    SetSequence.fromSet(principalRulesTags).addElement("var_reference");
   }
 }

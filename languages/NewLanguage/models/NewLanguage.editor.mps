@@ -130,6 +130,10 @@
   <node concept="24kQdi" id="4jI1$qfzbsa">
     <ref role="1XX52x" to="bfo2:4jI1$qfzbre" resolve="ConstantDefinition" />
     <node concept="3EZMnI" id="4jI1$qfzbsc" role="2wV5jI">
+      <node concept="3F0ifn" id="Hbl2X4jhqv" role="3EZMnx">
+        <property role="3F0ifm" value="constant" />
+        <ref role="1k5W1q" node="3e3AsVjhCeg" resolve="Keyword" />
+      </node>
       <node concept="3F0A7n" id="4jI1$qfzbsm" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <ref role="1k5W1q" node="3e3AsVjhCew" resolve="Name" />
@@ -611,6 +615,39 @@
         <ref role="1NtTu8" to="bfo2:Hbl2X4doYj" resolve="right" />
       </node>
       <node concept="l2Vlx" id="Hbl2X4doYP" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="Hbl2X4iUci">
+    <ref role="1XX52x" to="bfo2:Hbl2X4iUbN" resolve="VarDefinition" />
+    <node concept="3EZMnI" id="Hbl2X4iUck" role="2wV5jI">
+      <node concept="3F0ifn" id="Hbl2X4iUcr" role="3EZMnx">
+        <property role="3F0ifm" value="var" />
+        <ref role="1k5W1q" node="3e3AsVjhCeg" resolve="Keyword" />
+      </node>
+      <node concept="3F0A7n" id="Hbl2X4iUcx" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        <ref role="1k5W1q" node="3e3AsVjhCew" resolve="Name" />
+      </node>
+      <node concept="3F0ifn" id="Hbl2X4iUcD" role="3EZMnx">
+        <property role="3F0ifm" value="=" />
+      </node>
+      <node concept="3F1sOY" id="Hbl2X4iUcN" role="3EZMnx">
+        <ref role="1NtTu8" to="bfo2:Hbl2X4iUbQ" resolve="initializer" />
+      </node>
+      <node concept="l2Vlx" id="Hbl2X4iUcn" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="Hbl2X4iUdm">
+    <property role="3GE5qa" value="expression" />
+    <ref role="1XX52x" to="bfo2:Hbl2X4iUcT" resolve="VarReference" />
+    <node concept="1iCGBv" id="Hbl2X4iUdo" role="2wV5jI">
+      <ref role="1NtTu8" to="bfo2:Hbl2X4iUcU" resolve="declaration" />
+      <node concept="1sVBvm" id="Hbl2X4iUdq" role="1sWHZn">
+        <node concept="3F0A7n" id="Hbl2X4iUdx" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

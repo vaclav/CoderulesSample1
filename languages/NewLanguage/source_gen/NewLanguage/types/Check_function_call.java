@@ -75,7 +75,6 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
                 }));
               } finally {
               }
-              // TODO Let's mandate the two types to be the same for now and address convertsTo later
               builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().ArgType.logicalAt(i.value), rule().ParamDeclaredType.logicalAt(i.value)).toConstraint());
             }
             // at this point all arguments's types are ensured to be compatible with the function type

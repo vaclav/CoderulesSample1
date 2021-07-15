@@ -40,8 +40,10 @@ public class Check_ruleTable extends AbstractRuleTable implements RuleTable {
 
   private void init() {
     List<RuleTemplate<?>> list = ListSequence.fromList(new ArrayList<RuleTemplate<?>>());
-    ListSequence.fromList(list).addElement(new Check_constantDeclaration(this));
+    ListSequence.fromList(list).addElement(new Check_constantDefinition(this));
     ListSequence.fromList(list).addElement(new Check_constant_reference(this));
+    ListSequence.fromList(list).addElement(new Check_varDefinition(this));
+    ListSequence.fromList(list).addElement(new Check_var_reference(this));
     ListSequence.fromList(list).addElement(new Check_parameter_reference(this));
     ListSequence.fromList(list).addElement(new Check_dot(this));
     ListSequence.fromList(list).addElement(new Check_assignment(this));

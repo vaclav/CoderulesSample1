@@ -25,12 +25,12 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class Check_constantDeclaration extends AbstractRuleTemplate<Check_constantDeclaration.Token> {
+public class Check_varDefinition extends AbstractRuleTemplate<Check_varDefinition.Token> {
 
   public class Token implements RuleTemplate.Token {
 
     public Token(SNode input, TemplateApplicationSession session) {
-      this.constant = input;
+      this.var = input;
       this.session = session;
     }
 
@@ -38,15 +38,15 @@ public class Check_constantDeclaration extends AbstractRuleTemplate<Check_consta
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new constantDeclaration() {
+      new varDefinition() {
         @Override
         public void apply(TemplateApplicationSession session) {
           InitializerType = MetaLogicalFactory.metaLogical("InitializerType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "constantDeclaration", "constantDeclaration" + "_" + String.valueOf(token().constant.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().constant, SNodeOperations.getPointer(token().constant));
+          RuleBuilder builder = new RuleBuilder(session, "varDefinition", "varDefinition" + "_" + String.valueOf(token().var.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().var, SNodeOperations.getPointer(token().var));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().constant, LINKS.initializerValue$TtkI), rule().InitializerType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().constant, rule().InitializerType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().var, LINKS.initializer$8Hmi), rule().InitializerType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().var, rule().InitializerType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -59,9 +59,9 @@ public class Check_constantDeclaration extends AbstractRuleTemplate<Check_consta
       return this;
     }
 
-    public abstract class constantDeclaration implements ConstraintRuleTemplate {
+    public abstract class varDefinition implements ConstraintRuleTemplate {
 
-      protected constantDeclaration rule() {
+      protected varDefinition rule() {
         return this;
       }
 
@@ -69,20 +69,20 @@ public class Check_constantDeclaration extends AbstractRuleTemplate<Check_consta
 
     }
 
-    protected SNode constant;
+    protected SNode var;
     protected List<SNode> required;
     protected List<RuleBuilder> ruleBuilders;
     protected TemplateApplicationSession session;
   }
 
 
-  public Check_constantDeclaration(RuleTable ruleTable) {
-    super(ruleTable, "constantDeclaration", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/1749218580158264298"));
+  public Check_varDefinition(RuleTable ruleTable) {
+    super(ruleTable, "varDefinition", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719656728321"));
   }
 
   @Override
   public SAbstractConcept applicableConcept() {
-    return CONCEPTS.ConstantDefinition$wW;
+    return CONCEPTS.VarDefinition$Bv;
   }
 
 
@@ -93,10 +93,10 @@ public class Check_constantDeclaration extends AbstractRuleTemplate<Check_consta
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink initializerValue$TtkI = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, 0x44ee06468f8cb6eeL, "initializerValue");
+    /*package*/ static final SContainmentLink initializer$8Hmi = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f444ba2f3L, 0xb4b542f444ba2f6L, "initializer");
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept ConstantDefinition$wW = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6ceL, "NewLanguage.structure.ConstantDefinition");
+    /*package*/ static final SConcept VarDefinition$Bv = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f444ba2f3L, "NewLanguage.structure.VarDefinition");
   }
 }

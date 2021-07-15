@@ -37,6 +37,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_StringValue;
   private ConceptPresentation props_StructDefinition;
   private ConceptPresentation props_StructType;
+  private ConceptPresentation props_VarDefinition;
+  private ConceptPresentation props_VarReference;
 
   @Override
   @Nullable
@@ -235,6 +237,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StructType = cpb.create();
         }
         return props_StructType;
+      case LanguageConceptSwitch.VarDefinition:
+        if (props_VarDefinition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_VarDefinition = cpb.create();
+        }
+        return props_VarDefinition;
+      case LanguageConceptSwitch.VarReference:
+        if (props_VarReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f444ba339L, 0xb4b542f444ba33aL, "declaration", "", "");
+          props_VarReference = cpb.create();
+        }
+        return props_VarReference;
     }
     return null;
   }

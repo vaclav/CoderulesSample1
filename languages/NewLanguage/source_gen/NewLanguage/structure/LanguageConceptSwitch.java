@@ -37,6 +37,8 @@ public final class LanguageConceptSwitch {
   public static final int StringValue = 25;
   public static final int StructDefinition = 26;
   public static final int StructType = 27;
+  public static final int VarDefinition = 28;
+  public static final int VarReference = 29;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xf1277323ea964c38L, 0xa5127456d3818e7aL);
@@ -68,6 +70,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x44ee06468f8cb76eL, StringValue);
     builder.put(0xb4b542f44252d5dL, StructDefinition);
     builder.put(0xb4b542f442cbb88L, StructType);
+    builder.put(0xb4b542f444ba2f3L, VarDefinition);
+    builder.put(0xb4b542f444ba339L, VarReference);
     myIndex = builder.seal();
   }
 
