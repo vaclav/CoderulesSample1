@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAssignment = createDescriptorForAssignment();
   /*package*/ final ConceptDescriptor myConceptBinaryExpr = createDescriptorForBinaryExpr();
+  /*package*/ final ConceptDescriptor myConceptComment = createDescriptorForComment();
   /*package*/ final ConceptDescriptor myConceptConstantDefinition = createDescriptorForConstantDefinition();
   /*package*/ final ConceptDescriptor myConceptConstantFloatType = createDescriptorForConstantFloatType();
   /*package*/ final ConceptDescriptor myConceptConstantIntegerType = createDescriptorForConstantIntegerType();
@@ -57,7 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAssignment, myConceptBinaryExpr, myConceptConstantDefinition, myConceptConstantFloatType, myConceptConstantIntegerType, myConceptConstantLanguageType, myConceptConstantReference, myConceptConstantStringType, myConceptDefinition, myConceptDivExpr, myConceptDotAccessExpr, myConceptEmptyLine, myConceptExpr, myConceptField, myConceptFloatValue, myConceptFunctionCall, myConceptFunctionDefinition, myConceptIntValue, myConceptMinusExpr, myConceptMulExpr, myConceptNew, myConceptParameter, myConceptParameterReference, myConceptPlusExpr, myConceptProgramDefinition, myConceptStringValue, myConceptStructDefinition, myConceptStructType, myConceptVarDefinition, myConceptVarReference);
+    return Arrays.asList(myConceptAssignment, myConceptBinaryExpr, myConceptComment, myConceptConstantDefinition, myConceptConstantFloatType, myConceptConstantIntegerType, myConceptConstantLanguageType, myConceptConstantReference, myConceptConstantStringType, myConceptDefinition, myConceptDivExpr, myConceptDotAccessExpr, myConceptEmptyLine, myConceptExpr, myConceptField, myConceptFloatValue, myConceptFunctionCall, myConceptFunctionDefinition, myConceptIntValue, myConceptMinusExpr, myConceptMulExpr, myConceptNew, myConceptParameter, myConceptParameterReference, myConceptPlusExpr, myConceptProgramDefinition, myConceptStringValue, myConceptStructDefinition, myConceptStructType, myConceptVarDefinition, myConceptVarReference);
   }
 
   @Override
@@ -68,6 +69,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAssignment;
       case LanguageConceptSwitch.BinaryExpr:
         return myConceptBinaryExpr;
+      case LanguageConceptSwitch.Comment:
+        return myConceptComment;
       case LanguageConceptSwitch.ConstantDefinition:
         return myConceptConstantDefinition;
       case LanguageConceptSwitch.ConstantFloatType:
@@ -153,6 +156,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.aggregate("left", 0x5d19e06d2880ecfdL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L).optional(false).ordered(true).multiple(false).origin("6708639879380659453").done();
     b.aggregate("right", 0x5d19e06d2880ecffL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L).optional(false).ordered(true).multiple(false).origin("6708639879380659455").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForComment() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "Comment", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f445429bbL);
+    b.class_(false, false, false);
+    b.super_("NewLanguage.structure.Definition", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3405e02L);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/813836719657068987");
+    b.version(2);
+    b.property("text", 0xb4b542f445429bcL).type(PrimitiveTypeId.STRING).origin("813836719657068988").done();
+    b.alias("#");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConstantDefinition() {

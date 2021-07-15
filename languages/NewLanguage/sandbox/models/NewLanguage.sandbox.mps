@@ -34,6 +34,9 @@
       <concept id="813836719656510265" name="NewLanguage.structure.VarReference" flags="ng" index="1f0fsm">
         <reference id="813836719656510266" name="declaration" index="1f0fsl" />
       </concept>
+      <concept id="813836719657068987" name="NewLanguage.structure.Comment" flags="ng" index="1f7RQk">
+        <property id="813836719657068988" name="text" index="1f7RQj" />
+      </concept>
       <concept id="813836719654619916" name="NewLanguage.structure.New" flags="ng" index="1fppWz">
         <reference id="813836719654619917" name="structDefinition" index="1fppWy" />
       </concept>
@@ -89,6 +92,12 @@
   </registry>
   <node concept="3boF2d" id="4jI1$qfzxwQ">
     <property role="TrG5h" value="1_Constants" />
+    <node concept="1f7RQk" id="Hbl2X4lnK7" role="3boF2k">
+      <property role="1f7RQj" value="a few constants of different types, the type of a constant is inferred from its initializer expression" />
+    </node>
+    <node concept="1f7RQk" id="Hbl2X4lnLd" role="3boF2k">
+      <property role="1f7RQj" value="press Controol + Shift + P to check the &quot;expected type&quot; of a noode under cursor" />
+    </node>
     <node concept="3boF28" id="4jI1$qfzxwR" role="3boF2k">
       <property role="TrG5h" value="a" />
       <node concept="3boF4C" id="4jI1$qfzxwV" role="3boF2C">
@@ -145,19 +154,8 @@
         </node>
       </node>
     </node>
-    <node concept="3boF28" id="7fcpVcSEMMM" role="3boF2k">
-      <property role="TrG5h" value="g" />
-      <node concept="1PA3KZ" id="7fcpVcSEMNa" role="3boF2C">
-        <node concept="3boF4R" id="7fcpVcSEMNj" role="1PAgMg">
-          <property role="3boF4O" value="3" />
-        </node>
-        <node concept="3boF4C" id="7fcpVcSEMNo" role="1PAgMi">
-          <property role="3boF4D" value="hello" />
-        </node>
-      </node>
-    </node>
     <node concept="3boF28" id="7fcpVcSEMNy" role="3boF2k">
-      <property role="TrG5h" value="h" />
+      <property role="TrG5h" value="g" />
       <node concept="1PAgPi" id="7fcpVcSEMNY" role="3boF2C">
         <node concept="3boF4R" id="7fcpVcSEMO7" role="1PAgMg">
           <property role="3boF4O" value="10" />
@@ -167,14 +165,31 @@
         </node>
       </node>
     </node>
+    <node concept="1f7RQk" id="Hbl2X4lnPf" role="3boF2k">
+      <property role="1f7RQj" value="the + operation accepts a string type" />
+    </node>
     <node concept="3boF28" id="r_DgNl21Ir" role="3boF2k">
-      <property role="TrG5h" value="i" />
+      <property role="TrG5h" value="h" />
       <node concept="1PAgPj" id="r_DgNl21Jh" role="3boF2C">
         <node concept="1bpOEZ" id="r_DgNl21J_" role="1PAgMg">
           <property role="1bpOEY" value="1.2" />
         </node>
         <node concept="3boF4C" id="r_DgNl21JI" role="1PAgMi">
           <property role="3boF4D" value="foo" />
+        </node>
+      </node>
+    </node>
+    <node concept="1f7RQk" id="Hbl2X4lnO5" role="3boF2k">
+      <property role="1f7RQj" value="the * operation does not accept a string type" />
+    </node>
+    <node concept="3boF28" id="7fcpVcSEMMM" role="3boF2k">
+      <property role="TrG5h" value="i" />
+      <node concept="1PA3KZ" id="7fcpVcSEMNa" role="3boF2C">
+        <node concept="3boF4R" id="7fcpVcSEMNj" role="1PAgMg">
+          <property role="3boF4O" value="3" />
+        </node>
+        <node concept="3boF4C" id="7fcpVcSEMNo" role="1PAgMi">
+          <property role="3boF4D" value="hello" />
         </node>
       </node>
     </node>
@@ -186,6 +201,9 @@
       <node concept="3boF4R" id="3e3AsVjhAbi" role="3boF2C">
         <property role="3boF4O" value="10" />
       </node>
+    </node>
+    <node concept="1f7RQk" id="Hbl2X4m9KN" role="3boF2k">
+      <property role="1f7RQj" value="a function adding a float and an int" />
     </node>
     <node concept="3wKWvf" id="3e3AsVjhAbJ" role="3boF2k">
       <property role="TrG5h" value="add" />
@@ -207,6 +225,10 @@
       </node>
       <node concept="1bpUpt" id="2_f72J8I2Er" role="3wKZ8p" />
     </node>
+    <node concept="1fvZmq" id="Hbl2X4lnTU" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4lnR7" role="3boF2k">
+      <property role="1f7RQj" value="call with a perfect match of the parameters" />
+    </node>
     <node concept="3boF28" id="3e3AsVjhAbS" role="3boF2k">
       <property role="TrG5h" value="result" />
       <node concept="3wKZnR" id="3e3AsVjhAbT" role="3boF2C">
@@ -223,6 +245,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4lnTl" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4lnSd" role="3boF2k">
+      <property role="1f7RQj" value="a call with the first parameter being int" />
     </node>
     <node concept="3boF28" id="Hbl2X4gv8B" role="3boF2k">
       <property role="TrG5h" value="result" />
@@ -241,6 +267,10 @@
         </node>
       </node>
     </node>
+    <node concept="1fvZmq" id="Hbl2X4lnSL" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4lnV7" role="3boF2k">
+      <property role="1f7RQj" value="a call with the second parameter being float, which is not allwed" />
+    </node>
     <node concept="3boF28" id="2_f72J8Ie03" role="3boF2k">
       <property role="TrG5h" value="noresult" />
       <node concept="3wKZnR" id="2_f72J8Ie04" role="3boF2C">
@@ -258,6 +288,10 @@
         </node>
       </node>
     </node>
+    <node concept="1fvZmq" id="Hbl2X4lnW7" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4lnXo" role="3boF2k">
+      <property role="1f7RQj" value="a definition with declared type incompatible with the returned value" />
+    </node>
     <node concept="3wKWvf" id="Hbl2X4b9SV" role="3boF2k">
       <property role="TrG5h" value="invalidTypes" />
       <node concept="1ZVgE7" id="Hbl2X4b9Tr" role="3wKZ8p" />
@@ -265,6 +299,46 @@
         <property role="3boF4O" value="10" />
       </node>
     </node>
+    <node concept="1fvZmq" id="Hbl2X4lnYM" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4lo2e" role="3boF2k">
+      <property role="1f7RQj" value="a string containing a value that can be parsed to a number is convertable to int" />
+    </node>
+    <node concept="3boF28" id="Hbl2X4lo0p" role="3boF2k">
+      <property role="TrG5h" value="stringNumber" />
+      <node concept="3boF4C" id="Hbl2X4lo1e" role="3boF2C">
+        <property role="3boF4D" value="10" />
+      </node>
+    </node>
+    <node concept="3wKWvf" id="Hbl2X4lnY2" role="3boF2k">
+      <property role="TrG5h" value="intFromAString" />
+      <node concept="1ZVgE6" id="Hbl2X4lnZv" role="3wKZ8p" />
+      <node concept="1PAvhC" id="Hbl2X4lo1n" role="3wKZ8n">
+        <ref role="1PAvhF" node="Hbl2X4lo0p" resolve="stringNumber" />
+      </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4m9_u" role="3boF2k" />
+    <node concept="1f0frs" id="Hbl2X4m9B1" role="3boF2k">
+      <property role="TrG5h" value="stringVar" />
+      <node concept="3boF4C" id="Hbl2X4m9BY" role="1f0frp">
+        <property role="3boF4D" value="20" />
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="Hbl2X4m9CT" role="3boF2k">
+      <node concept="1f0fsm" id="Hbl2X4m9DO" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4m9B1" resolve="stringVar" />
+      </node>
+      <node concept="3boF4C" id="Hbl2X4m9DU" role="1fvHIW">
+        <property role="3boF4D" value="ABC" />
+      </node>
+    </node>
+    <node concept="3wKWvf" id="Hbl2X4m9HN" role="3boF2k">
+      <property role="TrG5h" value="intFromAStringNotPossible" />
+      <node concept="1ZVgE6" id="Hbl2X4m9HO" role="3wKZ8p" />
+      <node concept="1f0fsm" id="Hbl2X4m9J3" role="3wKZ8n">
+        <ref role="1f0fsl" node="Hbl2X4m9B1" resolve="stringVar" />
+      </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4m9E5" role="3boF2k" />
   </node>
   <node concept="3boF2d" id="Hbl2X49VD9">
     <property role="TrG5h" value="4_Structs" />
@@ -478,6 +552,9 @@
   </node>
   <node concept="3boF2d" id="Hbl2X4jyZg">
     <property role="TrG5h" value="2_Variables" />
+    <node concept="1f7RQk" id="Hbl2X4llAw" role="3boF2k">
+      <property role="1f7RQj" value="a few variables defined" />
+    </node>
     <node concept="1f0frs" id="Hbl2X4jz0u" role="3boF2k">
       <property role="TrG5h" value="a" />
       <node concept="3boF4R" id="Hbl2X4jz0y" role="1f0frp">
@@ -508,6 +585,10 @@
         <ref role="1f0fsl" node="Hbl2X4jz0F" resolve="f" />
       </node>
     </node>
+    <node concept="1fvZmq" id="Hbl2X4llBd" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4llCC" role="3boF2k">
+      <property role="1f7RQj" value="int can be assigned to a float variable" />
+    </node>
     <node concept="1fvHIZ" id="Hbl2X4jF3x" role="3boF2k">
       <node concept="1f0fsm" id="Hbl2X4jF3O" role="1fvHIY">
         <ref role="1f0fsl" node="Hbl2X4jz1I" resolve="ff" />
@@ -515,6 +596,10 @@
       <node concept="1f0fsm" id="Hbl2X4jF3R" role="1fvHIW">
         <ref role="1f0fsl" node="Hbl2X4jz0u" resolve="a" />
       </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4llDP" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4llFk" role="3boF2k">
+      <property role="1f7RQj" value="float cannot be assigned to an int variable" />
     </node>
     <node concept="1fvHIZ" id="Hbl2X4jF49" role="3boF2k">
       <node concept="1f0fsm" id="Hbl2X4jF4v" role="1fvHIY">
@@ -524,6 +609,18 @@
         <ref role="1f0fsl" node="Hbl2X4jz1I" resolve="ff" />
       </node>
     </node>
+    <node concept="1fvHIZ" id="Hbl2X4llJe" role="3boF2k">
+      <node concept="1f0fsm" id="Hbl2X4llK8" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4jz1l" resolve="b" />
+      </node>
+      <node concept="1bpOEZ" id="Hbl2X4llKr" role="1fvHIW">
+        <property role="1bpOEY" value="3.8" />
+      </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4llG5" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4llHC" role="3boF2k">
+      <property role="1f7RQj" value="int cannot be assigned to a string variable" />
+    </node>
     <node concept="1fvHIZ" id="Hbl2X4jF4R" role="3boF2k">
       <node concept="1f0fsm" id="Hbl2X4jF5g" role="1fvHIY">
         <ref role="1f0fsl" node="Hbl2X4jz0Y" resolve="s" />
@@ -532,7 +629,18 @@
         <ref role="1f0fsl" node="Hbl2X4jz0u" resolve="a" />
       </node>
     </node>
+    <node concept="1fvHIZ" id="Hbl2X4llMc" role="3boF2k">
+      <node concept="1f0fsm" id="Hbl2X4llN9" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4jz0Y" resolve="s" />
+      </node>
+      <node concept="3boF4R" id="Hbl2X4llNf" role="1fvHIW">
+        <property role="3boF4O" value="2390" />
+      </node>
+    </node>
     <node concept="1fvZmq" id="Hbl2X4k$od" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4llOX" role="3boF2k">
+      <property role="1f7RQj" value="an int constant can be assigned to an int or float variable, not to a string one" />
+    </node>
     <node concept="3boF28" id="Hbl2X4k$oS" role="3boF2k">
       <property role="TrG5h" value="cint" />
       <node concept="3boF4R" id="Hbl2X4k$pi" role="3boF2C">
@@ -564,6 +672,9 @@
       </node>
     </node>
     <node concept="1fvZmq" id="Hbl2X4kP2h" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4llzi" role="3boF2k">
+      <property role="1f7RQj" value="strings containing an int value can be converted to an int, others cannot" />
+    </node>
     <node concept="1fvHIZ" id="Hbl2X4kP4V" role="3boF2k">
       <node concept="1f0fsm" id="Hbl2X4kP5B" role="1fvHIY">
         <ref role="1f0fsl" node="Hbl2X4jz0u" resolve="a" />

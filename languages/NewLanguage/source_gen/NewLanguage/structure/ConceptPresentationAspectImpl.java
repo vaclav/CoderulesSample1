@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Assignment;
   private ConceptPresentation props_BinaryExpr;
+  private ConceptPresentation props_Comment;
   private ConceptPresentation props_ConstantDefinition;
   private ConceptPresentation props_ConstantFloatType;
   private ConceptPresentation props_ConstantIntegerType;
@@ -58,6 +59,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BinaryExpr = cpb.create();
         }
         return props_BinaryExpr;
+      case LanguageConceptSwitch.Comment:
+        if (props_Comment == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("#");
+          props_Comment = cpb.create();
+        }
+        return props_Comment;
       case LanguageConceptSwitch.ConstantDefinition:
         if (props_ConstantDefinition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

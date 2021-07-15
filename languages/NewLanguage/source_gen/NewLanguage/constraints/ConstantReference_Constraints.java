@@ -17,6 +17,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.ListScope;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNodePointer;
@@ -46,6 +47,7 @@ public class ConstantReference_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final ReferenceConstraintsContext _context) {
             List<SNode> constants = SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getContextNode()), CONCEPTS.ConstantDefinition$wW, false, new SAbstractConcept[]{});
+            ListSequence.fromList(constants).removeElement(SNodeOperations.getNodeAncestor(_context.getContextNode(), CONCEPTS.ConstantDefinition$wW, true, false));
             return ListScope.forNamedElements(constants);
           }
         };
