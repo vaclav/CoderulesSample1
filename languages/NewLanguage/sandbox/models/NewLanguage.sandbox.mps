@@ -218,6 +218,23 @@
         </node>
       </node>
     </node>
+    <node concept="3boF28" id="Hbl2X4gv8B" role="3boF2k">
+      <property role="TrG5h" value="result" />
+      <node concept="3wKZnR" id="Hbl2X4gv8C" role="3boF2C">
+        <ref role="3wKZmd" node="3e3AsVjhAbJ" resolve="add" />
+        <node concept="3boF4R" id="Hbl2X4gv9i" role="3wKZmb">
+          <property role="3boF4O" value="200" />
+        </node>
+        <node concept="1PAgPj" id="Hbl2X4gv8E" role="3wKZmb">
+          <node concept="3boF4R" id="Hbl2X4gv8F" role="1PAgMg">
+            <property role="3boF4O" value="10" />
+          </node>
+          <node concept="1PAvhC" id="Hbl2X4gv8G" role="1PAgMi">
+            <ref role="1PAvhF" node="3e3AsVjhAbh" resolve="value" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3boF28" id="2_f72J8Ie03" role="3boF2k">
       <property role="TrG5h" value="noresult" />
       <node concept="3wKZnR" id="2_f72J8Ie04" role="3boF2C">
@@ -279,6 +296,13 @@
         <node concept="1ZVgE7" id="Hbl2X4fXXY" role="1frB_c" />
         <node concept="3boF4C" id="Hbl2X4fXY5" role="1frB_a">
           <property role="3boF4D" value="Do magic" />
+        </node>
+      </node>
+      <node concept="1frB_f" id="Hbl2X4hdkl" role="1frBA3">
+        <property role="TrG5h" value="skillLevel" />
+        <node concept="1bpUpt" id="Hbl2X4hdky" role="1frB_c" />
+        <node concept="1bpOEZ" id="Hbl2X4hdkF" role="1frB_a">
+          <property role="1bpOEY" value="1.0" />
         </node>
       </node>
     </node>
@@ -382,6 +406,28 @@
         </node>
       </node>
     </node>
+    <node concept="1fvHIZ" id="Hbl2X4gScC" role="3boF2k">
+      <node concept="1fvHHJ" id="Hbl2X4gScE" role="1fvHIY">
+        <ref role="1fvHHE" node="Hbl2X4alTg" resolve="age" />
+        <node concept="1PAvhC" id="Hbl2X4gSdN" role="1fvHHG">
+          <ref role="1PAvhF" node="Hbl2X4bWLU" resolve="person2" />
+        </node>
+      </node>
+      <node concept="3boF4R" id="Hbl2X4gSdZ" role="1fvHIW">
+        <property role="3boF4O" value="10" />
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="Hbl2X4gSe8" role="3boF2k">
+      <node concept="1fvHHJ" id="Hbl2X4gSe9" role="1fvHIY">
+        <ref role="1fvHHE" node="Hbl2X4alTg" resolve="age" />
+        <node concept="1PAvhC" id="Hbl2X4gSea" role="1fvHHG">
+          <ref role="1PAvhF" node="Hbl2X4bWLU" resolve="person2" />
+        </node>
+      </node>
+      <node concept="1bpOEZ" id="Hbl2X4gSft" role="1fvHIW">
+        <property role="1bpOEY" value="12.3" />
+      </node>
+    </node>
     <node concept="1fvHIZ" id="Hbl2X4dCJE" role="3boF2k">
       <node concept="1fvHHJ" id="Hbl2X4dCJG" role="1fvHIY">
         <ref role="1fvHHE" node="Hbl2X4cwW1" resolve="street" />
@@ -402,6 +448,24 @@
       </node>
       <node concept="1bpOEZ" id="Hbl2X4el8d" role="1fvHIW">
         <property role="1bpOEY" value="23.5" />
+      </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4hdkM" role="3boF2k" />
+    <node concept="3boF28" id="Hbl2X4hdnb" role="3boF2k">
+      <property role="TrG5h" value="magician" />
+      <node concept="3wKZnR" id="Hbl2X4hdos" role="3boF2C">
+        <ref role="3wKZmd" node="Hbl2X4fXZb" resolve="createMagician" />
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="Hbl2X4hdpM" role="3boF2k">
+      <node concept="1fvHHJ" id="Hbl2X4hdpO" role="1fvHIY">
+        <ref role="1fvHHE" node="Hbl2X4hdkl" resolve="skillLevel" />
+        <node concept="1PAvhC" id="Hbl2X4hdrb" role="1fvHHG">
+          <ref role="1PAvhF" node="Hbl2X4hdnb" resolve="magician" />
+        </node>
+      </node>
+      <node concept="3boF4R" id="Hbl2X4hdrl" role="1fvHIW">
+        <property role="3boF4O" value="2" />
       </node>
     </node>
     <node concept="1fvZmq" id="Hbl2X4dCIv" role="3boF2k" />

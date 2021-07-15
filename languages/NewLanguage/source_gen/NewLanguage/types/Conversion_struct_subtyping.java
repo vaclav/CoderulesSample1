@@ -17,23 +17,22 @@ import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.logic.dataform.ValueRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
-import jetbrains.mps.logic.predicate.UnificationPredicate;
+import jetbrains.mps.logic.predicate.EvalExpressionPredicate;
 import jetbrains.mps.lang.coderules.template.LateExpression;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
 import jetbrains.mps.logic.reactor.logical.Logical;
+import NewLanguage.behavior.StructDefinition__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.builder.SNodeBuilder;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 
-public class Recover_recover_structType extends AbstractRuleTemplate<Recover_recover_structType.Token> {
+public class Conversion_struct_subtyping extends AbstractRuleTemplate<Conversion_struct_subtyping.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -45,28 +44,38 @@ public class Recover_recover_structType extends AbstractRuleTemplate<Recover_rec
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new recover_structType() {
+      new struct_subtyping() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          Node = MetaLogicalFactory.metaLogical("Node", SNode.class);
-          Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
-          structDef = MetaLogicalFactory.metaLogical("structDef", SNode.class);
+          A = MetaLogicalFactory.metaLogical("A", DataForm.class);
+          B = MetaLogicalFactory.metaLogical("B", DataForm.class);
+          SA = MetaLogicalFactory.metaLogical("SA", SNode.class);
+          SB = MetaLogicalFactory.metaLogical("SB", SNode.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "recover_structType", "recover_structType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "struct_subtyping", "struct_subtyping", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().Node, (new MyTerms_termTable.structType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.structType_term(true) {
             public DataForm definition() {
-              return ValueRole.create("definition", LogicalUtil.asValue(rule().structDef));
+              return ValueRole.create("definition", LogicalUtil.asValue(rule().SA));
             }
-          }).getTerm()).withPatternLogicals(null, rule().Type).toConstraint());
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Node, new LateExpression<Object>() {
+          }).getTerm(), (new MyTerms_termTable.structType_term(true) {
+            public DataForm definition() {
+              return ValueRole.create("definition", LogicalUtil.asValue(rule().SB));
+            }
+          }).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendGuard(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
-              return new Object[]{rule().structDef};
+              return new Object[]{rule().SA, rule().SB};
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
+              final Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
 
-              return createStructType_mptleq_a0a0a0a0a0d(typedArg0.findRoot().value());
+              return ListSequence.fromList(StructDefinition__BehaviorDescriptor.structAndExtendedStructs_idHbl2X4iivr.invoke(typedArg0.findRoot().value())).any(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return Objects.equals(it, typedArg1.findRoot().value());
+                }
+              });
             }
           }).toPredicate());
 
@@ -81,15 +90,16 @@ public class Recover_recover_structType extends AbstractRuleTemplate<Recover_rec
       return this;
     }
 
-    public abstract class recover_structType implements ConstraintRuleTemplate {
+    public abstract class struct_subtyping implements ConstraintRuleTemplate {
 
-      protected recover_structType rule() {
+      protected struct_subtyping rule() {
         return this;
       }
 
-      protected MetaLogical Node;
-      protected MetaLogical Type;
-      protected MetaLogical structDef;
+      protected MetaLogical A;
+      protected MetaLogical B;
+      protected MetaLogical SA;
+      protected MetaLogical SB;
 
     }
 
@@ -99,8 +109,8 @@ public class Recover_recover_structType extends AbstractRuleTemplate<Recover_rec
   }
 
 
-  public Recover_recover_structType(RuleTable ruleTable) {
-    super(ruleTable, "recover_structType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719655429636"));
+  public Conversion_struct_subtyping(RuleTable ruleTable) {
+    super(ruleTable, "struct_subtyping", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719656066546"));
   }
 
   @Override
@@ -113,18 +123,5 @@ public class Recover_recover_structType extends AbstractRuleTemplate<Recover_rec
   @Override
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
-  }
-  private static SNode createStructType_mptleq_a0a0a0a0a0d(SNode p0) {
-    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.StructType$nR);
-    n0.setReferenceTarget(LINKS.struct$JP1k, p0);
-    return n0.getResult();
-  }
-
-  private static final class CONCEPTS {
-    /*package*/ static final SConcept StructType$nR = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, "NewLanguage.structure.StructType");
-  }
-
-  private static final class LINKS {
-    /*package*/ static final SReferenceLink struct$JP1k = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, 0xb4b542f442cbba3L, "struct");
   }
 }

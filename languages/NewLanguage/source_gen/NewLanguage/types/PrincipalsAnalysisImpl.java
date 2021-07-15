@@ -28,6 +28,7 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("constantDeclaration");
     SetSequence.fromSet(principalRulesTags).addElement("constant_reference");
     SetSequence.fromSet(principalRulesTags).addElement("constructor");
+    SetSequence.fromSet(principalRulesTags).addElement("convert");
     SetSequence.fromSet(principalRulesTags).addElement("dot");
     SetSequence.fromSet(principalRulesTags).addElement("field");
     SetSequence.fromSet(principalRulesTags).addElement("floatLiteral");

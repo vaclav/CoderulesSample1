@@ -17,7 +17,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typechecking.TypecheckingFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import NewLanguage.behavior.StructDefinition__BehaviorDescriptor;
 import jetbrains.mps.scope.ListScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -51,7 +55,13 @@ public class DotAccessExpr_Constraints extends BaseConstraintsDescriptor {
             }
             SNode operandType = TypecheckingFacade.getFromContext().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), LINKS.operand$x03i));
             if (SNodeOperations.isInstanceOf(operandType, CONCEPTS.StructType$nR)) {
-              return ListScope.forNamedElements(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(operandType, CONCEPTS.StructType$nR), LINKS.struct$JP1k), LINKS.fields$ibNh));
+              SNode currentStructs = SLinkOperations.getTarget(SNodeOperations.as(operandType, CONCEPTS.StructType$nR), LINKS.struct$JP1k);
+              List<SNode> allStructs = StructDefinition__BehaviorDescriptor.structAndExtendedStructs_idHbl2X4iivr.invoke(currentStructs);
+              return ListScope.forNamedElements(ListSequence.fromList(allStructs).translate(new ITranslator2<SNode, SNode>() {
+                public Iterable<SNode> translate(SNode it) {
+                  return SLinkOperations.getChildren(it, LINKS.fields$ibNh);
+                }
+              }));
             } else {
               return null;
             }

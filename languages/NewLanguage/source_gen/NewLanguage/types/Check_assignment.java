@@ -10,13 +10,11 @@ import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
-import jetbrains.mps.logic.dataform.ListNode;
+import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.coderules.template.PredicateBuilder;
-import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
@@ -43,20 +41,19 @@ public class Check_assignment extends AbstractRuleTemplate<Check_assignment.Toke
       new assignment() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          LType = MetaLogicalFactory.metaLogical("LType", ListNode.class);
-          RType = MetaLogicalFactory.metaLogical("RType", ListNode.class);
+          LType = MetaLogicalFactory.metaLogical("LType", DataForm.class);
+          RType = MetaLogicalFactory.metaLogical("RType", DataForm.class);
 
           RuleBuilder builder = new RuleBuilder(session, "assignment", "assignment" + "_" + String.valueOf(token().assign.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().assign, SNodeOperations.getPointer(token().assign));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().assign, LINKS.left$$pjK), rule().LType).toConstraint());
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().assign, LINKS.right$$pLM), rule().RType).toConstraint());
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LType, rule().RType).toPredicate());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().RType, rule().LType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
 
       }.apply(_session);
-      // TODO Let's mandate the two types to be the same for now and address convertsTo later
       return ruleBuilders;
     }
 

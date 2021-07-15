@@ -52,6 +52,7 @@ public class Manifest extends AbstractCoderulesManifest {
       ListSequence.fromList(rtables).addElement(new Recover_ruleTable(this));
       ListSequence.fromList(rtables).addElement(new ExpectType_ruleTable(this));
       ListSequence.fromList(rtables).addElement(new lcs_ruleTable(this));
+      ListSequence.fromList(rtables).addElement(new Conversion_ruleTable(this));
       this.ruleTables = ListSequence.fromList(rtables).asUnmodifiable();
     }
     {

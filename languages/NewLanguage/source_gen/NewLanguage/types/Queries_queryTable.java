@@ -19,6 +19,12 @@ import java.util.List;
 import jetbrains.mps.lang.coderules.template.Query;
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession;
 import jetbrains.mps.coderules.typechecking.service.TypeOfQuery;
+import jetbrains.mps.coderules.typechecking.service.ConvertQuery;
+import jetbrains.mps.logic.unification.MetaLogicalFactory;
+import jetbrains.mps.logic.dataform.DataForm;
+import java.util.function.Function;
+import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
+import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.Collection;
 
 public class Queries_queryTable extends AbstractQueryTable {
@@ -194,6 +200,111 @@ public class Queries_queryTable extends AbstractQueryTable {
     }
 
   }
+  public static class convert_queryTemplate extends AbstractQueryTemplate<convert_queryTemplate.Token> {
+
+    public convert_queryTemplate() {
+      super("convert", "NewLanguage.types.convert", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/6694824264973509514"));
+    }
+
+    public class Token implements QueryTemplate.Token<ConvertQuery> {
+
+      protected Token(TemplateApplicationSession session) {
+        this.session = session;
+      }
+
+      @Override
+      public QueryTemplate.Token withQuery(ConvertQuery query) {
+        this.query = query;
+        return this;
+      }
+
+      @Override
+      public Iterable<RuleBuilder> apply() {
+        TemplateApplicationSession _session = session;
+        this.ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
+        _session.require(query.getFrom());
+        _session.require(query.getTo());
+
+        new convert() {
+          @Override
+          public void apply(TemplateApplicationSession session) {
+            A = MetaLogicalFactory.metaLogical("A", DataForm.class);
+            B = MetaLogicalFactory.metaLogical("B", DataForm.class);
+
+            RuleBuilder builder = new RuleBuilder(session, "convert", "convert", getTemplateRef(), null, SNodeOperations.getPointer(null));
+
+            try {
+              builder.merge(0, session.expandMacro(null, query.getFrom(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+                public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
+                  return tok.withLogical(rule().A).apply();
+                }
+              }));
+            } finally {
+            }
+            try {
+              builder.merge(0, session.expandMacro(null, query.getTo(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+                public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
+                  return tok.withLogical(rule().B).apply();
+                }
+              }));
+            } finally {
+            }
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
+
+            ListSequence.fromList(ruleBuilders).addElement(builder);
+          }
+
+        }.apply(_session);
+        return ruleBuilders;
+      }
+
+      protected Token token() {
+        return this;
+      }
+
+      public abstract class convert implements ConstraintRuleTemplate {
+
+        protected convert rule() {
+          return this;
+        }
+
+        protected MetaLogical A;
+        protected MetaLogical B;
+
+      }
+
+
+      protected ConvertQuery query;
+      protected List<RuleBuilder> ruleBuilders;
+      protected TemplateApplicationSession session;
+
+    }
+
+    @Override
+    public Class<? extends Query> queryType() {
+      return ConvertQuery.class;
+    }
+
+    @Override
+    public QueryTemplate.QueryConfigurable newQuery() {
+      return new Configurable();
+    }
+
+    @Override
+    public Token createToken(TemplateApplicationSession session) {
+      return new Token(session);
+    }
+
+    public static class Configurable implements QueryTemplate.QueryConfigurable {
+
+      @Override
+      public EvaluationSession.Config configure(String stage, EvaluationSession.Config config) {
+        return config;
+      }
+
+    }
+
+  }
 
   @Override
   public Collection<QueryTemplate> queryTemplates() {
@@ -204,6 +315,7 @@ public class Queries_queryTable extends AbstractQueryTable {
     List<QueryTemplate> list = ListSequence.fromList(new ArrayList<QueryTemplate>());
     ListSequence.fromList(list).addElement(new check_queryTemplate());
     ListSequence.fromList(list).addElement(new typeof_queryTemplate());
+    ListSequence.fromList(list).addElement(new convert_queryTemplate());
 
     this.queryTemplates = ListSequence.fromList(list).asUnmodifiable();
   }

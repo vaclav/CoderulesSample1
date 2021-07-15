@@ -290,8 +290,8 @@ public class Macros_macroTable extends AbstractMacroTable {
         TemplateApplicationSession _session = session;
         RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.StructType_813836719655204386");
         builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.structType_term(false) {
-          public DataForm struct_definition() {
-            return ValueRole.create("struct_definition", LogicalUtil.asValue(SLinkOperations.getTarget(macroInput, LINKS.struct$JP1k)));
+          public DataForm definition() {
+            return ValueRole.create("definition", LogicalUtil.asValue(SLinkOperations.getTarget(macroInput, LINKS.struct$JP1k)));
           }
         }).getTerm()).toPredicate());
         builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
@@ -349,8 +349,8 @@ public class Macros_macroTable extends AbstractMacroTable {
         TemplateApplicationSession _session = session;
         RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.StructDefinition_813836719655168588");
         builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.structType_term(false) {
-          public DataForm struct_definition() {
-            return ValueRole.create("struct_definition", LogicalUtil.asValue(macroInput));
+          public DataForm definition() {
+            return ValueRole.create("definition", LogicalUtil.asValue(macroInput));
           }
         }).getTerm()).toPredicate());
 

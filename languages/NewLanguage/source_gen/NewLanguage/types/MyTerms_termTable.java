@@ -99,18 +99,18 @@ public class MyTerms_termTable {
       this.pattern = pattern;
     }
 
-    public DataForm struct_definition() {
+    public DataForm definition() {
       if (pattern) {
-        return ValueRole.create("struct_definition", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
+        return ValueRole.create("definition", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
 
       } else {
-        return (ValueRole.create("struct_definition", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
+        return (ValueRole.create("definition", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
       }
     }
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(ValueRole.create("_term", Value.create("structType")), LogicalUtil.asDataForm(struct_definition())));
+      return (TermNode.create(ValueRole.create("_term", Value.create("structType")), LogicalUtil.asDataForm(definition())));
     }
 
     private boolean pattern;

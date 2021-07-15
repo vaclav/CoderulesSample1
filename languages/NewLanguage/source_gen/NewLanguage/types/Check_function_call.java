@@ -21,8 +21,6 @@ import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
-import jetbrains.mps.lang.coderules.template.PredicateBuilder;
-import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import jetbrains.mps.logic.unification.MetaLogicalArray;
@@ -78,7 +76,7 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
               } finally {
               }
               // TODO Let's mandate the two types to be the same for now and address convertsTo later
-              builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().ArgType.logicalAt(i.value), rule().ParamDeclaredType.logicalAt(i.value)).toPredicate());
+              builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().ArgType.logicalAt(i.value), rule().ParamDeclaredType.logicalAt(i.value)).toConstraint());
             }
             // at this point all arguments's types are ensured to be compatible with the function type
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().call, rule().FunctionType).toConstraint());

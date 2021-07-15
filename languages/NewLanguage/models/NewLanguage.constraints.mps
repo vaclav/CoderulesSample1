@@ -17,6 +17,7 @@
   <imports>
     <import index="bfo2" ref="r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
+    <import index="lul7" ref="r:a81b3f34-e236-41a1-9e99-06e09f3fb86e(NewLanguage.behavior)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -102,6 +103,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
@@ -149,6 +151,7 @@
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
     </language>
   </registry>
@@ -377,27 +380,71 @@
           </node>
           <node concept="3clFbJ" id="Hbl2X4dGul" role="3cqZAp">
             <node concept="3clFbS" id="Hbl2X4dGun" role="3clFbx">
+              <node concept="3cpWs8" id="Hbl2X4ihWo" role="3cqZAp">
+                <node concept="3cpWsn" id="Hbl2X4ihWp" role="3cpWs9">
+                  <property role="TrG5h" value="currentStructs" />
+                  <node concept="3Tqbb2" id="Hbl2X4ihM4" role="1tU5fm">
+                    <ref role="ehGHo" to="bfo2:Hbl2X49iPt" resolve="StructDefinition" />
+                  </node>
+                  <node concept="2OqwBi" id="Hbl2X4ihWq" role="33vP2m">
+                    <node concept="1PxgMI" id="Hbl2X4ihWr" role="2Oq$k0">
+                      <property role="1BlNFB" value="true" />
+                      <node concept="chp4Y" id="Hbl2X4ihWs" role="3oSUPX">
+                        <ref role="cht4Q" to="bfo2:Hbl2X4bbI8" resolve="StructType" />
+                      </node>
+                      <node concept="37vLTw" id="Hbl2X4ihWt" role="1m5AlR">
+                        <ref role="3cqZAo" node="Hbl2X4dGd0" resolve="operandType" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="Hbl2X4ihWu" role="2OqNvi">
+                      <ref role="3Tt5mk" to="bfo2:Hbl2X4bbIz" resolve="struct" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="Hbl2X4iuOV" role="3cqZAp">
+                <node concept="3cpWsn" id="Hbl2X4iuOW" role="3cpWs9">
+                  <property role="TrG5h" value="allStructs" />
+                  <node concept="2I9FWS" id="Hbl2X4iuKX" role="1tU5fm">
+                    <ref role="2I9WkF" to="bfo2:Hbl2X49iPt" resolve="StructDefinition" />
+                  </node>
+                  <node concept="2OqwBi" id="Hbl2X4iuOX" role="33vP2m">
+                    <node concept="37vLTw" id="Hbl2X4iuOY" role="2Oq$k0">
+                      <ref role="3cqZAo" node="Hbl2X4ihWp" resolve="currentStructs" />
+                    </node>
+                    <node concept="2qgKlT" id="Hbl2X4iuOZ" role="2OqNvi">
+                      <ref role="37wK5l" to="lul7:Hbl2X4iivr" resolve="structAndExtendedStructs" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3cpWs6" id="Hbl2X4dGZP" role="3cqZAp">
                 <node concept="2YIFZM" id="Hbl2X4dHja" role="3cqZAk">
                   <ref role="37wK5l" to="o8zo:4IP40Bi3eAf" resolve="forNamedElements" />
                   <ref role="1Pybhc" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
-                  <node concept="2OqwBi" id="Hbl2X4dIlG" role="37wK5m">
-                    <node concept="2OqwBi" id="Hbl2X4dHUs" role="2Oq$k0">
-                      <node concept="1PxgMI" id="Hbl2X4dHxM" role="2Oq$k0">
-                        <property role="1BlNFB" value="true" />
-                        <node concept="chp4Y" id="Hbl2X4dHIO" role="3oSUPX">
-                          <ref role="cht4Q" to="bfo2:Hbl2X4bbI8" resolve="StructType" />
-                        </node>
-                        <node concept="37vLTw" id="Hbl2X4dHmu" role="1m5AlR">
-                          <ref role="3cqZAo" node="Hbl2X4dGd0" resolve="operandType" />
-                        </node>
-                      </node>
-                      <node concept="3TrEf2" id="Hbl2X4dI6i" role="2OqNvi">
-                        <ref role="3Tt5mk" to="bfo2:Hbl2X4bbIz" resolve="struct" />
-                      </node>
+                  <node concept="2OqwBi" id="Hbl2X4ixuA" role="37wK5m">
+                    <node concept="37vLTw" id="Hbl2X4ivBX" role="2Oq$k0">
+                      <ref role="3cqZAo" node="Hbl2X4iuOW" resolve="allStructs" />
                     </node>
-                    <node concept="3Tsc0h" id="Hbl2X4dI$d" role="2OqNvi">
-                      <ref role="3TtcxE" to="bfo2:Hbl2X49iQG" resolve="fields" />
+                    <node concept="3goQfb" id="Hbl2X4i$aI" role="2OqNvi">
+                      <node concept="1bVj0M" id="Hbl2X4i$aK" role="23t8la">
+                        <node concept="3clFbS" id="Hbl2X4i$aL" role="1bW5cS">
+                          <node concept="3clFbF" id="Hbl2X4i$k4" role="3cqZAp">
+                            <node concept="2OqwBi" id="Hbl2X4i$_Y" role="3clFbG">
+                              <node concept="37vLTw" id="Hbl2X4i$k3" role="2Oq$k0">
+                                <ref role="3cqZAo" node="Hbl2X4i$aM" resolve="it" />
+                              </node>
+                              <node concept="3Tsc0h" id="Hbl2X4i$SJ" role="2OqNvi">
+                                <ref role="3TtcxE" to="bfo2:Hbl2X49iQG" resolve="fields" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="Rh6nW" id="Hbl2X4i$aM" role="1bW2Oz">
+                          <property role="TrG5h" value="it" />
+                          <node concept="2jxLKc" id="Hbl2X4i$aN" role="1tU5fm" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
