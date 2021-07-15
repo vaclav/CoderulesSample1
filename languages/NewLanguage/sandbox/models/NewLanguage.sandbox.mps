@@ -317,15 +317,18 @@
       </node>
     </node>
     <node concept="1fvZmq" id="Hbl2X4m9_u" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4mDzL" role="3boF2k">
+      <property role="1f7RQj" value="a string variable that holds a number cannot be assigned a non-numeric string" />
+    </node>
     <node concept="1f0frs" id="Hbl2X4m9B1" role="3boF2k">
-      <property role="TrG5h" value="stringVar" />
+      <property role="TrG5h" value="numericString" />
       <node concept="3boF4C" id="Hbl2X4m9BY" role="1f0frp">
         <property role="3boF4D" value="20" />
       </node>
     </node>
     <node concept="1fvHIZ" id="Hbl2X4m9CT" role="3boF2k">
       <node concept="1f0fsm" id="Hbl2X4m9DO" role="1fvHIY">
-        <ref role="1f0fsl" node="Hbl2X4m9B1" resolve="stringVar" />
+        <ref role="1f0fsl" node="Hbl2X4m9B1" resolve="numericString" />
       </node>
       <node concept="3boF4C" id="Hbl2X4m9DU" role="1fvHIW">
         <property role="3boF4D" value="ABC" />
@@ -335,14 +338,40 @@
       <property role="TrG5h" value="intFromAStringNotPossible" />
       <node concept="1ZVgE6" id="Hbl2X4m9HO" role="3wKZ8p" />
       <node concept="1f0fsm" id="Hbl2X4m9J3" role="3wKZ8n">
-        <ref role="1f0fsl" node="Hbl2X4m9B1" resolve="stringVar" />
+        <ref role="1f0fsl" node="Hbl2X4m9B1" resolve="numericString" />
       </node>
     </node>
     <node concept="1fvZmq" id="Hbl2X4m9E5" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4mDJZ" role="3boF2k">
+      <property role="1f7RQj" value="a noon-numeric string variable can be assigned a numeric string" />
+    </node>
+    <node concept="1f0frs" id="Hbl2X4mD_F" role="3boF2k">
+      <property role="TrG5h" value="nonNumericString" />
+      <node concept="3boF4C" id="Hbl2X4mDAG" role="1f0frp">
+        <property role="3boF4D" value="ABC" />
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="Hbl2X4mDBO" role="3boF2k">
+      <node concept="1f0fsm" id="Hbl2X4mDCU" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4mD_F" resolve="nonNumericString" />
+      </node>
+      <node concept="1f0fsm" id="Hbl2X4mDEi" role="1fvHIW">
+        <ref role="1f0fsl" node="Hbl2X4m9B1" resolve="numericString" />
+      </node>
+    </node>
+    <node concept="3boF28" id="Hbl2X4mDHH" role="3boF2k">
+      <property role="TrG5h" value="s" />
+      <node concept="1f0fsm" id="Hbl2X4mDIN" role="3boF2C">
+        <ref role="1f0fsl" node="Hbl2X4mD_F" resolve="nonNumericString" />
+      </node>
+    </node>
   </node>
   <node concept="3boF2d" id="Hbl2X49VD9">
     <property role="TrG5h" value="4_Structs" />
     <node concept="1fvZmq" id="Hbl2X4doVT" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4mDOf" role="3boF2k">
+      <property role="1f7RQj" value="an inheritance hierarchy" />
+    </node>
     <node concept="1frB_M" id="Hbl2X4a7RN" role="3boF2k">
       <property role="TrG5h" value="Person" />
       <node concept="1frB_f" id="Hbl2X4a7RS" role="1frBA3">
@@ -387,6 +416,9 @@
       </node>
     </node>
     <node concept="1fvZmq" id="Hbl2X4doVn" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4mDQR" role="3boF2k">
+      <property role="1f7RQj" value="another struct definition" />
+    </node>
     <node concept="1frB_M" id="Hbl2X4cwVF" role="3boF2k">
       <property role="TrG5h" value="House" />
       <node concept="1frB_f" id="Hbl2X4cwW1" role="1frBA3">
@@ -404,8 +436,10 @@
         </node>
       </node>
     </node>
-    <node concept="1fvZmq" id="Hbl2X4doS9" role="3boF2k" />
     <node concept="1fvZmq" id="Hbl2X4doSD" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4mDZ7" role="3boF2k">
+      <property role="1f7RQj" value="Person and House are dirrefent structs" />
+    </node>
     <node concept="3wKWvf" id="Hbl2X4bw4x" role="3boF2k">
       <property role="TrG5h" value="createPerson" />
       <node concept="1fpYYB" id="Hbl2X4bw4Q" role="3wKZ8p">
@@ -415,6 +449,9 @@
         <ref role="1fppWy" node="Hbl2X4a7RN" resolve="Person" />
       </node>
     </node>
+    <node concept="1f7RQk" id="Hbl2X4mE4_" role="3boF2k">
+      <property role="1f7RQj" value="So this is illegal" />
+    </node>
     <node concept="3wKWvf" id="Hbl2X4e3pi" role="3boF2k">
       <property role="TrG5h" value="createInvalidPerson" />
       <node concept="1fpYYB" id="Hbl2X4e3pj" role="3wKZ8p">
@@ -423,6 +460,10 @@
       <node concept="1fppWz" id="Hbl2X4e3pk" role="3wKZ8n">
         <ref role="1fppWy" node="Hbl2X4cwVF" resolve="House" />
       </node>
+    </node>
+    <node concept="1fvZmq" id="Hbl2X4mDUj" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4mE1P" role="3boF2k">
+      <property role="1f7RQj" value="Magician extends Person so this is all legal" />
     </node>
     <node concept="3wKWvf" id="Hbl2X4fXZb" role="3boF2k">
       <property role="TrG5h" value="createMagician" />
@@ -442,6 +483,7 @@
         <ref role="1fppWy" node="Hbl2X4fXWY" resolve="Magician" />
       </node>
     </node>
+    <node concept="1fvZmq" id="Hbl2X4mDVB" role="3boF2k" />
     <node concept="3boF28" id="Hbl2X4bWLd" role="3boF2k">
       <property role="TrG5h" value="person1" />
       <node concept="3wKZnR" id="Hbl2X4bWLy" role="3boF2C">
@@ -452,6 +494,15 @@
       <property role="TrG5h" value="person2" />
       <node concept="1PAvhC" id="Hbl2X4bWM$" role="3boF2C">
         <ref role="1PAvhF" node="Hbl2X4bWLd" resolve="person1" />
+      </node>
+    </node>
+    <node concept="3boF28" id="Hbl2X4eh9a" role="3boF2k">
+      <property role="TrG5h" value="personAge" />
+      <node concept="1fvHHJ" id="Hbl2X4eha6" role="3boF2C">
+        <ref role="1fvHHE" node="Hbl2X4alTg" resolve="age" />
+        <node concept="1PAvhC" id="Hbl2X4ehac" role="1fvHHG">
+          <ref role="1PAvhF" node="Hbl2X4bWLU" resolve="person2" />
+        </node>
       </node>
     </node>
     <node concept="1fvZmq" id="Hbl2X4doWs" role="3boF2k" />
@@ -467,7 +518,6 @@
         <ref role="1PAvhF" node="Hbl2X4cwWY" resolve="house1" />
       </node>
     </node>
-    <node concept="1fvZmq" id="Hbl2X4dCPE" role="3boF2k" />
     <node concept="3boF28" id="Hbl2X4dCOH" role="3boF2k">
       <property role="TrG5h" value="cityName" />
       <node concept="1fvHHJ" id="Hbl2X4dCPx" role="3boF2C">
@@ -477,14 +527,9 @@
         </node>
       </node>
     </node>
-    <node concept="3boF28" id="Hbl2X4eh9a" role="3boF2k">
-      <property role="TrG5h" value="personAge" />
-      <node concept="1fvHHJ" id="Hbl2X4eha6" role="3boF2C">
-        <ref role="1fvHHE" node="Hbl2X4alTg" resolve="age" />
-        <node concept="1PAvhC" id="Hbl2X4ehac" role="1fvHHG">
-          <ref role="1PAvhF" node="Hbl2X4bWLU" resolve="person2" />
-        </node>
-      </node>
+    <node concept="1fvZmq" id="Hbl2X4mE6N" role="3boF2k" />
+    <node concept="1f7RQk" id="Hbl2X4mEiN" role="3boF2k">
+      <property role="1f7RQj" value="assignments to test valid an invalid assignments" />
     </node>
     <node concept="1fvHIZ" id="Hbl2X4gScC" role="3boF2k">
       <node concept="1fvHHJ" id="Hbl2X4gScE" role="1fvHIY">

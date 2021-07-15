@@ -43,6 +43,7 @@ public class Conversion_ruleTable extends AbstractRuleTable implements RuleTable
     ListSequence.fromList(list).addElement(new Conversion_same_type_conversion(this));
     ListSequence.fromList(list).addElement(new Conversion_int_to_float(this));
     ListSequence.fromList(list).addElement(new Conversion_struct_subtyping(this));
+    ListSequence.fromList(list).addElement(new Conversion_strint_to_string(this));
     ListSequence.fromList(list).addElement(new Conversion_strint_to_int_when_parsed_to_number(this));
     ListSequence.fromList(list).addElement(new Conversion_convertsInfer(this));
     ListSequence.fromList(list).addElement(new Conversion_convertsUnhandled(this));

@@ -66,7 +66,7 @@ public class Conversion_strint_to_int_when_parsed_to_number extends AbstractRule
               Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
               Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
 
-              return isNotEmptyString(SPropertyOperations.getString(typedArg1.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg).matches("[0-9]+");
+              return isNotEmptyString(SPropertyOperations.getString(typedArg1.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg).matches("[+|-]?[0-9]+");
             }
           }).toPredicate());
 
