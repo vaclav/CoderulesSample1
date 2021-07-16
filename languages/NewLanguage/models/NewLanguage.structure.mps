@@ -445,5 +445,12 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
+  <node concept="1TIwiD" id="4E9f66uLn7u">
+    <property role="EcuMT" value="5370890420589261278" />
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="ConstantFloatStringType" />
+    <property role="34LRSv" value="float string" />
+    <ref role="1TJDcQ" node="3e3AsVjg6Jm" resolve="ConstantLanguageType" />
+  </node>
 </model>
 

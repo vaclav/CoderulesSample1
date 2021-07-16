@@ -17,6 +17,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBinaryExpr = createDescriptorForBinaryExpr();
   /*package*/ final ConceptDescriptor myConceptComment = createDescriptorForComment();
   /*package*/ final ConceptDescriptor myConceptConstantDefinition = createDescriptorForConstantDefinition();
+  /*package*/ final ConceptDescriptor myConceptConstantFloatStringType = createDescriptorForConstantFloatStringType();
   /*package*/ final ConceptDescriptor myConceptConstantFloatType = createDescriptorForConstantFloatType();
   /*package*/ final ConceptDescriptor myConceptConstantIntegerType = createDescriptorForConstantIntegerType();
   /*package*/ final ConceptDescriptor myConceptConstantLanguageType = createDescriptorForConstantLanguageType();
@@ -58,7 +59,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAssignment, myConceptBinaryExpr, myConceptComment, myConceptConstantDefinition, myConceptConstantFloatType, myConceptConstantIntegerType, myConceptConstantLanguageType, myConceptConstantReference, myConceptConstantStringType, myConceptDefinition, myConceptDivExpr, myConceptDotAccessExpr, myConceptEmptyLine, myConceptExpr, myConceptField, myConceptFloatValue, myConceptFunctionCall, myConceptFunctionDefinition, myConceptIntValue, myConceptMinusExpr, myConceptMulExpr, myConceptNew, myConceptParameter, myConceptParameterReference, myConceptPlusExpr, myConceptProgramDefinition, myConceptStringValue, myConceptStructDefinition, myConceptStructType, myConceptVarDefinition, myConceptVarReference);
+    return Arrays.asList(myConceptAssignment, myConceptBinaryExpr, myConceptComment, myConceptConstantDefinition, myConceptConstantFloatStringType, myConceptConstantFloatType, myConceptConstantIntegerType, myConceptConstantLanguageType, myConceptConstantReference, myConceptConstantStringType, myConceptDefinition, myConceptDivExpr, myConceptDotAccessExpr, myConceptEmptyLine, myConceptExpr, myConceptField, myConceptFloatValue, myConceptFunctionCall, myConceptFunctionDefinition, myConceptIntValue, myConceptMinusExpr, myConceptMulExpr, myConceptNew, myConceptParameter, myConceptParameterReference, myConceptPlusExpr, myConceptProgramDefinition, myConceptStringValue, myConceptStructDefinition, myConceptStructType, myConceptVarDefinition, myConceptVarReference);
   }
 
   @Override
@@ -73,6 +74,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptComment;
       case LanguageConceptSwitch.ConstantDefinition:
         return myConceptConstantDefinition;
+      case LanguageConceptSwitch.ConstantFloatStringType:
+        return myConceptConstantFloatStringType;
       case LanguageConceptSwitch.ConstantFloatType:
         return myConceptConstantFloatType;
       case LanguageConceptSwitch.ConstantIntegerType:
@@ -177,6 +180,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.aggregate("initializerValue", 0x44ee06468f8cb6eeL).target(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb6d1L).optional(false).ordered(true).multiple(false).origin("4966914339162076910").done();
     b.alias("constant");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForConstantFloatStringType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "ConstantFloatStringType", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x4a893c619ec571deL);
+    b.class_(false, false, false);
+    b.super_("NewLanguage.structure.ConstantLanguageType", 0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3406bd6L);
+    b.origin("r:be043769-47e7-46c7-b335-bc777f9c75cb(NewLanguage.structure)/5370890420589261278");
+    b.version(2);
+    b.alias("float string");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConstantFloatType() {

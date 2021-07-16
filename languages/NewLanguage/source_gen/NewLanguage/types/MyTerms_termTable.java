@@ -93,6 +93,20 @@ public class MyTerms_termTable {
 
     private boolean pattern;
   }
+  public static class floatHoldingStringType_term extends AbstractTermDeclaration {
+
+    public floatHoldingStringType_term(boolean pattern) {
+      this.pattern = pattern;
+    }
+
+
+    @Override
+    public DataForm getTerm() {
+      return (TermNode.create(ValueRole.create("_term", Value.create("floatHoldingStringType"))));
+    }
+
+    private boolean pattern;
+  }
   public static class structType_term extends AbstractTermDeclaration {
 
     public structType_term(boolean pattern) {

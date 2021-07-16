@@ -23,12 +23,14 @@ import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.logic.dataform.ValueRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class Macros_macroTable extends AbstractMacroTable {
@@ -293,11 +295,15 @@ public class Macros_macroTable extends AbstractMacroTable {
         init();
         TemplateApplicationSession _session = session;
         RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.StringValue_813836719656948806");
-        builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.stringType_term(false) {
-          public DataForm val() {
-            return ValueRole.create("val", LogicalUtil.asValue(macroInput));
-          }
-        }).getTerm()).toPredicate());
+        if (SPropertyOperations.getString(macroInput, PROPS.v$9ODg).matches("[-+]?[0-9]*\\.?[0-9]*[fF]")) {
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.floatHoldingStringType_term(false)).getTerm()).toPredicate());
+        } else {
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.stringType_term(false) {
+            public DataForm val() {
+              return ValueRole.create("val", LogicalUtil.asValue(macroInput));
+            }
+          }).getTerm()).toPredicate());
+        }
 
         builder.processMacroInput(CONCEPTS.StringValue$R1, macroInput);
         return builder;
@@ -501,6 +507,10 @@ public class Macros_macroTable extends AbstractMacroTable {
     /*package*/ static final SConcept StringValue$R1 = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb76eL, "NewLanguage.structure.StringValue");
     /*package*/ static final SConcept StructType$nR = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, "NewLanguage.structure.StructType");
     /*package*/ static final SConcept StructDefinition$r = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d5dL, "NewLanguage.structure.StructDefinition");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty v$9ODg = MetaAdapterFactory.getProperty(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb76eL, 0x44ee06468f8cb76fL, "v");
   }
 
   private static final class LINKS {

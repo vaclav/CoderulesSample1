@@ -32,7 +32,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class Conversion_strint_to_int_when_parsed_to_number extends AbstractRuleTemplate<Conversion_strint_to_int_when_parsed_to_number.Token> {
+public class Conversion_string_to_int_when_parsed_to_number extends AbstractRuleTemplate<Conversion_string_to_int_when_parsed_to_number.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -44,14 +44,14 @@ public class Conversion_strint_to_int_when_parsed_to_number extends AbstractRule
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new strint_to_int_when_parsed_to_number() {
+      new string_to_int_when_parsed_to_number() {
         @Override
         public void apply(TemplateApplicationSession session) {
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
           B = MetaLogicalFactory.metaLogical("B", DataForm.class);
           value = MetaLogicalFactory.metaLogical("value", SNode.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "strint_to_int_when_parsed_to_number", "strint_to_int_when_parsed_to_number", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "string_to_int_when_parsed_to_number", "string_to_int_when_parsed_to_number", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.stringType_term(true) {
             public DataForm val() {
@@ -66,7 +66,7 @@ public class Conversion_strint_to_int_when_parsed_to_number extends AbstractRule
               Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
               Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
 
-              return isNotEmptyString(SPropertyOperations.getString(typedArg1.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg).matches("[+|-]?[0-9]+");
+              return isNotEmptyString(SPropertyOperations.getString(typedArg1.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg).matches("[+-]?[0-9]+");
             }
           }).toPredicate());
 
@@ -81,9 +81,9 @@ public class Conversion_strint_to_int_when_parsed_to_number extends AbstractRule
       return this;
     }
 
-    public abstract class strint_to_int_when_parsed_to_number implements ConstraintRuleTemplate {
+    public abstract class string_to_int_when_parsed_to_number implements ConstraintRuleTemplate {
 
-      protected strint_to_int_when_parsed_to_number rule() {
+      protected string_to_int_when_parsed_to_number rule() {
         return this;
       }
 
@@ -99,8 +99,8 @@ public class Conversion_strint_to_int_when_parsed_to_number extends AbstractRule
   }
 
 
-  public Conversion_strint_to_int_when_parsed_to_number(RuleTable ruleTable) {
-    super(ruleTable, "strint_to_int_when_parsed_to_number", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719656064843"));
+  public Conversion_string_to_int_when_parsed_to_number(RuleTable ruleTable) {
+    super(ruleTable, "string_to_int_when_parsed_to_number", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719656064843"));
   }
 
   @Override

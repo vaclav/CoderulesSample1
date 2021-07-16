@@ -33,7 +33,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion_strint_to_string.Token> {
+public class Conversion_string_to_string extends AbstractRuleTemplate<Conversion_string_to_string.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -45,7 +45,7 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new strint_to_string() {
+      new string_to_string() {
         @Override
         public void apply(TemplateApplicationSession session) {
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
@@ -53,7 +53,7 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
           valueA = MetaLogicalFactory.metaLogical("valueA", SNode.class);
           valueB = MetaLogicalFactory.metaLogical("valueB", SNode.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "strint_to_string", "strint_to_string#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "string_to_string", "string_to_string#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.stringType_term(true) {
             public DataForm val() {
@@ -74,7 +74,7 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
               Logical<SNode> typedArg2 = (Logical<SNode>) args[2];
               Logical<SNode> typedArg3 = (Logical<SNode>) args[3];
 
-              return isNotEmptyString(SPropertyOperations.getString(typedArg1.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg2.findRoot().value(), PROPS.v$9ODg).matches("[+|-]?[0-9]+") && isNotEmptyString(SPropertyOperations.getString(typedArg3.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg).matches("[+|-]?[0-9]+");
+              return isNotEmptyString(SPropertyOperations.getString(typedArg1.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg2.findRoot().value(), PROPS.v$9ODg).matches("[+-]?[0-9]+") && isNotEmptyString(SPropertyOperations.getString(typedArg3.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg).matches("[+-]?[0-9]+");
             }
           }).toPredicate());
 
@@ -82,7 +82,7 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
         }
 
       }.apply(_session);
-      new strint_to_string1() {
+      new string_to_string1() {
         @Override
         public void apply(TemplateApplicationSession session) {
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
@@ -90,7 +90,7 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
           valueA = MetaLogicalFactory.metaLogical("valueA", SNode.class);
           valueB = MetaLogicalFactory.metaLogical("valueB", SNode.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "strint_to_string", "strint_to_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "string_to_string", "string_to_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.stringType_term(true) {
             public DataForm val() {
@@ -109,7 +109,7 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
               Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
               Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
 
-              return isNotEmptyString(SPropertyOperations.getString(typedArg1.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg).matches("[+|-]?[0-9]+");
+              return isNotEmptyString(SPropertyOperations.getString(typedArg1.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg).matches("[+-]?[0-9]+");
             }
           }).toPredicate());
 
@@ -117,7 +117,7 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
         }
 
       }.apply(_session);
-      new strint_to_string2() {
+      new string_to_string2() {
         @Override
         public void apply(TemplateApplicationSession session) {
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
@@ -125,7 +125,7 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
           valueA = MetaLogicalFactory.metaLogical("valueA", SNode.class);
           valueB = MetaLogicalFactory.metaLogical("valueB", SNode.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "strint_to_string", "strint_to_string#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "string_to_string", "string_to_string#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.stringType_term(true) {
             public DataForm val() {
@@ -157,9 +157,9 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
       return this;
     }
 
-    public abstract class strint_to_string implements ConstraintRuleTemplate {
+    public abstract class string_to_string implements ConstraintRuleTemplate {
 
-      protected strint_to_string rule() {
+      protected string_to_string rule() {
         return this;
       }
 
@@ -169,9 +169,9 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
       protected MetaLogical valueB;
 
     }
-    public abstract class strint_to_string1 implements ConstraintRuleTemplate {
+    public abstract class string_to_string1 implements ConstraintRuleTemplate {
 
-      protected strint_to_string1 rule() {
+      protected string_to_string1 rule() {
         return this;
       }
 
@@ -181,9 +181,9 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
       protected MetaLogical valueB;
 
     }
-    public abstract class strint_to_string2 implements ConstraintRuleTemplate {
+    public abstract class string_to_string2 implements ConstraintRuleTemplate {
 
-      protected strint_to_string2 rule() {
+      protected string_to_string2 rule() {
         return this;
       }
 
@@ -200,8 +200,8 @@ public class Conversion_strint_to_string extends AbstractRuleTemplate<Conversion
   }
 
 
-  public Conversion_strint_to_string(RuleTable ruleTable) {
-    super(ruleTable, "strint_to_string", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719657369605"));
+  public Conversion_string_to_string(RuleTable ruleTable) {
+    super(ruleTable, "string_to_string", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/813836719657369605"));
   }
 
   @Override
