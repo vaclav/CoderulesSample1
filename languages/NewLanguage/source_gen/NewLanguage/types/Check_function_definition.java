@@ -9,12 +9,12 @@ import jetbrains.mps.lang.coderules.template.TemplateApplicationSession;
 import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
 import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
@@ -40,31 +40,34 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new function_definition() {
-        @Override
-        public void apply(TemplateApplicationSession session) {
-          ActualReturnType = MetaLogicalFactory.metaLogical("ActualReturnType", DataForm.class);
-          DeclaredType = MetaLogicalFactory.metaLogical("DeclaredType", DataForm.class);
+      {
+        SNode target_jddv8_a0i = SLinkOperations.getTarget(token().fun, LINKS.body$Dpoh);
+        new function_definition() {
+          @Override
+          public void apply(TemplateApplicationSession session) {
+            ActualReturnType = MetaLogicalFactory.metaLogical("ActualReturnType", DataForm.class);
+            DeclaredType = MetaLogicalFactory.metaLogical("DeclaredType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "function_definition", "function_definition" + "_" + String.valueOf(token().fun.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().fun, SNodeOperations.getPointer(token().fun));
+            RuleBuilder builder = new RuleBuilder(session, "function_definition", "function_definition" + "_" + String.valueOf(token().fun.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().fun, SNodeOperations.getPointer(target_jddv8_a0i));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().fun, LINKS.body$Dpoh), rule().ActualReturnType).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          try {
-            builder.merge(0, session.expandMacro(token().fun, SLinkOperations.getTarget(token().fun, LINKS.declaredType$DoUf), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-              public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                return tok.withLogical(rule().DeclaredType).apply();
-              }
-            }));
-          } finally {
+            builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().fun, LINKS.body$Dpoh), rule().ActualReturnType).toConstraint());
+            builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
+            try {
+              builder.merge(0, session.expandMacro(token().fun, SLinkOperations.getTarget(token().fun, LINKS.declaredType$DoUf), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+                public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
+                  return tok.withLogical(rule().DeclaredType).apply();
+                }
+              }));
+            } finally {
+            }
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().fun, rule().DeclaredType).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().ActualReturnType, rule().DeclaredType).toConstraint());
+
+            ListSequence.fromList(ruleBuilders).addElement(builder);
           }
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().fun, rule().DeclaredType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().ActualReturnType, rule().DeclaredType).toConstraint());
 
-          ListSequence.fromList(ruleBuilders).addElement(builder);
-        }
-
-      }.apply(_session);
+        }.apply(_session);
+      }
       return ruleBuilders;
     }
 
