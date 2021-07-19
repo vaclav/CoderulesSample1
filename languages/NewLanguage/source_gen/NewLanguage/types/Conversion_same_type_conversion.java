@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
+import jetbrains.mps.logic.predicate.LogicalPredicate;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
@@ -44,6 +45,8 @@ public class Conversion_same_type_conversion extends AbstractRuleTemplate<Conver
           RuleBuilder builder = new RuleBuilder(session, "same_type_conversion", "same_type_conversion", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
+          builder.appendGuard(new PredicateBuilder(LogicalPredicate.BOUND_SYM).withArguments(rule().A).toPredicate());
+          builder.appendGuard(new PredicateBuilder(LogicalPredicate.BOUND_SYM).withArguments(rule().B).toPredicate());
           builder.appendGuard(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().A, rule().B).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);

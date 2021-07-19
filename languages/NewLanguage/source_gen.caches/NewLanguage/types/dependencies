@@ -618,6 +618,7 @@
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.TemplateApplicationSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
+    <classNode dependClassName="jetbrains.mps.logic.predicate.LogicalPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.predicate.UnificationPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
