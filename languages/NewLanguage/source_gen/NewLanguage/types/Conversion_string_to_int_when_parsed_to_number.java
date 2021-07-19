@@ -23,6 +23,7 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
 import jetbrains.mps.logic.reactor.logical.Logical;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.logic.predicate.FailPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
@@ -58,7 +59,7 @@ public class Conversion_string_to_int_when_parsed_to_number extends AbstractRule
               return ValueRole.create("val", LogicalUtil.asValue(rule().value));
             }
           }).getTerm(), (new MyTerms_termTable.intType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
-          builder.appendGuard(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
+          builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{rule().value, rule().value};
             }
@@ -67,6 +68,17 @@ public class Conversion_string_to_int_when_parsed_to_number extends AbstractRule
               Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
 
               return isNotEmptyString(SPropertyOperations.getString(typedArg1.findRoot().value(), PROPS.v$9ODg)) && SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg).matches("[+-]?[0-9]+");
+            }
+          }).toPredicate());
+          builder.appendAlternation();
+          builder.appendBody(new PredicateBuilder(FailPredicate.FAIL_SYM).withArguments(new LateExpression<Object>() {
+            public Object[] metaArgs() {
+              return new Object[]{rule().value};
+            }
+            public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
+              Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
+
+              return "Can't parse '" + SPropertyOperations.getString(typedArg0.findRoot().value(), PROPS.v$9ODg) + "' as an integer value";
             }
           }).toPredicate());
 

@@ -3509,14 +3509,14 @@
       <node id="1749218580158237815" at="22,89,23,89" concept="2" />
       <node id="1749218580158395723" at="40,72,41,74" concept="2" />
       <node id="496984808426459722" at="41,74,42,74" concept="2" />
-      <node id="496984808426456259" at="42,74,43,76" concept="2" />
-      <node id="496984808426456215" at="43,76,44,76" concept="2" />
+      <node id="496984808426456215" at="42,74,43,76" concept="2" />
+      <node id="496984808426456259" at="43,76,44,76" concept="2" />
       <node id="813836719655377884" at="44,76,45,71" concept="2" />
       <node id="813836719655377928" at="45,71,46,71" concept="2" />
       <node id="813836719654302896" at="46,71,47,84" concept="2" />
       <node id="813836719654302852" at="47,84,48,84" concept="2" />
-      <node id="813836719656715479" at="48,84,49,74" concept="2" />
-      <node id="813836719656715435" at="49,74,50,74" concept="2" />
+      <node id="813836719656715435" at="48,84,49,74" concept="2" />
+      <node id="813836719656715479" at="49,74,50,74" concept="2" />
     </file>
   </root>
   <root nodeRef="r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/496984808426549105">
@@ -4178,95 +4178,146 @@
       <unit id="6153771967692066639" at="31,0,110,0" name="NewLanguage.types.Conversion_convertsUnhandled" />
     </file>
     <file name="Conversion_float_holding_string_to_float_or_string.java">
-      <node id="5370890420589049964" at="28,67,29,29" concept="2" />
-      <node id="5370890420589049964" at="33,42,34,52" concept="7" />
-      <node id="5370890420589049964" at="34,52,35,73" concept="2" />
-      <node id="5370890420589049981" at="38,63,39,66" concept="2" />
-      <node id="5370890420589049982" at="39,66,40,66" concept="2" />
-      <node id="5370890420589049967" at="40,66,41,0" concept="10" />
-      <node id="5370890420589049967" at="41,0,42,203" concept="7" />
-      <node id="5370890420589049967" at="42,203,43,0" concept="10" />
-      <node id="5370890420589049970" at="43,0,44,293" concept="2" />
-      <node id="5370890420589049967" at="44,293,45,0" concept="10" />
-      <node id="5370890420589049967" at="45,0,46,66" concept="2" />
-      <node id="5370890420589051547" at="52,63,53,66" concept="2" />
-      <node id="5370890420589051548" at="53,66,54,66" concept="2" />
-      <node id="5370890420589051535" at="54,66,55,0" concept="10" />
-      <node id="5370890420589051535" at="55,0,56,203" concept="7" />
-      <node id="5370890420589051535" at="56,203,57,0" concept="10" />
-      <node id="5370890420589051538" at="57,0,58,294" concept="2" />
-      <node id="5370890420589051535" at="58,294,59,0" concept="10" />
-      <node id="5370890420589051535" at="59,0,60,66" concept="2" />
-      <node id="5370890420589049964" at="63,24,64,26" concept="8" />
-      <node id="5370890420589049964" at="67,29,68,18" concept="8" />
-      <node id="5370890420589049967" at="73,64,74,20" concept="8" />
-      <node id="5370890420589049981" at="77,0,78,0" concept="3" trace="A" />
-      <node id="5370890420589049982" at="78,0,79,0" concept="3" trace="B" />
-      <node id="5370890420589051535" at="83,65,84,20" concept="8" />
-      <node id="5370890420589051547" at="87,0,88,0" concept="3" trace="A" />
-      <node id="5370890420589051548" at="88,0,89,0" concept="3" trace="B" />
-      <node id="5370890420589049964" at="92,0,93,0" concept="3" trace="required" />
-      <node id="5370890420589049964" at="93,0,94,0" concept="3" trace="ruleBuilders" />
-      <node id="5370890420589049964" at="94,0,95,0" concept="3" trace="session" />
-      <node id="5370890420589049964" at="98,82,99,171" concept="13" />
-      <node id="5370890420589049964" at="103,47,104,16" concept="8" />
-      <node id="5370890420589049964" at="110,77,111,37" concept="8" />
-      <node id="5370890420589049964" at="28,0,31,0" concept="1" trace="Token#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
-      <node id="5370890420589049964" at="67,0,70,0" concept="6" trace="token#()LNewLanguage/types/Conversion_float_holding_string_to_float_or_string/Token;" />
-      <node id="5370890420589049967" at="73,0,76,0" concept="6" trace="rule#()LNewLanguage/types/Conversion_float_holding_string_to_float_or_string/Token/float_holding_string_to_float_or_string;" />
-      <node id="5370890420589051535" at="83,0,86,0" concept="6" trace="rule#()LNewLanguage/types/Conversion_float_holding_string_to_float_or_string/Token/float_holding_string_to_float_or_string1;" />
-      <node id="5370890420589049964" at="98,0,101,0" concept="1" trace="Conversion_float_holding_string_to_float_or_string#(Ljetbrains/mps/lang/coderules/template/RuleTable;)V" />
-      <node id="5370890420589049964" at="102,0,106,0" concept="6" trace="applicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="5370890420589049964" at="109,0,113,0" concept="6" trace="createToken#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)LNewLanguage/types/Conversion_float_holding_string_to_float_or_string/Token;" />
-      <node id="5370890420589049967" at="37,0,48,0" concept="6" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
-      <node id="5370890420589051535" at="51,0,62,0" concept="6" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
-      <node id="5370890420589049966" at="35,73,49,24" concept="2" />
-      <node id="5370890420589051534" at="49,24,63,24" concept="2" />
-      <node id="5370890420589049964" at="32,0,66,0" concept="6" trace="apply#()Ljava/lang/Iterable;" />
-      <scope id="5370890420589049964" at="28,67,29,29" />
-      <scope id="5370890420589049964" at="67,29,68,18" />
-      <scope id="5370890420589049967" at="73,64,74,20" />
-      <scope id="5370890420589051535" at="83,65,84,20" />
-      <scope id="5370890420589049964" at="98,82,99,171" />
-      <scope id="5370890420589049964" at="103,47,104,16" />
-      <scope id="5370890420589049964" at="110,77,111,37" />
-      <scope id="5370890420589049964" at="28,0,31,0">
+      <node id="5370890420589049964" at="39,67,40,29" concept="2" />
+      <node id="5370890420589049964" at="44,42,45,52" concept="7" />
+      <node id="5370890420589049964" at="45,52,46,73" concept="2" />
+      <node id="5370890420589049981" at="49,63,50,66" concept="2" />
+      <node id="5370890420589049982" at="50,66,51,66" concept="2" />
+      <node id="5370890420589049967" at="51,66,52,0" concept="10" />
+      <node id="5370890420589049967" at="52,0,53,203" concept="7" />
+      <node id="5370890420589049967" at="53,203,54,0" concept="10" />
+      <node id="5370890420589049970" at="54,0,55,293" concept="2" />
+      <node id="5370890420589049967" at="55,293,56,0" concept="10" />
+      <node id="5370890420589049967" at="56,0,57,66" concept="2" />
+      <node id="1110072876878216381" at="63,63,64,66" concept="2" />
+      <node id="1110072876878216382" at="64,66,65,66" concept="2" />
+      <node id="1110072876878216451" at="65,66,66,71" concept="2" />
+      <node id="1110072876878216369" at="66,71,67,0" concept="10" />
+      <node id="1110072876878216369" at="67,0,68,203" concept="7" />
+      <node id="1110072876878216369" at="68,203,69,0" concept="10" />
+      <node id="1110072876878219433" at="71,35,72,80" concept="8" />
+      <node id="1110072876878219451" at="76,40,77,48" concept="8" />
+      <node id="1110072876878219502" at="79,118,80,66" concept="7" />
+      <node id="1110072876878219451" at="80,66,81,0" concept="10" />
+      <node id="1110072876878219451" at="81,0,82,136" concept="8" />
+      <node id="1110072876878216369" at="84,28,85,0" concept="10" />
+      <node id="1110072876878216369" at="85,0,86,66" concept="2" />
+      <node id="5370890420589051547" at="92,63,93,66" concept="2" />
+      <node id="5370890420589051548" at="93,66,94,66" concept="2" />
+      <node id="5370890420589051535" at="94,66,95,0" concept="10" />
+      <node id="5370890420589051535" at="95,0,96,203" concept="7" />
+      <node id="5370890420589051535" at="96,203,97,0" concept="10" />
+      <node id="5370890420589051538" at="97,0,98,294" concept="2" />
+      <node id="5370890420589051535" at="98,294,99,0" concept="10" />
+      <node id="5370890420589051535" at="99,0,100,66" concept="2" />
+      <node id="5370890420589049964" at="103,24,104,26" concept="8" />
+      <node id="5370890420589049964" at="107,29,108,18" concept="8" />
+      <node id="5370890420589049967" at="113,64,114,20" concept="8" />
+      <node id="5370890420589049981" at="117,0,118,0" concept="3" trace="A" />
+      <node id="5370890420589049982" at="118,0,119,0" concept="3" trace="B" />
+      <node id="1110072876878216369" at="123,65,124,20" concept="8" />
+      <node id="1110072876878216381" at="127,0,128,0" concept="3" trace="A" />
+      <node id="1110072876878216382" at="128,0,129,0" concept="3" trace="B" />
+      <node id="1110072876878216451" at="129,0,130,0" concept="3" trace="value" />
+      <node id="5370890420589051535" at="134,65,135,20" concept="8" />
+      <node id="5370890420589051547" at="138,0,139,0" concept="3" trace="A" />
+      <node id="5370890420589051548" at="139,0,140,0" concept="3" trace="B" />
+      <node id="5370890420589049964" at="143,0,144,0" concept="3" trace="required" />
+      <node id="5370890420589049964" at="144,0,145,0" concept="3" trace="ruleBuilders" />
+      <node id="5370890420589049964" at="145,0,146,0" concept="3" trace="session" />
+      <node id="5370890420589049964" at="149,82,150,171" concept="13" />
+      <node id="5370890420589049964" at="154,47,155,16" concept="8" />
+      <node id="5370890420589049964" at="161,77,162,37" concept="8" />
+      <node id="5370890420589049964" at="166,0,167,0" concept="11" trace="v$9ODg" />
+      <node id="5370890420589049964" at="39,0,42,0" concept="1" trace="Token#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="1110072876878219433" at="71,0,74,0" concept="6" trace="val#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="1110072876878219451" at="76,0,79,0" concept="6" trace="metaArgs#()[Ljava/lang/Object;" />
+      <node id="5370890420589049964" at="107,0,110,0" concept="6" trace="token#()LNewLanguage/types/Conversion_float_holding_string_to_float_or_string/Token;" />
+      <node id="5370890420589049967" at="113,0,116,0" concept="6" trace="rule#()LNewLanguage/types/Conversion_float_holding_string_to_float_or_string/Token/float_holding_string_to_float_or_string;" />
+      <node id="1110072876878216369" at="123,0,126,0" concept="6" trace="rule#()LNewLanguage/types/Conversion_float_holding_string_to_float_or_string/Token/float_holding_string_to_float_or_string1;" />
+      <node id="5370890420589051535" at="134,0,137,0" concept="6" trace="rule#()LNewLanguage/types/Conversion_float_holding_string_to_float_or_string/Token/float_holding_string_to_float_or_string2;" />
+      <node id="5370890420589049964" at="149,0,152,0" concept="1" trace="Conversion_float_holding_string_to_float_or_string#(Ljetbrains/mps/lang/coderules/template/RuleTable;)V" />
+      <node id="5370890420589049964" at="153,0,157,0" concept="6" trace="applicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5370890420589049964" at="160,0,164,0" concept="6" trace="createToken#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)LNewLanguage/types/Conversion_float_holding_string_to_float_or_string/Token;" />
+      <node id="1110072876878216372" at="69,0,74,136" concept="2" />
+      <node id="1110072876878219451" at="79,0,84,0" concept="6" trace="eval#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;Ljetbrains/mps/logic/reactor/evaluation/InvocationContext;null)Ljava/lang/Object;" />
+      <node id="1110072876878219453" at="74,136,84,28" concept="2" />
+      <node id="5370890420589049967" at="48,0,59,0" concept="6" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="5370890420589051535" at="91,0,102,0" concept="6" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="5370890420589049966" at="46,73,60,24" concept="2" />
+      <node id="5370890420589051534" at="89,24,103,24" concept="2" />
+      <node id="1110072876878216369" at="62,0,88,0" concept="6" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="1110072876878216368" at="60,24,89,24" concept="2" />
+      <node id="5370890420589049964" at="43,0,106,0" concept="6" trace="apply#()Ljava/lang/Iterable;" />
+      <scope id="5370890420589049964" at="39,67,40,29" />
+      <scope id="1110072876878219433" at="71,35,72,80" />
+      <scope id="1110072876878219451" at="76,40,77,48" />
+      <scope id="5370890420589049964" at="107,29,108,18" />
+      <scope id="5370890420589049967" at="113,64,114,20" />
+      <scope id="1110072876878216369" at="123,65,124,20" />
+      <scope id="5370890420589051535" at="134,65,135,20" />
+      <scope id="5370890420589049964" at="149,82,150,171" />
+      <scope id="5370890420589049964" at="154,47,155,16" />
+      <scope id="5370890420589049964" at="161,77,162,37" />
+      <scope id="5370890420589049964" at="39,0,42,0">
         <var name="input" id="5370890420589049964" />
         <var name="session" id="5370890420589049964" />
       </scope>
-      <scope id="5370890420589049964" at="67,0,70,0" />
-      <scope id="5370890420589049967" at="73,0,76,0" />
-      <scope id="5370890420589051535" at="83,0,86,0" />
-      <scope id="5370890420589049964" at="98,0,101,0">
+      <scope id="1110072876878219433" at="71,0,74,0" />
+      <scope id="1110072876878219451" at="76,0,79,0" />
+      <scope id="1110072876878219451" at="79,118,82,136">
+        <var name="typedArg0" id="1110072876878219502" />
+      </scope>
+      <scope id="5370890420589049964" at="107,0,110,0" />
+      <scope id="5370890420589049967" at="113,0,116,0" />
+      <scope id="1110072876878216369" at="123,0,126,0" />
+      <scope id="5370890420589051535" at="134,0,137,0" />
+      <scope id="5370890420589049964" at="149,0,152,0">
         <var name="ruleTable" id="5370890420589049964" />
       </scope>
-      <scope id="5370890420589049964" at="102,0,106,0" />
-      <scope id="5370890420589049964" at="109,0,113,0">
+      <scope id="5370890420589049964" at="153,0,157,0" />
+      <scope id="5370890420589049964" at="160,0,164,0">
         <var name="input" id="5370890420589049964" />
         <var name="session" id="5370890420589049964" />
       </scope>
-      <scope id="5370890420589049967" at="38,63,46,66">
+      <scope id="1110072876878219451" at="79,0,84,0">
+        <var name="_invocationContext" id="1110072876878219451" />
+        <var name="_logicalContext" id="1110072876878219451" />
+        <var name="args" id="1110072876878219451" />
+      </scope>
+      <scope id="5370890420589049967" at="49,63,57,66">
         <var name="builder" id="5370890420589049967" />
       </scope>
-      <scope id="5370890420589051535" at="52,63,60,66">
+      <scope id="5370890420589051535" at="92,63,100,66">
         <var name="builder" id="5370890420589051535" />
       </scope>
-      <scope id="5370890420589049967" at="37,0,48,0">
+      <scope id="5370890420589049967" at="48,0,59,0">
         <var name="session" id="5370890420589049967" />
       </scope>
-      <scope id="5370890420589051535" at="51,0,62,0">
+      <scope id="5370890420589051535" at="91,0,102,0">
         <var name="session" id="5370890420589051535" />
       </scope>
-      <scope id="5370890420589049964" at="33,42,64,26">
+      <scope id="1110072876878216369" at="63,63,86,66">
+        <var name="builder" id="1110072876878216369" />
+      </scope>
+      <scope id="1110072876878216369" at="62,0,88,0">
+        <var name="session" id="1110072876878216369" />
+      </scope>
+      <scope id="5370890420589049964" at="44,42,104,26">
         <var name="_session" id="5370890420589049964" />
       </scope>
-      <scope id="5370890420589049964" at="32,0,66,0" />
-      <unit id="5370890420589049967" at="71,0,81,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$float_holding_string_to_float_or_string" />
-      <unit id="5370890420589051535" at="81,0,91,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$float_holding_string_to_float_or_string1" />
-      <unit id="5370890420589049967" at="36,10,49,7" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$1" />
-      <unit id="5370890420589051535" at="50,10,63,7" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$2" />
-      <unit id="5370890420589049964" at="26,0,96,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token" />
-      <unit id="5370890420589049964" at="24,0,114,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string" />
+      <scope id="5370890420589049964" at="43,0,106,0" />
+      <unit id="5370890420589049964" at="165,0,168,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$PROPS" />
+      <unit id="1110072876878219423" at="70,117,74,11" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$1" />
+      <unit id="1110072876878219451" at="75,92,84,11" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$2$1" />
+      <unit id="5370890420589049967" at="111,0,121,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$float_holding_string_to_float_or_string" />
+      <unit id="5370890420589051535" at="132,0,142,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$float_holding_string_to_float_or_string2" />
+      <unit id="1110072876878216369" at="121,0,132,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$float_holding_string_to_float_or_string1" />
+      <unit id="5370890420589049967" at="47,10,60,7" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$1" />
+      <unit id="5370890420589051535" at="90,10,103,7" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$3" />
+      <unit id="1110072876878216369" at="61,10,89,7" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token$2" />
+      <unit id="5370890420589049964" at="37,0,147,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string$Token" />
+      <unit id="5370890420589049964" at="35,0,169,0" name="NewLanguage.types.Conversion_float_holding_string_to_float_or_string" />
     </file>
     <file name="Conversion_int_to_float.java">
       <node id="813836719655978004" at="28,67,29,29" concept="2" />
@@ -4446,106 +4497,125 @@
       <unit id="813836719655793590" at="26,0,93,0" name="NewLanguage.types.Conversion_same_type_conversion" />
     </file>
     <file name="Conversion_string_to_int_when_parsed_to_number.java">
-      <node id="813836719656064843" at="39,67,40,29" concept="2" />
-      <node id="813836719656064843" at="44,42,45,52" concept="7" />
-      <node id="813836719656064843" at="45,52,46,73" concept="2" />
-      <node id="813836719656064858" at="49,63,50,66" concept="2" />
-      <node id="813836719656064859" at="50,66,51,66" concept="2" />
-      <node id="813836719656949545" at="51,66,52,71" concept="2" />
-      <node id="813836719656064846" at="52,71,53,0" concept="10" />
-      <node id="813836719656064846" at="53,0,54,193" concept="7" />
-      <node id="813836719656064846" at="54,193,55,0" concept="10" />
-      <node id="813836719656949541" at="57,35,58,80" concept="8" />
-      <node id="813836719656949645" at="62,40,63,62" concept="8" />
-      <node id="813836719656954511" at="65,118,66,66" concept="7" />
-      <node id="813836719656949649" at="66,66,67,66" concept="7" />
-      <node id="813836719656949645" at="67,66,68,0" concept="10" />
-      <node id="813836719656949645" at="68,0,69,213" concept="8" />
-      <node id="813836719656064846" at="71,28,72,0" concept="10" />
-      <node id="813836719656064846" at="72,0,73,66" concept="2" />
-      <node id="813836719656064843" at="76,24,77,26" concept="8" />
-      <node id="813836719656064843" at="80,29,81,18" concept="8" />
-      <node id="813836719656064846" at="86,60,87,20" concept="8" />
-      <node id="813836719656064858" at="90,0,91,0" concept="3" trace="A" />
-      <node id="813836719656064859" at="91,0,92,0" concept="3" trace="B" />
-      <node id="813836719656949545" at="92,0,93,0" concept="3" trace="value" />
-      <node id="813836719656064843" at="96,0,97,0" concept="3" trace="required" />
-      <node id="813836719656064843" at="97,0,98,0" concept="3" trace="ruleBuilders" />
-      <node id="813836719656064843" at="98,0,99,0" concept="3" trace="session" />
-      <node id="813836719656064843" at="102,78,103,166" concept="13" />
-      <node id="813836719656064843" at="107,47,108,16" concept="8" />
-      <node id="813836719656064843" at="114,77,115,37" concept="8" />
-      <node id="813836719656953220" at="117,55,118,43" concept="8" />
-      <node id="813836719656064843" at="122,0,123,0" concept="11" trace="v$9ODg" />
-      <node id="813836719656064843" at="39,0,42,0" concept="1" trace="Token#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
-      <node id="813836719656949541" at="57,0,60,0" concept="6" trace="val#()Ljetbrains/mps/logic/dataform/DataForm;" />
-      <node id="813836719656949645" at="62,0,65,0" concept="6" trace="metaArgs#()[Ljava/lang/Object;" />
-      <node id="813836719656064843" at="80,0,83,0" concept="6" trace="token#()LNewLanguage/types/Conversion_string_to_int_when_parsed_to_number/Token;" />
-      <node id="813836719656064846" at="86,0,89,0" concept="6" trace="rule#()LNewLanguage/types/Conversion_string_to_int_when_parsed_to_number/Token/string_to_int_when_parsed_to_number;" />
-      <node id="813836719656064843" at="102,0,105,0" concept="1" trace="Conversion_string_to_int_when_parsed_to_number#(Ljetbrains/mps/lang/coderules/template/RuleTable;)V" />
-      <node id="813836719656953220" at="117,0,120,0" concept="12" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
-      <node id="813836719656064843" at="106,0,110,0" concept="6" trace="applicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="813836719656064843" at="113,0,117,0" concept="6" trace="createToken#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)LNewLanguage/types/Conversion_string_to_int_when_parsed_to_number/Token;" />
-      <node id="813836719656064849" at="55,0,60,134" concept="2" />
-      <node id="813836719656949645" at="65,0,71,0" concept="6" trace="eval#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;Ljetbrains/mps/logic/reactor/evaluation/InvocationContext;null)Ljava/lang/Object;" />
-      <node id="813836719656949646" at="60,134,71,28" concept="2" />
-      <node id="813836719656064846" at="48,0,75,0" concept="6" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
-      <node id="813836719656064845" at="46,73,76,24" concept="2" />
-      <node id="813836719656064843" at="43,0,79,0" concept="6" trace="apply#()Ljava/lang/Iterable;" />
-      <scope id="813836719656064843" at="39,67,40,29" />
-      <scope id="813836719656949541" at="57,35,58,80" />
-      <scope id="813836719656949645" at="62,40,63,62" />
-      <scope id="813836719656064843" at="80,29,81,18" />
-      <scope id="813836719656064846" at="86,60,87,20" />
-      <scope id="813836719656064843" at="102,78,103,166" />
-      <scope id="813836719656064843" at="107,47,108,16" />
-      <scope id="813836719656064843" at="114,77,115,37" />
-      <scope id="813836719656953220" at="117,55,118,43" />
-      <scope id="813836719656064843" at="39,0,42,0">
+      <node id="813836719656064843" at="40,67,41,29" concept="2" />
+      <node id="813836719656064843" at="45,42,46,52" concept="7" />
+      <node id="813836719656064843" at="46,52,47,73" concept="2" />
+      <node id="813836719656064858" at="50,63,51,66" concept="2" />
+      <node id="813836719656064859" at="51,66,52,66" concept="2" />
+      <node id="813836719656949545" at="52,66,53,71" concept="2" />
+      <node id="813836719656064846" at="53,71,54,0" concept="10" />
+      <node id="813836719656064846" at="54,0,55,193" concept="7" />
+      <node id="813836719656064846" at="55,193,56,0" concept="10" />
+      <node id="813836719656949541" at="58,35,59,80" concept="8" />
+      <node id="813836719656949645" at="63,40,64,62" concept="8" />
+      <node id="813836719656954511" at="66,118,67,66" concept="7" />
+      <node id="813836719656949649" at="67,66,68,66" concept="7" />
+      <node id="813836719656949645" at="68,66,69,0" concept="10" />
+      <node id="813836719656949645" at="69,0,70,213" concept="8" />
+      <node id="813836719656064846" at="72,28,73,38" concept="2" />
+      <node id="5458649904070449246" at="75,40,76,48" concept="8" />
+      <node id="5458649904070450369" at="78,118,79,66" concept="7" />
+      <node id="5458649904070449246" at="79,66,80,0" concept="10" />
+      <node id="5458649904070449246" at="80,0,81,139" concept="8" />
+      <node id="813836719656064846" at="83,28,84,0" concept="10" />
+      <node id="813836719656064846" at="84,0,85,66" concept="2" />
+      <node id="813836719656064843" at="88,24,89,26" concept="8" />
+      <node id="813836719656064843" at="92,29,93,18" concept="8" />
+      <node id="813836719656064846" at="98,60,99,20" concept="8" />
+      <node id="813836719656064858" at="102,0,103,0" concept="3" trace="A" />
+      <node id="813836719656064859" at="103,0,104,0" concept="3" trace="B" />
+      <node id="813836719656949545" at="104,0,105,0" concept="3" trace="value" />
+      <node id="813836719656064843" at="108,0,109,0" concept="3" trace="required" />
+      <node id="813836719656064843" at="109,0,110,0" concept="3" trace="ruleBuilders" />
+      <node id="813836719656064843" at="110,0,111,0" concept="3" trace="session" />
+      <node id="813836719656064843" at="114,78,115,166" concept="13" />
+      <node id="813836719656064843" at="119,47,120,16" concept="8" />
+      <node id="813836719656064843" at="126,77,127,37" concept="8" />
+      <node id="813836719656953220" at="129,55,130,43" concept="8" />
+      <node id="813836719656064843" at="134,0,135,0" concept="11" trace="v$9ODg" />
+      <node id="813836719656064843" at="40,0,43,0" concept="1" trace="Token#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="813836719656949541" at="58,0,61,0" concept="6" trace="val#()Ljetbrains/mps/logic/dataform/DataForm;" />
+      <node id="813836719656949645" at="63,0,66,0" concept="6" trace="metaArgs#()[Ljava/lang/Object;" />
+      <node id="5458649904070449246" at="75,0,78,0" concept="6" trace="metaArgs#()[Ljava/lang/Object;" />
+      <node id="813836719656064843" at="92,0,95,0" concept="6" trace="token#()LNewLanguage/types/Conversion_string_to_int_when_parsed_to_number/Token;" />
+      <node id="813836719656064846" at="98,0,101,0" concept="6" trace="rule#()LNewLanguage/types/Conversion_string_to_int_when_parsed_to_number/Token/string_to_int_when_parsed_to_number;" />
+      <node id="813836719656064843" at="114,0,117,0" concept="1" trace="Conversion_string_to_int_when_parsed_to_number#(Ljetbrains/mps/lang/coderules/template/RuleTable;)V" />
+      <node id="813836719656953220" at="129,0,132,0" concept="12" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="813836719656064843" at="118,0,122,0" concept="6" trace="applicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="813836719656064843" at="125,0,129,0" concept="6" trace="createToken#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)LNewLanguage/types/Conversion_string_to_int_when_parsed_to_number/Token;" />
+      <node id="813836719656064849" at="56,0,61,134" concept="2" />
+      <node id="5458649904070449246" at="78,0,83,0" concept="6" trace="eval#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;Ljetbrains/mps/logic/reactor/evaluation/InvocationContext;null)Ljava/lang/Object;" />
+      <node id="813836719656949645" at="66,0,72,0" concept="6" trace="eval#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;Ljetbrains/mps/logic/reactor/evaluation/InvocationContext;null)Ljava/lang/Object;" />
+      <node id="5458649904070449248" at="73,38,83,28" concept="2" />
+      <node id="813836719656949646" at="61,134,72,28" concept="2" />
+      <node id="813836719656064846" at="49,0,87,0" concept="6" trace="apply#(Ljetbrains/mps/lang/coderules/template/TemplateApplicationSession;)V" />
+      <node id="813836719656064845" at="47,73,88,24" concept="2" />
+      <node id="813836719656064843" at="44,0,91,0" concept="6" trace="apply#()Ljava/lang/Iterable;" />
+      <scope id="813836719656064843" at="40,67,41,29" />
+      <scope id="813836719656949541" at="58,35,59,80" />
+      <scope id="813836719656949645" at="63,40,64,62" />
+      <scope id="5458649904070449246" at="75,40,76,48" />
+      <scope id="813836719656064843" at="92,29,93,18" />
+      <scope id="813836719656064846" at="98,60,99,20" />
+      <scope id="813836719656064843" at="114,78,115,166" />
+      <scope id="813836719656064843" at="119,47,120,16" />
+      <scope id="813836719656064843" at="126,77,127,37" />
+      <scope id="813836719656953220" at="129,55,130,43" />
+      <scope id="813836719656064843" at="40,0,43,0">
         <var name="input" id="813836719656064843" />
         <var name="session" id="813836719656064843" />
       </scope>
-      <scope id="813836719656949541" at="57,0,60,0" />
-      <scope id="813836719656949645" at="62,0,65,0" />
-      <scope id="813836719656064843" at="80,0,83,0" />
-      <scope id="813836719656064846" at="86,0,89,0" />
-      <scope id="813836719656064843" at="102,0,105,0">
+      <scope id="813836719656949541" at="58,0,61,0" />
+      <scope id="813836719656949645" at="63,0,66,0" />
+      <scope id="5458649904070449246" at="75,0,78,0" />
+      <scope id="5458649904070449246" at="78,118,81,139">
+        <var name="typedArg0" id="5458649904070450369" />
+      </scope>
+      <scope id="813836719656064843" at="92,0,95,0" />
+      <scope id="813836719656064846" at="98,0,101,0" />
+      <scope id="813836719656064843" at="114,0,117,0">
         <var name="ruleTable" id="813836719656064843" />
       </scope>
-      <scope id="813836719656953220" at="117,0,120,0">
+      <scope id="813836719656953220" at="129,0,132,0">
         <var name="str" id="813836719656953220" />
       </scope>
-      <scope id="813836719656949645" at="65,118,69,213">
+      <scope id="813836719656949645" at="66,118,70,213">
         <var name="typedArg0" id="813836719656954511" />
         <var name="typedArg1" id="813836719656949649" />
       </scope>
-      <scope id="813836719656064843" at="106,0,110,0" />
-      <scope id="813836719656064843" at="113,0,117,0">
+      <scope id="813836719656064843" at="118,0,122,0" />
+      <scope id="813836719656064843" at="125,0,129,0">
         <var name="input" id="813836719656064843" />
         <var name="session" id="813836719656064843" />
       </scope>
-      <scope id="813836719656949645" at="65,0,71,0">
+      <scope id="5458649904070449246" at="78,0,83,0">
+        <var name="_invocationContext" id="5458649904070449246" />
+        <var name="_logicalContext" id="5458649904070449246" />
+        <var name="args" id="5458649904070449246" />
+      </scope>
+      <scope id="813836719656949645" at="66,0,72,0">
         <var name="_invocationContext" id="813836719656949645" />
         <var name="_logicalContext" id="813836719656949645" />
         <var name="args" id="813836719656949645" />
       </scope>
-      <scope id="813836719656064846" at="49,63,73,66">
+      <scope id="813836719656064846" at="50,63,85,66">
         <var name="builder" id="813836719656064846" />
       </scope>
-      <scope id="813836719656064846" at="48,0,75,0">
+      <scope id="813836719656064846" at="49,0,87,0">
         <var name="session" id="813836719656064846" />
       </scope>
-      <scope id="813836719656064843" at="44,42,77,26">
+      <scope id="813836719656064843" at="45,42,89,26">
         <var name="_session" id="813836719656064843" />
       </scope>
-      <scope id="813836719656064843" at="43,0,79,0" />
-      <unit id="813836719656064843" at="121,0,124,0" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$PROPS" />
-      <unit id="813836719656065032" at="56,117,60,11" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$1" />
-      <unit id="813836719656949645" at="61,103,71,11" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$Token$1$1" />
-      <unit id="813836719656064846" at="84,0,95,0" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$Token$string_to_int_when_parsed_to_number" />
-      <unit id="813836719656064846" at="47,10,76,7" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$Token$1" />
-      <unit id="813836719656064843" at="37,0,100,0" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$Token" />
-      <unit id="813836719656064843" at="35,0,125,0" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number" />
+      <scope id="813836719656064843" at="44,0,91,0" />
+      <unit id="813836719656064843" at="133,0,136,0" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$PROPS" />
+      <unit id="813836719656065032" at="57,117,61,11" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$1" />
+      <unit id="5458649904070449246" at="74,92,83,11" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$Token$1$2" />
+      <unit id="813836719656949645" at="62,102,72,11" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$Token$1$1" />
+      <unit id="813836719656064846" at="96,0,107,0" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$Token$string_to_int_when_parsed_to_number" />
+      <unit id="813836719656064846" at="48,10,88,7" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$Token$1" />
+      <unit id="813836719656064843" at="38,0,112,0" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number$Token" />
+      <unit id="813836719656064843" at="36,0,137,0" name="NewLanguage.types.Conversion_string_to_int_when_parsed_to_number" />
     </file>
     <file name="Conversion_string_to_string.java">
       <node id="813836719657369605" at="40,67,41,29" concept="2" />
