@@ -82,6 +82,7 @@ public class Conversion_string_to_string extends AbstractRuleTemplate<Conversion
         }
 
       }.apply(_session);
+
       new string_to_string1() {
         @Override
         public void apply(TemplateApplicationSession session) {
@@ -117,6 +118,7 @@ public class Conversion_string_to_string extends AbstractRuleTemplate<Conversion
         }
 
       }.apply(_session);
+
       new string_to_string2() {
         @Override
         public void apply(TemplateApplicationSession session) {

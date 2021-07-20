@@ -58,6 +58,7 @@ public class Conversion_float_holding_string_to_float_or_string extends Abstract
         }
 
       }.apply(_session);
+
       new float_holding_string_to_float_or_string1() {
         @Override
         public void apply(TemplateApplicationSession session) {
@@ -87,6 +88,7 @@ public class Conversion_float_holding_string_to_float_or_string extends Abstract
         }
 
       }.apply(_session);
+
       new float_holding_string_to_float_or_string2() {
         @Override
         public void apply(TemplateApplicationSession session) {
