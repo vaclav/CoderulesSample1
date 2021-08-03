@@ -25,10 +25,11 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("assignment");
     SetSequence.fromSet(principalRulesTags).addElement("binary_expr_type");
     SetSequence.fromSet(principalRulesTags).addElement("check");
+    SetSequence.fromSet(principalRulesTags).addElement("coerceTo");
     SetSequence.fromSet(principalRulesTags).addElement("constantDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("constant_reference");
     SetSequence.fromSet(principalRulesTags).addElement("constructor");
-    SetSequence.fromSet(principalRulesTags).addElement("convert");
+    SetSequence.fromSet(principalRulesTags).addElement("convertsTo");
     SetSequence.fromSet(principalRulesTags).addElement("dot");
     SetSequence.fromSet(principalRulesTags).addElement("field");
     SetSequence.fromSet(principalRulesTags).addElement("floatLiteral");
@@ -38,6 +39,7 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("parameter");
     SetSequence.fromSet(principalRulesTags).addElement("parameter_reference");
     SetSequence.fromSet(principalRulesTags).addElement("stringLiteral");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
@@ -48,7 +50,6 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Variable");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Variable");
-    SetSequence.fromSet(principalRulesTags).addElement("typeof");
     SetSequence.fromSet(principalRulesTags).addElement("varDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("var_reference");
   }

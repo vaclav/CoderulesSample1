@@ -57,7 +57,7 @@ public class Manifest extends AbstractCoderulesManifest {
     }
     {
       List<QueryTable> qts = ListSequence.fromList(new ArrayList<QueryTable>());
-      ListSequence.fromList(qts).addElement(new Queries_queryTable());
+      ListSequence.fromList(qts).addElement(new _Queries__queryTable());
       this.queryTables = ListSequence.fromList(qts).asUnmodifiable();
     }
     {
