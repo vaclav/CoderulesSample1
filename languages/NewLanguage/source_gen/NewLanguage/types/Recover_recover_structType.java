@@ -66,7 +66,7 @@ public class Recover_recover_structType extends AbstractRuleTemplate<Recover_rec
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
 
-              return createStructType_mptleq_a0a0a0a0a0e(typedArg0.findRoot().value());
+              return createStructType_mptleq_a0a0a0a0a0f(typedArg0.findRoot().value());
             }
           }).toPredicate());
 
@@ -114,7 +114,7 @@ public class Recover_recover_structType extends AbstractRuleTemplate<Recover_rec
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createStructType_mptleq_a0a0a0a0a0e(SNode p0) {
+  private static SNode createStructType_mptleq_a0a0a0a0a0f(SNode p0) {
     SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.StructType$nR);
     n0.setReferenceTarget(LINKS.struct$JP1k, p0);
     return n0.getResult();

@@ -15,6 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ConstantDefinition;
   private ConceptPresentation props_ConstantFloatStringType;
   private ConceptPresentation props_ConstantFloatType;
+  private ConceptPresentation props_ConstantIntStringType;
   private ConceptPresentation props_ConstantIntegerType;
   private ConceptPresentation props_ConstantLanguageType;
   private ConceptPresentation props_ConstantReference;
@@ -88,6 +89,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstantFloatType = cpb.create();
         }
         return props_ConstantFloatType;
+      case LanguageConceptSwitch.ConstantIntStringType:
+        if (props_ConstantIntStringType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("int string");
+          props_ConstantIntStringType = cpb.create();
+        }
+        return props_ConstantIntStringType;
       case LanguageConceptSwitch.ConstantIntegerType:
         if (props_ConstantIntegerType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

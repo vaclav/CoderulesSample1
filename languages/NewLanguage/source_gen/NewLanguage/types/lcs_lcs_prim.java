@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
+import jetbrains.mps.logic.predicate.LogicalPredicate;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.function.Function;
@@ -52,6 +53,8 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
           RuleBuilder builder = new RuleBuilder(session, "lcs_prim", "lcs_prim#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments((new MyTerms_termTable.primType_term(true)).getTerm(), (new MyTerms_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendGuard(new PredicateBuilder(LogicalPredicate.BOUND_SYM).withArguments(rule().Left).toPredicate());
+          builder.appendGuard(new PredicateBuilder(LogicalPredicate.BOUND_SYM).withArguments(rule().Right).toPredicate());
           builder.appendGuard(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Left, rule().Right).toPredicate());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Left).toPredicate());
 

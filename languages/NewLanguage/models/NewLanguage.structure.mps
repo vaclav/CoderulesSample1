@@ -452,5 +452,12 @@
     <property role="34LRSv" value="float string" />
     <ref role="1TJDcQ" node="3e3AsVjg6Jm" resolve="ConstantLanguageType" />
   </node>
+  <node concept="1TIwiD" id="40umfPsfD25">
+    <property role="EcuMT" value="4620228112926281861" />
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="ConstantIntStringType" />
+    <property role="34LRSv" value="int string" />
+    <ref role="1TJDcQ" node="3e3AsVjg6Jm" resolve="ConstantLanguageType" />
+  </node>
 </model>
 

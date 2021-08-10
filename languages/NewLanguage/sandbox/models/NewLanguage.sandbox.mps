@@ -815,7 +815,43 @@
         <property role="3boF4D" value="12" />
       </node>
     </node>
-    <node concept="1fvZmq" id="4E9f66uLAjw" role="3boF2k" />
+    <node concept="1fvZmq" id="40umfPsg8Oe" role="3boF2k" />
+    <node concept="1f7RQk" id="40umfPsg8Yv" role="3boF2k">
+      <property role="1f7RQj" value="strings containing an int value can be combined with int values in binary expressions" />
+    </node>
+    <node concept="1fvHIZ" id="40umfPsfToT" role="3boF2k">
+      <node concept="1f0fsm" id="40umfPsfTqf" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4jz0u" resolve="a" />
+      </node>
+      <node concept="1PAgPj" id="40umfPsfTql" role="1fvHIW">
+        <node concept="3boF4C" id="40umfPsfTqx" role="1PAgMg">
+          <property role="3boF4D" value="12" />
+        </node>
+        <node concept="3boF4R" id="40umfPsfTqF" role="1PAgMi">
+          <property role="3boF4O" value="12" />
+        </node>
+      </node>
+    </node>
+    <node concept="1f0frs" id="40umfPsg8QR" role="3boF2k">
+      <property role="TrG5h" value="intstr" />
+      <node concept="3boF4C" id="40umfPsg8Sg" role="1f0frp">
+        <property role="3boF4D" value="24" />
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="40umfPsg8Sl" role="3boF2k">
+      <node concept="1f0fsm" id="40umfPsg8TM" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4jz0u" resolve="a" />
+      </node>
+      <node concept="1PAgPj" id="40umfPsg8U6" role="1fvHIW">
+        <node concept="1f0fsm" id="40umfPsg8Ui" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+        </node>
+        <node concept="3boF4R" id="40umfPsg8Ur" role="1PAgMi">
+          <property role="3boF4O" value="12" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvZmq" id="40umfPsg8VA" role="3boF2k" />
     <node concept="1f7RQk" id="4E9f66uLAll" role="3boF2k">
       <property role="1f7RQj" value="strings containing a flat value can be converted to a float, others cannot" />
     </node>
@@ -869,6 +905,42 @@
       </node>
     </node>
     <node concept="1fvZmq" id="4E9f66uLAkq" role="3boF2k" />
+    <node concept="1f7RQk" id="40umfPsg91p" role="3boF2k">
+      <property role="1f7RQj" value="strings containing a float value can be combined with float values in binary expressions" />
+    </node>
+    <node concept="1fvHIZ" id="40umfPsg91q" role="3boF2k">
+      <node concept="1f0fsm" id="40umfPsg93K" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4jz0F" resolve="f" />
+      </node>
+      <node concept="1PAgPj" id="40umfPsg91s" role="1fvHIW">
+        <node concept="3boF4C" id="40umfPsg91t" role="1PAgMg">
+          <property role="3boF4D" value="12f" />
+        </node>
+        <node concept="1bpOEZ" id="40umfPsg93x" role="1PAgMi">
+          <property role="1bpOEY" value="12" />
+        </node>
+      </node>
+    </node>
+    <node concept="1f0frs" id="40umfPsg91v" role="3boF2k">
+      <property role="TrG5h" value="floatstr" />
+      <node concept="3boF4C" id="40umfPsg91w" role="1f0frp">
+        <property role="3boF4D" value="24.6f" />
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="40umfPsg91x" role="3boF2k">
+      <node concept="1f0fsm" id="40umfPsg94G" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4jz0F" resolve="f" />
+      </node>
+      <node concept="1PAgPj" id="40umfPsg91z" role="1fvHIW">
+        <node concept="1f0fsm" id="40umfPsg91$" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+        </node>
+        <node concept="1bpOEZ" id="40umfPsg94h" role="1PAgMi">
+          <property role="1bpOEY" value="12.1f" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvZmq" id="40umfPsg8ZW" role="3boF2k" />
   </node>
 </model>
 

@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.builder.SNodeBuilder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class Recover_recover_stringType extends AbstractRuleTemplate<Recover_recover_stringType.Token> {
+public class Recover_recover_intHoldingStringType extends AbstractRuleTemplate<Recover_recover_intHoldingStringType.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -41,22 +41,22 @@ public class Recover_recover_stringType extends AbstractRuleTemplate<Recover_rec
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new recover_stringType() {
+      new recover_intHoldingStringType() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Node = MetaLogicalFactory.metaLogical("Node", SNode.class);
           Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "recover_stringType", "recover_stringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "recover_intHoldingStringType", "recover_intHoldingStringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().Node, (new MyTerms_termTable.stringType_term(true)).getTerm()).withPatternLogicals(null, rule().Type).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().Node, (new MyTerms_termTable.intHoldingStringType_term(true)).getTerm()).withPatternLogicals(null, rule().Type).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Node, new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{};
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return createConstantStringType_mptleq_a0a0a0a0a0e();
+              return createConstantIntStringType_mptleq_a0a0a0a0a0c();
             }
           }).toPredicate());
 
@@ -71,9 +71,9 @@ public class Recover_recover_stringType extends AbstractRuleTemplate<Recover_rec
       return this;
     }
 
-    public abstract class recover_stringType implements ConstraintRuleTemplate {
+    public abstract class recover_intHoldingStringType implements ConstraintRuleTemplate {
 
-      protected recover_stringType rule() {
+      protected recover_intHoldingStringType rule() {
         return this;
       }
 
@@ -88,8 +88,8 @@ public class Recover_recover_stringType extends AbstractRuleTemplate<Recover_rec
   }
 
 
-  public Recover_recover_stringType(RuleTable ruleTable) {
-    super(ruleTable, "recover_stringType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/1749218580158408090"));
+  public Recover_recover_intHoldingStringType(RuleTable ruleTable) {
+    super(ruleTable, "recover_intHoldingStringType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/4620228112926197047"));
   }
 
   @Override
@@ -103,12 +103,12 @@ public class Recover_recover_stringType extends AbstractRuleTemplate<Recover_rec
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createConstantStringType_mptleq_a0a0a0a0a0e() {
-    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantStringType$MU);
+  private static SNode createConstantIntStringType_mptleq_a0a0a0a0a0c() {
+    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantIntStringType$26);
     return n0.getResult();
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept ConstantStringType$MU = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3fbL, "NewLanguage.structure.ConstantStringType");
+    /*package*/ static final SConcept ConstantIntStringType$26 = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x401e58fd5c3e9085L, "NewLanguage.structure.ConstantIntStringType");
   }
 }

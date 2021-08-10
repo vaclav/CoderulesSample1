@@ -88,7 +88,29 @@ public class MyTerms_termTable {
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val())));
+      return (TermNode.create(ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val()), ChildRole.create("_subterm", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(DataForm.class)))));
+    }
+
+    private boolean pattern;
+  }
+  public static class intHoldingStringType_term extends AbstractTermDeclaration {
+
+    public intHoldingStringType_term(boolean pattern) {
+      this.pattern = pattern;
+    }
+
+    public DataForm val() {
+      if (pattern) {
+        return ValueRole.create("val", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
+
+      } else {
+        return (ValueRole.create("val", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
+      }
+    }
+
+    @Override
+    public DataForm getTerm() {
+      return (TermNode.create(ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val()), ChildRole.create("_subterm", TermNode.create(ValueRole.create("_term", Value.create("intHoldingStringType"))))));
     }
 
     private boolean pattern;
@@ -99,10 +121,18 @@ public class MyTerms_termTable {
       this.pattern = pattern;
     }
 
+    public DataForm val() {
+      if (pattern) {
+        return ValueRole.create("val", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
+
+      } else {
+        return (ValueRole.create("val", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
+      }
+    }
 
     @Override
     public DataForm getTerm() {
-      return (TermNode.create(ValueRole.create("_term", Value.create("floatHoldingStringType"))));
+      return (TermNode.create(ValueRole.create("_term", Value.create("stringType")), LogicalUtil.asDataForm(val()), ChildRole.create("_subterm", TermNode.create(ValueRole.create("_term", Value.create("floatHoldingStringType"))))));
     }
 
     private boolean pattern;
