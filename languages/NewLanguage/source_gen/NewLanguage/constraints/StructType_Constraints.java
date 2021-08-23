@@ -11,13 +11,13 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -28,18 +28,14 @@ public class StructType_Constraints extends BaseConstraintsDescriptor {
 
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
-    BaseReferenceConstraintsDescriptor d0 = new BaseReferenceConstraintsDescriptor(LINKS.struct$JP1k, this) {
-      @Override
-      public boolean hasOwnScopeProvider() {
-        return true;
-      }
+    BaseReferenceConstraintsDescriptor d0 = new BaseReferenceConstraintsDescriptor(LINKS.struct$JP1k, this, true, false) {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_axu98z_a0a0a0a0a1a0a0a0c;
+            return new SNodePointer("r:fb123c48-4411-4a2f-b19c-686872e91d89(NewLanguage.constraints)", "813836719654624678");
           }
           @Override
           public Scope createScope(final ReferenceConstraintsContext _context) {
@@ -52,7 +48,6 @@ public class StructType_Constraints extends BaseConstraintsDescriptor {
     references.put(d0.getReference(), d0);
     return references;
   }
-  private static final SNodePointer breakingNode_axu98z_a0a0a0a0a1a0a0a0c = new SNodePointer("r:fb123c48-4411-4a2f-b19c-686872e91d89(NewLanguage.constraints)", "813836719654624678");
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept StructType$nR = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, "NewLanguage.structure.StructType");

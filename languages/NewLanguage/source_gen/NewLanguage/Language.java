@@ -14,8 +14,6 @@ import NewLanguage.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import NewLanguage.structure.ConceptPresentationAspectImpl;
-import jetbrains.mps.lang.typechecking.aspect.TypecheckingAspect;
-import NewLanguage.types.TypesAspectDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.language.LanguageExtensions;
 
@@ -60,11 +58,6 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == ConceptPresentationAspect.class) {
       return aspectClass.cast(new ConceptPresentationAspectImpl());
-    }
-    if (aspectClass.getName().equals("jetbrains.mps.lang.typechecking.aspect.TypecheckingAspect")) {
-      if (aspectClass == TypecheckingAspect.class) {
-        return (T) new TypesAspectDescriptor();
-      }
     }
     return null;
   }

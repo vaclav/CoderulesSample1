@@ -49,8 +49,8 @@ public class Conversion_convertsUnhandled extends AbstractRuleTemplate<Conversio
           RuleBuilder builder = new RuleBuilder(session, "convertsUnhandled", "convertsUnhandled", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().Sub, rule().Super).toConstraint());
-          builder.appendGuard(new PredicateBuilder(LogicalPredicate.BOUND_SYM).withArguments(rule().Sub).toPredicate());
-          builder.appendGuard(new PredicateBuilder(LogicalPredicate.BOUND_SYM).withArguments(rule().Super).toPredicate());
+          builder.appendGuard(new PredicateBuilder(LogicalPredicate.NONFREE_SYM).withArguments(rule().Sub).toPredicate());
+          builder.appendGuard(new PredicateBuilder(LogicalPredicate.NONFREE_SYM).withArguments(rule().Super).toPredicate());
           builder.appendBody(new PredicateBuilder(FailPredicate.FAIL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{rule().Super, rule().Sub};
