@@ -940,6 +940,55 @@
         </node>
       </node>
     </node>
+    <node concept="1f0frs" id="4Y3XjETo5LC" role="3boF2k">
+      <property role="TrG5h" value="intstr" />
+      <node concept="3boF4C" id="4Y3XjETo5Sf" role="1f0frp">
+        <property role="3boF4D" value="123" />
+      </node>
+    </node>
+    <node concept="1f7RQk" id="4Y3XjEToDC0" role="3boF2k">
+      <property role="1f7RQj" value="string containing either a float or an int can be combined with another string containing either a float or an int" />
+    </node>
+    <node concept="1fvHIZ" id="4Y3XjEToD8Y" role="3boF2k">
+      <node concept="1f0fsm" id="4Y3XjEToD8Z" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4jz0Y" resolve="s" />
+      </node>
+      <node concept="1PAgPj" id="4Y3XjEToD90" role="1fvHIW">
+        <node concept="1f0fsm" id="4Y3XjEToD91" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+        </node>
+        <node concept="1f0fsm" id="4Y3XjEToD92" role="1PAgMi">
+          <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="4Y3XjEToDrf" role="3boF2k">
+      <node concept="1f0fsm" id="4Y3XjEToDrg" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4jz0Y" resolve="s" />
+      </node>
+      <node concept="1PAgPj" id="4Y3XjEToDrh" role="1fvHIW">
+        <node concept="1f0fsm" id="4Y3XjEToDri" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+        </node>
+        <node concept="1f0fsm" id="4Y3XjEToDrj" role="1PAgMi">
+          <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="4Y3XjEToD8T" role="3boF2k">
+      <node concept="1f0fsm" id="4Y3XjEToD8U" role="1fvHIY">
+        <ref role="1f0fsl" node="Hbl2X4jz0Y" resolve="s" />
+      </node>
+      <node concept="1PAgPj" id="4Y3XjEToD8V" role="1fvHIW">
+        <node concept="1f0fsm" id="4Y3XjEToD8W" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+        </node>
+        <node concept="1f0fsm" id="4Y3XjEToD8X" role="1PAgMi">
+          <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvZmq" id="4Y3XjEToD4_" role="3boF2k" />
     <node concept="1fvZmq" id="40umfPsg8ZW" role="3boF2k" />
   </node>
 </model>

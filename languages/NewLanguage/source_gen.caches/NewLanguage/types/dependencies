@@ -1236,6 +1236,13 @@
     <classNode extendsClassName="jetbrains.mps.lang.coderules.template.AbstractRuleTable" />
     <classNode extendsClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
   </dependency>
+  <dependency className="NewLanguage.types.TypesAspectDescriptor">
+    <classNode dependClassName="NewLanguage.types.Manifest" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.coderules.aspect.AbstractCoderulesManifest" />
+    <classNode extendsClassName="jetbrains.mps.lang.coderules.aspect.CoderulesAspect" />
+    <classNode extendsClassName="jetbrains.mps.lang.typechecking.aspect.TypecheckingAspect" />
+  </dependency>
   <dependency className="NewLanguage.types.lcs_lcs_prim">
     <classNode dependClassName="NewLanguage.types.MyTerms_termTable" />
     <classNode dependClassName="java.lang.Iterable" />

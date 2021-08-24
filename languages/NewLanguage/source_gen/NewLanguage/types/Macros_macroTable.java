@@ -296,9 +296,17 @@ public class Macros_macroTable extends AbstractMacroTable {
         TemplateApplicationSession _session = session;
         RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.StringValue_813836719656948806");
         if (SPropertyOperations.getString(macroInput, PROPS.v$9ODg).matches("[-+]?[0-9]*\\.?[0-9]*[fF]")) {
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.floatHoldingStringType_term(false)).getTerm()).toPredicate());
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.floatHoldingStringType_term(false) {
+            public DataForm val() {
+              return ValueRole.create("val", LogicalUtil.asValue(macroInput));
+            }
+          }).getTerm()).toPredicate());
         } else if (SPropertyOperations.getString(macroInput, PROPS.v$9ODg).matches("[+-]?[0-9]+")) {
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.intHoldingStringType_term(false)).getTerm()).toPredicate());
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.intHoldingStringType_term(false) {
+            public DataForm val() {
+              return ValueRole.create("val", LogicalUtil.asValue(macroInput));
+            }
+          }).getTerm()).toPredicate());
         } else {
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTerms_termTable.stringType_term(false) {
             public DataForm val() {

@@ -68,7 +68,7 @@ public class Conversion_float_holding_string_to_float_or_string extends Abstract
 
           RuleBuilder builder = new RuleBuilder(session, "float_holding_string_to_float_or_string", "float_holding_string_to_float_or_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.stringType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.floatHoldingStringType_term(true) {
             public DataForm val() {
               return ValueRole.create("val", LogicalUtil.asValue(rule().value));
             }
