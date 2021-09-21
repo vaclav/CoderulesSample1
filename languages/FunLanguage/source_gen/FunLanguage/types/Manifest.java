@@ -43,13 +43,16 @@ public class Manifest extends AbstractCoderulesManifest {
   private void init() {
     {
       List<MacroTable> macroTables = ListSequence.fromList(new ArrayList<MacroTable>());
+      ListSequence.fromList(macroTables).addElement(new _ExpectTypeMacro__macroTable());
       ListSequence.fromList(macroTables).addElement(new Macros_macroTable());
       this.macroTables = ListSequence.fromList(macroTables).asUnmodifiable();
     }
     {
       List<RuleTable> rtables = ListSequence.fromList(new ArrayList<RuleTable>());
+      ListSequence.fromList(rtables).addElement(new _TypeOf__ruleTable(this));
+      ListSequence.fromList(rtables).addElement(new _RecoverType_Default__ruleTable(this));
+      ListSequence.fromList(rtables).addElement(new _RecoverType__ruleTable(this));
       ListSequence.fromList(rtables).addElement(new Check_ruleTable(this));
-      ListSequence.fromList(rtables).addElement(new Recover_ruleTable(this));
       ListSequence.fromList(rtables).addElement(new ExpectType_ruleTable(this));
       ListSequence.fromList(rtables).addElement(new lcs_ruleTable(this));
       ListSequence.fromList(rtables).addElement(new Conversion_ruleTable(this));

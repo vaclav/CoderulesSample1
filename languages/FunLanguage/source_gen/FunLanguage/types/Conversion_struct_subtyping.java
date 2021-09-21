@@ -54,11 +54,11 @@ public class Conversion_struct_subtyping extends AbstractRuleTemplate<Conversion
 
           RuleBuilder builder = new RuleBuilder(session, "struct_subtyping", "struct_subtyping", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.structType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.structType_term(true) {
             public DataForm definition() {
               return ValueRole.create("definition", LogicalUtil.asValue(rule().SA));
             }
-          }).getTerm(), (new MyTerms_termTable.structType_term(true) {
+          }).getTerm(), (new MyTypes_termTable.structType_term(true) {
             public DataForm definition() {
               return ValueRole.create("definition", LogicalUtil.asValue(rule().SB));
             }
@@ -69,7 +69,7 @@ public class Conversion_struct_subtyping extends AbstractRuleTemplate<Conversion
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
-              final Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
+              Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
 
               return ListSequence.fromList(StructDefinition__BehaviorDescriptor.structAndExtendedStructs_idHbl2X4iivr.invoke(typedArg0.findRoot().value())).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {

@@ -44,7 +44,7 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
           RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTerms_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTerms_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Right).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -61,7 +61,7 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
           RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTerms_termTable.primType_term(true)).getTerm(), (new MyTerms_termTable.intHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Left).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -78,7 +78,7 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
           RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTerms_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTerms_termTable.floatType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.floatType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Right).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -95,7 +95,7 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
           RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#3", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTerms_termTable.floatType_term(true)).getTerm(), (new MyTerms_termTable.floatHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.floatType_term(true)).getTerm(), (new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Left).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -112,7 +112,7 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
           RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#4", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTerms_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTerms_termTable.floatHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Right).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -129,8 +129,8 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
           RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#5", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTerms_termTable.stringType_term(true)).getTerm(), (new MyTerms_termTable.stringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTerms_termTable.stringType_term(false)).getTerm()).toPredicate());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.stringType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.stringType_term(false)).getTerm()).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -146,8 +146,8 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
           RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#6", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTerms_termTable.stringType_term(true)).getTerm(), (new MyTerms_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTerms_termTable.stringType_term(false)).getTerm()).toPredicate());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.stringType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.stringType_term(false)).getTerm()).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -163,8 +163,8 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
           RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#7", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTerms_termTable.primType_term(true)).getTerm(), (new MyTerms_termTable.stringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTerms_termTable.stringType_term(false)).getTerm()).toPredicate());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.stringType_term(false)).getTerm()).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

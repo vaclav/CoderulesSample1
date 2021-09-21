@@ -41,7 +41,7 @@ public class Conversion_int_to_float extends AbstractRuleTemplate<Conversion_int
 
           RuleBuilder builder = new RuleBuilder(session, "int_to_float", "int_to_float", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.intType_term(true)).getTerm(), (new MyTerms_termTable.floatType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.intType_term(true)).getTerm(), (new MyTypes_termTable.floatType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

@@ -57,7 +57,7 @@ public class Check_binary_expr_type extends AbstractRuleTemplate<Check_binary_ex
           } else if (SNodeOperations.isInstanceOf(token().bin, CONCEPTS.DivExpr$sE)) {
             // div yields float type
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().LeftType, rule().RightType, rule().PLCS).toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().PLCS, (new MyTerms_termTable.floatType_term(false)).getTerm(), rule().LCS).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().PLCS, (new MyTypes_termTable.floatType_term(false)).getTerm(), rule().LCS).toConstraint());
 
           } else {
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().LeftType, rule().RightType, rule().LCS).toConstraint());

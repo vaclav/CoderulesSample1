@@ -40,7 +40,7 @@ public class Check_intLiteral extends AbstractRuleTemplate<Check_intLiteral.Toke
           RuleBuilder builder = new RuleBuilder(session, "intLiteral", "intLiteral" + "_" + String.valueOf(token().i.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().i, SNodeOperations.getPointer(token().i));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().i, (new MyTerms_termTable.intType_term(false)).getTerm()).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().i, (new MyTypes_termTable.intType_term(false)).getTerm()).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

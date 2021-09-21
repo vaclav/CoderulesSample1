@@ -52,7 +52,7 @@ public class Conversion_int_holding_string_to_int_or_string extends AbstractRule
 
           RuleBuilder builder = new RuleBuilder(session, "int_holding_string_to_int_or_string", "int_holding_string_to_int_or_string#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTerms_termTable.intType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.intType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -68,11 +68,11 @@ public class Conversion_int_holding_string_to_int_or_string extends AbstractRule
 
           RuleBuilder builder = new RuleBuilder(session, "int_holding_string_to_int_or_string", "int_holding_string_to_int_or_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.intHoldingStringType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true) {
             public DataForm val() {
               return ValueRole.create("val", LogicalUtil.asValue(rule().value));
             }
-          }).getTerm(), (new MyTerms_termTable.intType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          }).getTerm(), (new MyTypes_termTable.intType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
           builder.appendBody(new PredicateBuilder(FailPredicate.FAIL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{rule().value};
@@ -97,7 +97,7 @@ public class Conversion_int_holding_string_to_int_or_string extends AbstractRule
 
           RuleBuilder builder = new RuleBuilder(session, "int_holding_string_to_int_or_string", "int_holding_string_to_int_or_string#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTerms_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTerms_termTable.stringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

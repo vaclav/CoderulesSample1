@@ -66,7 +66,7 @@ public class _Queries__queryTable extends AbstractQueryTable {
             RuleBuilder builder = new RuleBuilder(session, "check", "check", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recoverAll", 1)).withArguments(query.getTypesCollector()).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("expectAll", 0)).withArguments().toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
           }
@@ -149,7 +149,7 @@ public class _Queries__queryTable extends AbstractQueryTable {
             RuleBuilder builder = new RuleBuilder(session, "typeOf", "typeOf", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("expectType", 2)).withArguments(query.getSubject(), query.getTypesCollector()).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("expectType", 1)).withArguments(query.getSubject()).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
           }
@@ -233,22 +233,16 @@ public class _Queries__queryTable extends AbstractQueryTable {
 
             RuleBuilder builder = new RuleBuilder(session, "convertsTo", "convertsTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-            try {
-              builder.merge(0, session.expandMacro(null, query.getFrom(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-                public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                  return tok.withLogical(rule().A).apply();
-                }
-              }));
-            } finally {
-            }
-            try {
-              builder.merge(0, session.expandMacro(null, query.getTo(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-                public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                  return tok.withLogical(rule().B).apply();
-                }
-              }));
-            } finally {
-            }
+            builder.merge(0, session.expandMacro(null, query.getFrom(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+              public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
+                return tok.withLogical(rule().A).withParams().apply();
+              }
+            }));
+            builder.merge(0, session.expandMacro(null, query.getTo(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+              public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
+                return tok.withLogical(rule().B).withParams().apply();
+              }
+            }));
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -336,35 +330,27 @@ public class _Queries__queryTable extends AbstractQueryTable {
 
             RuleBuilder builder = new RuleBuilder(session, "coerceTo", "coerceTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-            try {
-              builder.merge(0, session.expandMacro(null, query.getSource(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+            builder.merge(0, session.expandMacro(null, query.getSource(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+              public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
+                return tok.withLogical(rule().A).withParams().apply();
+              }
+            }));
+            if (query.getTargetNode() != null) {
+              builder.merge(0, session.expandMacro(null, query.getTargetNode(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
                 public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                  return tok.withLogical(rule().A).apply();
+                  return tok.withLogical(rule().B).withParams().apply();
                 }
               }));
-            } finally {
-            }
-            if (query.getTargetNode() != null) {
-              try {
-                builder.merge(0, session.expandMacro(null, query.getTargetNode(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-                  public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                    return tok.withLogical(rule().B).apply();
-                  }
-                }));
-              } finally {
-              }
             } else {
-              try {
-                builder.merge(0, session.expandMacro(null, query.getTargetConcept(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-                  public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                    return tok.withLogical(rule().B).apply();
-                  }
-                }));
-              } finally {
-              }
+              builder.merge(0, session.expandMacro(null, query.getTargetConcept(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(NewLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+                public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
+                  return tok.withLogical(rule().B).withParams().apply();
+                }
+              }));
             }
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("recover", 2)).withArguments(rule().Node, rule().B).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Node, rule().B).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Node, rule().B).toConstraint());
             builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(query.getResult(), rule().Node).toPredicate());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);

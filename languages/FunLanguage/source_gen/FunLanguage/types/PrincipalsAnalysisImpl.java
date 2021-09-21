@@ -19,8 +19,8 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(this.principalCtrs).addElement(new ConstraintSymbol("main", 0));
 
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("checkAll", 0));
-    SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("expectType", 2));
-    SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("recoverAll", 1));
+    SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("expectAll", 0));
+    SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("expectType", 1));
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("typeOf", 2));
     SetSequence.fromSet(principalRulesTags).addElement("assignment");
     SetSequence.fromSet(principalRulesTags).addElement("binary_expr_type");
@@ -41,14 +41,11 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("stringLiteral");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Definition");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Field");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Field");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Variable");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Variable");
     SetSequence.fromSet(principalRulesTags).addElement("varDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("var_reference");
