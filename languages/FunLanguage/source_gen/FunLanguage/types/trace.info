@@ -28,20 +28,22 @@
     </file>
     <file name="_ExpectTypeMacro__macroTable.java">
       <unit at="160,0,163,0" name="NewLanguage.types._ExpectTypeMacro__macroTable$CONCEPTS" />
-      <unit at="117,100,127,9" name="NewLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3027594903208720677_Expand$Token$1" />
-      <unit at="87,0,144,0" name="NewLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3027594903208720677_Expand$Token" />
-      <unit at="85,0,159,0" name="NewLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3027594903208720677_Expand" />
+      <unit at="117,100,127,9" name="NewLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_2700891522873359234_Expand$Token$1" />
+      <unit at="87,0,144,0" name="NewLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_2700891522873359234_Expand$Token" />
+      <unit at="85,0,159,0" name="NewLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_2700891522873359234_Expand" />
       <unit at="35,0,164,0" name="NewLanguage.types._ExpectTypeMacro__macroTable" />
     </file>
     <file name="_RecoverType_Default__recover_catchall.java">
-      <unit at="57,111,65,11" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$1$1" />
-      <unit at="82,111,91,11" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$2$1" />
-      <unit at="104,0,115,0" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$recover_catchall" />
-      <unit at="115,0,126,0" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$recover_catchall1" />
-      <unit at="46,10,70,7" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$1" />
-      <unit at="72,10,96,7" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$2" />
-      <unit at="36,0,131,0" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token" />
-      <unit at="34,0,163,0" name="NewLanguage.types._RecoverType_Default__recover_catchall" />
+      <unit at="160,0,163,0" name="NewLanguage.types._RecoverType_Default__recover_catchall$CONCEPTS" />
+      <unit at="164,0,167,0" name="NewLanguage.types._RecoverType_Default__recover_catchall$PROPS" />
+      <unit at="58,111,66,11" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$1$1" />
+      <unit at="83,111,92,11" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$2$1" />
+      <unit at="105,0,116,0" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$recover_catchall" />
+      <unit at="116,0,127,0" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$recover_catchall1" />
+      <unit at="47,10,71,7" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$1" />
+      <unit at="73,10,97,7" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token$2" />
+      <unit at="37,0,132,0" name="NewLanguage.types._RecoverType_Default__recover_catchall$Token" />
+      <unit at="35,0,168,0" name="NewLanguage.types._RecoverType_Default__recover_catchall" />
     </file>
     <file name="_RecoverType_Default__ruleTable.java">
       <unit at="14,0,49,0" name="NewLanguage.types._RecoverType_Default__ruleTable" />
@@ -3601,8 +3603,8 @@
       <node id="3519196375455935484" at="22,88,23,89" concept="2" />
       <node id="8482592726194254618" at="42,65,43,74" concept="2" />
       <node id="9107496436260760408" at="43,74,44,76" concept="2" />
-      <node id="9107496436260805993" at="44,76,45,76" concept="2" />
-      <node id="3519196375455936775" at="45,76,46,76" concept="2" />
+      <node id="3519196375455936775" at="44,76,45,76" concept="2" />
+      <node id="9107496436260805993" at="45,76,46,76" concept="2" />
       <node id="8482592726194256413" at="46,76,47,71" concept="2" />
       <node id="8482592726194255672" at="47,71,48,84" concept="2" />
       <node id="8482592726194254927" at="48,84,49,74" concept="2" />

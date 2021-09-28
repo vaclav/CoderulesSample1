@@ -28,8 +28,9 @@ import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.builder.SNodeBuilder;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate<_RecoverType_Default__recover_catchall.Token> {
 
@@ -60,7 +61,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return _quotation_createNode_dwn3e9_a1a1a0b0a0a0i0a0a0a2a3b("type is unknown");
+              return createRuntimeErrorType_dwn3e9_a1a1a0b0a0a0i0a0a0a2a3b();
             }
           }).toPredicate());
 
@@ -86,7 +87,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<DataForm> typedArg0 = (Logical<DataForm>) args[0];
 
-              return _quotation_createNode_dwn3e9_a2a1a0b0a0a0h0a0a0a4a3b("unreifiable type [" + typedArg0.findRoot().value() + "]");
+              return createRuntimeErrorType_dwn3e9_a2a1a0b0a0a0h0a0a0a4a3b("unreifiable type [" + typedArg0.findRoot().value() + "]");
             }
           }).toPredicate());
 
@@ -131,7 +132,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
 
 
   public _RecoverType_Default__recover_catchall(RuleTable ruleTable) {
-    super(ruleTable, "recover_catchall", SNodePointer.deserialize("d46c148d-544d-4f38-9536-4474575b5a6b/i:10000008(NewLanguage@transient1/NewLanguage.types@4_6)/3027594903208720605"));
+    super(ruleTable, "recover_catchall", SNodePointer.deserialize("ea8b5415-792c-486b-b082-302b4d95001a/i:1000005a(NewLanguage@transient0/NewLanguage.types@4_6)/2700891522873359162"));
   }
 
   @Override
@@ -145,18 +146,22 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode _quotation_createNode_dwn3e9_a1a1a0b0a0a0i0a0a0a2a3b(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    SNodeBuilder nb = new SNodeBuilder(null, null).init(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, "jetbrains.mps.lang.typesystem"), 0x113f84956f9L, "RuntimeErrorType"));
-    quotedNode_2 = nb.getResult();
-    SNodeAccessUtil.setPropertyValue(quotedNode_2, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, 0x113f84956faL, "errorText"), (String) parameter_1);
-    return quotedNode_2;
+  private static SNode createRuntimeErrorType_dwn3e9_a1a1a0b0a0a0i0a0a0a2a3b() {
+    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.RuntimeErrorType$3c);
+    n0.setProperty(PROPS.errorText$leWQ, "type is unknown");
+    return n0.getResult();
   }
-  private static SNode _quotation_createNode_dwn3e9_a2a1a0b0a0a0h0a0a0a4a3b(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    SNodeBuilder nb = new SNodeBuilder(null, null).init(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, "jetbrains.mps.lang.typesystem"), 0x113f84956f9L, "RuntimeErrorType"));
-    quotedNode_2 = nb.getResult();
-    SNodeAccessUtil.setPropertyValue(quotedNode_2, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, 0x113f84956faL, "errorText"), (String) parameter_1);
-    return quotedNode_2;
+  private static SNode createRuntimeErrorType_dwn3e9_a2a1a0b0a0a0h0a0a0a4a3b(String p0) {
+    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.RuntimeErrorType$3c);
+    n0.setProperty(PROPS.errorText$leWQ, p0);
+    return n0.getResult();
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept RuntimeErrorType$3c = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty errorText$leWQ = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, 0x113f84956faL, "errorText");
   }
 }

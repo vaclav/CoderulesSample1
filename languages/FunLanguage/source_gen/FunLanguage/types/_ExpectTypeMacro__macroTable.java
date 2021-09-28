@@ -41,7 +41,7 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
 
   @Override
   public SNodeReference tableRef() {
-    return SNodePointer.deserialize("d46c148d-544d-4f38-9536-4474575b5a6b/i:10000008(NewLanguage@transient1/NewLanguage.types@4_6)/3027594903208720676");
+    return SNodePointer.deserialize("ea8b5415-792c-486b-b082-302b4d95001a/i:1000005a(NewLanguage@transient0/NewLanguage.types@4_6)/2700891522873359233");
   }
 
   @Override
@@ -57,7 +57,7 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
 
     List<ExpandMacroTemplate<T>> result = ListSequence.fromList(new ArrayList<ExpandMacroTemplate<T>>());
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.BaseConcept$gP)) {
-      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new BaseConcept_3027594903208720677_Expand());
+      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new BaseConcept_2700891522873359234_Expand());
     }
     return result;
   }
@@ -77,12 +77,12 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
   public Collection<SNodeReference> allMacroTemplateRefs() {
     List<SNodeReference> result = ListSequence.fromList(new ArrayList<SNodeReference>());
 
-    ListSequence.fromList(result).addElement(SNodePointer.deserialize("d46c148d-544d-4f38-9536-4474575b5a6b/i:10000008(NewLanguage@transient1/NewLanguage.types@4_6)/3027594903208720677"));
+    ListSequence.fromList(result).addElement(SNodePointer.deserialize("ea8b5415-792c-486b-b082-302b4d95001a/i:1000005a(NewLanguage@transient0/NewLanguage.types@4_6)/2700891522873359234"));
 
     return result;
   }
 
-  public static class BaseConcept_3027594903208720677_Expand extends AbstractMacroTemplate<BaseConcept_3027594903208720677_Expand.Token> implements ExpandMacroTemplate<BaseConcept_3027594903208720677_Expand.Token> {
+  public static class BaseConcept_2700891522873359234_Expand extends AbstractMacroTemplate<BaseConcept_2700891522873359234_Expand.Token> implements ExpandMacroTemplate<BaseConcept_2700891522873359234_Expand.Token> {
 
     public static class Token implements ExpandMacroTemplate.Token {
 
@@ -112,7 +112,7 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
       public RuleBuilder apply() {
         init();
         TemplateApplicationSession _session = session;
-        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.BaseConcept_3027594903208720677");
+        RuleBuilder builder = new RuleBuilder(session, "NewLanguage.types.BaseConcept_2700891522873359234");
         builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(Token.this.TypeNode, Token.this.TypeTerm).toConstraint());
         builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
           public Object[] metaArgs() {
@@ -142,13 +142,13 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
       protected SNode ruleInput;
     }
 
-    public BaseConcept_3027594903208720677_Expand() {
-      super(SNodePointer.deserialize("d46c148d-544d-4f38-9536-4474575b5a6b/i:10000008(NewLanguage@transient1/NewLanguage.types@4_6)/3027594903208720677"));
+    public BaseConcept_2700891522873359234_Expand() {
+      super(SNodePointer.deserialize("ea8b5415-792c-486b-b082-302b4d95001a/i:1000005a(NewLanguage@transient0/NewLanguage.types@4_6)/2700891522873359234"));
     }
 
     @Override
     public SNodeReference getPrototypeTemplateRef() {
-      return SNodePointer.deserialize("d46c148d-544d-4f38-9536-4474575b5a6b/i:10000008(NewLanguage@transient1/NewLanguage.types@4_6)/3027594903208720701");
+      return SNodePointer.deserialize("ea8b5415-792c-486b-b082-302b4d95001a/i:1000005a(NewLanguage@transient0/NewLanguage.types@4_6)/2700891522873359258");
     }
 
     @Override
