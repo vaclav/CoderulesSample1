@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="d20tdmwdn4pd6uh5domk9a4g57gbn72">
-  <files names="Assignment_Constraints.java:ConstantReference_Constraints.java:ConstraintsAspectDescriptor.java:Definition_Constraints.java:DotAccessExpr_Constraints.java:FunctionCall_Constraints.java:New_Constraints.java:ParameterReference_Constraints.java:StructDefinition_Constraints.java:StructType_Constraints.java:VarReference_Constraints.java" />
-</product>
-
