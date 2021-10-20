@@ -9,13 +9,10 @@ import jetbrains.mps.lang.coderules.template.TemplateApplicationSession;
 import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.logic.unification.MetaLogicalFactory;
-import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
-import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
@@ -39,7 +36,6 @@ public class Check_intLiteral extends AbstractRuleTemplate<Check_intLiteral.Toke
       new intLiteral() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          IntType = MetaLogicalFactory.metaLogical("IntType", DataForm.class);
 
           RuleBuilder builder = new RuleBuilder(session, "intLiteral", "intLiteral" + "_" + String.valueOf(token().i.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().i, SNodeOperations.getPointer(token().i));
 
@@ -63,7 +59,6 @@ public class Check_intLiteral extends AbstractRuleTemplate<Check_intLiteral.Toke
         return this;
       }
 
-      protected MetaLogical IntType;
 
     }
 

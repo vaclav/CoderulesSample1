@@ -325,10 +325,7 @@
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTemplate" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.TemplateApplicationSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
-    <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
-    <classNode dependClassName="jetbrains.mps.logic.unification.MetaLogicalFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />

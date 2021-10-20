@@ -2263,12 +2263,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3NuqgR" id="2G88zfdfFhq" role="0Rg$4">
-              <node concept="aZer4" id="2G88zfdfFhr" role="3XD1gS">
-                <property role="TrG5h" value="IntType" />
-              </node>
-              <node concept="32pEOW" id="2G88zfdfFhB" role="3vLBG7" />
-            </node>
             <node concept="3xSepi" id="2G88zfdfFic" role="3xSepv">
               <node concept="3Aq9E8" id="2G88zfdfFid" role="3xSepj">
                 <node concept="3I6sU6" id="2G88zfdfFie" role="3Ip0Jz">
