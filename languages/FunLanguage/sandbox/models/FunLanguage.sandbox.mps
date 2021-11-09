@@ -964,7 +964,7 @@
       <property role="1f7RQj" value="a string with a float value is a &quot;float string&quot; type" />
     </node>
     <node concept="3boF28" id="4E9f66uLmVU" role="3boF2k">
-      <property role="TrG5h" value="a" />
+      <property role="TrG5h" value="float_string" />
       <node concept="3boF4C" id="4E9f66uLmWA" role="3boF2C">
         <property role="3boF4D" value="20.0f" />
       </node>
@@ -974,7 +974,7 @@
       <property role="1f7RQj" value="a string with an int value is a &quot;int string&quot; type" />
     </node>
     <node concept="3boF28" id="poU809YzQn" role="3boF2k">
-      <property role="TrG5h" value="b" />
+      <property role="TrG5h" value="int_string" />
       <node concept="3boF4C" id="poU809YzQo" role="3boF2C">
         <property role="3boF4D" value="20" />
       </node>
@@ -1015,7 +1015,7 @@
     </node>
     <node concept="1fvZmq" id="40umfPsg8Oe" role="3boF2k" />
     <node concept="1f7RQk" id="40umfPsg8Yv" role="3boF2k">
-      <property role="1f7RQj" value="strings containing an int value can be combined with int values in binary expressions" />
+      <property role="1f7RQj" value="strings containing an int value can be combined with int values in binary expressions to get an int expression" />
     </node>
     <node concept="1fvHIZ" id="40umfPsfToT" role="3boF2k">
       <node concept="1f0fsm" id="40umfPsfTqf" role="1fvHIY">
@@ -1049,11 +1049,24 @@
         </node>
       </node>
     </node>
+    <node concept="1fvHIZ" id="36_U$dlczkN" role="3boF2k">
+      <node concept="1f0fsm" id="36_U$dlczkO" role="1fvHIY">
+        <ref role="1f0fsl" node="poU809YzVu" resolve="a" />
+      </node>
+      <node concept="1PAgPj" id="36_U$dlczkP" role="1fvHIW">
+        <node concept="1f0fsm" id="36_U$dlczkQ" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+        </node>
+        <node concept="1PAvhC" id="36_U$dlczmy" role="1PAgMi">
+          <ref role="1PAvhF" node="poU809YzQn" resolve="int_string" />
+        </node>
+      </node>
+    </node>
     <node concept="1fvZmq" id="40umfPsg8VA" role="3boF2k" />
     <node concept="1f0frs" id="poU809Y$0b" role="3boF2k">
       <property role="TrG5h" value="f" />
-      <node concept="3boF4C" id="poU809Y$1_" role="1f0frp">
-        <property role="3boF4D" value="1.2f" />
+      <node concept="1bpOEZ" id="36_U$dlaEwW" role="1f0frp">
+        <property role="1bpOEY" value="1.2" />
       </node>
     </node>
     <node concept="1f7RQk" id="4E9f66uLAll" role="3boF2k">
@@ -1115,8 +1128,51 @@
       </node>
     </node>
     <node concept="1fvZmq" id="4E9f66uLAkq" role="3boF2k" />
+    <node concept="1f7RQk" id="36_U$dlczUs" role="3boF2k">
+      <property role="1f7RQj" value="strings containing an int value can be combined with int values in binary expressions to get an int expression" />
+    </node>
+    <node concept="1fvHIZ" id="36_U$dlczUt" role="3boF2k">
+      <node concept="1PAgPj" id="36_U$dlczUv" role="1fvHIW">
+        <node concept="3boF4C" id="36_U$dlczUw" role="1PAgMg">
+          <property role="3boF4D" value="12" />
+        </node>
+        <node concept="3boF4R" id="36_U$dlczXj" role="1PAgMi">
+          <property role="3boF4O" value="12" />
+        </node>
+      </node>
+      <node concept="1f0fsm" id="36_U$dlczXS" role="1fvHIY">
+        <ref role="1f0fsl" node="poU809YzVu" resolve="a" />
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="36_U$dlczU$" role="3boF2k">
+      <node concept="1f0fsm" id="36_U$dlczU_" role="1fvHIY">
+        <ref role="1f0fsl" node="poU809Y$0b" resolve="f" />
+      </node>
+      <node concept="1PAgPj" id="36_U$dlczUA" role="1fvHIW">
+        <node concept="1f0fsm" id="36_U$dlczUB" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+        </node>
+        <node concept="3boF4R" id="36_U$dlc$1q" role="1PAgMi">
+          <property role="3boF4O" value="20" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="36_U$dlczUD" role="3boF2k">
+      <node concept="1f0fsm" id="36_U$dlczUE" role="1fvHIY">
+        <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+      </node>
+      <node concept="1PAgPj" id="36_U$dlczUF" role="1fvHIW">
+        <node concept="1f0fsm" id="36_U$dlczUG" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+        </node>
+        <node concept="1PAvhC" id="36_U$dlc$1P" role="1PAgMi">
+          <ref role="1PAvhF" node="poU809YzQn" resolve="int_string" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvZmq" id="36_U$dlczS$" role="3boF2k" />
     <node concept="1f7RQk" id="40umfPsg91p" role="3boF2k">
-      <property role="1f7RQj" value="strings containing a float value can be combined with float values in binary expressions" />
+      <property role="1f7RQj" value="strings containing a float value can be combined with float values in binary expressions to get a float expression" />
     </node>
     <node concept="1fvHIZ" id="40umfPsg91q" role="3boF2k">
       <node concept="1f0fsm" id="40umfPsg93K" role="1fvHIY">
@@ -1150,18 +1206,79 @@
         </node>
       </node>
     </node>
-    <node concept="1f0frs" id="4Y3XjETo5LC" role="3boF2k">
-      <property role="TrG5h" value="intstr" />
-      <node concept="3boF4C" id="4Y3XjETo5Sf" role="1f0frp">
-        <property role="3boF4D" value="123" />
+    <node concept="1fvHIZ" id="36_U$dlczI2" role="3boF2k">
+      <node concept="1f0fsm" id="36_U$dlczI3" role="1fvHIY">
+        <ref role="1f0fsl" node="poU809Y$0b" resolve="f" />
+      </node>
+      <node concept="1PAgPj" id="36_U$dlczI4" role="1fvHIW">
+        <node concept="1f0fsm" id="36_U$dlczI5" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+        </node>
+        <node concept="3boF4R" id="36_U$dlczKu" role="1PAgMi">
+          <property role="3boF4O" value="10" />
+        </node>
       </node>
     </node>
+    <node concept="1fvZmq" id="36_U$dlczKx" role="3boF2k" />
     <node concept="1f7RQk" id="4Y3XjEToDC0" role="3boF2k">
       <property role="1f7RQj" value="string containing either a float or an int can be combined with another string containing either a float or an int" />
     </node>
+    <node concept="1fvHIZ" id="36_U$dlczoX" role="3boF2k">
+      <node concept="1f0fsm" id="36_U$dlczqC" role="1fvHIY">
+        <ref role="1f0fsl" node="poU809Y$0b" resolve="f" />
+      </node>
+      <node concept="1PAgPj" id="36_U$dlczqR" role="1fvHIW">
+        <node concept="1PAvhC" id="36_U$dlczr3" role="1PAgMg">
+          <ref role="1PAvhF" node="4E9f66uLmVU" resolve="float_string" />
+        </node>
+        <node concept="1f0fsm" id="36_U$dlczrc" role="1PAgMi">
+          <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="36_U$dlczxA" role="3boF2k">
+      <node concept="1f0fsm" id="36_U$dlczxB" role="1fvHIY">
+        <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+      </node>
+      <node concept="1PAgPj" id="36_U$dlczxC" role="1fvHIW">
+        <node concept="1f0fsm" id="36_U$dlczxD" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+        </node>
+        <node concept="1f0fsm" id="36_U$dlczzM" role="1PAgMi">
+          <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="36_U$dlczzZ" role="3boF2k">
+      <node concept="1f0fsm" id="36_U$dlcz$0" role="1fvHIY">
+        <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+      </node>
+      <node concept="1PAgPj" id="36_U$dlcz$1" role="1fvHIW">
+        <node concept="1f0fsm" id="36_U$dlcz$2" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg8QR" resolve="intstr" />
+        </node>
+        <node concept="1PAvhC" id="36_U$dlczAi" role="1PAgMi">
+          <ref role="1PAvhF" node="4E9f66uLmVU" resolve="float_string" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="36_U$dlc$2a" role="3boF2k">
+      <node concept="1f0fsm" id="36_U$dlc$2b" role="1fvHIY">
+        <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+      </node>
+      <node concept="1PAgPj" id="36_U$dlc$2c" role="1fvHIW">
+        <node concept="1f0fsm" id="36_U$dlc$2d" role="1PAgMg">
+          <ref role="1f0fsl" node="40umfPsg91v" resolve="floatstr" />
+        </node>
+        <node concept="1PAvhC" id="36_U$dlc$2e" role="1PAgMi">
+          <ref role="1PAvhF" node="4E9f66uLmVU" resolve="float_string" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvZmq" id="36_U$dlczvD" role="3boF2k" />
     <node concept="1fvHIZ" id="4Y3XjEToD8Y" role="3boF2k">
       <node concept="1f0fsm" id="4Y3XjEToD8Z" role="1fvHIY">
-        <ref role="1f0fsl" node="Hbl2X4jz0Y" resolve="s" />
+        <ref role="1f0fsl" node="2IVjHSu3ILl" resolve="s" />
       </node>
       <node concept="1PAgPj" id="4Y3XjEToD90" role="1fvHIW">
         <node concept="1f0fsm" id="4Y3XjEToD91" role="1PAgMg">
@@ -1174,7 +1291,7 @@
     </node>
     <node concept="1fvHIZ" id="4Y3XjEToDrf" role="3boF2k">
       <node concept="1f0fsm" id="4Y3XjEToDrg" role="1fvHIY">
-        <ref role="1f0fsl" node="Hbl2X4jz0Y" resolve="s" />
+        <ref role="1f0fsl" node="2IVjHSu3ILl" resolve="s" />
       </node>
       <node concept="1PAgPj" id="4Y3XjEToDrh" role="1fvHIW">
         <node concept="1f0fsm" id="4Y3XjEToDri" role="1PAgMg">
@@ -1187,7 +1304,7 @@
     </node>
     <node concept="1fvHIZ" id="4Y3XjEToD8T" role="3boF2k">
       <node concept="1f0fsm" id="4Y3XjEToD8U" role="1fvHIY">
-        <ref role="1f0fsl" node="Hbl2X4jz0Y" resolve="s" />
+        <ref role="1f0fsl" node="2IVjHSu3ILl" resolve="s" />
       </node>
       <node concept="1PAgPj" id="4Y3XjEToD8V" role="1fvHIW">
         <node concept="1f0fsm" id="4Y3XjEToD8W" role="1PAgMg">
