@@ -1671,7 +1671,7 @@
                                       <node concept="3cpWs8" id="6z" role="3cqZAp">
                                         <uo k="s:originTrace" v="n:813836719656345368" />
                                         <node concept="3cpWsn" id="6A" role="3cpWs9">
-                                          <property role="TrG5h" value="currentStructs" />
+                                          <property role="TrG5h" value="currentStruct" />
                                           <uo k="s:originTrace" v="n:813836719656345369" />
                                           <node concept="3Tqbb2" id="6B" role="1tU5fm">
                                             <ref role="ehGHo" to="bfo2:Hbl2X49iPt" resolve="StructDefinition" />
@@ -1710,7 +1710,7 @@
                                           <node concept="2OqwBi" id="6J" role="33vP2m">
                                             <uo k="s:originTrace" v="n:813836719656398141" />
                                             <node concept="37vLTw" id="6K" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="6A" resolve="currentStructs" />
+                                              <ref role="3cqZAo" node="6A" resolve="currentStruct" />
                                               <uo k="s:originTrace" v="n:813836719656398142" />
                                             </node>
                                             <node concept="2qgKlT" id="6L" role="2OqNvi">

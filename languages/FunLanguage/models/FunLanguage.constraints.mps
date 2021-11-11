@@ -419,7 +419,7 @@
             <node concept="3clFbS" id="Hbl2X4dGun" role="3clFbx">
               <node concept="3cpWs8" id="Hbl2X4ihWo" role="3cqZAp">
                 <node concept="3cpWsn" id="Hbl2X4ihWp" role="3cpWs9">
-                  <property role="TrG5h" value="currentStructs" />
+                  <property role="TrG5h" value="currentStruct" />
                   <node concept="3Tqbb2" id="Hbl2X4ihM4" role="1tU5fm">
                     <ref role="ehGHo" to="bfo2:Hbl2X49iPt" resolve="StructDefinition" />
                   </node>

@@ -77,6 +77,7 @@
     <classNode dependClassName="FunLanguage.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="FunLanguage.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="FunLanguage.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="FunLanguage.intentions.IntentionsDescriptor" />
     <classNode dependClassName="FunLanguage.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="FunLanguage.structure.StructureAspectDescriptor" />
     <classNode dependClassName="FunLanguage.types.TypesAspectDescriptor" />
@@ -86,6 +87,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.lang.typechecking.aspect.TypecheckingAspect" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageExtensions" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />

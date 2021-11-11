@@ -249,8 +249,8 @@
       <node id="813836719655128547" at="44,63,45,125" concept="6" />
       <node id="813836719655132271" at="49,56,50,26" concept="6" />
       <node id="813836719655142207" at="51,13,52,154" concept="5" />
-      <node id="813836719656345368" at="53,84,54,139" concept="5" />
-      <node id="813836719656398139" at="54,139,55,137" concept="5" />
+      <node id="813836719656345368" at="53,84,54,138" concept="5" />
+      <node id="813836719656398139" at="54,138,55,136" concept="5" />
       <node id="813836719656420612" at="57,60,58,76" concept="6" />
       <node id="813836719655145271" at="61,20,62,26" concept="6" />
       <node id="813836719655128546" at="67,6,68,131" concept="5" />
@@ -267,7 +267,7 @@
       <node id="813836719655130567" at="48,80,51,13" concept="3" />
       <node id="813836719656420016" at="57,0,60,0" concept="4" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="813836719655128547" at="43,0,47,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="813836719655145461" at="55,137,60,18" concept="6" />
+      <node id="813836719655145461" at="55,136,60,18" concept="6" />
       <node id="813836719655143317" at="52,154,63,13" concept="3" />
       <node id="813836719655128547" at="47,0,65,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="813836719655128547" at="41,56,65,10" concept="6" />
@@ -286,7 +286,7 @@
       <scope id="813836719655128547" at="43,0,47,0" />
       <scope id="813836719655143319" at="53,84,60,18">
         <var name="allStructs" id="813836719656398140" />
-        <var name="currentStructs" id="813836719656345369" />
+        <var name="currentStruct" id="813836719656345369" />
       </scope>
       <scope id="813836719655128547" at="48,80,63,13">
         <var name="operandType" id="813836719655142208" />

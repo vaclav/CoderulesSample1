@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="IntentionsDescriptor.java">
+      <unit at="18,0,56,0" name="FunLanguage.intentions.IntentionsDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:88230427-eea4-4626-949d-f92ff0709ff7(FunLanguage.intentions)/1942659408249481930">
+    <file name="IntentionsDescriptor.java">
+      <node id="1942659408249481930" at="37,47,38,52" concept="1" />
+      <node id="1942659408249481930" at="50,52,51,38" concept="1" />
+    </file>
+    <file name="MakeFloat_Intention.java">
+      <node id="1942659408249481930" at="23,0,24,0" concept="2" trace="myCachedExecutable" />
+      <node id="1942659408249481930" at="24,32,25,137" concept="8" />
+      <node id="1942659408249481930" at="28,35,29,23" concept="6" />
+      <node id="1942659408249481930" at="32,84,33,16" concept="6" />
+      <node id="1942659408249481930" at="36,35,37,17" concept="6" />
+      <node id="1942659408249481930" at="40,37,41,105" concept="1" />
+      <node id="1942659408249481930" at="42,5,43,30" concept="6" />
+      <node id="1942659408249482272" at="49,87,50,28" concept="6" />
+      <node id="1942659408249483678" at="53,78,54,82" concept="5" />
+      <node id="1942659408249482402" at="54,82,55,115" concept="1" />
+      <node id="1942659408249481930" at="58,48,59,38" concept="6" />
+      <node id="1942659408249481930" at="64,0,65,0" concept="7" trace="FloatValue$v2" />
+      <node id="1942659408249481930" at="68,0,69,0" concept="7" trace="value$ACDK" />
+      <node id="1942659408249481930" at="69,0,70,0" concept="7" trace="value$9Utg" />
+      <node id="1942659408249481930" at="46,0,48,0" concept="0" trace="IntentionImplementation#()V" />
+      <node id="1942659408249481930" at="24,0,27,0" concept="0" trace="MakeFloat_Intention#()V" />
+      <node id="1942659408249481930" at="39,99,42,5" concept="3" />
+      <node id="1942659408249481930" at="27,0,31,0" concept="4" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="1942659408249481930" at="31,0,35,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="1942659408249481930" at="35,0,39,0" concept="4" trace="isSurroundWith#()Z" />
+      <node id="1942659408249481930" at="48,0,52,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="1942659408249481930" at="57,0,61,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
+      <node id="1942659408249481930" at="52,0,57,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="1942659408249481930" at="39,0,45,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <scope id="1942659408249481930" at="46,38,46,38" />
+      <scope id="1942659408249481930" at="24,32,25,137" />
+      <scope id="1942659408249481930" at="28,35,29,23" />
+      <scope id="1942659408249481930" at="32,84,33,16" />
+      <scope id="1942659408249481930" at="36,35,37,17" />
+      <scope id="1942659408249481930" at="40,37,41,105" />
+      <scope id="1942659408249481932" at="49,87,50,28" />
+      <scope id="1942659408249481930" at="58,48,59,38" />
+      <scope id="1942659408249481930" at="46,0,48,0" />
+      <scope id="1942659408249481934" at="53,78,55,115">
+        <var name="f" id="1942659408249483679" />
+      </scope>
+      <scope id="1942659408249481930" at="24,0,27,0" />
+      <scope id="1942659408249481930" at="27,0,31,0" />
+      <scope id="1942659408249481930" at="31,0,35,0">
+        <var name="editorContext" id="1942659408249481930" />
+        <var name="node" id="1942659408249481930" />
+      </scope>
+      <scope id="1942659408249481930" at="35,0,39,0" />
+      <scope id="1942659408249481930" at="39,99,43,30" />
+      <scope id="1942659408249481930" at="48,0,52,0">
+        <var name="editorContext" id="1942659408249481930" />
+        <var name="node" id="1942659408249481930" />
+      </scope>
+      <scope id="1942659408249481930" at="57,0,61,0" />
+      <scope id="1942659408249481930" at="52,0,57,0">
+        <var name="editorContext" id="1942659408249481930" />
+        <var name="node" id="1942659408249481930" />
+      </scope>
+      <scope id="1942659408249481930" at="39,0,45,0">
+        <var name="context" id="1942659408249481930" />
+        <var name="node" id="1942659408249481930" />
+      </scope>
+      <unit id="1942659408249481930" at="63,0,66,0" name="FunLanguage.intentions.MakeFloat_Intention$CONCEPTS" />
+      <unit id="1942659408249481930" at="67,0,71,0" name="FunLanguage.intentions.MakeFloat_Intention$PROPS" />
+      <unit id="1942659408249481930" at="45,0,62,0" name="FunLanguage.intentions.MakeFloat_Intention$IntentionImplementation" />
+      <unit id="1942659408249481930" at="22,0,72,0" name="FunLanguage.intentions.MakeFloat_Intention" />
+    </file>
+  </root>
+</debug-info>
+

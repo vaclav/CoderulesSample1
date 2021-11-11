@@ -51,8 +51,8 @@ public class DotAccessExpr_Constraints extends BaseConstraintsDescriptor {
             }
             SNode operandType = TypecheckingFacade.getFromContext().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), LINKS.operand$x03i));
             if (SNodeOperations.isInstanceOf(operandType, CONCEPTS.StructType$nR)) {
-              SNode currentStructs = SLinkOperations.getTarget(SNodeOperations.as(operandType, CONCEPTS.StructType$nR), LINKS.struct$JP1k);
-              List<SNode> allStructs = StructDefinition__BehaviorDescriptor.structAndExtendedStructs_idHbl2X4iivr.invoke(currentStructs);
+              SNode currentStruct = SLinkOperations.getTarget(SNodeOperations.as(operandType, CONCEPTS.StructType$nR), LINKS.struct$JP1k);
+              List<SNode> allStructs = StructDefinition__BehaviorDescriptor.structAndExtendedStructs_idHbl2X4iivr.invoke(currentStruct);
               return ListScope.forNamedElements(ListSequence.fromList(allStructs).translate(new ITranslator2<SNode, SNode>() {
                 public Iterable<SNode> translate(SNode it) {
                   return SLinkOperations.getChildren(it, LINKS.fields$ibNh);
