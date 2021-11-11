@@ -40,13 +40,10 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalRulesTags).addElement("parameter_reference");
     SetSequence.fromSet(principalRulesTags).addElement("stringLiteral");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Constant");
+    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Definition");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Definition");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
     SetSequence.fromSet(principalRulesTags).addElement("typeOf_Expression");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Field");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_FunctionDefinition");
-    SetSequence.fromSet(principalRulesTags).addElement("typeOf_Variable");
     SetSequence.fromSet(principalRulesTags).addElement("varDefinition");
     SetSequence.fromSet(principalRulesTags).addElement("var_reference");
   }

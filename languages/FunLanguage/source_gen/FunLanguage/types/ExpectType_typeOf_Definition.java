@@ -9,11 +9,11 @@ import jetbrains.mps.lang.coderules.template.TemplateApplicationSession;
 import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.logic.unification.MetaLogicalFactory;
-import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
+import jetbrains.mps.logic.unification.MetaLogicalFactory;
+import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
@@ -41,14 +41,28 @@ public class ExpectType_typeOf_Definition extends AbstractRuleTemplate<ExpectTyp
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
       new typeOf_Definition() {
         @Override
+        public void apply(TemplateApplicationSession session) {
+
+          RuleBuilder builder = new RuleBuilder(session, "typeOf_Definition", "typeOf_Definition#0" + "_" + String.valueOf(token().def.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().def, SNodeOperations.getPointer(token().def));
+
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("expectAll", 0)).withArguments().toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("expectType", 1)).withArguments(token().def).toConstraint());
+
+          ListSequence.fromList(ruleBuilders).addElement(builder);
+        }
+
+      }.apply(_session);
+
+      new typeOf_Definition1() {
+        @Override
         public void apply(final TemplateApplicationSession session) {
           Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "typeOf_Definition", "typeOf_Definition" + "_" + String.valueOf(token().def.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().def, SNodeOperations.getPointer(token().def));
+          RuleBuilder builder = new RuleBuilder(session, "typeOf_Definition", "typeOf_Definition#1" + "_" + String.valueOf(token().def.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().def, SNodeOperations.getPointer(token().def));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 1)).withArguments(token().def).toConstraint());
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().def, rule().Type).toConstraint());
-          builder.merge(0, session.expandMacro(token().def, token().def, SNodePointer.deserialize("5d4f9b00-e523-4571-b890-fc2e7204987a/i:10000044(FunLanguage@transient27/FunLanguage.types@3_4)/3577523053930106238"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+          builder.merge(0, session.expandMacro(token().def, token().def, SNodePointer.deserialize("1e1cb32f-f351-4779-8474-7f95498558c8/i:10000006(FunLanguage@transient0/FunLanguage.types@3_4)/1942659408248973317"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
             public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
               return tok.withLogical(rule().Type).withParams(session.getParameter(TypecheckingState.TYPES_COLLECTOR, Object.class)).apply();
             }
@@ -68,6 +82,14 @@ public class ExpectType_typeOf_Definition extends AbstractRuleTemplate<ExpectTyp
     public abstract class typeOf_Definition implements ConstraintRuleTemplate {
 
       protected typeOf_Definition rule() {
+        return this;
+      }
+
+
+    }
+    public abstract class typeOf_Definition1 implements ConstraintRuleTemplate {
+
+      protected typeOf_Definition1 rule() {
         return this;
       }
 
