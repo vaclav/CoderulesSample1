@@ -447,7 +447,7 @@
                   </node>
                   <node concept="2OqwBi" id="Hbl2X4iuOX" role="33vP2m">
                     <node concept="37vLTw" id="Hbl2X4iuOY" role="2Oq$k0">
-                      <ref role="3cqZAo" node="Hbl2X4ihWp" resolve="currentStructs" />
+                      <ref role="3cqZAo" node="Hbl2X4ihWp" resolve="currentStruct" />
                     </node>
                     <node concept="2qgKlT" id="Hbl2X4iuOZ" role="2OqNvi">
                       <ref role="37wK5l" to="lul7:Hbl2X4iivr" resolve="structAndExtendedStructs" />
