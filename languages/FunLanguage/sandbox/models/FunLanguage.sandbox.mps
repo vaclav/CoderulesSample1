@@ -96,7 +96,7 @@
       <property role="1f7RQj" value="a few constants of different types, the type of a constant is inferred from its initializer expression" />
     </node>
     <node concept="1f7RQk" id="Hbl2X4lnLd" role="3boF2k">
-      <property role="1f7RQj" value="press Controol + Shift + P to check the &quot;expected type&quot; of a noode under cursor" />
+      <property role="1f7RQj" value="press Control + Shift + P to check the &quot;expected type&quot; of a noode under cursor" />
     </node>
     <node concept="3boF28" id="4jI1$qfzxwR" role="3boF2k">
       <property role="TrG5h" value="a" />

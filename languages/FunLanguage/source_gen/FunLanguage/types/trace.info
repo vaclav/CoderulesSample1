@@ -28,9 +28,9 @@
     </file>
     <file name="_ExpectTypeMacro__macroTable.java">
       <unit at="160,0,163,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$CONCEPTS" />
-      <unit at="117,100,127,9" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_1942659408250533868_Expand$Token$1" />
-      <unit at="87,0,144,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_1942659408250533868_Expand$Token" />
-      <unit at="85,0,159,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_1942659408250533868_Expand" />
+      <unit at="117,100,127,9" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_4402704400524120079_Expand$Token$1" />
+      <unit at="87,0,144,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_4402704400524120079_Expand$Token" />
+      <unit at="85,0,159,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_4402704400524120079_Expand" />
       <unit at="35,0,164,0" name="FunLanguage.types._ExpectTypeMacro__macroTable" />
     </file>
     <file name="_RecoverType_Default__recover_catchall.java">
@@ -3230,7 +3230,7 @@
       </scope>
       <scope id="9107496436260758626" at="38,0,77,0" />
       <unit id="9107496436260758626" at="123,0,126,0" name="FunLanguage.types.ExpectType_typeOf_Definition$CONCEPTS" />
-      <unit id="9107496436260760428" at="65,221,69,11" name="FunLanguage.types.ExpectType_typeOf_Definition$Token$2$1" />
+      <unit id="9107496436260760428" at="65,220,69,11" name="FunLanguage.types.ExpectType_typeOf_Definition$Token$2$1" />
       <unit id="1942659408248972984" at="82,0,90,0" name="FunLanguage.types.ExpectType_typeOf_Definition$Token$typeOf_Definition" />
       <unit id="9107496436260760408" at="90,0,99,0" name="FunLanguage.types.ExpectType_typeOf_Definition$Token$typeOf_Definition1" />
       <unit id="1942659408248972984" at="42,10,54,7" name="FunLanguage.types.ExpectType_typeOf_Definition$Token$1" />
@@ -3331,7 +3331,7 @@
       </scope>
       <scope id="496984808426456212" at="38,0,78,0" />
       <unit id="496984808426456212" at="124,0,127,0" name="FunLanguage.types.ExpectType_typeOf_Expression$CONCEPTS" />
-      <unit id="9218862293852457540" at="65,223,69,11" name="FunLanguage.types.ExpectType_typeOf_Expression$Token$2$1" />
+      <unit id="9218862293852457540" at="65,222,69,11" name="FunLanguage.types.ExpectType_typeOf_Expression$Token$2$1" />
       <unit id="9107496436260805993" at="83,0,91,0" name="FunLanguage.types.ExpectType_typeOf_Expression$Token$typeOf_Expression" />
       <unit id="3519196375455936775" at="91,0,100,0" name="FunLanguage.types.ExpectType_typeOf_Expression$Token$typeOf_Expression1" />
       <unit id="9107496436260805993" at="42,10,54,7" name="FunLanguage.types.ExpectType_typeOf_Expression$Token$1" />
@@ -3347,8 +3347,8 @@
       <node id="3519196375455935484" at="22,88,23,89" concept="2" />
       <node id="9107496436260760408" at="42,65,43,76" concept="2" />
       <node id="1942659408248972984" at="43,76,44,76" concept="2" />
-      <node id="3519196375455936775" at="44,76,45,76" concept="2" />
-      <node id="9107496436260805993" at="45,76,46,76" concept="2" />
+      <node id="9107496436260805993" at="44,76,45,76" concept="2" />
+      <node id="3519196375455936775" at="45,76,46,76" concept="2" />
     </file>
   </root>
   <root nodeRef="r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426549105">
