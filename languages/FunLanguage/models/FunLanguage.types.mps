@@ -264,6 +264,7 @@
       <concept id="861509610434294982" name="jetbrains.mps.lang.coderules.structure.ValueFeature" flags="ng" index="nssqF">
         <child id="1722266558649369683" name="type" index="1NczKs" />
       </concept>
+      <concept id="861509610434289827" name="jetbrains.mps.lang.coderules.structure.ChildFeature" flags="ng" index="nstbe" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
         <child id="1149537088045275069" name="item" index="iSaTp" />
@@ -1172,7 +1173,7 @@
                     <node concept="ns1u0" id="3rti6XtSaEo" role="3AunhB">
                       <ref role="ns1xF" node="3rti6XtQ4GQ" resolve="arrayType" />
                       <node concept="nsMwS" id="3rti6XtSaEv" role="ns1xD">
-                        <ref role="nsMwP" node="3rti6XtQ4Hy" resolve="parameter" />
+                        <ref role="nsMwP" node="6TxhFOEUneq" resolve="parameter" />
                         <node concept="a7P8L" id="3rti6XtSaEy" role="iSaTp">
                           <ref role="a7OzE" node="3rti6XtRMTS" resolve="ElementType" />
                         </node>
@@ -1249,7 +1250,7 @@
                       <node concept="ns1u0" id="3rti6XtQ5zB" role="3AunhB">
                         <ref role="ns1xF" node="3rti6XtQ4GQ" resolve="arrayType" />
                         <node concept="nsMwS" id="3rti6XtQ5zG" role="ns1xD">
-                          <ref role="nsMwP" node="3rti6XtQ4Hy" resolve="parameter" />
+                          <ref role="nsMwP" node="6TxhFOEUneq" resolve="parameter" />
                           <node concept="a7P8L" id="3rti6XtQ5zJ" role="iSaTp">
                             <ref role="a7OzE" node="3rti6XtQ4$w" resolve="ElementType" />
                           </node>
@@ -4729,7 +4730,7 @@
     <node concept="3iyMRA" id="3rti6XtQ4GQ" role="ns1xc">
       <property role="TrG5h" value="arrayType" />
       <node concept="nspSf" id="3rti6XtQ4GR" role="ns1xx">
-        <node concept="nssqF" id="3rti6XtQ4Hy" role="nspSe">
+        <node concept="nstbe" id="6TxhFOEUneq" role="nspSe">
           <property role="TrG5h" value="parameter" />
         </node>
       </node>
@@ -4740,7 +4741,9 @@
             <node concept="2pIpSj" id="3rti6XtQG7r" role="2pJxcM">
               <ref role="2pIpSl" to="bfo2:3rti6XtQ51b" resolve="elementType" />
               <node concept="36biLy" id="3rti6XtQG7z" role="28nt2d">
-                <node concept="10Nm6u" id="3rti6XtSSGU" role="36biLW" />
+                <node concept="1NbZt7" id="6TxhFOEUney" role="36biLW">
+                  <ref role="1NbY7m" node="6TxhFOEUneq" resolve="parameter" />
+                </node>
               </node>
             </node>
           </node>

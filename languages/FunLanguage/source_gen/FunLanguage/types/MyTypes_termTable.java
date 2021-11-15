@@ -167,10 +167,10 @@ public class MyTypes_termTable {
 
     public DataForm parameter() {
       if (pattern) {
-        return ValueRole.create("parameter", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
+        return ChildRole.create("parameter", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(DataForm.class)));
 
       } else {
-        return (ValueRole.create("parameter", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
+        return (ChildRole.create("parameter", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(DataForm.class))));
       }
     }
 

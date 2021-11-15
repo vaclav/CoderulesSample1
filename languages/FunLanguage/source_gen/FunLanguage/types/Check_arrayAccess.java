@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.logic.dataform.ValueRole;
+import jetbrains.mps.logic.dataform.ChildRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
@@ -49,7 +49,7 @@ public class Check_arrayAccess extends AbstractRuleTemplate<Check_arrayAccess.To
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().arrayAccess, LINKS.array$vaBJ), (new MyTypes_termTable.arrayType_term(false) {
             public DataForm parameter() {
-              return ValueRole.create("parameter", LogicalUtil.asValue(rule().ElementType));
+              return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().ElementType));
             }
           }).getTerm()).toConstraint());
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().arrayAccess, rule().ElementType).toConstraint());

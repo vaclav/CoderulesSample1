@@ -132,7 +132,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
 
 
   public _RecoverType_Default__recover_catchall(RuleTable ruleTable) {
-    super(ruleTable, "recover_catchall", SNodePointer.deserialize("82ca9abf-19c4-411c-b637-f306c9b4bb1d/i:10000006(FunLanguage@transient12/FunLanguage.types@3_4)/3953395691054926662"));
+    super(ruleTable, "recover_catchall", SNodePointer.deserialize("c357eb46-28e5-4afa-89e6-9b5de76c5a8d/i:10000073(FunLanguage@transient1/FunLanguage.types@4_6)/6533580880086303381"));
   }
 
   @Override

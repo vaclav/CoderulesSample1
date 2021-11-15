@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
-import jetbrains.mps.logic.dataform.ValueRole;
+import jetbrains.mps.logic.dataform.ChildRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
@@ -57,7 +57,7 @@ public class Check_array_creation extends AbstractRuleTemplate<Check_array_creat
           }));
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().array, (new MyTypes_termTable.arrayType_term(false) {
             public DataForm parameter() {
-              return ValueRole.create("parameter", LogicalUtil.asValue(rule().ElementType));
+              return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().ElementType));
             }
           }).getTerm()).toConstraint());
 

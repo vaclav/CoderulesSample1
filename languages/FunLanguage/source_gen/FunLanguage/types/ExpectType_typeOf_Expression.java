@@ -62,7 +62,7 @@ public class ExpectType_typeOf_Expression extends AbstractRuleTemplate<ExpectTyp
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 1)).withArguments(token().expr).toConstraint());
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().expr, rule().Type).toConstraint());
-          builder.merge(0, session.expandMacro(token().expr, token().expr, SNodePointer.deserialize("82ca9abf-19c4-411c-b637-f306c9b4bb1d/i:10000006(FunLanguage@transient12/FunLanguage.types@3_4)/3953395691054926763"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+          builder.merge(0, session.expandMacro(token().expr, token().expr, SNodePointer.deserialize("c357eb46-28e5-4afa-89e6-9b5de76c5a8d/i:10000073(FunLanguage@transient1/FunLanguage.types@4_6)/6533580880086303477"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
             public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
               return tok.withLogical(rule().Type).withParams(session.getParameter(TypecheckingState.TYPES_COLLECTOR, Object.class)).apply();
             }

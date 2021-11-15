@@ -47,8 +47,8 @@
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.TemplateApplicationSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logic.dataform.ChildRole" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.ValueRole" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
     <classNode dependClassName="jetbrains.mps.logic.unification.LogicalUtil" />
@@ -79,8 +79,8 @@
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.TemplateApplicationSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logic.dataform.ChildRole" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.ValueRole" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
     <classNode dependClassName="jetbrains.mps.logic.unification.LogicalUtil" />
@@ -1058,10 +1058,11 @@
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTemplate" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.TemplateApplicationSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logic.dataform.ChildRole" />
     <classNode dependClassName="jetbrains.mps.logic.dataform.DataForm" />
-    <classNode dependClassName="jetbrains.mps.logic.dataform.ValueRole" />
     <classNode dependClassName="jetbrains.mps.logic.predicate.UnificationPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.evaluation.InvocationContext" />
+    <classNode dependClassName="jetbrains.mps.logic.reactor.logical.Logical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.LogicalContext" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
