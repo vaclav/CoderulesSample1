@@ -28,10 +28,14 @@ import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.logic.dataform.ValueRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.logic.unification.MetaLogicalFactory;
+import java.util.function.Function;
+import jetbrains.mps.logic.dataform.ChildRole;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class Macros_macroTable extends AbstractMacroTable {
 
@@ -75,6 +79,9 @@ public class Macros_macroTable extends AbstractMacroTable {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.StructDefinition$r)) {
       ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new StructDefinition_813836719655168588_Expand());
     }
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.ConstantArrayType$ZT)) {
+      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new ConstantArrayType_5736138219386146136_Expand());
+    }
     return result;
   }
 
@@ -101,6 +108,7 @@ public class Macros_macroTable extends AbstractMacroTable {
     ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719656948806"));
     ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655204386"));
     ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655168588"));
+    ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5736138219386146136"));
     ListSequence.fromList(result).addElement(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484017472"));
 
     return result;
@@ -490,6 +498,77 @@ public class Macros_macroTable extends AbstractMacroTable {
       return new Token(ruleInput, macroInput, session);
     }
   }
+  public static class ConstantArrayType_5736138219386146136_Expand extends AbstractMacroTemplate<ConstantArrayType_5736138219386146136_Expand.Token> implements ExpandMacroTemplate<ConstantArrayType_5736138219386146136_Expand.Token> {
+
+    public static class Token implements ExpandMacroTemplate.Token {
+
+      protected Token(SNode ruleInput, SNode macroInput, TemplateApplicationSession session) {
+        this.ruleInput = ruleInput;
+        this.macroInput = macroInput;
+        this.session = session;
+      }
+
+      private void init() {
+        this.ComponentType = MetaLogicalFactory.metaLogical("ComponentType", DataForm.class);
+      }
+
+      @Override
+      public Token withLogical(Object... logical) {
+        this.Type = ((MetaLogical) logical[0]);
+        return this;
+      }
+
+      @Override
+      public Token withParams(Object... params) {
+        return this;
+      }
+
+      @Override
+      public RuleBuilder apply() {
+        init();
+        TemplateApplicationSession _session = session;
+        RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.ConstantArrayType_5736138219386146136");
+        builder.merge(0, _session.expandMacro(token().ruleInput, SLinkOperations.getTarget(macroInput, LINKS.componentType$F$Gi), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+          public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
+            return tok.withLogical(Token.this.ComponentType).withParams().apply();
+          }
+        }));
+        builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTypes_termTable.arrayType_term(false) {
+          public DataForm parameter() {
+            return ChildRole.create("parameter", LogicalUtil.asDataForm(Token.this.ComponentType));
+          }
+        }).getTerm()).toPredicate());
+        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
+
+        builder.processMacroInput(CONCEPTS.ConstantArrayType$ZT, macroInput);
+        return builder;
+      }
+
+      protected Token token() {
+        return this;
+      }
+
+      protected TemplateApplicationSession session;
+      protected MetaLogical Type;
+      protected MetaLogical ComponentType;
+      protected SNode macroInput;
+      protected SNode ruleInput;
+    }
+
+    public ConstantArrayType_5736138219386146136_Expand() {
+      super(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5736138219386146136"));
+    }
+
+    @Override
+    public SNodeReference getPrototypeTemplateRef() {
+      return SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126");
+    }
+
+    @Override
+    public Token createToken(SNode ruleInput, SNode macroInput, TemplateApplicationSession session) {
+      return new Token(ruleInput, macroInput, session);
+    }
+  }
   public static class make_Float_Type_Call extends AbstractMacroTemplate<make_Float_Type_Call.Token> implements CallMacroTemplate<make_Float_Type_Call.Token> {
 
     public class Token implements CallMacroTemplate.Token {
@@ -547,6 +626,7 @@ public class Macros_macroTable extends AbstractMacroTable {
     /*package*/ static final SConcept StringValue$R1 = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x44ee06468f8cb76eL, "FunLanguage.structure.StringValue");
     /*package*/ static final SConcept StructType$nR = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, "FunLanguage.structure.StructType");
     /*package*/ static final SConcept StructDefinition$r = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d5dL, "FunLanguage.structure.StructDefinition");
+    /*package*/ static final SConcept ConstantArrayType$ZT = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x36dd486f5dd84f56L, "FunLanguage.structure.ConstantArrayType");
   }
 
   private static final class PROPS {
@@ -555,5 +635,6 @@ public class Macros_macroTable extends AbstractMacroTable {
 
   private static final class LINKS {
     /*package*/ static final SReferenceLink struct$JP1k = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, 0xb4b542f442cbba3L, "struct");
+    /*package*/ static final SContainmentLink componentType$F$Gi = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, 0xf940d819f8L, "componentType");
   }
 }

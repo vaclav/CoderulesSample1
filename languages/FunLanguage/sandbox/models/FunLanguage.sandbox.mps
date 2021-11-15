@@ -75,6 +75,9 @@
       <concept id="3711979631470195153" name="FunLanguage.structure.ParameterReference" flags="ng" index="3wLUwv">
         <reference id="3711979631470195154" name="declaration" index="3wLUws" />
       </concept>
+      <concept id="3953395691054190422" name="FunLanguage.structure.ConstantArrayType" flags="ng" index="1F1gsT">
+        <child id="3953395691054190667" name="elementType" index="1F1hw$" />
+      </concept>
       <concept id="3953395691053818462" name="FunLanguage.structure.CreateArray" flags="ng" index="1F3YCL">
         <property id="3953395691054119250" name="size" index="1F2B4X" />
         <child id="3953395691053818585" name="elementType" index="1F3YEQ" />
@@ -1521,6 +1524,29 @@
         <property role="3boF4O" value="3" />
       </node>
     </node>
+    <node concept="1fvZmq" id="4YqQP6P3odw" role="3boF2k" />
+    <node concept="3wKWvf" id="4YqQP6P3og1" role="3boF2k">
+      <property role="TrG5h" value="getAll" />
+      <node concept="1F1gsT" id="4YqQP6P3ohp" role="3wKZ8p">
+        <node concept="1bpUpt" id="4YqQP6P4vQw" role="1F1hw$" />
+      </node>
+      <node concept="1PAgPj" id="4YqQP6P3ohE" role="3wKZ8n">
+        <node concept="1bpOEZ" id="4YqQP6P3oh_" role="1PAgMg">
+          <property role="1bpOEY" value="1.2" />
+        </node>
+        <node concept="3boF4R" id="4YqQP6P3ohJ" role="1PAgMi">
+          <property role="3boF4O" value="3" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvZmq" id="4YqQP6P3oiL" role="3boF2k" />
+    <node concept="1f0frs" id="4YqQP6P3omt" role="3boF2k">
+      <property role="TrG5h" value="f" />
+      <node concept="3wKZnR" id="4YqQP6P3onT" role="1f0frp">
+        <ref role="3wKZmd" node="4YqQP6P3og1" resolve="getAll" />
+      </node>
+    </node>
+    <node concept="1fvZmq" id="4YqQP6P3onW" role="3boF2k" />
     <node concept="1fvZmq" id="1z76$z5Looy" role="3boF2k" />
   </node>
 </model>
