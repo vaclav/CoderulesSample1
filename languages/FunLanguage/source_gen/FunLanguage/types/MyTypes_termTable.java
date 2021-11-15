@@ -159,6 +159,28 @@ public class MyTypes_termTable {
 
     private boolean pattern;
   }
+  public static class arrayType_term extends AbstractTermDeclaration {
+
+    public arrayType_term(boolean pattern) {
+      this.pattern = pattern;
+    }
+
+    public DataForm parameter() {
+      if (pattern) {
+        return ValueRole.create("parameter", LogicalUtil.asDataForm(MetaLogicalFactory.wildcardMetaLogical(Object.class)));
+
+      } else {
+        return (ValueRole.create("parameter", LogicalUtil.asValue(MetaLogicalFactory.wildcardMetaLogical(Object.class))));
+      }
+    }
+
+    @Override
+    public DataForm getTerm() {
+      return (TermNode.create(ValueRole.create("_term", Value.create("arrayType")), LogicalUtil.asDataForm(parameter())));
+    }
+
+    private boolean pattern;
+  }
 
 
 }

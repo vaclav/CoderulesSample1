@@ -22,6 +22,8 @@ public class PrincipalsAnalysisImpl extends PrincipalsAnalysis {
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("expectAll", 0));
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("expectType", 1));
     SetSequence.fromSet(principalCtrs).addElement(new ConstraintSymbol("typeOf", 2));
+    SetSequence.fromSet(principalRulesTags).addElement("arrayAccess");
+    SetSequence.fromSet(principalRulesTags).addElement("array_creation");
     SetSequence.fromSet(principalRulesTags).addElement("assignment");
     SetSequence.fromSet(principalRulesTags).addElement("binary_expr_type");
     SetSequence.fromSet(principalRulesTags).addElement("check");

@@ -9,9 +9,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_ArrayAccess;
   private ConceptPresentation props_Assignment;
   private ConceptPresentation props_BinaryExpr;
   private ConceptPresentation props_Comment;
+  private ConceptPresentation props_ConstantArrayType;
   private ConceptPresentation props_ConstantDefinition;
   private ConceptPresentation props_ConstantFloatStringType;
   private ConceptPresentation props_ConstantFloatType;
@@ -20,6 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ConstantLanguageType;
   private ConceptPresentation props_ConstantReference;
   private ConceptPresentation props_ConstantStringType;
+  private ConceptPresentation props_CreateArray;
   private ConceptPresentation props_Definition;
   private ConceptPresentation props_DivExpr;
   private ConceptPresentation props_DotAccessExpr;
@@ -48,6 +51,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ArrayAccess:
+        if (props_ArrayAccess == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("[]");
+          props_ArrayAccess = cpb.create();
+        }
+        return props_ArrayAccess;
       case LanguageConceptSwitch.Assignment:
         if (props_Assignment == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -68,6 +78,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Comment = cpb.create();
         }
         return props_Comment;
+      case LanguageConceptSwitch.ConstantArrayType:
+        if (props_ConstantArrayType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("array");
+          props_ConstantArrayType = cpb.create();
+        }
+        return props_ConstantArrayType;
       case LanguageConceptSwitch.ConstantDefinition:
         if (props_ConstantDefinition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -123,6 +140,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstantStringType = cpb.create();
         }
         return props_ConstantStringType;
+      case LanguageConceptSwitch.CreateArray:
+        if (props_CreateArray == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("array");
+          props_CreateArray = cpb.create();
+        }
+        return props_CreateArray;
       case LanguageConceptSwitch.Definition:
         if (props_Definition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

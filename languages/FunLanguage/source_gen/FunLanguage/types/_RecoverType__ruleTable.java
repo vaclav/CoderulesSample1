@@ -46,6 +46,7 @@ public class _RecoverType__ruleTable extends AbstractRuleTable implements RuleTa
     ListSequence.fromList(list).addElement(new _RecoverType___recover_intHoldingStringType(this));
     ListSequence.fromList(list).addElement(new _RecoverType___recover_floatHoldingStringType(this));
     ListSequence.fromList(list).addElement(new _RecoverType___recover_structType(this));
+    ListSequence.fromList(list).addElement(new _RecoverType___recover_arrayType(this));
     this.ruleTemplates = ListSequence.fromList(list).asUnmodifiable();
   }
 

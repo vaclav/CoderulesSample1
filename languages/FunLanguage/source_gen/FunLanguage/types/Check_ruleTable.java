@@ -46,6 +46,8 @@ public class Check_ruleTable extends AbstractRuleTable implements RuleTable {
     ListSequence.fromList(list).addElement(new Check_var_reference(this));
     ListSequence.fromList(list).addElement(new Check_parameter_reference(this));
     ListSequence.fromList(list).addElement(new Check_dot(this));
+    ListSequence.fromList(list).addElement(new Check_arrayAccess(this));
+    ListSequence.fromList(list).addElement(new Check_array_creation(this));
     ListSequence.fromList(list).addElement(new Check_assignment(this));
     ListSequence.fromList(list).addElement(new Check_function_call(this));
     ListSequence.fromList(list).addElement(new Check_function_definition(this));

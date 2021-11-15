@@ -41,14 +41,14 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
       {
-        SNode target_jddv8_a0i = SLinkOperations.getTarget(token().fun, LINKS.body$Dpoh);
+        SNode target_jddv8_a0k = SLinkOperations.getTarget(token().fun, LINKS.body$Dpoh);
         new function_definition() {
           @Override
           public void apply(TemplateApplicationSession session) {
             ActualReturnType = MetaLogicalFactory.metaLogical("ActualReturnType", DataForm.class);
             DeclaredType = MetaLogicalFactory.metaLogical("DeclaredType", DataForm.class);
 
-            RuleBuilder builder = new RuleBuilder(session, "function_definition", "function_definition" + "_" + String.valueOf(token().fun.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().fun, SNodeOperations.getPointer(target_jddv8_a0i));
+            RuleBuilder builder = new RuleBuilder(session, "function_definition", "function_definition" + "_" + String.valueOf(token().fun.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().fun, SNodeOperations.getPointer(target_jddv8_a0k));
 
             builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().fun, LINKS.body$Dpoh), rule().ActualReturnType).toConstraint());
             builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());

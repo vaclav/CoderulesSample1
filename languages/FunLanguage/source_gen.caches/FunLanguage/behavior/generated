@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-2kml2zn7at2cdcukspwmbukqzhwveoa">
-  <files names="BehaviorAspectDescriptor.java:DotAccessExpr__BehaviorDescriptor.java:Expr__BehaviorDescriptor.java:StructDefinition__BehaviorDescriptor.java:VarReference__BehaviorDescriptor.java" />
+<product version="3" modelHash="-epqrkakndcg5j77a2jjbyz0s7ycvex1">
+  <files names="ArrayAccess__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:DotAccessExpr__BehaviorDescriptor.java:Expr__BehaviorDescriptor.java:StructDefinition__BehaviorDescriptor.java:VarReference__BehaviorDescriptor.java" />
 </product>
 

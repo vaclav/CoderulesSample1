@@ -75,6 +75,14 @@
       <concept id="3711979631470195153" name="FunLanguage.structure.ParameterReference" flags="ng" index="3wLUwv">
         <reference id="3711979631470195154" name="declaration" index="3wLUws" />
       </concept>
+      <concept id="3953395691053818462" name="FunLanguage.structure.CreateArray" flags="ng" index="1F3YCL">
+        <property id="3953395691054119250" name="size" index="1F2B4X" />
+        <child id="3953395691053818585" name="elementType" index="1F3YEQ" />
+      </concept>
+      <concept id="3953395691053819347" name="FunLanguage.structure.ArrayAccess" flags="ng" index="1F3YQW">
+        <child id="3953395691053820095" name="array" index="1F3Y3g" />
+        <child id="3953395691053819470" name="index" index="1F3YSx" />
+      </concept>
       <concept id="6708639879380720723" name="FunLanguage.structure.DivExpr" flags="ng" index="1PA3KY" />
       <concept id="6708639879380720722" name="FunLanguage.structure.MulExpr" flags="ng" index="1PA3KZ" />
       <concept id="6708639879380659452" name="FunLanguage.structure.BinaryExpr" flags="ng" index="1PAgMh">
@@ -1458,6 +1466,59 @@
             <ref role="1f0fsl" node="1z76$z5Lojf" resolve="p" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="1fvZmq" id="3rti6XtPkjb" role="3boF2k" />
+    <node concept="1f0frs" id="3rti6XtPkl2" role="3boF2k">
+      <property role="TrG5h" value="arr" />
+      <node concept="1F3YCL" id="3rti6XtPkm2" role="1f0frp">
+        <property role="1F2B4X" value="5" />
+        <node concept="1ZVgE7" id="3rti6XtPkm8" role="1F3YEQ" />
+      </node>
+    </node>
+    <node concept="1f0frs" id="3rti6XtPNne" role="3boF2k">
+      <property role="TrG5h" value="s" />
+      <node concept="3boF4C" id="3rti6XtPNor" role="1f0frp">
+        <property role="3boF4D" value="bbb" />
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="3rti6XtPNpG" role="3boF2k">
+      <node concept="1f0fsm" id="3rti6XtPNpE" role="1fvHIY">
+        <ref role="1f0fsl" node="3rti6XtPNne" resolve="s" />
+      </node>
+      <node concept="1F3YQW" id="3rti6XtPNr5" role="1fvHIW">
+        <node concept="3boF4R" id="3rti6XtPNrn" role="1F3YSx">
+          <property role="3boF4O" value="0" />
+        </node>
+        <node concept="1f0fsm" id="3rti6XtPNrh" role="1F3Y3g">
+          <ref role="1f0fsl" node="3rti6XtPkl2" resolve="arr" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="3rti6XtPkwk" role="3boF2k">
+      <node concept="3boF4C" id="3rti6XtPkxA" role="1fvHIW">
+        <property role="3boF4D" value="aaa" />
+      </node>
+      <node concept="1F3YQW" id="3rti6XtPkxv" role="1fvHIY">
+        <node concept="3boF4R" id="3rti6XtPkxw" role="1F3YSx">
+          <property role="3boF4O" value="1" />
+        </node>
+        <node concept="1f0fsm" id="3rti6XtPkxx" role="1F3Y3g">
+          <ref role="1f0fsl" node="3rti6XtPkl2" resolve="arr" />
+        </node>
+      </node>
+    </node>
+    <node concept="1fvHIZ" id="3rti6XtPkxD" role="3boF2k">
+      <node concept="1F3YQW" id="3rti6XtPkxF" role="1fvHIY">
+        <node concept="3boF4R" id="3rti6XtPkxG" role="1F3YSx">
+          <property role="3boF4O" value="1" />
+        </node>
+        <node concept="1f0fsm" id="3rti6XtPkxH" role="1F3Y3g">
+          <ref role="1f0fsl" node="3rti6XtPkl2" resolve="arr" />
+        </node>
+      </node>
+      <node concept="3boF4R" id="3rti6XtPkyY" role="1fvHIW">
+        <property role="3boF4O" value="3" />
       </node>
     </node>
     <node concept="1fvZmq" id="1z76$z5Looy" role="3boF2k" />
