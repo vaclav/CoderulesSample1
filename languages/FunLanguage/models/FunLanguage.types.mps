@@ -1984,20 +1984,6 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="1X3_iC" id="Hbl2X4gk70" role="lGtFl">
-                            <property role="3V$3am" value="statement" />
-                            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                            <node concept="3Aqczg" id="Hbl2X4gk6d" role="8Wnug">
-                              <node concept="3A8Hvi" id="Hbl2X4gk6e" role="3Aqpz8">
-                                <node concept="a7P8L" id="Hbl2X4gk6f" role="3A8wtg">
-                                  <ref role="a7OzE" node="3e3AsVjiw8l" resolve="DeclaredType" />
-                                </node>
-                                <node concept="a7P8L" id="Hbl2X4gk6g" role="3A8w4Q">
-                                  <ref role="a7OzE" node="3e3AsVjiuQS" resolve="ActualReturnType" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
                         </node>
                       </node>
                     </node>

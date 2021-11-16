@@ -28,9 +28,9 @@
     </file>
     <file name="_ExpectTypeMacro__macroTable.java">
       <unit at="160,0,163,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$CONCEPTS" />
-      <unit at="117,100,127,9" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_5736138219387601013_Expand$Token$1" />
-      <unit at="87,0,144,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_5736138219387601013_Expand$Token" />
-      <unit at="85,0,159,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_5736138219387601013_Expand" />
+      <unit at="117,100,127,9" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_5736138219387700940_Expand$Token$1" />
+      <unit at="87,0,144,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_5736138219387700940_Expand$Token" />
+      <unit at="85,0,159,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_5736138219387700940_Expand" />
       <unit at="35,0,164,0" name="FunLanguage.types._ExpectTypeMacro__macroTable" />
     </file>
     <file name="_RecoverType_Default__recover_catchall.java">
@@ -3741,8 +3741,8 @@
       <node id="3519196375455935484" at="22,88,23,89" concept="2" />
       <node id="9107496436260760408" at="44,65,45,76" concept="2" />
       <node id="1942659408248972984" at="45,76,46,76" concept="2" />
-      <node id="9107496436260805993" at="46,76,47,76" concept="2" />
-      <node id="3519196375455936775" at="47,76,48,76" concept="2" />
+      <node id="3519196375455936775" at="46,76,47,76" concept="2" />
+      <node id="9107496436260805993" at="47,76,48,76" concept="2" />
     </file>
   </root>
   <root nodeRef="r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426549105">
