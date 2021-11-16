@@ -64,6 +64,7 @@ public class VarReference_TransformationMenu extends TransformationMenuBase {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new TMP_Action_jj48bl_a0());
+      result.add(new TMP_Action_jj48bl_b0());
     }
     return result;
   }
@@ -130,12 +131,76 @@ public class VarReference_TransformationMenu extends TransformationMenuBase {
     }
 
   }
+  private class TMP_Action_jj48bl_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    @Nullable
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      Item item = new Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:03a898a7-fc22-4755-8556-58301e273720(FunLanguage.editor)", "5736138219387801043")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
+    }
+
+    private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
+      private final TransformationMenuContext _context;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "[]";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        SNode aa = SNodeOperations.replaceWithNewChild(_context.getNode(), CONCEPTS.ArrayAccess$gK);
+        SLinkOperations.setTarget(aa, LINKS.array$vaBJ, _context.getNode());
+        SelectionUtil.selectCell(_context.getEditorContext(), aa, SelectionManager.LAST_EDITABLE_CELL);
+      }
+
+
+
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myEditorMenuTraceInfo;
+      }
+
+      public void customize(String pattern, EditorMenuItemStyle style) {
+        EditorMenuItemModifyingCustomizationContext modifyingContext = new EditorMenuItemModifyingCustomizationContext(_context.getNode(), null, null, null);
+        SAbstractConcept outputConcept = null;
+        EditorMenuItemCompositeCustomizationContext compositeContext = new EditorMenuItemCompositeCustomizationContext(modifyingContext, new CompletionMenuItemCustomizationContext(new CompletionItemInformation(null, outputConcept, getLabelText(pattern), getShortDescriptionText(pattern))));
+        for (EditorMenuItemCustomizer customizer : CollectionSequence.fromCollection(_context.getCustomizers())) {
+          customizer.customize(style, compositeContext);
+        }
+      }
+    }
+
+  }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept DotAccessExpr$cT = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44358f40L, "FunLanguage.structure.DotAccessExpr");
+    /*package*/ static final SConcept ArrayAccess$gK = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x36dd486f5dd2a5d3L, "FunLanguage.structure.ArrayAccess");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink operand$x03i = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44358f40L, 0xb4b542f44358f43L, "operand");
+    /*package*/ static final SContainmentLink array$vaBJ = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x36dd486f5dd2a5d3L, 0x36dd486f5dd2a8bfL, "array");
   }
 }
