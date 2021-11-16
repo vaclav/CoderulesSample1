@@ -528,7 +528,7 @@ public class Macros_macroTable extends AbstractMacroTable {
         init();
         TemplateApplicationSession _session = session;
         RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.ConstantArrayType_5736138219386146136");
-        builder.merge(0, _session.expandMacro(token().ruleInput, SLinkOperations.getTarget(macroInput, LINKS.componentType$F$Gi), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
+        builder.merge(0, _session.expandMacro(token().ruleInput, SLinkOperations.getTarget(macroInput, LINKS.elementType$Xq3i), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
           public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
             return tok.withLogical(Token.this.ComponentType).withParams().apply();
           }
@@ -635,6 +635,6 @@ public class Macros_macroTable extends AbstractMacroTable {
 
   private static final class LINKS {
     /*package*/ static final SReferenceLink struct$JP1k = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, 0xb4b542f442cbba3L, "struct");
-    /*package*/ static final SContainmentLink componentType$F$Gi = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, 0xf940d819f8L, "componentType");
+    /*package*/ static final SContainmentLink elementType$Xq3i = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x36dd486f5dd84f56L, 0x36dd486f5dd8504bL, "elementType");
   }
 }

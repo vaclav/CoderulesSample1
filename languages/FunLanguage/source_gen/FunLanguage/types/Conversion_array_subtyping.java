@@ -42,8 +42,8 @@ public class Conversion_array_subtyping extends AbstractRuleTemplate<Conversion_
         public void apply(TemplateApplicationSession session) {
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
           B = MetaLogicalFactory.metaLogical("B", DataForm.class);
-          EA = MetaLogicalFactory.metaLogical("EA", SNode.class);
-          EB = MetaLogicalFactory.metaLogical("EB", SNode.class);
+          EA = MetaLogicalFactory.metaLogical("EA", DataForm.class);
+          EB = MetaLogicalFactory.metaLogical("EB", DataForm.class);
 
           RuleBuilder builder = new RuleBuilder(session, "array_subtyping", "array_subtyping", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
@@ -56,7 +56,7 @@ public class Conversion_array_subtyping extends AbstractRuleTemplate<Conversion_
               return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().EB));
             }
           }).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
-          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().EA, rule().EB).toPredicate());
+          builder.appendGuard(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().EA, rule().EB).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

@@ -43,16 +43,21 @@ public class Check_arrayAccess extends AbstractRuleTemplate<Check_arrayAccess.To
       new arrayAccess() {
         @Override
         public void apply(TemplateApplicationSession session) {
+          TargetArrayType = MetaLogicalFactory.metaLogical("TargetArrayType", DataForm.class);
           ElementType = MetaLogicalFactory.metaLogical("ElementType", DataForm.class);
+          IndexType = MetaLogicalFactory.metaLogical("IndexType", DataForm.class);
 
           RuleBuilder builder = new RuleBuilder(session, "arrayAccess", "arrayAccess" + "_" + String.valueOf(token().arrayAccess.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().arrayAccess, SNodeOperations.getPointer(token().arrayAccess));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().arrayAccess, LINKS.array$vaBJ), (new MyTypes_termTable.arrayType_term(false) {
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().arrayAccess, LINKS.array$vaBJ), rule().TargetArrayType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().arrayAccess, LINKS.index$amV6), rule().IndexType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().arrayAccess, rule().ElementType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().IndexType, (new MyTypes_termTable.intType_term(false)).getTerm()).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().TargetArrayType, (new MyTypes_termTable.arrayType_term(false) {
             public DataForm parameter() {
               return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().ElementType));
             }
           }).getTerm()).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().arrayAccess, rule().ElementType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -71,7 +76,9 @@ public class Check_arrayAccess extends AbstractRuleTemplate<Check_arrayAccess.To
         return this;
       }
 
+      protected MetaLogical TargetArrayType;
       protected MetaLogical ElementType;
+      protected MetaLogical IndexType;
 
     }
 
@@ -100,6 +107,7 @@ public class Check_arrayAccess extends AbstractRuleTemplate<Check_arrayAccess.To
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink array$vaBJ = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x36dd486f5dd2a5d3L, 0x36dd486f5dd2a8bfL, "array");
+    /*package*/ static final SContainmentLink index$amV6 = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x36dd486f5dd2a5d3L, 0x36dd486f5dd2a64eL, "index");
   }
 
   private static final class CONCEPTS {
