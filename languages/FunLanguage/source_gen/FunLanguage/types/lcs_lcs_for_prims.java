@@ -31,7 +31,7 @@ import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
+public class lcs_lcs_for_prims extends AbstractRuleTemplate<lcs_lcs_for_prims.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -43,14 +43,14 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new lcs_prim() {
+      new lcs_for_prims() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_prim", "lcs_prim#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.NONFREE_SYM).withArguments(rule().Left).toPredicate());
@@ -63,14 +63,14 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
 
       }.apply(_session);
 
-      new lcs_prim1() {
+      new lcs_for_prims1() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_prim", "lcs_prim#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments((new MyTypes_termTable.floatType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.merge(0, session.callMacro(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484017472"), new Function<CallMacroTemplate.Token, RuleBuilder>() {
@@ -84,14 +84,14 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
 
       }.apply(_session);
 
-      new lcs_prim2() {
+      new lcs_for_prims2() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_prim", "lcs_prim#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.floatType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.merge(0, session.callMacro(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484017472"), new Function<CallMacroTemplate.Token, RuleBuilder>() {
@@ -105,14 +105,14 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
 
       }.apply(_session);
 
-      new lcs_prim3() {
+      new lcs_for_prims3() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_prim", "lcs_prim#3", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#3", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().Left, rule().Right, rule().LCS).toConstraint());
           builder.appendBody(new PredicateBuilder(FailPredicate.FAIL_SYM).withArguments(new LateExpression<Object>() {
@@ -138,9 +138,9 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
       return this;
     }
 
-    public abstract class lcs_prim implements ConstraintRuleTemplate {
+    public abstract class lcs_for_prims implements ConstraintRuleTemplate {
 
-      protected lcs_prim rule() {
+      protected lcs_for_prims rule() {
         return this;
       }
 
@@ -149,9 +149,9 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_prim1 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_prims1 implements ConstraintRuleTemplate {
 
-      protected lcs_prim1 rule() {
+      protected lcs_for_prims1 rule() {
         return this;
       }
 
@@ -160,9 +160,9 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_prim2 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_prims2 implements ConstraintRuleTemplate {
 
-      protected lcs_prim2 rule() {
+      protected lcs_for_prims2 rule() {
         return this;
       }
 
@@ -171,9 +171,9 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_prim3 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_prims3 implements ConstraintRuleTemplate {
 
-      protected lcs_prim3 rule() {
+      protected lcs_for_prims3 rule() {
         return this;
       }
 
@@ -189,8 +189,8 @@ public class lcs_lcs_prim extends AbstractRuleTemplate<lcs_lcs_prim.Token> {
   }
 
 
-  public lcs_lcs_prim(RuleTable ruleTable) {
-    super(ruleTable, "lcs_prim", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426555316"));
+  public lcs_lcs_for_prims(RuleTable ruleTable) {
+    super(ruleTable, "lcs_for_prims", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426555316"));
   }
 
   @Override

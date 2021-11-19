@@ -23,7 +23,7 @@ import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
+public class lcs_lcs_for_strings extends AbstractRuleTemplate<lcs_lcs_for_strings.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -35,14 +35,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new lcs_string() {
+      new lcs_for_strings() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Right).toPredicate());
@@ -52,14 +52,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string1() {
+      new lcs_for_strings1() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Left).toPredicate());
@@ -69,14 +69,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string2() {
+      new lcs_for_strings2() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.floatType_term(false)).getTerm()).toPredicate());
@@ -86,14 +86,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string3() {
+      new lcs_for_strings3() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#3", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#3", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.floatType_term(false)).getTerm()).toPredicate());
@@ -103,14 +103,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string4() {
+      new lcs_for_strings4() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#4", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#4", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Right).toPredicate());
@@ -120,14 +120,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string5() {
+      new lcs_for_strings5() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#5", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#5", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Left).toPredicate());
@@ -137,14 +137,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string6() {
+      new lcs_for_strings6() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#6", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#6", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Right).toPredicate());
@@ -154,14 +154,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string7() {
+      new lcs_for_strings7() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#7", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#7", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, rule().Right).toPredicate());
@@ -171,14 +171,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string8() {
+      new lcs_for_strings8() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#8", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#8", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.stringType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.stringType_term(false)).getTerm()).toPredicate());
@@ -188,14 +188,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string9() {
+      new lcs_for_strings9() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#9", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#9", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.stringType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.stringType_term(false)).getTerm()).toPredicate());
@@ -205,14 +205,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string10() {
+      new lcs_for_strings10() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#10", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#10", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.stringType_term(false)).getTerm()).toPredicate());
@@ -222,14 +222,14 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
 
       }.apply(_session);
 
-      new lcs_string11() {
+      new lcs_for_strings11() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Left = MetaLogicalFactory.metaLogical("Left", DataForm.class);
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_string", "lcs_string#11", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "lcs_for_strings", "lcs_for_strings#11", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments(rule().Left, rule().Right, rule().LCS).toConstraint());
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().Left, rule().Right, rule().LCS).toConstraint());
@@ -245,9 +245,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       return this;
     }
 
-    public abstract class lcs_string implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings implements ConstraintRuleTemplate {
 
-      protected lcs_string rule() {
+      protected lcs_for_strings rule() {
         return this;
       }
 
@@ -256,9 +256,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string1 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings1 implements ConstraintRuleTemplate {
 
-      protected lcs_string1 rule() {
+      protected lcs_for_strings1 rule() {
         return this;
       }
 
@@ -267,9 +267,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string2 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings2 implements ConstraintRuleTemplate {
 
-      protected lcs_string2 rule() {
+      protected lcs_for_strings2 rule() {
         return this;
       }
 
@@ -278,9 +278,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string3 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings3 implements ConstraintRuleTemplate {
 
-      protected lcs_string3 rule() {
+      protected lcs_for_strings3 rule() {
         return this;
       }
 
@@ -289,9 +289,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string4 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings4 implements ConstraintRuleTemplate {
 
-      protected lcs_string4 rule() {
+      protected lcs_for_strings4 rule() {
         return this;
       }
 
@@ -300,9 +300,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string5 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings5 implements ConstraintRuleTemplate {
 
-      protected lcs_string5 rule() {
+      protected lcs_for_strings5 rule() {
         return this;
       }
 
@@ -311,9 +311,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string6 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings6 implements ConstraintRuleTemplate {
 
-      protected lcs_string6 rule() {
+      protected lcs_for_strings6 rule() {
         return this;
       }
 
@@ -322,9 +322,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string7 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings7 implements ConstraintRuleTemplate {
 
-      protected lcs_string7 rule() {
+      protected lcs_for_strings7 rule() {
         return this;
       }
 
@@ -333,9 +333,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string8 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings8 implements ConstraintRuleTemplate {
 
-      protected lcs_string8 rule() {
+      protected lcs_for_strings8 rule() {
         return this;
       }
 
@@ -344,9 +344,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string9 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings9 implements ConstraintRuleTemplate {
 
-      protected lcs_string9 rule() {
+      protected lcs_for_strings9 rule() {
         return this;
       }
 
@@ -355,9 +355,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string10 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings10 implements ConstraintRuleTemplate {
 
-      protected lcs_string10 rule() {
+      protected lcs_for_strings10 rule() {
         return this;
       }
 
@@ -366,9 +366,9 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
       protected MetaLogical LCS;
 
     }
-    public abstract class lcs_string11 implements ConstraintRuleTemplate {
+    public abstract class lcs_for_strings11 implements ConstraintRuleTemplate {
 
-      protected lcs_string11 rule() {
+      protected lcs_for_strings11 rule() {
         return this;
       }
 
@@ -384,8 +384,8 @@ public class lcs_lcs_string extends AbstractRuleTemplate<lcs_lcs_string.Token> {
   }
 
 
-  public lcs_lcs_string(RuleTable ruleTable) {
-    super(ruleTable, "lcs_string", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426549632"));
+  public lcs_lcs_for_strings(RuleTable ruleTable) {
+    super(ruleTable, "lcs_for_strings", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426549632"));
   }
 
   @Override

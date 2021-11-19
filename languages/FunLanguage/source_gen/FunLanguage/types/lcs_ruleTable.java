@@ -40,8 +40,8 @@ public class lcs_ruleTable extends AbstractRuleTable implements RuleTable {
 
   private void init() {
     List<RuleTemplate<?>> list = ListSequence.fromList(new ArrayList<RuleTemplate<?>>());
-    ListSequence.fromList(list).addElement(new lcs_lcs_string(this));
-    ListSequence.fromList(list).addElement(new lcs_lcs_prim(this));
+    ListSequence.fromList(list).addElement(new lcs_lcs_for_strings(this));
+    ListSequence.fromList(list).addElement(new lcs_lcs_for_prims(this));
     this.ruleTemplates = ListSequence.fromList(list).asUnmodifiable();
   }
 
