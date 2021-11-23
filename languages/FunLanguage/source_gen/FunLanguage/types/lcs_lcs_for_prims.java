@@ -17,9 +17,6 @@ import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.LogicalPredicate;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
-import jetbrains.mps.smodel.SNodePointer;
-import java.util.function.Function;
-import jetbrains.mps.lang.coderules.template.CallMacroTemplate;
 import jetbrains.mps.logic.predicate.FailPredicate;
 import jetbrains.mps.lang.coderules.template.LateExpression;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
@@ -29,6 +26,7 @@ import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class lcs_lcs_for_prims extends AbstractRuleTemplate<lcs_lcs_for_prims.Token> {
@@ -73,11 +71,7 @@ public class lcs_lcs_for_prims extends AbstractRuleTemplate<lcs_lcs_for_prims.To
           RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments((new MyTypes_termTable.floatType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
-          builder.merge(0, session.callMacro(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484017472"), new Function<CallMacroTemplate.Token, RuleBuilder>() {
-            public RuleBuilder apply(CallMacroTemplate.Token tok) {
-              return tok.withLogical(rule().LCS).withParam().apply();
-            }
-          }));
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.floatType_term(false)).getTerm()).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -94,11 +88,7 @@ public class lcs_lcs_for_prims extends AbstractRuleTemplate<lcs_lcs_for_prims.To
           RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.floatType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
-          builder.merge(0, session.callMacro(SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484017472"), new Function<CallMacroTemplate.Token, RuleBuilder>() {
-            public RuleBuilder apply(CallMacroTemplate.Token tok) {
-              return tok.withLogical(rule().LCS).withParam().apply();
-            }
-          }));
+          builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.floatType_term(false)).getTerm()).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

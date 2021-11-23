@@ -21,8 +21,6 @@ import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import jetbrains.mps.lang.coderules.template.RuleBuilder;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
-import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
-import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.logic.dataform.ValueRole;
@@ -144,7 +142,6 @@ public class Macros_macroTable extends AbstractMacroTable {
         TemplateApplicationSession _session = session;
         RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.ConstantIntegerType_7475035771484099139");
         builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTypes_termTable.intType_term(false)).getTerm()).toPredicate());
-        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
 
         builder.processMacroInput(CONCEPTS.ConstantIntegerType$Mr, macroInput);
         return builder;
@@ -204,7 +201,6 @@ public class Macros_macroTable extends AbstractMacroTable {
         TemplateApplicationSession _session = session;
         RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.ConstantFloatType_7475035771484099171");
         builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTypes_termTable.floatType_term(false)).getTerm()).toPredicate());
-        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
 
         builder.processMacroInput(CONCEPTS.ConstantFloatType$fo, macroInput);
         return builder;
@@ -264,7 +260,6 @@ public class Macros_macroTable extends AbstractMacroTable {
         TemplateApplicationSession _session = session;
         RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.ConstantStringType_7475035771484099211");
         builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTypes_termTable.stringType_term(false)).getTerm()).toPredicate());
-        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
 
         builder.processMacroInput(CONCEPTS.ConstantStringType$MU, macroInput);
         return builder;
@@ -405,7 +400,6 @@ public class Macros_macroTable extends AbstractMacroTable {
             return ValueRole.create("definition", LogicalUtil.asValue(SLinkOperations.getTarget(macroInput, LINKS.struct$JP1k)));
           }
         }).getTerm()).toPredicate());
-        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
 
         builder.processMacroInput(CONCEPTS.StructType$nR, macroInput);
         return builder;
@@ -538,7 +532,6 @@ public class Macros_macroTable extends AbstractMacroTable {
             return ChildRole.create("parameter", LogicalUtil.asDataForm(Token.this.ComponentType));
           }
         }).getTerm()).toPredicate());
-        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(macroInput, Token.this.Type).toConstraint());
 
         builder.processMacroInput(CONCEPTS.ConstantArrayType$ZT, macroInput);
         return builder;

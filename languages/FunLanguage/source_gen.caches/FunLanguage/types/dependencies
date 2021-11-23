@@ -878,7 +878,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.AbstractMacroTemplate" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.CallMacroTemplate" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ExpandMacroTemplate" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.PredicateBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleBuilder" />
@@ -892,7 +891,6 @@
     <classNode dependClassName="jetbrains.mps.logic.dataform.ValueRole" />
     <classNode dependClassName="jetbrains.mps.logic.predicate.UnificationPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.MetaLogical" />
-    <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
     <classNode dependClassName="jetbrains.mps.logic.unification.LogicalUtil" />
     <classNode dependClassName="jetbrains.mps.logic.unification.MetaLogicalFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -1349,9 +1347,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.function.Function" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.CallMacroTemplate" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.LateExpression" />
