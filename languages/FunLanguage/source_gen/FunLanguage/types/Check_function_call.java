@@ -19,7 +19,6 @@ import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
@@ -67,11 +66,7 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
               builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(ListSequence.fromList(args).getElement(i), rule().ArgType.logicalAt(i)).toConstraint());
             }
             for (final Wrappers._int i = new Wrappers._int(0); i.value < ListSequence.fromList(params).count(); i.value++) {
-              builder.merge(0, session.expandMacro(token().call, SLinkOperations.getTarget(ListSequence.fromList(params).getElement(i.value), LINKS.declaredType$ScNM), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-                public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                  return tok.withLogical(rule().ParamDeclaredType.logicalAt(i.value)).withParams().apply();
-                }
-              }));
+              builder.merge(0, session.expandMacro(token().call, SLinkOperations.getTarget(ListSequence.fromList(params).getElement(i.value), LINKS.declaredType$ScNM), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().ParamDeclaredType.logicalAt(i.value)).withParams().apply()));
               builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().ArgType.logicalAt(i.value), rule().ParamDeclaredType.logicalAt(i.value)).toConstraint());
             }
             // at this point all arguments's types are ensured to be compatible with the function type

@@ -656,7 +656,7 @@
               </node>
             </node>
             <node concept="a7P8L" id="4YqQP6P3KuK" role="3jbY8V">
-              <ref role="a7OzE" node="4YqQP6P3Kua" resolve="ComponeType" />
+              <ref role="a7OzE" node="4YqQP6P3Kua" resolve="ComponentType" />
             </node>
           </node>
         </node>
@@ -670,7 +670,7 @@
               <node concept="nsMwS" id="4YqQP6P3oPu" role="ns1xD">
                 <ref role="nsMwP" node="6TxhFOEUneq" resolve="parameter" />
                 <node concept="a7P8L" id="4YqQP6P3KuU" role="iSaTp">
-                  <ref role="a7OzE" node="4YqQP6P3Kua" resolve="ComponeType" />
+                  <ref role="a7OzE" node="4YqQP6P3Kua" resolve="ComponentType" />
                 </node>
               </node>
             </node>

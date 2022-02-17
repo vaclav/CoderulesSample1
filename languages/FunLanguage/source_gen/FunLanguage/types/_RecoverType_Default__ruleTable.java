@@ -40,6 +40,7 @@ public class _RecoverType_Default__ruleTable extends AbstractRuleTable implement
 
   private void init() {
     List<RuleTemplate<?>> list = ListSequence.fromList(new ArrayList<RuleTemplate<?>>());
+    ListSequence.fromList(list).addElement(new _RecoverType_Default__recover_list(this));
     ListSequence.fromList(list).addElement(new _RecoverType_Default__recover_catchall(this));
     this.ruleTemplates = ListSequence.fromList(list).asUnmodifiable();
   }

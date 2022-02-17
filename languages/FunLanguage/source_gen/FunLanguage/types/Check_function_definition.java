@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
@@ -52,11 +51,7 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
 
             builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().fun, LINKS.body$Dpoh), rule().ActualReturnType).toConstraint());
             builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-            builder.merge(0, session.expandMacro(token().fun, SLinkOperations.getTarget(token().fun, LINKS.declaredType$DoUf), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-              public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                return tok.withLogical(rule().DeclaredType).withParams().apply();
-              }
-            }));
+            builder.merge(0, session.expandMacro(token().fun, SLinkOperations.getTarget(token().fun, LINKS.declaredType$DoUf), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().DeclaredType).withParams().apply()));
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().fun, rule().DeclaredType).toConstraint());
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().ActualReturnType, rule().DeclaredType).toConstraint());
 

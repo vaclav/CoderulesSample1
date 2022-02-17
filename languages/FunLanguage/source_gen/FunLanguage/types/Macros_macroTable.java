@@ -27,7 +27,6 @@ import jetbrains.mps.logic.dataform.ValueRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
-import java.util.function.Function;
 import jetbrains.mps.logic.dataform.ChildRole;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -522,11 +521,7 @@ public class Macros_macroTable extends AbstractMacroTable {
         init();
         TemplateApplicationSession _session = session;
         RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.ConstantArrayType_5736138219386146136");
-        builder.merge(0, _session.expandMacro(token().ruleInput, SLinkOperations.getTarget(macroInput, LINKS.elementType$Xq3i), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-          public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-            return tok.withLogical(Token.this.ComponentType).withParams().apply();
-          }
-        }));
+        builder.merge(0, _session.expandMacro(token().ruleInput, SLinkOperations.getTarget(macroInput, LINKS.elementType$Xq3i), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(Token.this.ComponentType).withParams().apply()));
         builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(Token.this.Type, (new MyTypes_termTable.arrayType_term(false) {
           public DataForm parameter() {
             return ChildRole.create("parameter", LogicalUtil.asDataForm(Token.this.ComponentType));

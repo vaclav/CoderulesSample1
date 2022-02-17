@@ -21,21 +21,21 @@ import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class MakeFloat_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
+
   public MakeFloat_Intention() {
     super(Kind.NORMAL, false, new SNodePointer("r:88230427-eea4-4626-949d-f92ff0709ff7(FunLanguage.intentions)", "1942659408249481930"));
   }
+
   @Override
   public String getPresentation() {
     return "MakeFloat";
   }
-  @Override
-  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return true;
-  }
+
   @Override
   public boolean isSurroundWith() {
     return false;
   }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new IntentionImplementation());
@@ -45,19 +45,30 @@ public final class MakeFloat_Intention extends AbstractIntentionDescriptor imple
   /*package*/ final class IntentionImplementation extends AbstractIntentionExecutable {
     public IntentionImplementation() {
     }
+
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Make a Float";
     }
+
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode f = SNodeOperations.replaceWithNewChild(node, CONCEPTS.FloatValue$v2);
       SPropertyOperations.assign(f, PROPS.value$ACDK, "" + SPropertyOperations.getInteger(node, PROPS.value$9Utg));
     }
+
+    @Override
+    public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+      return true;
+    }
+
+
+
     @Override
     public IntentionDescriptor getDescriptor() {
       return MakeFloat_Intention.this;
     }
+
   }
 
   private static final class CONCEPTS {

@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
@@ -46,11 +45,7 @@ public class Check_stringLiteral extends AbstractRuleTemplate<Check_stringLitera
           RuleBuilder builder = new RuleBuilder(session, "stringLiteral", "stringLiteral" + "_" + String.valueOf(token().s.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().s, SNodeOperations.getPointer(token().s));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          builder.merge(0, session.expandMacro(token().s, token().s, SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-            public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-              return tok.withLogical(rule().StringType).withParams().apply();
-            }
-          }));
+          builder.merge(0, session.expandMacro(token().s, token().s, SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().StringType).withParams().apply()));
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().s, rule().StringType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);

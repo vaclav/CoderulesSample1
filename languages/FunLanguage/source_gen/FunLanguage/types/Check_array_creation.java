@@ -16,7 +16,6 @@ import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
 import jetbrains.mps.logic.dataform.ChildRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
@@ -50,11 +49,7 @@ public class Check_array_creation extends AbstractRuleTemplate<Check_array_creat
           RuleBuilder builder = new RuleBuilder(session, "array_creation", "array_creation" + "_" + String.valueOf(token().array.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().array, SNodeOperations.getPointer(token().array));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          builder.merge(0, session.expandMacro(token().array, SLinkOperations.getTarget(token().array, LINKS.elementType$tpyh), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-            public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-              return tok.withLogical(rule().ElementType).withParams().apply();
-            }
-          }));
+          builder.merge(0, session.expandMacro(token().array, SLinkOperations.getTarget(token().array, LINKS.elementType$tpyh), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().ElementType).withParams().apply()));
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().array, (new MyTypes_termTable.arrayType_term(false) {
             public DataForm parameter() {
               return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().ElementType));

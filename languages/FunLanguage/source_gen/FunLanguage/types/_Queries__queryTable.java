@@ -22,7 +22,6 @@ import jetbrains.mps.coderules.typechecking.service.TypeOfQuery;
 import jetbrains.mps.coderules.typechecking.service.ConvertQuery;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
 import jetbrains.mps.logic.dataform.DataForm;
-import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import jetbrains.mps.coderules.typechecking.service.CoerceQuery;
@@ -233,16 +232,8 @@ public class _Queries__queryTable extends AbstractQueryTable {
 
             RuleBuilder builder = new RuleBuilder(session, "convertsTo", "convertsTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-            builder.merge(0, session.expandMacro(null, query.getFrom(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-              public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                return tok.withLogical(rule().A).withParams().apply();
-              }
-            }));
-            builder.merge(0, session.expandMacro(null, query.getTo(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-              public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                return tok.withLogical(rule().B).withParams().apply();
-              }
-            }));
+            builder.merge(0, session.expandMacro(null, query.getFrom(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().A).withParams().apply()));
+            builder.merge(0, session.expandMacro(null, query.getTo(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -330,23 +321,11 @@ public class _Queries__queryTable extends AbstractQueryTable {
 
             RuleBuilder builder = new RuleBuilder(session, "coerceTo", "coerceTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-            builder.merge(0, session.expandMacro(null, query.getSource(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-              public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                return tok.withLogical(rule().A).withParams().apply();
-              }
-            }));
+            builder.merge(0, session.expandMacro(null, query.getSource(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().A).withParams().apply()));
             if (query.getTargetNode() != null) {
-              builder.merge(0, session.expandMacro(null, query.getTargetNode(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-                public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                  return tok.withLogical(rule().B).withParams().apply();
-                }
-              }));
+              builder.merge(0, session.expandMacro(null, query.getTargetNode(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
             } else {
-              builder.merge(0, session.expandMacro(null, query.getTargetConcept(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-                public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-                  return tok.withLogical(rule().B).withParams().apply();
-                }
-              }));
+              builder.merge(0, session.expandMacro(null, query.getTargetConcept(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
             }
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Node, rule().B).toConstraint());

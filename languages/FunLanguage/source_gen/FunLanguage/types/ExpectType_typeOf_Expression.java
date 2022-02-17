@@ -15,7 +15,6 @@ import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
 import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.function.Function;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
 import jetbrains.mps.coderules.typechecking.service.TypecheckingState;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
@@ -62,11 +61,7 @@ public class ExpectType_typeOf_Expression extends AbstractRuleTemplate<ExpectTyp
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 1)).withArguments(token().expr).toConstraint());
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().expr, rule().Type).toConstraint());
-          builder.merge(0, session.expandMacro(token().expr, token().expr, SNodePointer.deserialize("70745fa4-9fed-4bd8-a6a8-bd7749edc84f/i:10000057(FunLanguage@transient0/FunLanguage.types@3_2)/4589199836013879662"), new Function<ExpandMacroTemplate.Token, RuleBuilder>() {
-            public RuleBuilder apply(ExpandMacroTemplate.Token tok) {
-              return tok.withLogical(rule().Type).withParams(session.getParameter(TypecheckingState.TYPES_COLLECTOR, Object.class)).apply();
-            }
-          }));
+          builder.merge(0, session.expandMacro(token().expr, token().expr, SNodePointer.deserialize("5a78b1b2-d817-42b2-b1fa-240a7b825d0c/i:10000054(FunLanguage@transient0/FunLanguage.types@3_2)/6066286926828963292"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().Type).withParams(session.getParameter(TypecheckingState.TYPES_COLLECTOR, Object.class)).apply()));
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
