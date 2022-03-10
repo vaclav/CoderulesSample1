@@ -56,21 +56,6 @@ public class Conversion_int_holding_string_to_int_or_string extends AbstractRule
 
           RuleBuilder builder = new RuleBuilder(session, "int_holding_string_to_int_or_string", "int_holding_string_to_int_or_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
-
-          ListSequence.fromList(ruleBuilders).addElement(builder);
-        }
-
-      }.apply(_session);
-
-      new int_holding_string_to_int_or_string2() {
-        @Override
-        public void apply(TemplateApplicationSession session) {
-          A = MetaLogicalFactory.metaLogical("A", DataForm.class);
-          B = MetaLogicalFactory.metaLogical("B", DataForm.class);
-
-          RuleBuilder builder = new RuleBuilder(session, "int_holding_string_to_int_or_string", "int_holding_string_to_int_or_string#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
-
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -97,16 +82,6 @@ public class Conversion_int_holding_string_to_int_or_string extends AbstractRule
     public abstract class int_holding_string_to_int_or_string1 implements ConstraintRuleTemplate {
 
       protected int_holding_string_to_int_or_string1 rule() {
-        return this;
-      }
-
-      protected MetaLogical A;
-      protected MetaLogical B;
-
-    }
-    public abstract class int_holding_string_to_int_or_string2 implements ConstraintRuleTemplate {
-
-      protected int_holding_string_to_int_or_string2 rule() {
         return this;
       }
 

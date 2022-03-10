@@ -14,6 +14,12 @@ import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
+import jetbrains.mps.lang.coderules.template.PredicateBuilder;
+import jetbrains.mps.logic.predicate.FailPredicate;
+import jetbrains.mps.lang.coderules.template.LateExpression;
+import jetbrains.mps.logic.reactor.logical.LogicalContext;
+import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
+import jetbrains.mps.logic.reactor.logical.Logical;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
@@ -56,6 +62,32 @@ public class Conversion_float_holding_string_to_float_or_string extends Abstract
 
           RuleBuilder builder = new RuleBuilder(session, "float_holding_string_to_float_or_string", "float_holding_string_to_float_or_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.intHoldingStringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendBody(new PredicateBuilder(FailPredicate.FAIL_SYM).withArguments(new LateExpression<Object>() {
+            public Object[] metaArgs() {
+              return new Object[]{rule().B, rule().A};
+            }
+            public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
+              Logical<DataForm> typedArg0 = (Logical<DataForm>) args[0];
+              Logical<DataForm> typedArg1 = (Logical<DataForm>) args[1];
+
+              return typedArg1.findRoot().value() + " is not a subtype of " + typedArg0.findRoot().value();
+            }
+          }).toPredicate());
+
+          ListSequence.fromList(ruleBuilders).addElement(builder);
+        }
+
+      }.apply(_session);
+
+      new float_holding_string_to_float_or_string2() {
+        @Override
+        public void apply(TemplateApplicationSession session) {
+          A = MetaLogicalFactory.metaLogical("A", DataForm.class);
+          B = MetaLogicalFactory.metaLogical("B", DataForm.class);
+
+          RuleBuilder builder = new RuleBuilder(session, "float_holding_string_to_float_or_string", "float_holding_string_to_float_or_string#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
+
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -82,6 +114,16 @@ public class Conversion_float_holding_string_to_float_or_string extends Abstract
     public abstract class float_holding_string_to_float_or_string1 implements ConstraintRuleTemplate {
 
       protected float_holding_string_to_float_or_string1 rule() {
+        return this;
+      }
+
+      protected MetaLogical A;
+      protected MetaLogical B;
+
+    }
+    public abstract class float_holding_string_to_float_or_string2 implements ConstraintRuleTemplate {
+
+      protected float_holding_string_to_float_or_string2 rule() {
         return this;
       }
 
