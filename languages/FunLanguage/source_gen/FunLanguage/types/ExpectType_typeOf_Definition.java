@@ -42,10 +42,10 @@ public class ExpectType_typeOf_Definition extends AbstractRuleTemplate<ExpectTyp
         @Override
         public void apply(TemplateApplicationSession session) {
 
-          RuleBuilder builder = new RuleBuilder(session, "typeOf_Definition", "typeOf_Definition#0" + "_" + String.valueOf(token().def.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().def, SNodeOperations.getPointer(token().def));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.typeOf_Definition", "typeOf_Definition#0" + "_" + String.valueOf(token().def.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().def, SNodeOperations.getPointer(token().def));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("expectAll", 0)).withArguments().toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("expectType", 1)).withArguments(token().def).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.expectAll", 0)).withArguments().toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.expectType", 1)).withArguments(token().def).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -57,11 +57,11 @@ public class ExpectType_typeOf_Definition extends AbstractRuleTemplate<ExpectTyp
         public void apply(final TemplateApplicationSession session) {
           Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "typeOf_Definition", "typeOf_Definition#1" + "_" + String.valueOf(token().def.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().def, SNodeOperations.getPointer(token().def));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.typeOf_Definition", "typeOf_Definition#1" + "_" + String.valueOf(token().def.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().def, SNodeOperations.getPointer(token().def));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("expectType", 1)).withArguments(token().def).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().def, rule().Type).toConstraint());
-          builder.merge(0, session.expandMacro(token().def, token().def, SNodePointer.deserialize("b6e77a9e-8e94-42ec-a11e-8fc74ad73b5d/i:10000054(FunLanguage@transient4/FunLanguage.types@3_2)/4413211962752664883"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().Type).withParams(session.getParameter(TypecheckingState.TYPES_COLLECTOR, Object.class)).apply()));
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.expectType", 1)).withArguments(token().def).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().def, rule().Type).toConstraint());
+          builder.merge(0, session.expandMacro(token().def, token().def, SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327966"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().Type).withParams(session.getParameter(TypecheckingState.TYPES_COLLECTOR, Object.class)).apply()));
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

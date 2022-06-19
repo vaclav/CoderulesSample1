@@ -43,10 +43,10 @@ public class Check_constant_reference extends AbstractRuleTemplate<Check_constan
         public void apply(TemplateApplicationSession session) {
           DeclType = MetaLogicalFactory.metaLogical("DeclType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "constant_reference", "constant_reference" + "_" + String.valueOf(token().ref.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().ref, SNodeOperations.getPointer(token().ref));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.constant_reference", "constant_reference" + "_" + String.valueOf(token().ref.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().ref, SNodeOperations.getPointer(token().ref));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().ref, LINKS.target$C4m5), rule().DeclType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().ref, rule().DeclType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().ref, LINKS.target$C4m5), rule().DeclType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().ref, rule().DeclType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

@@ -46,9 +46,9 @@ public class Conversion_convertsUnhandled extends AbstractRuleTemplate<Conversio
           Sub = MetaLogicalFactory.metaLogical("Sub", DataForm.class);
           Super = MetaLogicalFactory.metaLogical("Super", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "convertsUnhandled", "convertsUnhandled", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.convertsUnhandled", "convertsUnhandled", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().Sub, rule().Super).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().Sub, rule().Super).toConstraint());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.NONFREE_SYM).withArguments(rule().Sub).toPredicate());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.NONFREE_SYM).withArguments(rule().Super).toPredicate());
           builder.appendBody(new PredicateBuilder(FailPredicate.FAIL_SYM).withArguments(new LateExpression<Object>() {

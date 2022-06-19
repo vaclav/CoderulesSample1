@@ -45,9 +45,9 @@ public class Conversion_float_holding_string_to_float_or_string extends Abstract
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
           B = MetaLogicalFactory.metaLogical("B", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "float_holding_string_to_float_or_string", "float_holding_string_to_float_or_string#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.float_holding_string_to_float_or_string", "float_holding_string_to_float_or_string#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.floatType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.floatType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -60,9 +60,9 @@ public class Conversion_float_holding_string_to_float_or_string extends Abstract
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
           B = MetaLogicalFactory.metaLogical("B", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "float_holding_string_to_float_or_string", "float_holding_string_to_float_or_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.float_holding_string_to_float_or_string", "float_holding_string_to_float_or_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.intHoldingStringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.intHoldingStringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
           builder.appendBody(new PredicateBuilder(FailPredicate.FAIL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{rule().B, rule().A};
@@ -86,9 +86,9 @@ public class Conversion_float_holding_string_to_float_or_string extends Abstract
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
           B = MetaLogicalFactory.metaLogical("B", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "float_holding_string_to_float_or_string", "float_holding_string_to_float_or_string#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.float_holding_string_to_float_or_string", "float_holding_string_to_float_or_string#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments((new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

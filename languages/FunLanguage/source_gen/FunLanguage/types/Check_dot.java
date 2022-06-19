@@ -43,10 +43,10 @@ public class Check_dot extends AbstractRuleTemplate<Check_dot.Token> {
         public void apply(TemplateApplicationSession session) {
           Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "dot", "dot" + "_" + String.valueOf(token().dotExpr.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().dotExpr, SNodeOperations.getPointer(token().dotExpr));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.dot", "dot" + "_" + String.valueOf(token().dotExpr.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().dotExpr, SNodeOperations.getPointer(token().dotExpr));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().dotExpr, LINKS.property$x0xk), rule().Type).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().dotExpr, rule().Type).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().dotExpr, LINKS.property$x0xk), rule().Type).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().dotExpr, rule().Type).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

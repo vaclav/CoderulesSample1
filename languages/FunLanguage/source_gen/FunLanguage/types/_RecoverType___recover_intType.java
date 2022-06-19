@@ -50,9 +50,9 @@ public class _RecoverType___recover_intType extends AbstractRuleTemplate<_Recove
           Term = MetaLogicalFactory.metaLogical("Term", DataForm.class);
           val = MetaLogicalFactory.metaLogical("val", Object.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "_recover_intType", "_recover_intType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_intType", "_recover_intType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.intType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.intType_term(true) {
             public DataForm val() {
               return ValueRole.create("val", LogicalUtil.asValue(rule().val));
             }

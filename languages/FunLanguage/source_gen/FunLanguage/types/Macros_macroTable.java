@@ -559,9 +559,10 @@ public class Macros_macroTable extends AbstractMacroTable {
   }
   public static class make_Float_Type_Call extends AbstractMacroTemplate<make_Float_Type_Call.Token> implements CallMacroTemplate<make_Float_Type_Call.Token> {
 
-    public class Token implements CallMacroTemplate.Token {
+    public static class Token implements CallMacroTemplate.Token {
 
-      protected Token(TemplateApplicationSession session) {
+      protected Token(SNode ruleInput, TemplateApplicationSession session) {
+        this.ruleInput = ruleInput;
         this.session = session;
       }
 
@@ -592,9 +593,13 @@ public class Macros_macroTable extends AbstractMacroTable {
         return builder;
       }
 
+      protected Token token() {
+        return this;
+      }
+
       private TemplateApplicationSession session;
       protected MetaLogical LCS;
-
+      protected SNode ruleInput;
     }
 
     public make_Float_Type_Call() {
@@ -602,8 +607,8 @@ public class Macros_macroTable extends AbstractMacroTable {
     }
 
     @Override
-    public Token createToken(TemplateApplicationSession session) {
-      return new Token(session);
+    public Token createToken(SNode ruleInput, TemplateApplicationSession session) {
+      return new Token(ruleInput, session);
     }
   }
 

@@ -44,11 +44,11 @@ public class Check_parameter extends AbstractRuleTemplate<Check_parameter.Token>
         public void apply(TemplateApplicationSession session) {
           Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "parameter", "parameter" + "_" + String.valueOf(token().param.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().param, SNodeOperations.getPointer(token().param));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.parameter", "parameter" + "_" + String.valueOf(token().param.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().param, SNodeOperations.getPointer(token().param));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.checkAll", 0)).withArguments().toConstraint());
           builder.merge(0, session.expandMacro(token().param, SLinkOperations.getTarget(token().param, LINKS.declaredType$ScNM), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().Type).withParams().apply()));
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().param, rule().Type).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().param, rule().Type).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

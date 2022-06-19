@@ -42,9 +42,9 @@ public class Conversion_convertsInfer extends AbstractRuleTemplate<Conversion_co
           Sub = MetaLogicalFactory.metaLogical("Sub", DataForm.class);
           Super = MetaLogicalFactory.metaLogical("Super", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "convertsInfer", "convertsInfer#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.convertsInfer", "convertsInfer#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().Sub, rule().Super).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().Sub, rule().Super).toConstraint());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.FREE_SYM).withArguments(rule().Super).toPredicate());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Sub, rule().Super).toPredicate());
 
@@ -59,9 +59,9 @@ public class Conversion_convertsInfer extends AbstractRuleTemplate<Conversion_co
           Super = MetaLogicalFactory.metaLogical("Super", DataForm.class);
           Sub = MetaLogicalFactory.metaLogical("Sub", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "convertsInfer", "convertsInfer#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.convertsInfer", "convertsInfer#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().Sub, rule().Super).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().Sub, rule().Super).toConstraint());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.FREE_SYM).withArguments(rule().Sub).toPredicate());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Super, rule().Sub).toPredicate());
 

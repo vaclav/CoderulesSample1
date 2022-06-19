@@ -62,10 +62,10 @@ public class _Queries__queryTable extends AbstractQueryTable {
           @Override
           public void apply(TemplateApplicationSession session) {
 
-            RuleBuilder builder = new RuleBuilder(session, "check", "check", getTemplateRef(), null, SNodeOperations.getPointer(null));
+            RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.check", "check", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("expectAll", 0)).withArguments().toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.checkAll", 0)).withArguments().toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.expectAll", 0)).withArguments().toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
           }
@@ -97,11 +97,6 @@ public class _Queries__queryTable extends AbstractQueryTable {
     @Override
     public Class<? extends Query> queryType() {
       return CheckQuery.class;
-    }
-
-    @Override
-    public QueryTemplate.QueryConfigurable newQuery() {
-      return new Configurable();
     }
 
     @Override
@@ -145,10 +140,10 @@ public class _Queries__queryTable extends AbstractQueryTable {
           @Override
           public void apply(TemplateApplicationSession session) {
 
-            RuleBuilder builder = new RuleBuilder(session, "typeOf", "typeOf", getTemplateRef(), null, SNodeOperations.getPointer(null));
+            RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.typeOf", "typeOf", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("expectType", 1)).withArguments(query.getSubject()).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.checkAll", 0)).withArguments().toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.expectType", 1)).withArguments(query.getSubject()).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
           }
@@ -180,11 +175,6 @@ public class _Queries__queryTable extends AbstractQueryTable {
     @Override
     public Class<? extends Query> queryType() {
       return TypeOfQuery.class;
-    }
-
-    @Override
-    public QueryTemplate.QueryConfigurable newQuery() {
-      return new Configurable();
     }
 
     @Override
@@ -230,11 +220,11 @@ public class _Queries__queryTable extends AbstractQueryTable {
             A = MetaLogicalFactory.metaLogical("A", DataForm.class);
             B = MetaLogicalFactory.metaLogical("B", DataForm.class);
 
-            RuleBuilder builder = new RuleBuilder(session, "convertsTo", "convertsTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
+            RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.convertsTo", "convertsTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
             builder.merge(0, session.expandMacro(null, query.getFrom(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().A).withParams().apply()));
             builder.merge(0, session.expandMacro(null, query.getTo(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
           }
@@ -268,11 +258,6 @@ public class _Queries__queryTable extends AbstractQueryTable {
     @Override
     public Class<? extends Query> queryType() {
       return ConvertQuery.class;
-    }
-
-    @Override
-    public QueryTemplate.QueryConfigurable newQuery() {
-      return new Configurable();
     }
 
     @Override
@@ -319,7 +304,7 @@ public class _Queries__queryTable extends AbstractQueryTable {
             B = MetaLogicalFactory.metaLogical("B", DataForm.class);
             Node = MetaLogicalFactory.metaLogical("Node", SNode.class);
 
-            RuleBuilder builder = new RuleBuilder(session, "coerceTo", "coerceTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
+            RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.coerceTo", "coerceTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
             builder.merge(0, session.expandMacro(null, query.getSource(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().A).withParams().apply()));
             if (query.getTargetNode() != null) {
@@ -327,9 +312,9 @@ public class _Queries__queryTable extends AbstractQueryTable {
             } else {
               builder.merge(0, session.expandMacro(null, query.getTargetConcept(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
             }
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Node, rule().B).toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Node, rule().B).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Node, rule().B).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Node, rule().B).toConstraint());
             builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(query.getResult(), rule().Node).toPredicate());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -365,11 +350,6 @@ public class _Queries__queryTable extends AbstractQueryTable {
     @Override
     public Class<? extends Query> queryType() {
       return CoerceQuery.class;
-    }
-
-    @Override
-    public QueryTemplate.QueryConfigurable newQuery() {
-      return new Configurable();
     }
 
     @Override

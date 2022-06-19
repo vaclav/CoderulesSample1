@@ -906,7 +906,6 @@
     <classNode dependClassName="FunLanguage.types.Conversion_ruleTable" />
     <classNode dependClassName="FunLanguage.types.ExpectType_ruleTable" />
     <classNode dependClassName="FunLanguage.types.Macros_macroTable" />
-    <classNode dependClassName="FunLanguage.types.PrincipalsAnalysisImpl" />
     <classNode dependClassName="FunLanguage.types._ExpectTypeMacro__macroTable" />
     <classNode dependClassName="FunLanguage.types._Queries__queryTable" />
     <classNode dependClassName="FunLanguage.types._RecoverType_Default__ruleTable" />
@@ -920,7 +919,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.aspect.AbstractCoderulesAspect" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.MacroTable" />
-    <classNode dependClassName="jetbrains.mps.lang.coderules.template.ProgramSpecBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.QueryTable" />
     <classNode dependClassName="jetbrains.mps.lang.coderules.template.RuleTable" />
     <classNode extendsClassName="jetbrains.mps.lang.coderules.aspect.AbstractCoderulesManifest" />
@@ -936,13 +934,6 @@
     <classNode dependClassName="jetbrains.mps.logic.dataform.ValueRole" />
     <classNode dependClassName="jetbrains.mps.logic.unification.LogicalUtil" />
     <classNode dependClassName="jetbrains.mps.logic.unification.MetaLogicalFactory" />
-  </dependency>
-  <dependency className="FunLanguage.types.PrincipalsAnalysisImpl">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
-    <classNode dependClassName="jetbrains.mps.logic.reactor.program.IncrementalSpec" />
-    <classNode extendsClassName="jetbrains.mps.lang.coderules.program.analysis.PrincipalsAnalysis" />
   </dependency>
   <dependency className="FunLanguage.types.TypesAspectDescriptor">
     <classNode dependClassName="FunLanguage.types.Manifest" />
@@ -1074,6 +1065,7 @@
     <classNode dependClassName="jetbrains.mps.logic.dataform.ListNode" />
     <classNode dependClassName="jetbrains.mps.logic.predicate.EvalExpressionPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.predicate.FailPredicate" />
+    <classNode dependClassName="jetbrains.mps.logic.predicate.UnificationPredicate" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.evaluation.InvocationContext" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.Logical" />
     <classNode dependClassName="jetbrains.mps.logic.reactor.logical.LogicalContext" />

@@ -43,10 +43,10 @@ public class Check_var_reference extends AbstractRuleTemplate<Check_var_referenc
         public void apply(TemplateApplicationSession session) {
           DeclType = MetaLogicalFactory.metaLogical("DeclType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "var_reference", "var_reference" + "_" + String.valueOf(token().ref.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().ref, SNodeOperations.getPointer(token().ref));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.var_reference", "var_reference" + "_" + String.valueOf(token().ref.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().ref, SNodeOperations.getPointer(token().ref));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().ref, LINKS.declaration$bZ6g), rule().DeclType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().ref, rule().DeclType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().ref, LINKS.declaration$bZ6g), rule().DeclType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().ref, rule().DeclType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

@@ -39,9 +39,9 @@ public class Conversion_int_holding_string_to_int_or_string extends AbstractRule
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
           B = MetaLogicalFactory.metaLogical("B", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "int_holding_string_to_int_or_string", "int_holding_string_to_int_or_string#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.int_holding_string_to_int_or_string", "int_holding_string_to_int_or_string#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -54,9 +54,9 @@ public class Conversion_int_holding_string_to_int_or_string extends AbstractRule
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
           B = MetaLogicalFactory.metaLogical("B", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "int_holding_string_to_int_or_string", "int_holding_string_to_int_or_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.int_holding_string_to_int_or_string", "int_holding_string_to_int_or_string#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments((new MyTypes_termTable.intHoldingStringType_term(true)).getTerm(), (new MyTypes_termTable.stringType_term(true)).getTerm()).withPatternLogicals(rule().A, rule().B).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

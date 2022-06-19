@@ -45,9 +45,9 @@ public class Conversion_array_subtyping extends AbstractRuleTemplate<Conversion_
           EA = MetaLogicalFactory.metaLogical("EA", DataForm.class);
           EB = MetaLogicalFactory.metaLogical("EB", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "array_subtyping", "array_subtyping", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.array_subtyping", "array_subtyping", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.arrayType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments((new MyTypes_termTable.arrayType_term(true) {
             public DataForm parameter() {
               return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().EA));
             }

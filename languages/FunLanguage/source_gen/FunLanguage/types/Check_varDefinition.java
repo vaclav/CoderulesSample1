@@ -43,10 +43,10 @@ public class Check_varDefinition extends AbstractRuleTemplate<Check_varDefinitio
         public void apply(TemplateApplicationSession session) {
           InitializerType = MetaLogicalFactory.metaLogical("InitializerType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "varDefinition", "varDefinition" + "_" + String.valueOf(token().var.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().var, SNodeOperations.getPointer(token().var));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.varDefinition", "varDefinition" + "_" + String.valueOf(token().var.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().var, SNodeOperations.getPointer(token().var));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().var, LINKS.initializer$8Hmi), rule().InitializerType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().var, rule().InitializerType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().var, LINKS.initializer$8Hmi), rule().InitializerType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().var, rule().InitializerType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

@@ -46,11 +46,11 @@ public class Check_array_creation extends AbstractRuleTemplate<Check_array_creat
         public void apply(TemplateApplicationSession session) {
           ElementType = MetaLogicalFactory.metaLogical("ElementType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "array_creation", "array_creation" + "_" + String.valueOf(token().array.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().array, SNodeOperations.getPointer(token().array));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.array_creation", "array_creation" + "_" + String.valueOf(token().array.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().array, SNodeOperations.getPointer(token().array));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.checkAll", 0)).withArguments().toConstraint());
           builder.merge(0, session.expandMacro(token().array, SLinkOperations.getTarget(token().array, LINKS.elementType$tpyh), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().ElementType).withParams().apply()));
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().array, (new MyTypes_termTable.arrayType_term(false) {
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().array, (new MyTypes_termTable.arrayType_term(false) {
             public DataForm parameter() {
               return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().ElementType));
             }

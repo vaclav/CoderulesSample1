@@ -8,7 +8,6 @@ import java.util.Collection;
 import jetbrains.mps.lang.coderules.template.MacroTable;
 import jetbrains.mps.lang.coderules.template.RuleTable;
 import jetbrains.mps.lang.coderules.template.QueryTable;
-import jetbrains.mps.lang.coderules.template.ProgramSpecBuilder;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -35,11 +34,6 @@ public class Manifest extends AbstractCoderulesManifest {
     return queryTables;
   }
 
-  @Override
-  public ProgramSpecBuilder programSpecBuilder() {
-    return analyses.specBuilder();
-  }
-
   private void init() {
     {
       List<MacroTable> macroTables = ListSequence.fromList(new ArrayList<MacroTable>());
@@ -63,16 +57,10 @@ public class Manifest extends AbstractCoderulesManifest {
       ListSequence.fromList(qts).addElement(new _Queries__queryTable());
       this.queryTables = ListSequence.fromList(qts).asUnmodifiable();
     }
-    {
-      PrincipalsAnalysisImpl builder = new PrincipalsAnalysisImpl();
-      builder.run();
-      this.analyses = builder;
-    }
   }
 
   private List<MacroTable> macroTables;
   private List<RuleTable> ruleTables;
 
   private List<QueryTable> queryTables;
-  private PrincipalsAnalysisImpl analyses;
 }

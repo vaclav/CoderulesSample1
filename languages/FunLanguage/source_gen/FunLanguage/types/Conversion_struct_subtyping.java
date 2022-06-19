@@ -52,9 +52,9 @@ public class Conversion_struct_subtyping extends AbstractRuleTemplate<Conversion
           SA = MetaLogicalFactory.metaLogical("SA", SNode.class);
           SB = MetaLogicalFactory.metaLogical("SB", SNode.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "struct_subtyping", "struct_subtyping", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.struct_subtyping", "struct_subtyping", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments((new MyTypes_termTable.structType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments((new MyTypes_termTable.structType_term(true) {
             public DataForm definition() {
               return ValueRole.create("definition", LogicalUtil.asValue(rule().SA));
             }

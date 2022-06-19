@@ -44,11 +44,11 @@ public class Check_assignment extends AbstractRuleTemplate<Check_assignment.Toke
           LType = MetaLogicalFactory.metaLogical("LType", DataForm.class);
           RType = MetaLogicalFactory.metaLogical("RType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "assignment", "assignment" + "_" + String.valueOf(token().assign.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().assign, SNodeOperations.getPointer(token().assign));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.assignment", "assignment" + "_" + String.valueOf(token().assign.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().assign, SNodeOperations.getPointer(token().assign));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().assign, LINKS.left$$pjK), rule().LType).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().assign, LINKS.right$$pLM), rule().RType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().RType, rule().LType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().assign, LINKS.left$$pjK), rule().LType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().assign, LINKS.right$$pLM), rule().RType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().RType, rule().LType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

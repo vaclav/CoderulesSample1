@@ -50,9 +50,9 @@ public class _RecoverType___recover_stringType extends AbstractRuleTemplate<_Rec
           Term = MetaLogicalFactory.metaLogical("Term", DataForm.class);
           val = MetaLogicalFactory.metaLogical("val", Object.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "_recover_stringType", "_recover_stringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_stringType", "_recover_stringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.stringType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.stringType_term(true) {
             public DataForm val() {
               return ValueRole.create("val", LogicalUtil.asValue(rule().val));
             }

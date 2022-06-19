@@ -41,7 +41,7 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
 
   @Override
   public SNodeReference tableRef() {
-    return SNodePointer.deserialize("b6e77a9e-8e94-42ec-a11e-8fc74ad73b5d/i:10000054(FunLanguage@transient4/FunLanguage.types@3_2)/4413211962752664799");
+    return SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327924");
   }
 
   @Override
@@ -57,7 +57,10 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
 
     List<ExpandMacroTemplate<T>> result = ListSequence.fromList(new ArrayList<ExpandMacroTemplate<T>>());
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.BaseConcept$gP)) {
-      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new BaseConcept_4413211962752664805_Expand());
+      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new BaseConcept_3922049351427327925_Expand());
+    }
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), CONCEPTS.BaseConcept$gP)) {
+      ListSequence.fromList(result).addElement((ExpandMacroTemplate<T>) new BaseConcept_3922049351427327949_Expand());
     }
     return result;
   }
@@ -77,12 +80,13 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
   public Collection<SNodeReference> allMacroTemplateRefs() {
     List<SNodeReference> result = ListSequence.fromList(new ArrayList<SNodeReference>());
 
-    ListSequence.fromList(result).addElement(SNodePointer.deserialize("b6e77a9e-8e94-42ec-a11e-8fc74ad73b5d/i:10000054(FunLanguage@transient4/FunLanguage.types@3_2)/4413211962752664805"));
+    ListSequence.fromList(result).addElement(SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327925"));
+    ListSequence.fromList(result).addElement(SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327949"));
 
     return result;
   }
 
-  public static class BaseConcept_4413211962752664805_Expand extends AbstractMacroTemplate<BaseConcept_4413211962752664805_Expand.Token> implements ExpandMacroTemplate<BaseConcept_4413211962752664805_Expand.Token> {
+  public static class BaseConcept_3922049351427327925_Expand extends AbstractMacroTemplate<BaseConcept_3922049351427327925_Expand.Token> implements ExpandMacroTemplate<BaseConcept_3922049351427327925_Expand.Token> {
 
     public static class Token implements ExpandMacroTemplate.Token {
 
@@ -112,8 +116,8 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
       public RuleBuilder apply() {
         init();
         TemplateApplicationSession _session = session;
-        RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.BaseConcept_4413211962752664805");
-        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(Token.this.TypeNode, Token.this.TypeTerm).toConstraint());
+        RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.BaseConcept_3922049351427327925");
+        builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(Token.this.TypeNode, Token.this.TypeTerm).toConstraint());
         builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
           public Object[] metaArgs() {
             return new Object[]{Token.this.TypeNode};
@@ -142,13 +146,84 @@ public class _ExpectTypeMacro__macroTable extends AbstractMacroTable {
       protected SNode ruleInput;
     }
 
-    public BaseConcept_4413211962752664805_Expand() {
-      super(SNodePointer.deserialize("b6e77a9e-8e94-42ec-a11e-8fc74ad73b5d/i:10000054(FunLanguage@transient4/FunLanguage.types@3_2)/4413211962752664805"));
+    public BaseConcept_3922049351427327925_Expand() {
+      super(SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327925"));
     }
 
     @Override
     public SNodeReference getPrototypeTemplateRef() {
-      return SNodePointer.deserialize("b6e77a9e-8e94-42ec-a11e-8fc74ad73b5d/i:10000054(FunLanguage@transient4/FunLanguage.types@3_2)/4413211962752664883");
+      return SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327966");
+    }
+
+    @Override
+    public Token createToken(SNode ruleInput, SNode macroInput, TemplateApplicationSession session) {
+      return new Token(ruleInput, macroInput, session);
+    }
+  }
+  public static class BaseConcept_3922049351427327949_Expand extends AbstractMacroTemplate<BaseConcept_3922049351427327949_Expand.Token> implements ExpandMacroTemplate<BaseConcept_3922049351427327949_Expand.Token> {
+
+    public static class Token implements ExpandMacroTemplate.Token {
+
+      protected Token(SNode ruleInput, SNode macroInput, TemplateApplicationSession session) {
+        this.ruleInput = ruleInput;
+        this.macroInput = macroInput;
+        this.session = session;
+      }
+
+      private void init() {
+      }
+
+      @Override
+      public Token withLogical(Object... logical) {
+        this.TypeNode = ((MetaLogical) logical[0]);
+        return this;
+      }
+
+      @Override
+      public Token withParams(Object... params) {
+        this.typeConsumer = ((BiConsumer<SNodeReference, SNode>) params[0]);
+        return this;
+      }
+
+      @Override
+      public RuleBuilder apply() {
+        init();
+        TemplateApplicationSession _session = session;
+        RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.BaseConcept_3922049351427327949");
+        builder.appendBody(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
+          public Object[] metaArgs() {
+            return new Object[]{Token.this.TypeNode};
+          }
+          public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
+            Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
+
+            typeConsumer.accept(SNodeOperations.getPointer(macroInput), typedArg0.findRoot().value());
+            return true;
+          }
+        }).toPredicate());
+
+        builder.processMacroInput(CONCEPTS.BaseConcept$gP, macroInput);
+        return builder;
+      }
+
+      protected Token token() {
+        return this;
+      }
+
+      protected TemplateApplicationSession session;
+      protected MetaLogical TypeNode;
+      protected BiConsumer<SNodeReference, SNode> typeConsumer;
+      protected SNode macroInput;
+      protected SNode ruleInput;
+    }
+
+    public BaseConcept_3922049351427327949_Expand() {
+      super(SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327949"));
+    }
+
+    @Override
+    public SNodeReference getPrototypeTemplateRef() {
+      return SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327974");
     }
 
     @Override

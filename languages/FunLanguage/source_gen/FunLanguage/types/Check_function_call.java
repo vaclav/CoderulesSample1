@@ -59,18 +59,18 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
             ArgType = MetaLogicalFactory.multiMetaLogical("ArgType", DataForm.class, ListSequence.fromList(args).count());
             ParamDeclaredType = MetaLogicalFactory.multiMetaLogical("ParamDeclaredType", DataForm.class, ListSequence.fromList(params).count());
 
-            RuleBuilder builder = new RuleBuilder(session, "function_call", "function_call" + "_" + String.valueOf(token().call.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().call, SNodeOperations.getPointer(token().call));
+            RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.function_call", "function_call" + "_" + String.valueOf(token().call.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().call, SNodeOperations.getPointer(token().call));
 
-            builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().call, LINKS.target$SiaI), rule().FunctionType).toConstraint());
+            builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().call, LINKS.target$SiaI), rule().FunctionType).toConstraint());
             for (int i = 0; i < ListSequence.fromList(args).count(); i++) {
-              builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(ListSequence.fromList(args).getElement(i), rule().ArgType.logicalAt(i)).toConstraint());
+              builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(ListSequence.fromList(args).getElement(i), rule().ArgType.logicalAt(i)).toConstraint());
             }
             for (final Wrappers._int i = new Wrappers._int(0); i.value < ListSequence.fromList(params).count(); i.value++) {
               builder.merge(0, session.expandMacro(token().call, SLinkOperations.getTarget(ListSequence.fromList(params).getElement(i.value), LINKS.declaredType$ScNM), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().ParamDeclaredType.logicalAt(i.value)).withParams().apply()));
-              builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().ArgType.logicalAt(i.value), rule().ParamDeclaredType.logicalAt(i.value)).toConstraint());
+              builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().ArgType.logicalAt(i.value), rule().ParamDeclaredType.logicalAt(i.value)).toConstraint());
             }
             // at this point all arguments's types are ensured to be compatible with the function type
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().call, rule().FunctionType).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().call, rule().FunctionType).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
           }

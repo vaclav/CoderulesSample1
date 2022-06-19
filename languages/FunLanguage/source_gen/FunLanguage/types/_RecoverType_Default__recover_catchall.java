@@ -51,9 +51,9 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
           Node = MetaLogicalFactory.metaLogical("Node", SNode.class);
           Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "recover_catchall", "recover_catchall#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.recover_catchall", "recover_catchall#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Node, rule().Type).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Node, rule().Type).toConstraint());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.FREE_SYM).withArguments(rule().Type).toPredicate());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Node, new LateExpression<Object>() {
             public Object[] metaArgs() {
@@ -77,9 +77,10 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
           Node = MetaLogicalFactory.metaLogical("Node", SNode.class);
           Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "recover_catchall", "recover_catchall#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.recover_catchall", "recover_catchall#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Node, rule().Type).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Node, rule().Type).toConstraint());
+          builder.appendGuard(new PredicateBuilder(LogicalPredicate.FREE_SYM).withArguments(rule().Node).toPredicate());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Node, new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{rule().Type};
@@ -87,7 +88,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<DataForm> typedArg0 = (Logical<DataForm>) args[0];
 
-              return createRuntimeErrorType_dwn3e9_a2a1a0b0a0a0h0a0a0a4a3b("unreifiable type [" + typedArg0.findRoot().value() + "]");
+              return createRuntimeErrorType_dwn3e9_a2a1a0b0a0a0i0a0a0a4a3b("unreifiable type [" + typedArg0.findRoot().value() + "]");
             }
           }).toPredicate());
 
@@ -132,7 +133,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
 
 
   public _RecoverType_Default__recover_catchall(RuleTable ruleTable) {
-    super(ruleTable, "recover_catchall", SNodePointer.deserialize("b6e77a9e-8e94-42ec-a11e-8fc74ad73b5d/i:10000054(FunLanguage@transient4/FunLanguage.types@3_2)/4413211962752664967"));
+    super(ruleTable, "recover_catchall", SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327844"));
   }
 
   @Override
@@ -151,7 +152,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
     n0.setProperty(PROPS.errorText$leWQ, "type is unknown");
     return n0.getResult();
   }
-  private static SNode createRuntimeErrorType_dwn3e9_a2a1a0b0a0a0h0a0a0a4a3b(String p0) {
+  private static SNode createRuntimeErrorType_dwn3e9_a2a1a0b0a0a0i0a0a0a4a3b(String p0) {
     SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.RuntimeErrorType$3c);
     n0.setProperty(PROPS.errorText$leWQ, p0);
     return n0.getResult();

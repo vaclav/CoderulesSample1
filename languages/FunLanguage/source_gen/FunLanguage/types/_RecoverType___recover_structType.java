@@ -52,9 +52,9 @@ public class _RecoverType___recover_structType extends AbstractRuleTemplate<_Rec
           Term = MetaLogicalFactory.metaLogical("Term", DataForm.class);
           definition = MetaLogicalFactory.metaLogical("definition", SNode.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "_recover_structType", "_recover_structType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_structType", "_recover_structType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.structType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.structType_term(true) {
             public DataForm definition() {
               return ValueRole.create("definition", LogicalUtil.asValue(rule().definition));
             }

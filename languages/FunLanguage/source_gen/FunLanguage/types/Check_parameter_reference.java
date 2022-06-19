@@ -43,10 +43,10 @@ public class Check_parameter_reference extends AbstractRuleTemplate<Check_parame
         public void apply(TemplateApplicationSession session) {
           ParamType = MetaLogicalFactory.metaLogical("ParamType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "parameter_reference", "parameter_reference" + "_" + String.valueOf(token().ref.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().ref, SNodeOperations.getPointer(token().ref));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.parameter_reference", "parameter_reference" + "_" + String.valueOf(token().ref.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().ref, SNodeOperations.getPointer(token().ref));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().ref, LINKS.declaration$VoCg), rule().ParamType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().ref, rule().ParamType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().ref, LINKS.declaration$VoCg), rule().ParamType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().ref, rule().ParamType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

@@ -37,10 +37,10 @@ public class Check_floatLiteral extends AbstractRuleTemplate<Check_floatLiteral.
         @Override
         public void apply(TemplateApplicationSession session) {
 
-          RuleBuilder builder = new RuleBuilder(session, "floatLiteral", "floatLiteral" + "_" + String.valueOf(token().f.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().f, SNodeOperations.getPointer(token().f));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.floatLiteral", "floatLiteral" + "_" + String.valueOf(token().f.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().f, SNodeOperations.getPointer(token().f));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("checkAll", 0)).withArguments().toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().f, (new MyTypes_termTable.floatType_term(false)).getTerm()).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.checkAll", 0)).withArguments().toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().f, (new MyTypes_termTable.floatType_term(false)).getTerm()).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

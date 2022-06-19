@@ -43,10 +43,10 @@ public class Check_constantDefinition extends AbstractRuleTemplate<Check_constan
         public void apply(TemplateApplicationSession session) {
           InitializerType = MetaLogicalFactory.metaLogical("InitializerType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "constantDefinition", "constantDefinition" + "_" + String.valueOf(token().constant.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().constant, SNodeOperations.getPointer(token().constant));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.constantDefinition", "constantDefinition" + "_" + String.valueOf(token().constant.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().constant, SNodeOperations.getPointer(token().constant));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().constant, LINKS.initializerValue$TtkI), rule().InitializerType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().constant, rule().InitializerType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().constant, LINKS.initializerValue$TtkI), rule().InitializerType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().constant, rule().InitializerType).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

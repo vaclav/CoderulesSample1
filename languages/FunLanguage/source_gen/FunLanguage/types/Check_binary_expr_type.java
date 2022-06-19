@@ -46,24 +46,24 @@ public class Check_binary_expr_type extends AbstractRuleTemplate<Check_binary_ex
           PLCS = MetaLogicalFactory.metaLogical("PLCS", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "binary_expr_type", "binary_expr_type" + "_" + String.valueOf(token().bin.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().bin, SNodeOperations.getPointer(token().bin));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.binary_expr_type", "binary_expr_type" + "_" + String.valueOf(token().bin.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().bin, SNodeOperations.getPointer(token().bin));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.left$WBNK), rule().LeftType).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.right$WChM), rule().RightType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.left$WBNK), rule().LeftType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().bin, LINKS.right$WChM), rule().RightType).toConstraint());
           if (SNodeOperations.isInstanceOf(token().bin, CONCEPTS.PlusExpr$PF)) {
             // overloaded + for string
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("lcs_string", 3)).withArguments(rule().LeftType, rule().RightType, rule().LCS).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.lcs_string", 3)).withArguments(rule().LeftType, rule().RightType, rule().LCS).toConstraint());
 
           } else if (SNodeOperations.isInstanceOf(token().bin, CONCEPTS.DivExpr$sE)) {
             // div yields float type
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().LeftType, rule().RightType, rule().PLCS).toConstraint());
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().PLCS, (new MyTypes_termTable.floatType_term(false)).getTerm(), rule().LCS).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.lcs_prim", 3)).withArguments(rule().LeftType, rule().RightType, rule().PLCS).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.lcs_prim", 3)).withArguments(rule().PLCS, (new MyTypes_termTable.floatType_term(false)).getTerm(), rule().LCS).toConstraint());
 
           } else {
-            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().LeftType, rule().RightType, rule().LCS).toConstraint());
+            builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.lcs_prim", 3)).withArguments(rule().LeftType, rule().RightType, rule().LCS).toConstraint());
           }
 
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().bin, rule().LCS).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().bin, rule().LCS).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }

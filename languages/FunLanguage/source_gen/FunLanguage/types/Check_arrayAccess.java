@@ -47,13 +47,13 @@ public class Check_arrayAccess extends AbstractRuleTemplate<Check_arrayAccess.To
           ElementType = MetaLogicalFactory.metaLogical("ElementType", DataForm.class);
           IndexType = MetaLogicalFactory.metaLogical("IndexType", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "arrayAccess", "arrayAccess" + "_" + String.valueOf(token().arrayAccess.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().arrayAccess, SNodeOperations.getPointer(token().arrayAccess));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.arrayAccess", "arrayAccess" + "_" + String.valueOf(token().arrayAccess.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().arrayAccess, SNodeOperations.getPointer(token().arrayAccess));
 
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().arrayAccess, LINKS.array$vaBJ), rule().TargetArrayType).toConstraint());
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(SLinkOperations.getTarget(token().arrayAccess, LINKS.index$amV6), rule().IndexType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("typeOf", 2)).withArguments(token().arrayAccess, rule().ElementType).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().IndexType, (new MyTypes_termTable.intType_term(false)).getTerm()).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().TargetArrayType, (new MyTypes_termTable.arrayType_term(false) {
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().arrayAccess, LINKS.array$vaBJ), rule().TargetArrayType).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().arrayAccess, LINKS.index$amV6), rule().IndexType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().arrayAccess, rule().ElementType).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().IndexType, (new MyTypes_termTable.intType_term(false)).getTerm()).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().TargetArrayType, (new MyTypes_termTable.arrayType_term(false) {
             public DataForm parameter() {
               return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().ElementType));
             }

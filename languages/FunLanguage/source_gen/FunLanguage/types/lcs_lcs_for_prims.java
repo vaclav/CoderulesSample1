@@ -48,9 +48,9 @@ public class lcs_lcs_for_prims extends AbstractRuleTemplate<lcs_lcs_for_prims.To
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.lcs_for_prims", "lcs_for_prims#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.lcs_prim", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.NONFREE_SYM).withArguments(rule().Left).toPredicate());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.NONFREE_SYM).withArguments(rule().Right).toPredicate());
           builder.appendGuard(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Left, rule().Right).toPredicate());
@@ -68,9 +68,9 @@ public class lcs_lcs_for_prims extends AbstractRuleTemplate<lcs_lcs_for_prims.To
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.lcs_for_prims", "lcs_for_prims#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments((new MyTypes_termTable.floatType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.lcs_prim", 3)).withArguments((new MyTypes_termTable.floatType_term(true)).getTerm(), (new MyTypes_termTable.primType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.floatType_term(false)).getTerm()).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -85,9 +85,9 @@ public class lcs_lcs_for_prims extends AbstractRuleTemplate<lcs_lcs_for_prims.To
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.lcs_for_prims", "lcs_for_prims#2", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.floatType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.lcs_prim", 3)).withArguments((new MyTypes_termTable.primType_term(true)).getTerm(), (new MyTypes_termTable.floatType_term(true)).getTerm(), rule().LCS).withPatternLogicals(rule().Left, rule().Right, null).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().LCS, (new MyTypes_termTable.floatType_term(false)).getTerm()).toPredicate());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -102,9 +102,9 @@ public class lcs_lcs_for_prims extends AbstractRuleTemplate<lcs_lcs_for_prims.To
           Right = MetaLogicalFactory.metaLogical("Right", DataForm.class);
           LCS = MetaLogicalFactory.metaLogical("LCS", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "lcs_for_prims", "lcs_for_prims#3", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.lcs_for_prims", "lcs_for_prims#3", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("lcs_prim", 3)).withArguments(rule().Left, rule().Right, rule().LCS).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.lcs_prim", 3)).withArguments(rule().Left, rule().Right, rule().LCS).toConstraint());
           builder.appendBody(new PredicateBuilder(FailPredicate.FAIL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{rule().Right, rule().Left};

@@ -53,14 +53,14 @@ public class _RecoverType___recover_arrayType extends AbstractRuleTemplate<_Reco
           parameterType = MetaLogicalFactory.metaLogical("parameterType", SNode.class);
           parameter = MetaLogicalFactory.metaLogical("parameter", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "_recover_arrayType", "_recover_arrayType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_arrayType", "_recover_arrayType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.arrayType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.arrayType_term(true) {
             public DataForm parameter() {
               return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().parameter));
             }
           }).getTerm()).withPatternLogicals(null, rule().Term).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().parameterType, rule().parameter).toConstraint());
+          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().parameterType, rule().parameter).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Type, new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{rule().parameterType};

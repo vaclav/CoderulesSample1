@@ -47,9 +47,9 @@ public class _RecoverType___recover_floatHoldingStringType extends AbstractRuleT
           Type = MetaLogicalFactory.metaLogical("Type", SNode.class);
           Term = MetaLogicalFactory.metaLogical("Term", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "_recover_floatHoldingStringType", "_recover_floatHoldingStringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_floatHoldingStringType", "_recover_floatHoldingStringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm()).withPatternLogicals(null, rule().Term).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.floatHoldingStringType_term(true)).getTerm()).withPatternLogicals(null, rule().Term).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Type, new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{};

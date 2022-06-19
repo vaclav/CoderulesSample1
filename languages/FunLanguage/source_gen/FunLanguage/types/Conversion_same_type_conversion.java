@@ -42,9 +42,9 @@ public class Conversion_same_type_conversion extends AbstractRuleTemplate<Conver
           A = MetaLogicalFactory.metaLogical("A", DataForm.class);
           B = MetaLogicalFactory.metaLogical("B", DataForm.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "same_type_conversion", "same_type_conversion", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.same_type_conversion", "same_type_conversion", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.NONFREE_SYM).withArguments(rule().A).toPredicate());
           builder.appendGuard(new PredicateBuilder(LogicalPredicate.NONFREE_SYM).withArguments(rule().B).toPredicate());
           builder.appendGuard(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().A, rule().B).toPredicate());
