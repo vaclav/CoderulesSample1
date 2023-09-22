@@ -97,7 +97,7 @@ public class Check_binary_expr_type extends AbstractRuleTemplate<Check_binary_ex
 
 
   public Check_binary_expr_type(RuleTable ruleTable) {
-    super(ruleTable, "binary_expr_type", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/6708639879380703252"));
+    super(ruleTable, "binary_expr_type", "FunLanguage.types.binary_expr_type", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/6708639879380703252"));
   }
 
   @Override

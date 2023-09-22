@@ -22,7 +22,6 @@ import java.util.List;
 import FunLanguage.behavior.StructDefinition__BehaviorDescriptor;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -53,11 +52,7 @@ public class DotAccessExpr_Constraints extends BaseConstraintsDescriptor {
             if (SNodeOperations.isInstanceOf(operandType, CONCEPTS.StructType$nR)) {
               SNode currentStruct = SLinkOperations.getTarget(SNodeOperations.as(operandType, CONCEPTS.StructType$nR), LINKS.struct$JP1k);
               List<SNode> allStructs = StructDefinition__BehaviorDescriptor.structAndExtendedStructs_idHbl2X4iivr.invoke(currentStruct);
-              return ListScope.forNamedElements(ListSequence.fromList(allStructs).translate(new ITranslator2<SNode, SNode>() {
-                public Iterable<SNode> translate(SNode it) {
-                  return SLinkOperations.getChildren(it, LINKS.fields$ibNh);
-                }
-              }));
+              return ListScope.forNamedElements(ListSequence.fromList(allStructs).translate((it) -> SLinkOperations.getChildren(it, LINKS.fields$ibNh)));
             } else {
               return null;
             }

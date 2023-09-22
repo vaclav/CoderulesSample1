@@ -15,8 +15,6 @@ import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
-import jetbrains.mps.logic.dataform.ListNode;
-import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.EvalExpressionPredicate;
 import jetbrains.mps.lang.coderules.template.LateExpression;
@@ -24,6 +22,8 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
 import jetbrains.mps.logic.reactor.logical.Logical;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
+import jetbrains.mps.logic.dataform.ListNode;
+import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.logic.predicate.FailPredicate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
@@ -52,24 +52,7 @@ public class _RecoverType_Default__recover_list extends AbstractRuleTemplate<_Re
 
           RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.recover_list", "recover_list#0", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverList__", 2)).withArguments(rule().Nodes, (ListNode.createList())).withPatternLogicals(null, rule().Terms).toConstraint());
-
-          ListSequence.fromList(ruleBuilders).addElement(builder);
-        }
-
-      }.apply(_session);
-
-      new recover_list1() {
-        @Override
-        public void apply(TemplateApplicationSession session) {
-          T = MetaLogicalFactory.metaLogical("T", DataForm.class);
-          Tail = MetaLogicalFactory.metaLogical("Tail", ListNode.class);
-          Nodes = MetaLogicalFactory.metaLogical("Nodes", List.class);
-          Terms = MetaLogicalFactory.metaLogical("Terms", DataForm.class);
-
-          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.recover_list", "recover_list#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
-
-          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverList__", 2)).withArguments(rule().Nodes, (ListNode.createConsList(LogicalUtil.asDataForm(rule().Tail), LogicalUtil.asDataForm(rule().T)))).withPatternLogicals(null, rule().Terms).toConstraint());
+          builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverList__", 2)).withArguments(rule().Nodes, rule().Terms).toConstraint());
           builder.appendGuard(new PredicateBuilder(EvalExpressionPredicate.EVAL_SYM).withArguments(new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{rule().Nodes};
@@ -89,6 +72,22 @@ public class _RecoverType_Default__recover_list extends AbstractRuleTemplate<_Re
               return new ArrayList<SNode>();
             }
           }).toPredicate());
+
+          ListSequence.fromList(ruleBuilders).addElement(builder);
+        }
+
+      }.apply(_session);
+
+      new recover_list1() {
+        @Override
+        public void apply(TemplateApplicationSession session) {
+          Nodes = MetaLogicalFactory.metaLogical("Nodes", List.class);
+          Terms = MetaLogicalFactory.metaLogical("Terms", DataForm.class);
+          X = MetaLogicalFactory.metaLogical("X", DataForm.class);
+
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.recover_list", "recover_list#1", getTemplateRef(), null, SNodeOperations.getPointer(null));
+
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverList__", 2)).withArguments(rule().Nodes, (ListNode.createList())).withPatternLogicals(null, rule().Terms).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -174,10 +173,9 @@ public class _RecoverType_Default__recover_list extends AbstractRuleTemplate<_Re
         return this;
       }
 
-      protected MetaLogical T;
-      protected MetaLogical Tail;
       protected MetaLogical Nodes;
       protected MetaLogical Terms;
+      protected MetaLogical X;
 
     }
     public abstract class recover_list2 implements ConstraintRuleTemplate {
@@ -212,7 +210,7 @@ public class _RecoverType_Default__recover_list extends AbstractRuleTemplate<_Re
 
 
   public _RecoverType_Default__recover_list(RuleTable ruleTable) {
-    super(ruleTable, "recover_list", SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327700"));
+    super(ruleTable, "recover_list", "FunLanguage.types.recover_list", SNodePointer.deserialize("945bd5e4-6bdc-4ae1-9bbd-bb8ecfbcec15/i:10000056(FunLanguage@transient3/FunLanguage.types@3_2)/3059597553262396917"));
   }
 
   @Override

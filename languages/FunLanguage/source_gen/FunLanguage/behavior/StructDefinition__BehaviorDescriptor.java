@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 public final class StructDefinition__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f44252d5dL, "FunLanguage.structure.StructDefinition");
 
-  public static final SMethod<List<SNode>> structAndExtendedStructs_idHbl2X4iivr = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("structAndExtendedStructs").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("Hbl2X4iivr").build();
+  public static final SMethod<List<SNode>> structAndExtendedStructs_idHbl2X4iivr = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("structAndExtendedStructs").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(813836719656347611L).languageId(0xa5127456d3818e7aL, 0xf1277323ea964c38L).build2();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(structAndExtendedStructs_idHbl2X4iivr);
 

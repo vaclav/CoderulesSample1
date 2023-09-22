@@ -92,7 +92,7 @@ public class Conversion_convertsUnhandled extends AbstractRuleTemplate<Conversio
 
 
   public Conversion_convertsUnhandled(RuleTable ruleTable) {
-    super(ruleTable, "convertsUnhandled", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/6153771967692066639"));
+    super(ruleTable, "convertsUnhandled", "FunLanguage.types.convertsUnhandled", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/6153771967692066639"));
   }
 
   @Override

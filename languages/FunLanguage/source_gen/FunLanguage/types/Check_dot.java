@@ -77,7 +77,7 @@ public class Check_dot extends AbstractRuleTemplate<Check_dot.Token> {
 
 
   public Check_dot(RuleTable ruleTable) {
-    super(ruleTable, "dot", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655245651"));
+    super(ruleTable, "dot", "FunLanguage.types.dot", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655245651"));
   }
 
   @Override

@@ -66,7 +66,7 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
               builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(ListSequence.fromList(args).getElement(i), rule().ArgType.logicalAt(i)).toConstraint());
             }
             for (final Wrappers._int i = new Wrappers._int(0); i.value < ListSequence.fromList(params).count(); i.value++) {
-              builder.merge(0, session.expandMacro(token().call, SLinkOperations.getTarget(ListSequence.fromList(params).getElement(i.value), LINKS.declaredType$ScNM), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().ParamDeclaredType.logicalAt(i.value)).withParams().apply()));
+              builder.merge(0, session.expandMacro(token().call, SLinkOperations.getTarget(ListSequence.fromList(params).getElement(i.value), LINKS.declaredType$ScNM), "FunLanguage.types.lift", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().ParamDeclaredType.logicalAt(i.value)).withParams().apply()));
               builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().ArgType.logicalAt(i.value), rule().ParamDeclaredType.logicalAt(i.value)).toConstraint());
             }
             // at this point all arguments's types are ensured to be compatible with the function type
@@ -104,7 +104,7 @@ public class Check_function_call extends AbstractRuleTemplate<Check_function_cal
 
 
   public Check_function_call(RuleTable ruleTable) {
-    super(ruleTable, "function_call", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3711979631470531666"));
+    super(ruleTable, "function_call", "FunLanguage.types.function_call", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3711979631470531666"));
   }
 
   @Override

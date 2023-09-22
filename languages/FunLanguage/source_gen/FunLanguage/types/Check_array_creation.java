@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
 import jetbrains.mps.logic.dataform.ChildRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
@@ -23,6 +22,7 @@ import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -49,7 +49,7 @@ public class Check_array_creation extends AbstractRuleTemplate<Check_array_creat
           RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.array_creation", "array_creation" + "_" + String.valueOf(token().array.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().array, SNodeOperations.getPointer(token().array));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.checkAll", 0)).withArguments().toConstraint());
-          builder.merge(0, session.expandMacro(token().array, SLinkOperations.getTarget(token().array, LINKS.elementType$tpyh), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().ElementType).withParams().apply()));
+          builder.merge(0, session.expandMacro(token().array, SLinkOperations.getTarget(token().array, LINKS.elementType$tpyh), "FunLanguage.types.lift", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().ElementType).withParams().apply()));
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().array, (new MyTypes_termTable.arrayType_term(false) {
             public DataForm parameter() {
               return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().ElementType));
@@ -85,7 +85,7 @@ public class Check_array_creation extends AbstractRuleTemplate<Check_array_creat
 
 
   public Check_array_creation(RuleTable ruleTable) {
-    super(ruleTable, "array_creation", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3953395691054188168"));
+    super(ruleTable, "array_creation", "FunLanguage.types.array_creation", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3953395691054188168"));
   }
 
   @Override

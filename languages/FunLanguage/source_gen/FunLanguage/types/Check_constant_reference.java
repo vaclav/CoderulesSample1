@@ -77,7 +77,7 @@ public class Check_constant_reference extends AbstractRuleTemplate<Check_constan
 
 
   public Check_constant_reference(RuleTable ruleTable) {
-    super(ruleTable, "constant_reference", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/6708639879380635123"));
+    super(ruleTable, "constant_reference", "FunLanguage.types.constant_reference", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/6708639879380635123"));
   }
 
   @Override

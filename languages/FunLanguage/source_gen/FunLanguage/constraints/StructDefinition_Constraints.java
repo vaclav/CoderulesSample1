@@ -18,7 +18,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
 import jetbrains.mps.scope.ListScope;
 import java.util.HashMap;
@@ -43,11 +42,7 @@ public class StructDefinition_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final ReferenceConstraintsContext _context) {
-            Iterable<SNode> structs = ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getReferenceNode()), CONCEPTS.StructDefinition$r, false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return !(Objects.equals(it, _context.getReferenceNode()));
-              }
-            });
+            Iterable<SNode> structs = ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getReferenceNode()), CONCEPTS.StructDefinition$r, false, new SAbstractConcept[]{})).where((it) -> !(Objects.equals(it, _context.getReferenceNode())));
             return ListScope.forNamedElements(structs);
           }
         };

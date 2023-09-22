@@ -78,7 +78,7 @@ public class Conversion_same_type_conversion extends AbstractRuleTemplate<Conver
 
 
   public Conversion_same_type_conversion(RuleTable ruleTable) {
-    super(ruleTable, "same_type_conversion", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655793590"));
+    super(ruleTable, "same_type_conversion", "FunLanguage.types.same_type_conversion", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655793590"));
   }
 
   @Override

@@ -80,7 +80,7 @@ public class Check_assignment extends AbstractRuleTemplate<Check_assignment.Toke
 
 
   public Check_assignment(RuleTable ruleTable) {
-    super(ruleTable, "assignment", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655314828"));
+    super(ruleTable, "assignment", "FunLanguage.types.assignment", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655314828"));
   }
 
   @Override

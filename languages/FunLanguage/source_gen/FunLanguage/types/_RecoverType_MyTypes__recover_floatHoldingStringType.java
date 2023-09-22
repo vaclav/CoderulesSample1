@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.builder.SNodeBuilder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class _RecoverType___recover_stringType extends AbstractRuleTemplate<_RecoverType___recover_stringType.Token> {
+public class _RecoverType_MyTypes__recover_floatHoldingStringType extends AbstractRuleTemplate<_RecoverType_MyTypes__recover_floatHoldingStringType.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -43,16 +43,16 @@ public class _RecoverType___recover_stringType extends AbstractRuleTemplate<_Rec
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new _recover_stringType() {
+      new _recover_floatHoldingStringType() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Type = MetaLogicalFactory.metaLogical("Type", SNode.class);
           Term = MetaLogicalFactory.metaLogical("Term", DataForm.class);
           val = MetaLogicalFactory.metaLogical("val", Object.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_stringType", "_recover_stringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_floatHoldingStringType", "_recover_floatHoldingStringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.stringType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.floatHoldingStringType_term(true) {
             public DataForm val() {
               return ValueRole.create("val", LogicalUtil.asValue(rule().val));
             }
@@ -63,7 +63,7 @@ public class _RecoverType___recover_stringType extends AbstractRuleTemplate<_Rec
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return createConstantStringType_89ua5v_a1a1a0b0a0a0h0a0a0a2a3b();
+              return createConstantFloatStringType_nefalp_a1a1a0b0a0a0h0a0a0a2a3b();
             }
           }).toPredicate());
 
@@ -78,9 +78,9 @@ public class _RecoverType___recover_stringType extends AbstractRuleTemplate<_Rec
       return this;
     }
 
-    public abstract class _recover_stringType implements ConstraintRuleTemplate {
+    public abstract class _recover_floatHoldingStringType implements ConstraintRuleTemplate {
 
-      protected _recover_stringType rule() {
+      protected _recover_floatHoldingStringType rule() {
         return this;
       }
 
@@ -96,8 +96,8 @@ public class _RecoverType___recover_stringType extends AbstractRuleTemplate<_Rec
   }
 
 
-  public _RecoverType___recover_stringType(RuleTable ruleTable) {
-    super(ruleTable, "_recover_stringType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3756571906020596446"));
+  public _RecoverType_MyTypes__recover_floatHoldingStringType(RuleTable ruleTable) {
+    super(ruleTable, "_recover_floatHoldingStringType", "FunLanguage.types._recover_floatHoldingStringType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5057411498114695604"));
   }
 
   @Override
@@ -111,12 +111,12 @@ public class _RecoverType___recover_stringType extends AbstractRuleTemplate<_Rec
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createConstantStringType_89ua5v_a1a1a0b0a0a0h0a0a0a2a3b() {
-    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantStringType$MU);
+  private static SNode createConstantFloatStringType_nefalp_a1a1a0b0a0a0h0a0a0a2a3b() {
+    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantFloatStringType$bJ);
     return n0.getResult();
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept ConstantStringType$MU = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3fbL, "FunLanguage.structure.ConstantStringType");
+    /*package*/ static final SConcept ConstantFloatStringType$bJ = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x4a893c619ec571deL, "FunLanguage.structure.ConstantFloatStringType");
   }
 }

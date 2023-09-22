@@ -89,7 +89,7 @@ public class Conversion_array_subtyping extends AbstractRuleTemplate<Conversion_
 
 
   public Conversion_array_subtyping(RuleTable ruleTable) {
-    super(ruleTable, "array_subtyping", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5736138219386444270"));
+    super(ruleTable, "array_subtyping", "FunLanguage.types.array_subtyping", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5736138219386444270"));
   }
 
   @Override

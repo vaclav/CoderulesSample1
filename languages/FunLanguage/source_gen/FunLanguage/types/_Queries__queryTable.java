@@ -222,8 +222,8 @@ public class _Queries__queryTable extends AbstractQueryTable {
 
             RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.convertsTo", "convertsTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-            builder.merge(0, session.expandMacro(null, query.getFrom(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().A).withParams().apply()));
-            builder.merge(0, session.expandMacro(null, query.getTo(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
+            builder.merge(0, session.expandMacro(null, query.getFrom(), "FunLanguage.types.lift", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().A).withParams().apply()));
+            builder.merge(0, session.expandMacro(null, query.getTo(), "FunLanguage.types.lift", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
 
             ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -306,11 +306,11 @@ public class _Queries__queryTable extends AbstractQueryTable {
 
             RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.coerceTo", "coerceTo", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-            builder.merge(0, session.expandMacro(null, query.getSource(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().A).withParams().apply()));
+            builder.merge(0, session.expandMacro(null, query.getSource(), "FunLanguage.types.lift", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().A).withParams().apply()));
             if (query.getTargetNode() != null) {
-              builder.merge(0, session.expandMacro(null, query.getTargetNode(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
+              builder.merge(0, session.expandMacro(null, query.getTargetNode(), "FunLanguage.types.lift", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
             } else {
-              builder.merge(0, session.expandMacro(null, query.getTargetConcept(), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
+              builder.merge(0, session.expandMacro(null, query.getTargetConcept(), "FunLanguage.types.lift", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().B).withParams().apply()));
             }
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().A, rule().B).toConstraint());
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Node, rule().B).toConstraint());

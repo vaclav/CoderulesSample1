@@ -23,7 +23,6 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
 import jetbrains.mps.logic.reactor.logical.Logical;
 import FunLanguage.behavior.StructDefinition__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
@@ -71,11 +70,7 @@ public class Conversion_struct_subtyping extends AbstractRuleTemplate<Conversion
               Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
               Logical<SNode> typedArg1 = (Logical<SNode>) args[1];
 
-              return ListSequence.fromList(StructDefinition__BehaviorDescriptor.structAndExtendedStructs_idHbl2X4iivr.invoke(typedArg0.findRoot().value())).any(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return Objects.equals(it, typedArg1.findRoot().value());
-                }
-              });
+              return ListSequence.fromList(StructDefinition__BehaviorDescriptor.structAndExtendedStructs_idHbl2X4iivr.invoke(typedArg0.findRoot().value())).any((it) -> Objects.equals(it, typedArg1.findRoot().value()));
             }
           }).toPredicate());
 
@@ -110,7 +105,7 @@ public class Conversion_struct_subtyping extends AbstractRuleTemplate<Conversion
 
 
   public Conversion_struct_subtyping(RuleTable ruleTable) {
-    super(ruleTable, "struct_subtyping", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719656066546"));
+    super(ruleTable, "struct_subtyping", "FunLanguage.types.struct_subtyping", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719656066546"));
   }
 
   @Override

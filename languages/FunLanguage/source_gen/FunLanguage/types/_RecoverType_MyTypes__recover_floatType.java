@@ -21,7 +21,6 @@ import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.LateExpression;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
-import jetbrains.mps.logic.reactor.logical.Logical;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
@@ -31,9 +30,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.builder.SNodeBuilder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 
-public class _RecoverType___recover_structType extends AbstractRuleTemplate<_RecoverType___recover_structType.Token> {
+public class _RecoverType_MyTypes__recover_floatType extends AbstractRuleTemplate<_RecoverType_MyTypes__recover_floatType.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -45,28 +43,27 @@ public class _RecoverType___recover_structType extends AbstractRuleTemplate<_Rec
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new _recover_structType() {
+      new _recover_floatType() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Type = MetaLogicalFactory.metaLogical("Type", SNode.class);
           Term = MetaLogicalFactory.metaLogical("Term", DataForm.class);
-          definition = MetaLogicalFactory.metaLogical("definition", SNode.class);
+          val = MetaLogicalFactory.metaLogical("val", Object.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_structType", "_recover_structType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_floatType", "_recover_floatType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.structType_term(true) {
-            public DataForm definition() {
-              return ValueRole.create("definition", LogicalUtil.asValue(rule().definition));
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.floatType_term(true) {
+            public DataForm val() {
+              return ValueRole.create("val", LogicalUtil.asValue(rule().val));
             }
           }).getTerm()).withPatternLogicals(null, rule().Term).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Type, new LateExpression<Object>() {
             public Object[] metaArgs() {
-              return new Object[]{rule().definition};
+              return new Object[]{};
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
-              Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
 
-              return createStructType_msxo7p_a2a1a0b0a0a0h0a0a0a2a3b(typedArg0.findRoot().value());
+              return createConstantFloatType_1p0dx3_a1a1a0b0a0a0h0a0a0a2a3b();
             }
           }).toPredicate());
 
@@ -81,15 +78,15 @@ public class _RecoverType___recover_structType extends AbstractRuleTemplate<_Rec
       return this;
     }
 
-    public abstract class _recover_structType implements ConstraintRuleTemplate {
+    public abstract class _recover_floatType implements ConstraintRuleTemplate {
 
-      protected _recover_structType rule() {
+      protected _recover_floatType rule() {
         return this;
       }
 
       protected MetaLogical Type;
       protected MetaLogical Term;
-      protected MetaLogical definition;
+      protected MetaLogical val;
 
     }
 
@@ -99,8 +96,8 @@ public class _RecoverType___recover_structType extends AbstractRuleTemplate<_Rec
   }
 
 
-  public _RecoverType___recover_structType(RuleTable ruleTable) {
-    super(ruleTable, "_recover_structType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5057411498114695611"));
+  public _RecoverType_MyTypes__recover_floatType(RuleTable ruleTable) {
+    super(ruleTable, "_recover_floatType", "FunLanguage.types._recover_floatType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5057411498114695588"));
   }
 
   @Override
@@ -114,17 +111,12 @@ public class _RecoverType___recover_structType extends AbstractRuleTemplate<_Rec
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createStructType_msxo7p_a2a1a0b0a0a0h0a0a0a2a3b(SNode p0) {
-    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.StructType$nR);
-    n0.setReferenceTarget(LINKS.struct$JP1k, p0);
+  private static SNode createConstantFloatType_1p0dx3_a1a1a0b0a0a0h0a0a0a2a3b() {
+    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantFloatType$fo);
     return n0.getResult();
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept StructType$nR = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, "FunLanguage.structure.StructType");
-  }
-
-  private static final class LINKS {
-    /*package*/ static final SReferenceLink struct$JP1k = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, 0xb4b542f442cbba3L, "struct");
+    /*package*/ static final SConcept ConstantFloatType$fo = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x73cc67b338abc1eeL, "FunLanguage.structure.ConstantFloatType");
   }
 }

@@ -97,7 +97,7 @@ public class Conversion_int_holding_string_to_int_or_string extends AbstractRule
 
 
   public Conversion_int_holding_string_to_int_or_string(RuleTable ruleTable) {
-    super(ruleTable, "int_holding_string_to_int_or_string", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/4620228112926198722"));
+    super(ruleTable, "int_holding_string_to_int_or_string", "FunLanguage.types.int_holding_string_to_int_or_string", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/4620228112926198722"));
   }
 
   @Override

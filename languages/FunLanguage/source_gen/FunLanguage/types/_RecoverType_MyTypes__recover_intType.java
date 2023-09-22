@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.builder.SNodeBuilder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class _RecoverType___recover_floatType extends AbstractRuleTemplate<_RecoverType___recover_floatType.Token> {
+public class _RecoverType_MyTypes__recover_intType extends AbstractRuleTemplate<_RecoverType_MyTypes__recover_intType.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -43,16 +43,16 @@ public class _RecoverType___recover_floatType extends AbstractRuleTemplate<_Reco
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new _recover_floatType() {
+      new _recover_intType() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Type = MetaLogicalFactory.metaLogical("Type", SNode.class);
           Term = MetaLogicalFactory.metaLogical("Term", DataForm.class);
           val = MetaLogicalFactory.metaLogical("val", Object.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_floatType", "_recover_floatType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_intType", "_recover_intType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.floatType_term(true) {
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.intType_term(true) {
             public DataForm val() {
               return ValueRole.create("val", LogicalUtil.asValue(rule().val));
             }
@@ -63,7 +63,7 @@ public class _RecoverType___recover_floatType extends AbstractRuleTemplate<_Reco
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return createConstantFloatType_qrgj3h_a1a1a0b0a0a0h0a0a0a2a3b();
+              return createConstantIntegerType_zcmmps_a1a1a0b0a0a0h0a0a0a2a3b();
             }
           }).toPredicate());
 
@@ -78,9 +78,9 @@ public class _RecoverType___recover_floatType extends AbstractRuleTemplate<_Reco
       return this;
     }
 
-    public abstract class _recover_floatType implements ConstraintRuleTemplate {
+    public abstract class _recover_intType implements ConstraintRuleTemplate {
 
-      protected _recover_floatType rule() {
+      protected _recover_intType rule() {
         return this;
       }
 
@@ -96,8 +96,8 @@ public class _RecoverType___recover_floatType extends AbstractRuleTemplate<_Reco
   }
 
 
-  public _RecoverType___recover_floatType(RuleTable ruleTable) {
-    super(ruleTable, "_recover_floatType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5057411498114695588"));
+  public _RecoverType_MyTypes__recover_intType(RuleTable ruleTable) {
+    super(ruleTable, "_recover_intType", "FunLanguage.types._recover_intType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5057411498114695448"));
   }
 
   @Override
@@ -111,12 +111,12 @@ public class _RecoverType___recover_floatType extends AbstractRuleTemplate<_Reco
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createConstantFloatType_qrgj3h_a1a1a0b0a0a0h0a0a0a2a3b() {
-    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantFloatType$fo);
+  private static SNode createConstantIntegerType_zcmmps_a1a1a0b0a0a0h0a0a0a2a3b() {
+    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantIntegerType$Mr);
     return n0.getResult();
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept ConstantFloatType$fo = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x73cc67b338abc1eeL, "FunLanguage.structure.ConstantFloatType");
+    /*package*/ static final SConcept ConstantIntegerType$Mr = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3faL, "FunLanguage.structure.ConstantIntegerType");
   }
 }
