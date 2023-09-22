@@ -210,7 +210,7 @@ public class _RecoverType_Default__recover_list extends AbstractRuleTemplate<_Re
 
 
   public _RecoverType_Default__recover_list(RuleTable ruleTable) {
-    super(ruleTable, "recover_list", "FunLanguage.types.recover_list", SNodePointer.deserialize("128e6471-1881-427b-87e3-301270fd993f/i:10000056(FunLanguage@transient0/FunLanguage.types@3_2)/3059597553262145687"));
+    super(ruleTable, "recover_list", "FunLanguage.types.recover_list", SNodePointer.deserialize("945bd5e4-6bdc-4ae1-9bbd-bb8ecfbcec15/i:10000056(FunLanguage@transient3/FunLanguage.types@3_2)/3059597553262396917"));
   }
 
   @Override

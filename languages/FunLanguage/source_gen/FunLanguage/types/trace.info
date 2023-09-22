@@ -25,12 +25,12 @@
     </file>
     <file name="_ExpectTypeMacro__macroTable.java">
       <unit at="235,0,238,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$CONCEPTS" />
-      <unit at="121,100,131,9" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262145903_Expand$Token$1" />
-      <unit at="193,100,203,9" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262145927_Expand$Token$1" />
-      <unit at="165,0,219,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262145927_Expand$Token" />
-      <unit at="91,0,148,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262145903_Expand$Token" />
-      <unit at="163,0,234,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262145927_Expand" />
-      <unit at="89,0,163,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262145903_Expand" />
+      <unit at="121,100,131,9" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262397133_Expand$Token$1" />
+      <unit at="193,100,203,9" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262397157_Expand$Token$1" />
+      <unit at="165,0,219,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262397157_Expand$Token" />
+      <unit at="91,0,148,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262397133_Expand$Token" />
+      <unit at="163,0,234,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262397157_Expand" />
+      <unit at="89,0,163,0" name="FunLanguage.types._ExpectTypeMacro__macroTable$BaseConcept_3059597553262397133_Expand" />
       <unit at="35,0,239,0" name="FunLanguage.types._ExpectTypeMacro__macroTable" />
     </file>
     <file name="_RecoverType_Default__recover_catchall.java">
