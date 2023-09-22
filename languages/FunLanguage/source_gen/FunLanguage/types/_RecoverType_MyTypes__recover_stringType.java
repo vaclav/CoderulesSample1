@@ -14,6 +14,8 @@ import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
+import jetbrains.mps.logic.dataform.ValueRole;
+import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
 import jetbrains.mps.lang.coderules.template.LateExpression;
@@ -29,7 +31,7 @@ import jetbrains.mps.smodel.builder.SNodeBuilder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class _RecoverType___recover_intHoldingStringType extends AbstractRuleTemplate<_RecoverType___recover_intHoldingStringType.Token> {
+public class _RecoverType_MyTypes__recover_stringType extends AbstractRuleTemplate<_RecoverType_MyTypes__recover_stringType.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -41,22 +43,27 @@ public class _RecoverType___recover_intHoldingStringType extends AbstractRuleTem
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new _recover_intHoldingStringType() {
+      new _recover_stringType() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Type = MetaLogicalFactory.metaLogical("Type", SNode.class);
           Term = MetaLogicalFactory.metaLogical("Term", DataForm.class);
+          val = MetaLogicalFactory.metaLogical("val", Object.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_intHoldingStringType", "_recover_intHoldingStringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_stringType", "_recover_stringType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.intHoldingStringType_term(true)).getTerm()).withPatternLogicals(null, rule().Term).toConstraint());
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.stringType_term(true) {
+            public DataForm val() {
+              return ValueRole.create("val", LogicalUtil.asValue(rule().val));
+            }
+          }).getTerm()).withPatternLogicals(null, rule().Term).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Type, new LateExpression<Object>() {
             public Object[] metaArgs() {
               return new Object[]{};
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return createConstantIntStringType_siutp_a1a1a0b0a0a0g0a0a0a2a3b();
+              return createConstantStringType_ci6fdl_a1a1a0b0a0a0h0a0a0a2a3b();
             }
           }).toPredicate());
 
@@ -71,14 +78,15 @@ public class _RecoverType___recover_intHoldingStringType extends AbstractRuleTem
       return this;
     }
 
-    public abstract class _recover_intHoldingStringType implements ConstraintRuleTemplate {
+    public abstract class _recover_stringType implements ConstraintRuleTemplate {
 
-      protected _recover_intHoldingStringType rule() {
+      protected _recover_stringType rule() {
         return this;
       }
 
       protected MetaLogical Type;
       protected MetaLogical Term;
+      protected MetaLogical val;
 
     }
 
@@ -88,8 +96,8 @@ public class _RecoverType___recover_intHoldingStringType extends AbstractRuleTem
   }
 
 
-  public _RecoverType___recover_intHoldingStringType(RuleTable ruleTable) {
-    super(ruleTable, "_recover_intHoldingStringType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5057411498114695597"));
+  public _RecoverType_MyTypes__recover_stringType(RuleTable ruleTable) {
+    super(ruleTable, "_recover_stringType", "FunLanguage.types._recover_stringType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3756571906020596446"));
   }
 
   @Override
@@ -103,12 +111,12 @@ public class _RecoverType___recover_intHoldingStringType extends AbstractRuleTem
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createConstantIntStringType_siutp_a1a1a0b0a0a0g0a0a0a2a3b() {
-    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantIntStringType$26);
+  private static SNode createConstantStringType_ci6fdl_a1a1a0b0a0a0h0a0a0a2a3b() {
+    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantStringType$MU);
     return n0.getResult();
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept ConstantIntStringType$26 = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x401e58fd5c3e9085L, "FunLanguage.structure.ConstantIntStringType");
+    /*package*/ static final SConcept ConstantStringType$MU = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x6deaa97c1207a3fbL, "FunLanguage.structure.ConstantStringType");
   }
 }

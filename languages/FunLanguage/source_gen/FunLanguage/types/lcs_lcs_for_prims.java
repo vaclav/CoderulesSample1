@@ -180,7 +180,7 @@ public class lcs_lcs_for_prims extends AbstractRuleTemplate<lcs_lcs_for_prims.To
 
 
   public lcs_lcs_for_prims(RuleTable ruleTable) {
-    super(ruleTable, "lcs_for_prims", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426555316"));
+    super(ruleTable, "lcs_for_prims", "FunLanguage.types.lcs_for_prims", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426555316"));
   }
 
   @Override

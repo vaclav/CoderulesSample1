@@ -385,7 +385,7 @@ public class lcs_lcs_for_strings extends AbstractRuleTemplate<lcs_lcs_for_string
 
 
   public lcs_lcs_for_strings(RuleTable ruleTable) {
-    super(ruleTable, "lcs_for_strings", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426549632"));
+    super(ruleTable, "lcs_for_strings", "FunLanguage.types.lcs_for_strings", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426549632"));
   }
 
   @Override

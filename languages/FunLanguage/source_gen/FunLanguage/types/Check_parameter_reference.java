@@ -77,7 +77,7 @@ public class Check_parameter_reference extends AbstractRuleTemplate<Check_parame
 
 
   public Check_parameter_reference(RuleTable ruleTable) {
-    super(ruleTable, "parameter_reference", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3711979631470528430"));
+    super(ruleTable, "parameter_reference", "FunLanguage.types.parameter_reference", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3711979631470528430"));
   }
 
   @Override

@@ -15,12 +15,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -47,7 +47,7 @@ public class Check_field extends AbstractRuleTemplate<Check_field.Token> {
           RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types.field", "field" + "_" + String.valueOf(token().field.getNodeId()).replaceAll("~", "_"), getTemplateRef(), token().field, SNodeOperations.getPointer(token().field));
 
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.checkAll", 0)).withArguments().toConstraint());
-          builder.merge(0, session.expandMacro(token().field, SLinkOperations.getTarget(token().field, LINKS.declaredType$eZu7), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().Type).withParams().apply()));
+          builder.merge(0, session.expandMacro(token().field, SLinkOperations.getTarget(token().field, LINKS.declaredType$eZu7), "FunLanguage.types.lift", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().Type).withParams().apply()));
           builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().field, rule().Type).toConstraint());
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
@@ -79,7 +79,7 @@ public class Check_field extends AbstractRuleTemplate<Check_field.Token> {
 
 
   public Check_field(RuleTable ruleTable) {
-    super(ruleTable, "field", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655253504"));
+    super(ruleTable, "field", "FunLanguage.types.field", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655253504"));
   }
 
   @Override

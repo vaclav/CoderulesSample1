@@ -14,7 +14,7 @@ import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
-import jetbrains.mps.logic.dataform.ChildRole;
+import jetbrains.mps.logic.dataform.ValueRole;
 import jetbrains.mps.logic.unification.LogicalUtil;
 import jetbrains.mps.lang.coderules.template.PredicateBuilder;
 import jetbrains.mps.logic.predicate.UnificationPredicate;
@@ -31,9 +31,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.builder.SNodeBuilder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
-public class _RecoverType___recover_arrayType extends AbstractRuleTemplate<_RecoverType___recover_arrayType.Token> {
+public class _RecoverType_MyTypes__recover_structType extends AbstractRuleTemplate<_RecoverType_MyTypes__recover_structType.Token> {
 
   public class Token implements RuleTemplate.Token {
 
@@ -45,30 +45,28 @@ public class _RecoverType___recover_arrayType extends AbstractRuleTemplate<_Reco
     public Iterable<RuleBuilder> apply() {
       TemplateApplicationSession _session = session;
       ruleBuilders = ListSequence.fromList(new ArrayList<RuleBuilder>());
-      new _recover_arrayType() {
+      new _recover_structType() {
         @Override
         public void apply(TemplateApplicationSession session) {
           Type = MetaLogicalFactory.metaLogical("Type", SNode.class);
           Term = MetaLogicalFactory.metaLogical("Term", DataForm.class);
-          parameterType = MetaLogicalFactory.metaLogical("parameterType", SNode.class);
-          parameter = MetaLogicalFactory.metaLogical("parameter", DataForm.class);
+          definition = MetaLogicalFactory.metaLogical("definition", SNode.class);
 
-          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_arrayType", "_recover_arrayType", getTemplateRef(), null, SNodeOperations.getPointer(null));
+          RuleBuilder builder = new RuleBuilder(session, "FunLanguage.types._recover_structType", "_recover_structType", getTemplateRef(), null, SNodeOperations.getPointer(null));
 
-          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.arrayType_term(true) {
-            public DataForm parameter() {
-              return ChildRole.create("parameter", LogicalUtil.asDataForm(rule().parameter));
+          builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().Type, (new MyTypes_termTable.structType_term(true) {
+            public DataForm definition() {
+              return ValueRole.create("definition", LogicalUtil.asValue(rule().definition));
             }
           }).getTerm()).withPatternLogicals(null, rule().Term).toConstraint());
-          builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.__recoverType__", 2)).withArguments(rule().parameterType, rule().parameter).toConstraint());
           builder.appendBody(new PredicateBuilder(UnificationPredicate.UNI_SYM).withArguments(rule().Type, new LateExpression<Object>() {
             public Object[] metaArgs() {
-              return new Object[]{rule().parameterType};
+              return new Object[]{rule().definition};
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
               Logical<SNode> typedArg0 = (Logical<SNode>) args[0];
 
-              return createConstantArrayType_wfss4s_a2a1a0b0a0a0j0a0a0a2a3b(typedArg0.findRoot().value());
+              return createStructType_r19tff_a2a1a0b0a0a0h0a0a0a2a3b(typedArg0.findRoot().value());
             }
           }).toPredicate());
 
@@ -83,16 +81,15 @@ public class _RecoverType___recover_arrayType extends AbstractRuleTemplate<_Reco
       return this;
     }
 
-    public abstract class _recover_arrayType implements ConstraintRuleTemplate {
+    public abstract class _recover_structType implements ConstraintRuleTemplate {
 
-      protected _recover_arrayType rule() {
+      protected _recover_structType rule() {
         return this;
       }
 
       protected MetaLogical Type;
       protected MetaLogical Term;
-      protected MetaLogical parameterType;
-      protected MetaLogical parameter;
+      protected MetaLogical definition;
 
     }
 
@@ -102,8 +99,8 @@ public class _RecoverType___recover_arrayType extends AbstractRuleTemplate<_Reco
   }
 
 
-  public _RecoverType___recover_arrayType(RuleTable ruleTable) {
-    super(ruleTable, "_recover_arrayType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3953395691054190410"));
+  public _RecoverType_MyTypes__recover_structType(RuleTable ruleTable) {
+    super(ruleTable, "_recover_structType", "FunLanguage.types._recover_structType", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5057411498114695611"));
   }
 
   @Override
@@ -117,18 +114,17 @@ public class _RecoverType___recover_arrayType extends AbstractRuleTemplate<_Reco
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createConstantArrayType_wfss4s_a2a1a0b0a0a0j0a0a0a2a3b(SNode p0) {
-    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.ConstantArrayType$ZT);
-    n0.forChild(LINKS.elementType$Xq3i).initNode(p0, CONCEPTS.ConstantLanguageType$iZ, true);
+  private static SNode createStructType_r19tff_a2a1a0b0a0a0h0a0a0a2a3b(SNode p0) {
+    SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.StructType$nR);
+    n0.setReferenceTarget(LINKS.struct$JP1k, p0);
     return n0.getResult();
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept ConstantArrayType$ZT = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x36dd486f5dd84f56L, "FunLanguage.structure.ConstantArrayType");
-    /*package*/ static final SConcept ConstantLanguageType$iZ = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x338399ced3406bd6L, "FunLanguage.structure.ConstantLanguageType");
+    /*package*/ static final SConcept StructType$nR = MetaAdapterFactory.getConcept(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, "FunLanguage.structure.StructType");
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink elementType$Xq3i = MetaAdapterFactory.getContainmentLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0x36dd486f5dd84f56L, 0x36dd486f5dd8504bL, "elementType");
+    /*package*/ static final SReferenceLink struct$JP1k = MetaAdapterFactory.getReferenceLink(0xf1277323ea964c38L, 0xa5127456d3818e7aL, 0xb4b542f442cbb88L, 0xb4b542f442cbba3L, "struct");
   }
 }

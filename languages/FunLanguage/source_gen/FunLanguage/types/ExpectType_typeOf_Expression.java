@@ -14,13 +14,12 @@ import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 import jetbrains.mps.logic.unification.MetaLogicalFactory;
 import jetbrains.mps.logic.dataform.DataForm;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
-import jetbrains.mps.coderules.typechecking.service.TypecheckingState;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -61,7 +60,7 @@ public class ExpectType_typeOf_Expression extends AbstractRuleTemplate<ExpectTyp
 
           builder.appendHeadReplaced(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.expectType", 1)).withArguments(token().expr).toConstraint());
           builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().expr, rule().Type).toConstraint());
-          builder.merge(0, session.expandMacro(token().expr, token().expr, SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327966"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().Type).withParams(session.getParameter(TypecheckingState.TYPES_COLLECTOR, Object.class)).apply()));
+          builder.merge(0, session.expandMacro(token().expr, token().expr, "FunLanguage.types._expectType_", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().Type).withParams(session.getParameter("class jetbrains.mps.coderules.typechecking.service.TypecheckingState.TypesCollector", Object.class)).apply()));
 
           ListSequence.fromList(ruleBuilders).addElement(builder);
         }
@@ -101,7 +100,7 @@ public class ExpectType_typeOf_Expression extends AbstractRuleTemplate<ExpectTyp
 
 
   public ExpectType_typeOf_Expression(RuleTable ruleTable) {
-    super(ruleTable, "typeOf_Expression", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426456212"));
+    super(ruleTable, "typeOf_Expression", "FunLanguage.types.typeOf_Expression", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/496984808426456212"));
   }
 
   @Override

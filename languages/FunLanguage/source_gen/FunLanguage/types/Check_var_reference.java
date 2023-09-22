@@ -77,7 +77,7 @@ public class Check_var_reference extends AbstractRuleTemplate<Check_var_referenc
 
 
   public Check_var_reference(RuleTable ruleTable) {
-    super(ruleTable, "var_reference", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719656730244"));
+    super(ruleTable, "var_reference", "FunLanguage.types.var_reference", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719656730244"));
   }
 
   @Override

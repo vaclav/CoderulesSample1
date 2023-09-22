@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
-import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
@@ -74,7 +74,9 @@ public class Expr_TransformationMenu extends TransformationMenuBase {
   }
 
   private class TMP_Param_e1zeix_a0 extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
-
+    /*package*/ TMP_Param_e1zeix_a0() {
+      super(new EditorMenuDescriptorBase("parameterized transformation menu part", new SNodePointer("r:03a898a7-fc22-4755-8556-58301e273720(FunLanguage.editor)", "4480776280326385512")));
+    }
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(SConcept parameter, TransformationMenuContext context) {
@@ -85,17 +87,6 @@ public class Expr_TransformationMenu extends TransformationMenuBase {
     @Override
     protected Iterable<? extends SConcept> getParameters(TransformationMenuContext _context) {
       return SConceptOperations.getAllSubConcepts2(CONCEPTS.BinaryExpr$tm, _context.getModel());
-    }
-    @NotNull
-    @Override
-    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
-      context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized transformation menu part", new SNodePointer("r:03a898a7-fc22-4755-8556-58301e273720(FunLanguage.editor)", "4480776280326385512")));
-      try {
-        return super.createItems(context);
-      } finally {
-        context.getEditorMenuTrace().popTraceInfo();
-      }
     }
 
     private class TMP_Action_e1zeix_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -167,7 +158,9 @@ public class Expr_TransformationMenu extends TransformationMenuBase {
     }
   }
   private class TMP_Param_e1zeix_a1 extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
-
+    /*package*/ TMP_Param_e1zeix_a1() {
+      super(new EditorMenuDescriptorBase("parameterized transformation menu part", new SNodePointer("r:03a898a7-fc22-4755-8556-58301e273720(FunLanguage.editor)", "4480776280326647455")));
+    }
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(SConcept parameter, TransformationMenuContext context) {
@@ -178,17 +171,6 @@ public class Expr_TransformationMenu extends TransformationMenuBase {
     @Override
     protected Iterable<? extends SConcept> getParameters(TransformationMenuContext _context) {
       return SConceptOperations.getAllSubConcepts2(CONCEPTS.BinaryExpr$tm, _context.getModel());
-    }
-    @NotNull
-    @Override
-    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
-      context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized transformation menu part", new SNodePointer("r:03a898a7-fc22-4755-8556-58301e273720(FunLanguage.editor)", "4480776280326647455")));
-      try {
-        return super.createItems(context);
-      } finally {
-        context.getEditorMenuTrace().popTraceInfo();
-      }
     }
 
     private class TMP_Action_e1zeix_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {

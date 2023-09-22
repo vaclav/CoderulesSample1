@@ -72,7 +72,7 @@ public class Conversion_int_to_float extends AbstractRuleTemplate<Conversion_int
 
 
   public Conversion_int_to_float(RuleTable ruleTable) {
-    super(ruleTable, "int_to_float", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655978004"));
+    super(ruleTable, "int_to_float", "FunLanguage.types.int_to_float", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719655978004"));
   }
 
   @Override

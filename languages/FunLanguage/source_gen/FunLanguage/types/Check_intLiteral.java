@@ -70,7 +70,7 @@ public class Check_intLiteral extends AbstractRuleTemplate<Check_intLiteral.Toke
 
 
   public Check_intLiteral(RuleTable ruleTable) {
-    super(ruleTable, "intLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3100765949326701594"));
+    super(ruleTable, "intLiteral", "FunLanguage.types.intLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3100765949326701594"));
   }
 
   @Override

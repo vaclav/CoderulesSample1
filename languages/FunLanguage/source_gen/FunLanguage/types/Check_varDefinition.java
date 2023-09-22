@@ -77,7 +77,7 @@ public class Check_varDefinition extends AbstractRuleTemplate<Check_varDefinitio
 
 
   public Check_varDefinition(RuleTable ruleTable) {
-    super(ruleTable, "varDefinition", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719656728321"));
+    super(ruleTable, "varDefinition", "FunLanguage.types.varDefinition", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/813836719656728321"));
   }
 
   @Override

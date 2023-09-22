@@ -47,7 +47,6 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
       new recover_catchall() {
         @Override
         public void apply(TemplateApplicationSession session) {
-          Location = MetaLogicalFactory.metaLogical("Location", SNode.class);
           Node = MetaLogicalFactory.metaLogical("Node", SNode.class);
           Type = MetaLogicalFactory.metaLogical("Type", DataForm.class);
 
@@ -61,7 +60,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
             }
             public Object eval(LogicalContext _logicalContext, InvocationContext _invocationContext, Object... args) {
 
-              return createRuntimeErrorType_dwn3e9_a1a1a0b0a0a0i0a0a0a2a3b();
+              return createRuntimeErrorType_dwn3e9_a1a1a0b0a0a0h0a0a0a2a3b();
             }
           }).toPredicate());
 
@@ -109,7 +108,6 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
         return this;
       }
 
-      protected MetaLogical Location;
       protected MetaLogical Node;
       protected MetaLogical Type;
 
@@ -133,7 +131,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
 
 
   public _RecoverType_Default__recover_catchall(RuleTable ruleTable) {
-    super(ruleTable, "recover_catchall", SNodePointer.deserialize("505432f5-6517-4990-8d73-9a2428bd50f3/i:1000006e(FunLanguage@transient7/FunLanguage.types@4_4)/3922049351427327844"));
+    super(ruleTable, "recover_catchall", "FunLanguage.types.recover_catchall", SNodePointer.deserialize("128e6471-1881-427b-87e3-301270fd993f/i:10000056(FunLanguage@transient0/FunLanguage.types@3_2)/3059597553262145824"));
   }
 
   @Override
@@ -147,7 +145,7 @@ public class _RecoverType_Default__recover_catchall extends AbstractRuleTemplate
   public Token createToken(SNode input, TemplateApplicationSession session) {
     return new Token(input, session);
   }
-  private static SNode createRuntimeErrorType_dwn3e9_a1a1a0b0a0a0i0a0a0a2a3b() {
+  private static SNode createRuntimeErrorType_dwn3e9_a1a1a0b0a0a0h0a0a0a2a3b() {
     SNodeBuilder n0 = new SNodeBuilder().init(CONCEPTS.RuntimeErrorType$3c);
     n0.setProperty(PROPS.errorText$leWQ, "type is unknown");
     return n0.getResult();

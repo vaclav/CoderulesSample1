@@ -15,12 +15,12 @@ import jetbrains.mps.logic.dataform.DataForm;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.coderules.template.ConstraintBuilder;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.coderules.template.ExpandMacroTemplate;
 import jetbrains.mps.lang.coderules.template.ConstraintRuleTemplate;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import java.util.List;
 import jetbrains.mps.lang.coderules.template.RuleTable;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -51,7 +51,7 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
 
             builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(SLinkOperations.getTarget(token().fun, LINKS.body$Dpoh), rule().ActualReturnType).toConstraint());
             builder.appendHeadKept(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.checkAll", 0)).withArguments().toConstraint());
-            builder.merge(0, session.expandMacro(token().fun, SLinkOperations.getTarget(token().fun, LINKS.declaredType$DoUf), SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7475035771484099126"), (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().DeclaredType).withParams().apply()));
+            builder.merge(0, session.expandMacro(token().fun, SLinkOperations.getTarget(token().fun, LINKS.declaredType$DoUf), "FunLanguage.types.lift", (ExpandMacroTemplate.Token tok) -> tok.withLogical(rule().DeclaredType).withParams().apply()));
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.typeOf", 2)).withArguments(token().fun, rule().DeclaredType).toConstraint());
             builder.appendBody(new ConstraintBuilder(new ConstraintSymbol("FunLanguage.types.convertsTo", 2)).withArguments(rule().ActualReturnType, rule().DeclaredType).toConstraint());
 
@@ -86,7 +86,7 @@ public class Check_function_definition extends AbstractRuleTemplate<Check_functi
 
 
   public Check_function_definition(RuleTable ruleTable) {
-    super(ruleTable, "function_definition", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3711979631470533744"));
+    super(ruleTable, "function_definition", "FunLanguage.types.function_definition", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3711979631470533744"));
   }
 
   @Override

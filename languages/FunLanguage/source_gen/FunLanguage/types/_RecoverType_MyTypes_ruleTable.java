@@ -11,21 +11,21 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-public class _RecoverType__ruleTable extends AbstractRuleTable implements RuleTable {
+public class _RecoverType_MyTypes_ruleTable extends AbstractRuleTable implements RuleTable {
 
-  protected _RecoverType__ruleTable(AbstractCoderulesManifest manifest) {
+  protected _RecoverType_MyTypes_ruleTable(AbstractCoderulesManifest manifest) {
     super(manifest);
     init();
   }
 
   @Override
   public String name() {
-    return "_RecoverType_";
+    return "_RecoverType_MyTypes";
   }
 
   @Override
   public String fqName() {
-    return "FunLanguage.types._RecoverType_";
+    return "FunLanguage.types._RecoverType_MyTypes";
   }
 
   @Override
@@ -40,13 +40,13 @@ public class _RecoverType__ruleTable extends AbstractRuleTable implements RuleTa
 
   private void init() {
     List<RuleTemplate<?>> list = ListSequence.fromList(new ArrayList<RuleTemplate<?>>());
-    ListSequence.fromList(list).addElement(new _RecoverType___recover_intType(this));
-    ListSequence.fromList(list).addElement(new _RecoverType___recover_floatType(this));
-    ListSequence.fromList(list).addElement(new _RecoverType___recover_intHoldingStringType(this));
-    ListSequence.fromList(list).addElement(new _RecoverType___recover_floatHoldingStringType(this));
-    ListSequence.fromList(list).addElement(new _RecoverType___recover_stringType(this));
-    ListSequence.fromList(list).addElement(new _RecoverType___recover_structType(this));
-    ListSequence.fromList(list).addElement(new _RecoverType___recover_arrayType(this));
+    ListSequence.fromList(list).addElement(new _RecoverType_MyTypes__recover_intType(this));
+    ListSequence.fromList(list).addElement(new _RecoverType_MyTypes__recover_floatType(this));
+    ListSequence.fromList(list).addElement(new _RecoverType_MyTypes__recover_stringType(this));
+    ListSequence.fromList(list).addElement(new _RecoverType_MyTypes__recover_intHoldingStringType(this));
+    ListSequence.fromList(list).addElement(new _RecoverType_MyTypes__recover_floatHoldingStringType(this));
+    ListSequence.fromList(list).addElement(new _RecoverType_MyTypes__recover_structType(this));
+    ListSequence.fromList(list).addElement(new _RecoverType_MyTypes__recover_arrayType(this));
     this.ruleTemplates = ListSequence.fromList(list).asUnmodifiable();
   }
 

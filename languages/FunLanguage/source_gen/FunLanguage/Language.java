@@ -13,11 +13,11 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import FunLanguage.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.openapi.intentions.IntentionAspectDescriptor;
 import FunLanguage.intentions.IntentionsDescriptor;
+import jetbrains.mps.lang.typechecking.aspect.TypecheckingAspect;
+import FunLanguage.types.TypesAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import FunLanguage.structure.ConceptPresentationAspectImpl;
-import jetbrains.mps.lang.typechecking.aspect.TypecheckingAspect;
-import FunLanguage.types.TypesAspectDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.language.LanguageExtensions;
 
@@ -60,16 +60,14 @@ public class Language extends LanguageRuntime {
     if (aspectClass == IntentionAspectDescriptor.class) {
       return aspectClass.cast(new IntentionsDescriptor());
     }
+    if (aspectClass == TypecheckingAspect.class) {
+      return aspectClass.cast(new TypesAspectDescriptor());
+    }
     if (aspectClass == StructureAspectDescriptor.class) {
       return aspectClass.cast(new FunLanguage.structure.StructureAspectDescriptor());
     }
     if (aspectClass == ConceptPresentationAspect.class) {
       return aspectClass.cast(new ConceptPresentationAspectImpl());
-    }
-    if (aspectClass.getName().equals("jetbrains.mps.lang.typechecking.aspect.TypecheckingAspect")) {
-      if (aspectClass == TypecheckingAspect.class) {
-        return (T) new TypesAspectDescriptor();
-      }
     }
     return null;
   }

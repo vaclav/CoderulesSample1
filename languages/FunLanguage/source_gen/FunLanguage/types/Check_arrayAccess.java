@@ -90,7 +90,7 @@ public class Check_arrayAccess extends AbstractRuleTemplate<Check_arrayAccess.To
 
 
   public Check_arrayAccess(RuleTable ruleTable) {
-    super(ruleTable, "arrayAccess", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3953395691054636890"));
+    super(ruleTable, "arrayAccess", "FunLanguage.types.arrayAccess", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/3953395691054636890"));
   }
 
   @Override

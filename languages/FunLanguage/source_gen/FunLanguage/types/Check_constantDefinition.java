@@ -77,7 +77,7 @@ public class Check_constantDefinition extends AbstractRuleTemplate<Check_constan
 
 
   public Check_constantDefinition(RuleTable ruleTable) {
-    super(ruleTable, "constantDefinition", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/1749218580158264298"));
+    super(ruleTable, "constantDefinition", "FunLanguage.types.constantDefinition", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/1749218580158264298"));
   }
 
   @Override

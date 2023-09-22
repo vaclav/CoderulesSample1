@@ -104,7 +104,7 @@ public class Conversion_convertsInfer extends AbstractRuleTemplate<Conversion_co
 
 
   public Conversion_convertsInfer(RuleTable ruleTable) {
-    super(ruleTable, "convertsInfer", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7907172955837628509"));
+    super(ruleTable, "convertsInfer", "FunLanguage.types.convertsInfer", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/7907172955837628509"));
   }
 
   @Override

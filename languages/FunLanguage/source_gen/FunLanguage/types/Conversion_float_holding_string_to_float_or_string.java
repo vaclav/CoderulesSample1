@@ -139,7 +139,7 @@ public class Conversion_float_holding_string_to_float_or_string extends Abstract
 
 
   public Conversion_float_holding_string_to_float_or_string(RuleTable ruleTable) {
-    super(ruleTable, "float_holding_string_to_float_or_string", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5370890420589049964"));
+    super(ruleTable, "float_holding_string_to_float_or_string", "FunLanguage.types.float_holding_string_to_float_or_string", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/5370890420589049964"));
   }
 
   @Override

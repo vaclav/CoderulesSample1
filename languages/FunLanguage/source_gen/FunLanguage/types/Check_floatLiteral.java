@@ -70,7 +70,7 @@ public class Check_floatLiteral extends AbstractRuleTemplate<Check_floatLiteral.
 
 
   public Check_floatLiteral(RuleTable ruleTable) {
-    super(ruleTable, "floatLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/8344158229058266665"));
+    super(ruleTable, "floatLiteral", "FunLanguage.types.floatLiteral", SNodePointer.deserialize("r:9e6cb41b-3b70-499a-8027-e5d416a03df7(FunLanguage.types)/8344158229058266665"));
   }
 
   @Override
